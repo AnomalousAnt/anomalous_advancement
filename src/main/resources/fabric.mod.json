@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "anomalous_advancement",
+	"version": "${version}",
+	"name": "Anomalous_Advancement",
+	"description": "This is Anomalous_Ant's take on reworking the broken and terrible progression of vanilla Minecraft.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/AnomalousAnt/Anomalous_Advancement"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/anomalous_advancement/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.ant.anomalous_advancement.Anomalous_Advancement"
+		],
+		"fabric-datagen": [
+			"com.ant.anomalous_advancement.Anomalous_AdvancementDataGenerator"
+		],
+		"client": [
+			"com.ant.anomalous_advancement.Anomalous_AdvancementClient"
+		]
+	},
+	"mixins": [
+		"anomalous_advancement.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
