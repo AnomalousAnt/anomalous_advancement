@@ -3,13 +3,19 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "anomalous_advancement:flint_sword"
+      "item": "minecraft:flint"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    },
+    "Y": {
+      "item": "minecraft:string"
     }
   },
   "pattern": [
     "###",
-    "###",
-    "###"
+    " XY",
+    " X "
   ],
   "result": {
     "count": 1,

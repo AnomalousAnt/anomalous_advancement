@@ -1,5 +1,7 @@
 package com.ant.anomalous_advancement;
 
+import com.ant.anomalous_advancement.block.ModBlocks;
+import com.ant.anomalous_advancement.item.ModItemGroups;
 import com.ant.anomalous_advancement.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -12,6 +14,8 @@ public class Anomalous_Advancement implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }

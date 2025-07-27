@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:smooth_stone"
+    },
+    "X": {
+      "item": "minecraft:coal"
+    },
+    "Y": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "pattern": [
+    "###",
+    "XYX",
+    "XYX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:altar"
+  }
+}

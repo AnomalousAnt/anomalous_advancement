@@ -3,5 +3,10 @@
   "item.anomalous_advancement.flint_sword": "Flint Sword",
   "item.anomalous_advancement.flint_shovel": "Flint Shovel",
   "item.anomalous_advancement.flint_axe": "Flint Axe",
-  "item.anomalous_advancement.flint_hoe": "Flint Hoe"
+  "item.anomalous_advancement.flint_hoe": "Flint Hoe",
+
+  "block.anomalous_advancement.altar": "Altar",
+  "block.anomalous_advancement.gilded_altar": "Gilded Altar",
+
+  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions"
 }
