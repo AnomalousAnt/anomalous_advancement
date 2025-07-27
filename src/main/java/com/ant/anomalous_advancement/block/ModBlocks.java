@@ -1,6 +1,7 @@
 package com.ant.anomalous_advancement.block;
 
 import com.ant.anomalous_advancement.Anomalous_Advancement;
+import com.ant.anomalous_advancement.block.custom.MagicTable;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -15,11 +16,11 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block ALTAR = registerBlock("altar",
-            new Block(AbstractBlock.Settings.create().strength(4f)
+            new MagicTable(AbstractBlock.Settings.create().strength(4f)
                     .requiresTool().sounds(BlockSoundGroup.STONE)));
 
     public static final Block GILDED_ALTAR = registerBlock("gilded_altar",
-            new Block(AbstractBlock.Settings.create().strength(5f)
+            new MagicTable(AbstractBlock.Settings.create().strength(5f)
                     .requiresTool().sounds(BlockSoundGroup.STONE)));
 
 
