@@ -8,5 +8,7 @@
   "block.anomalous_advancement.altar": "Altar",
   "block.anomalous_advancement.gilded_altar": "Gilded Altar",
 
-  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions"
+  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions",
+
+  "item.anomalous_advancement.mashed_potatoes": "Mashed Potatoes"
 }

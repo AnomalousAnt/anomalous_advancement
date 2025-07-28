@@ -24,6 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.FLINT_SWORD);
                         entries.add(ModBlocks.ALTAR);
                         entries.add(ModBlocks.GILDED_ALTAR);
+                        entries.add(ModItems.MASHED_POTATOES);
                     }).build());
 
     public static void registerItemGroups(){

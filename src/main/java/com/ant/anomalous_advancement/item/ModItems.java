@@ -16,6 +16,8 @@ public class ModItems {
     public static final Item FLINT_HOE = registerItem("flint_hoe", new Item(new Item.Settings()));
     public static final Item FLINT_SHOVEL = registerItem("flint_shovel", new Item(new Item.Settings()));
 
+    public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", new Item(new Item.Settings().food(ModFoodComponents.MASHED_POTATOES)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name), item);
     }
