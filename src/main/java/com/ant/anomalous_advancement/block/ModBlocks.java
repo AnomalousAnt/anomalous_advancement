@@ -17,11 +17,11 @@ public class ModBlocks {
 
     public static final Block ALTAR = registerBlock("altar",
             new MagicTable(AbstractBlock.Settings.create().strength(4f)
-                    .requiresTool().sounds(BlockSoundGroup.STONE)));
+                    .requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> state.get(MagicTable.CLICKED) ? 5 : 0)));
 
     public static final Block GILDED_ALTAR = registerBlock("gilded_altar",
             new MagicTable(AbstractBlock.Settings.create().strength(5f)
-                    .requiresTool().sounds(BlockSoundGroup.STONE)));
+                    .requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> state.get(MagicTable.CLICKED) ? 10 : 0)));
 
 
 

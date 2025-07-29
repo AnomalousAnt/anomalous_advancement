@@ -2,6 +2,7 @@ package com.ant.anomalous_advancement.datagen;
 
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModItems;
+import com.ant.anomalous_advancement.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
@@ -30,6 +31,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
+                .pattern("###")
+                .pattern(" XY")
+                .pattern(" X ")
+                .input('X', Items.STICK)
+                .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                .input('Y', Items.STRING)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .offerTo(exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.FLINT_AXE)
                 .pattern("## ")
                 .pattern("#XY")
@@ -38,6 +49,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.FLINT)
                 .input('Y', Items.STRING)
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_AXE)
+                .pattern("## ")
+                .pattern("#XY")
+                .pattern(" X ")
+                .input('X', Items.STICK)
+                .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                .input('Y', Items.STRING)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.FLINT_HOE)
@@ -50,6 +71,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_HOE)
+                .pattern("## ")
+                .pattern(" XY")
+                .pattern(" X ")
+                .input('X', Items.STICK)
+                .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                .input('Y', Items.STRING)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .offerTo(exporter);
+
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.FLINT_SHOVEL)
                 .pattern(" # ")
                 .pattern(" XY")
@@ -58,6 +90,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.FLINT)
                 .input('Y', Items.STRING)
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
+                .pattern(" # ")
+                .pattern(" XY")
+                .pattern(" X ")
+                .input('X', Items.STICK)
+                .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                .input('Y', Items.STRING)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                 .offerTo(exporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.FLINT_SWORD)
@@ -70,6 +112,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_SWORD)
+                .pattern(" # ")
+                .pattern(" #Y")
+                .pattern(" X ")
+                .input('X', Items.STICK)
+                .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                .input('Y', Items.STRING)
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .offerTo(exporter);
 
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModBlocks.ALTAR)

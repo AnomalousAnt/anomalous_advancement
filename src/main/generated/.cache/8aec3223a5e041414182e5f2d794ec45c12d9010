@@ -1,0 +1,4 @@
+// 1.21.1	2025-07-28T23:20:00.2228338	Anomalous_Advancement/Tags for minecraft:block
+9ff0eb50a115526dfc5d60830fcae326556c7de3 data\minecraft\tags\block\mineable\pickaxe.json
+3e0158d72d5b92c5f89b453f0462654dcf5d7645 data\minecraft\tags\block\needs_stone_tool.json
+141a538f805508cfd05846e435981ce9d6866b31 data\anomalous_advancement\tags\block\needs_flint_tool.json

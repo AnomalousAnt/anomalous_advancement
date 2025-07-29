@@ -1,18 +1,17 @@
 package com.ant.anomalous_advancement.item;
 
+import com.ant.anomalous_advancement.util.ModTags;
 import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    FLINT(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 4.0F, 15, () -> Ingredient.ofItems(Items.NETHERITE_INGOT));
+    FLINT(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL, 32, 1.5F, 0.5F, 5, () -> Ingredient.ofItems(Items.FLINT));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

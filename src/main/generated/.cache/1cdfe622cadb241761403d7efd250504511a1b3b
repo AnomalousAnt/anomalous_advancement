@@ -1,0 +1,7 @@
+// 1.21.1	2025-07-28T23:20:00.2218319	Anomalous_Advancement/Tags for minecraft:item
+bc78e507649276356a6d7125e795a5e208326e68 data\minecraft\tags\item\shovels.json
+53a33f35c5699e830bff32ddf79d4b94b71c53cb data\minecraft\tags\item\axes.json
+f83cc7360db95cc9071333dff6f165635e1f8135 data\minecraft\tags\item\swords.json
+08f120e6e8f1c7afe4bef785631cb0dfc90ec35d data\anomalous_advancement\tags\item\modded_stone_tool_materials.json
+06f76ab9f87dc3a2beb0795cff09f293cf5e2586 data\minecraft\tags\item\pickaxes.json
+2a1009281fa0b994669dc6ff565f304087d818e6 data\minecraft\tags\item\hoes.json

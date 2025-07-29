@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "anomalous_advancement:item/flint_pickaxe"
+  }
+}

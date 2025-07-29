@@ -16,16 +16,16 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALTAR);
-        blockStateModelGenerator.registerRotatable(ModBlocks.GILDED_ALTAR);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GILDED_ALTAR);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.FLINT_AXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLINT_HOE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLINT_PICKAXE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLINT_SHOVEL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FLINT_SWORD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FLINT_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FLINT_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FLINT_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FLINT_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.FLINT_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MASHED_POTATOES, Models.GENERATED);
     }
 }
