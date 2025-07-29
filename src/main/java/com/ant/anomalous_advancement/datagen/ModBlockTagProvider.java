@@ -21,11 +21,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.GILDED_ALTAR)
                 .add(net.minecraft.block.Blocks.GRAVEL);
 
+        getOrCreateTagBuilder(ModTags.Blocks.INCORRECT_FOR_WOOD_TOOL)
+                .add(net.minecraft.block.Blocks.STONE);
+
         getOrCreateTagBuilder(ModTags.Blocks.NEEDS_FLINT_TOOL)
                 .add(ModBlocks.ALTAR);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.GILDED_ALTAR);
+
 
     }
 }

@@ -1,0 +1,12 @@
+{
+  "compatibilityLevel": "JAVA_22",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8",
+  "mixins": [
+    "ModifyVanillaToolsMixin"
+  ],
+  "package": "com.ant.anomalous_advancement.mixin",
+  "required": true
+}

@@ -14,6 +14,7 @@ public class Anomalous_AdvancementDataGenerator implements DataGeneratorEntrypoi
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(MixinProvider::new);
 
 	}
 }
