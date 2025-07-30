@@ -1,5 +1,5 @@
-// 1.21.1	2025-07-29T00:06:30.5768976	Anomalous_Advancement/Tags for minecraft:block
-9ff0eb50a115526dfc5d60830fcae326556c7de3 data\minecraft\tags\block\mineable\pickaxe.json
-3e0158d72d5b92c5f89b453f0462654dcf5d7645 data\minecraft\tags\block\needs_stone_tool.json
-141a538f805508cfd05846e435981ce9d6866b31 data\anomalous_advancement\tags\block\needs_flint_tool.json
-f92c41ce4c3dd51d875dafefe81e048bf6b8f9ed data\anomalous_advancement\tags\block\incorrect_for_wood_tool.json
+// 1.21.1	2025-07-29T20:28:50.0312532	Anomalous_Advancement/Tags for minecraft:block
+7629168c3b1a4f52032f5041a409c33907136ba1 data\minecraft\tags\block\mineable\pickaxe.json
+e8d7d2e05d30859a146b07a91260f83adc46b0a4 data\anomalous_advancement\tags\block\incorrect_for_stone_tool.json
+fd9b3b14aa938bf1a1a2474fa206b9b7ea994d13 data\anomalous_advancement\tags\block\incorrect_for_flint_tool.json
+3af50108fb2d912dbc65de68edb64ff1b45e2767 data\anomalous_advancement\tags\block\incorrect_for_wood_tool.json

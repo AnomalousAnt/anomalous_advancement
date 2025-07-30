@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-29T00:06:30.5753759	Anomalous_Advancement/Model Definitions
+// 1.21.1	2025-07-29T20:28:50.0292036	Anomalous_Advancement/Model Definitions
 6e6fe32aac7d842cf4d3d8a61731f6504438c564 assets\anomalous_advancement\models\block\altar.json
 3d3a01aaea507cdfce2687f9da063898187428f9 assets\anomalous_advancement\models\item\gilded_altar.json
 8b8ff4dd169392a6eecc2977690b150538149ac0 assets\anomalous_advancement\models\block\gilded_altar.json
@@ -6,8 +6,8 @@
 4fd998a92002aeaeacd9da234aa7aa57bb45f209 assets\anomalous_advancement\models\item\flint_shovel.json
 a7f94974b8c9ab9f4ecd96202447dc8b8776d1fc assets\anomalous_advancement\models\item\mashed_potatoes.json
 99c01eace33d61cb89d3991b64c0845cd82ac7a6 assets\anomalous_advancement\blockstates\gilded_altar.json
-73cd041d501a503c32af46de5f2a9f1ae732cf92 assets\anomalous_advancement\models\item\altar.json
 b093174db7c6a0799457c98519089236c29884e3 assets\anomalous_advancement\models\item\flint_sword.json
+73cd041d501a503c32af46de5f2a9f1ae732cf92 assets\anomalous_advancement\models\item\altar.json
 8ce6b8e4b47e7879838ed6fd6a5a931245163bbf assets\anomalous_advancement\models\item\flint_axe.json
 c6119027e585d3ef90d615d6495e62630024bf8b assets\anomalous_advancement\models\item\flint_hoe.json
 e4db65a5e95d913163ab124c0ab5bec4e9624905 assets\anomalous_advancement\models\item\flint_pickaxe.json
