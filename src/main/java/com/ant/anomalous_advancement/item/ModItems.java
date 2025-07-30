@@ -23,6 +23,20 @@ public class ModItems {
 
     public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", new Item(new Item.Settings().food(ModFoodComponents.MASHED_POTATOES)));
 
+    public static final Item PIGLIN_BRONZE = registerItem("piglin_bronze", new Item(new Item.Settings()));
+    public static final Item PIGLIN_BRONZE_HELMET = registerItem("piglin_bronze_helmet",
+            new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+    public static final Item PIGLIN_BRONZE_CHESTPLATE = registerItem("piglin_bronze_chestplate",
+            new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+    public static final Item PIGLIN_BRONZE_LEGGINGS = registerItem("piglin_bronze_leggings",
+            new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+    public static final Item PIGLIN_BRONZE_BOOTS = registerItem("piglin_bronze_boots",
+            new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name), item);
     }
