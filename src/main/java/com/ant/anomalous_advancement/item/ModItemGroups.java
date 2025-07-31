@@ -24,7 +24,7 @@ public class ModItemGroups {
                         entries.add(ModItems.FLINT_SWORD);
                         entries.add(ModBlocks.ALTAR);
                         entries.add(ModBlocks.GILDED_ALTAR);
-                        entries.add(ModItems.PIGLIN_BRONZE);
+                        entries.add(ModItems.PIGLIN_BRONZE_INGOT);
                         entries.add(ModItems.PIGLIN_BRONZE_HELMET);
                         entries.add(ModItems.PIGLIN_BRONZE_CHESTPLATE);
                         entries.add(ModItems.PIGLIN_BRONZE_LEGGINGS);

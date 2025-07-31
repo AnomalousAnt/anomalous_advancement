@@ -16,14 +16,14 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class ModArmorMaterials {
-    public static final RegistryEntry<ArmorMaterial> PIGLIN_BRONZE_ARMOR_MATERIAL = registerArmorMaterial("piglin_bronze", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+    public static final RegistryEntry<ArmorMaterial> PIGLIN_BRONZE_ARMOR_MATERIAL = registerArmorMaterial("piglin_bronze_ingot", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 2);
         map.put(ArmorItem.Type.LEGGINGS, 4);
         map.put(ArmorItem.Type.CHESTPLATE, 6);
         map.put(ArmorItem.Type.HELMET, 2);
         map.put(ArmorItem.Type.BODY, 4);
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, () -> Ingredient.ofItems(ModItems.PIGLIN_BRONZE),
-            List.of(new ArmorMaterial.Layer(Identifier.of(Anomalous_Advancement.MOD_ID,"piglin_bronze"))), 0, 0));
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, () -> Ingredient.ofItems(ModItems.PIGLIN_BRONZE_INGOT),
+            List.of(new ArmorMaterial.Layer(Identifier.of(Anomalous_Advancement.MOD_ID,"piglin_bronze_ingot"))), 0, 0));
 
 
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {

@@ -32,6 +32,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(ModItems.FLINT_HOE);
 
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.PIGLIN_BRONZE_HELMET)
+                .add(ModItems.PIGLIN_BRONZE_CHESTPLATE)
+                .add(ModItems.PIGLIN_BRONZE_LEGGINGS)
+                .add(ModItems.PIGLIN_BRONZE_BOOTS);
+
         getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, "modded_stone_tool_materials")))
                 .add(Items.POLISHED_ANDESITE)
                 .add(Items.POLISHED_DIORITE)

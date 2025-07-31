@@ -23,7 +23,7 @@ public class ModItems {
 
     public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", new Item(new Item.Settings().food(ModFoodComponents.MASHED_POTATOES)));
 
-    public static final Item PIGLIN_BRONZE = registerItem("piglin_bronze", new Item(new Item.Settings()));
+    public static final Item PIGLIN_BRONZE_INGOT = registerItem("piglin_bronze_ingot", new Item(new Item.Settings()));
     public static final Item PIGLIN_BRONZE_HELMET = registerItem("piglin_bronze_helmet",
             new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
                     .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
