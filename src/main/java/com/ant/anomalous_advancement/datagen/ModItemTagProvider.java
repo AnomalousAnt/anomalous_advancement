@@ -45,5 +45,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Items.POLISHED_TUFF)
                 .add(Items.POLISHED_BASALT)
                 .add(Items.POLISHED_BLACKSTONE);
+
+        getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.PIGLIN_BRONZE_INGOT);
     }
 }

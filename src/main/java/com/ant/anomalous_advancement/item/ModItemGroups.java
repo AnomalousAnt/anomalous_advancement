@@ -29,7 +29,10 @@ public class ModItemGroups {
                         entries.add(ModItems.PIGLIN_BRONZE_CHESTPLATE);
                         entries.add(ModItems.PIGLIN_BRONZE_LEGGINGS);
                         entries.add(ModItems.PIGLIN_BRONZE_BOOTS);
+                        entries.add(ModItems.PIGLIN_BRONZE_HORSE_ARMOR);
+                        entries.add(ModItems.PIGLIN_BRONZE_BOW);
                         entries.add(ModItems.MASHED_POTATOES);
+                        entries.add(ModItems.CLOAKED_CHAUFFEUR_MUSIC_DISC);
                     }).build());
 
     public static void registerItemGroups(){

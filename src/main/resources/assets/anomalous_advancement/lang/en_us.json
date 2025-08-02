@@ -16,6 +16,15 @@
   "item.anomalous_advancement.piglin_bronze_helmet": "Piglin Bronze Helmet",
   "item.anomalous_advancement.piglin_bronze_chestplate": "Piglin Bronze Chestplate",
   "item.anomalous_advancement.piglin_bronze_leggings": "Piglin Bronze Leggings",
-  "item.anomalous_advancement.piglin_bronze_boots": "Piglin Bronze Boots"
+  "item.anomalous_advancement.piglin_bronze_boots": "Piglin Bronze Boots",
+
+  "item.anomalous_advancement.piglin_bronze_bow": "Piglin Bronze Bow",
+
+  "item.anomalous_advancement.piglin_bronze_horse_armor": "Piglin Bronze Horse Armor",
+
+  "trim_material.anomalous_advancement.piglin_bronze_ingot": "Piglin Bronze Material",
+
+  "item.anomalous_advancement.cloaked_chauffeur_music_disc": "Cloaked Chauffeur Music Disc",
+  "item.anomalous_advancement.cloaked_chauffeur_music_disc.desc": "Cloaked Chauffeur - Anomalous_Ant"
 
 }

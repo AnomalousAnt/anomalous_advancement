@@ -1,8 +1,9 @@
-// 1.21.1	2025-07-30T23:42:20.1476359	Anomalous_Advancement/Tags for minecraft:item
+// 1.21.1	2025-08-01T19:40:43.0048513	Anomalous_Advancement/Tags for minecraft:item
 bc78e507649276356a6d7125e795a5e208326e68 data\minecraft\tags\item\shovels.json
 53a33f35c5699e830bff32ddf79d4b94b71c53cb data\minecraft\tags\item\axes.json
 f83cc7360db95cc9071333dff6f165635e1f8135 data\minecraft\tags\item\swords.json
-08f120e6e8f1c7afe4bef785631cb0dfc90ec35d data\anomalous_advancement\tags\item\modded_stone_tool_materials.json
 40ef08d2414f37505be2463487c11f9557b53013 data\minecraft\tags\item\trimmable_armor.json
+08f120e6e8f1c7afe4bef785631cb0dfc90ec35d data\anomalous_advancement\tags\item\modded_stone_tool_materials.json
+f4fffe733ffed4466f718d999f64d1c8ba57c29a data\minecraft\tags\item\trim_materials.json
 06f76ab9f87dc3a2beb0795cff09f293cf5e2586 data\minecraft\tags\item\pickaxes.json
 2a1009281fa0b994669dc6ff565f304087d818e6 data\minecraft\tags\item\hoes.json

@@ -1,0 +1,10 @@
+{
+  "cloaked_chauffeur": {
+    "sounds": [
+      {
+        "name": "anomalous_advancement:cloaked_chauffeur",
+        "stream": true
+      }
+    ]
+  }
+}

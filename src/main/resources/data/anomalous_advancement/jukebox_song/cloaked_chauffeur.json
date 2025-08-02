@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.anomalous_advancement.cloaked_chauffeur_music_disc.desc"
+  },
+  "length_in_seconds": 202.0,
+  "sound_event": "anomalous_advancement:cloaked_chauffeur"
+}

@@ -1,6 +1,7 @@
 package com.ant.anomalous_advancement.item;
 
 import com.ant.anomalous_advancement.Anomalous_Advancement;
+import com.ant.anomalous_advancement.sound.ModSounds;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -20,6 +21,8 @@ public class ModItems {
     public static final Item FLINT_HOE = registerItem("flint_hoe", new HoeItem(ModToolMaterials.FLINT, new Item.Settings()
             .attributeModifiers((HoeItem.createAttributeModifiers(ModToolMaterials.FLINT, 0, -3f)))));
 
+public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",
+        new Item(new Item.Settings().jukeboxPlayable(ModSounds.CLOAKED_CHAUFFEUR_KEY).maxCount(1)));
 
     public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", new Item(new Item.Settings().food(ModFoodComponents.MASHED_POTATOES)));
 
@@ -36,6 +39,11 @@ public class ModItems {
     public static final Item PIGLIN_BRONZE_BOOTS = registerItem("piglin_bronze_boots",
             new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
                     .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+    public static final Item PIGLIN_BRONZE_BOW = registerItem("piglin_bronze_bow",
+            new BowItem(new Item.Settings().maxDamage(500)));
+
+    public static final Item PIGLIN_BRONZE_HORSE_ARMOR = registerItem("piglin_bronze_horse_armor",
+            new AnimalArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name), item);

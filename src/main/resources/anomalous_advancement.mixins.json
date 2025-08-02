@@ -5,6 +5,9 @@
 	"mixins": [
 		"ModifyVanillaToolsMixin"
 	],
+	"client": [
+		"AbstractClientPlayerEntityMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},

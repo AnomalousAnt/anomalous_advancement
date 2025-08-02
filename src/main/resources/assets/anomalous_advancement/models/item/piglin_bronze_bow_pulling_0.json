@@ -1,0 +1,6 @@
+{
+  "parent": "anomalous_advancement:item/piglin_bronze_bow",
+  "textures": {
+    "layer0": "anomalous_advancement:item/piglin_bronze_bow_pulling_0"
+  }
+}

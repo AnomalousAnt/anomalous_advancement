@@ -3,6 +3,7 @@ package com.ant.anomalous_advancement;
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModItemGroups;
 import com.ant.anomalous_advancement.item.ModItems;
+import com.ant.anomalous_advancement.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -17,5 +18,7 @@ public class Anomalous_Advancement implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModSounds.registerSounds();
 	}
+
 }
