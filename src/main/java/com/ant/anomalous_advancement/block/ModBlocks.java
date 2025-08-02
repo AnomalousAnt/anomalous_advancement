@@ -1,6 +1,7 @@
 package com.ant.anomalous_advancement.block;
 
 import com.ant.anomalous_advancement.Anomalous_Advancement;
+import com.ant.anomalous_advancement.block.custom.MagicBench;
 import com.ant.anomalous_advancement.block.custom.MagicTable;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
@@ -16,12 +17,12 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block ALTAR = registerBlock("altar",
-            new MagicTable(AbstractBlock.Settings.create().strength(4f)
-                    .requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> state.get(MagicTable.CLICKED) ? 5 : 0)));
+            new MagicBench(AbstractBlock.Settings.create().strength(4f)
+                    .requiresTool().sounds(BlockSoundGroup.STONE)));
 
     public static final Block GILDED_ALTAR = registerBlock("gilded_altar",
-            new MagicTable(AbstractBlock.Settings.create().strength(5f)
-                    .requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> state.get(MagicTable.CLICKED) ? 10 : 0)));
+            new MagicBench(AbstractBlock.Settings.create().strength(5f)
+                    .requiresTool().sounds(BlockSoundGroup.STONE)));
 
 
 

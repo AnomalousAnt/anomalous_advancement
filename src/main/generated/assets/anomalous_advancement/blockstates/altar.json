@@ -2,18 +2,18 @@
   "variants": {
     "facing=east": {
       "model": "anomalous_advancement:block/altar",
-      "y": 90
+      "y": 270
     },
     "facing=north": {
-      "model": "anomalous_advancement:block/altar"
-    },
-    "facing=south": {
       "model": "anomalous_advancement:block/altar",
       "y": 180
     },
+    "facing=south": {
+      "model": "anomalous_advancement:block/altar"
+    },
     "facing=west": {
       "model": "anomalous_advancement:block/altar",
-      "y": 270
+      "y": 90
     }
   }
 }
