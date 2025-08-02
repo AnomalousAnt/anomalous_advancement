@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_bottom_top",
+	"textures": {
+		"top": "anomalous_advancement:block/gilded_altar_top",
+		"bottom": "anomalous_advancement:block/gilded_altar_bottom",
+		"side": "anomalous_advancement:block/gilded_altar_side"
+	}
+}

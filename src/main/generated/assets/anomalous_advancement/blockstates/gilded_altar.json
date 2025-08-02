@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "anomalous_advancement:block/gilded_altar",
+      "y": 90
+    },
+    "facing=north": {
       "model": "anomalous_advancement:block/gilded_altar"
+    },
+    "facing=south": {
+      "model": "anomalous_advancement:block/gilded_altar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "anomalous_advancement:block/gilded_altar",
+      "y": 270
     }
   }
 }

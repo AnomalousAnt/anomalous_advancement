@@ -135,8 +135,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModBlocks.GILDED_ALTAR)
                 .pattern("XXX")
-                .pattern("Y#Y")
-                .pattern("ZZZ")
+                .pattern("Z#Z")
+                .pattern("YYY")
                 .input('X', Items.GOLD_INGOT)
                 .input('#', ModBlocks.ALTAR)
                 .input('Y', Items.IRON_INGOT)

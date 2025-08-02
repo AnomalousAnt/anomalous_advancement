@@ -1,4 +1,4 @@
-// 1.21.1	2025-08-01T19:40:43.0053635	Anomalous_Advancement/Recipes
+// 1.21.1	2025-08-01T21:11:03.3891712	Anomalous_Advancement/Recipes
 d0bb8f6cd985d1f7a6c5c6aa4b3e265993dac640 data\anomalous_advancement\recipe\stone_shovel.json
 8492beab0acc3de8f556ca9dbdfc5711c95fd55c data\anomalous_advancement\recipe\stone_axe.json
 e22af397f3f20687916ca2c9a396d58d8643c240 data\anomalous_advancement\recipe\stone_hoe.json
@@ -10,7 +10,7 @@ fa5338cc211fbac94dbe4973557b3dfbffc3770c data\anomalous_advancement\advancement\
 e77bf6532b32cd127bc49888a0f76568b5afb217 data\anomalous_advancement\advancement\recipes\tools\gilded_altar.json
 f0499cc1b2688c9c85b3c8262df6277852cd46bd data\anomalous_advancement\advancement\recipes\tools\flint_shovel.json
 be4ef6fd9363ccbe52686d66fe724f3b6862c5ce data\anomalous_advancement\recipe\flint_sword.json
-55d3ea240313f7465875de6d8c5f83b77c16554f data\anomalous_advancement\recipe\gilded_altar.json
+5ff4f57fdae758a506978fec1d7d9a8024aea83a data\anomalous_advancement\recipe\gilded_altar.json
 0d5c560f90287c82d785279b19d4a744742acc9c data\anomalous_advancement\recipe\stone_pickaxe.json
 67f21d86820fddc3ab3cb594661b0e05c74a1fd2 data\anomalous_advancement\advancement\recipes\tools\stone_sword.json
 270fb1432d664ddede8936bda486ee72ab29e197 data\anomalous_advancement\advancement\recipes\tools\stone_axe.json

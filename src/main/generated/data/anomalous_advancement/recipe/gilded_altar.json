@@ -17,8 +17,8 @@
   },
   "pattern": [
     "XXX",
-    "Y#Y",
-    "ZZZ"
+    "Z#Z",
+    "YYY"
   ],
   "result": {
     "count": 1,
