@@ -17,25 +17,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        // Altar: cube_bottom_top with separate top, bottom, side and horizontal facing
-        blockStateModelGenerator.registerSouthDefaultHorizontalFacing(
-                TexturedModel.CUBE_BOTTOM_TOP.andThen(textureMap -> {
-                    textureMap.put(TextureKey.SIDE, Identifier.of("anomalous_advancement", "block/altar_side"));
-                    textureMap.put(TextureKey.UP, Identifier.of("anomalous_advancement", "block/altar_top"));
-                    textureMap.put(TextureKey.DOWN, Identifier.of("anomalous_advancement", "block/altar_bottom"));
-                }),
-                ModBlocks.ALTAR
-        );
 
-        // Gilded Altar
-        blockStateModelGenerator.registerSouthDefaultHorizontalFacing(
-                TexturedModel.CUBE_BOTTOM_TOP.andThen(textureMap -> {
-                    textureMap.put(TextureKey.SIDE, Identifier.of("anomalous_advancement", "block/gilded_altar_side"));
-                    textureMap.put(TextureKey.UP, Identifier.of("anomalous_advancement", "block/gilded_altar_top"));
-                    textureMap.put(TextureKey.DOWN, Identifier.of("anomalous_advancement", "block/gilded_altar_bottom"));
-                }),
-                ModBlocks.GILDED_ALTAR
-        );
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALTAR);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GILDED_ALTAR);
     }
 
     @Override

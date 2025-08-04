@@ -1,8 +1,11 @@
 package com.ant.anomalous_advancement;
 
 import com.ant.anomalous_advancement.block.ModBlocks;
+import com.ant.anomalous_advancement.block.entity.ModBlockEntities;
 import com.ant.anomalous_advancement.item.ModItemGroups;
 import com.ant.anomalous_advancement.item.ModItems;
+import com.ant.anomalous_advancement.recipe.ModRecipes;
+import com.ant.anomalous_advancement.screen.ModScreenHandlers;
 import com.ant.anomalous_advancement.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 
@@ -19,6 +22,9 @@ public class Anomalous_Advancement implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModSounds.registerSounds();
+		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
+		ModRecipes.registerRecipes();
 	}
 
 }
