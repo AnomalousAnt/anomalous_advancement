@@ -16,7 +16,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class MagicBenchScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    private final PropertyDelegate propertyDelegate;
     public final MagicBenchEntity blockEntity;
 
     public MagicBenchScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
@@ -33,24 +32,16 @@ public class MagicBenchScreenHandler extends ScreenHandler {
 
         this.blockEntity = (MagicBenchEntity) blockEntity;
         this.inventory = this.blockEntity;
-        this.propertyDelegate = propertyDelegate;
 
-        // Add tool slot (index 0)
         this.addSlot(new Slot(inventory, MagicBenchEntity.TOOL_SLOT, 54, 34));
-
-        // Add reagent slot (index 1)
-        this.addSlot(new Slot(inventory, MagicBenchEntity.REAGENT_SLOT, 104, 34));
-
-        // Add output slot (index 2)
-        this.addSlot(new OutputSlot(inventory, this.blockEntity, MagicBenchEntity.OUTPUT_SLOT, 154, 34));
+        this.addSlot(new Slot(inventory, MagicBenchEntity.REAGENT_SLOT, 13, 15));
+        this.addSlot(new OutputSlot(inventory, this.blockEntity, MagicBenchEntity.OUTPUT_SLOT, 104, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
 
-        addProperties(propertyDelegate);
     }
 
-    // ✅ FIXED: Correct method override
     private static class OutputSlot extends Slot {
         private final MagicBenchEntity blockEntity;
 

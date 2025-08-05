@@ -3,7 +3,6 @@ package com.ant.anomalous_advancement.block.entity;
 import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.block.entity.custom.MagicBenchEntity;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;

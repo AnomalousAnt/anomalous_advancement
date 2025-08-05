@@ -26,7 +26,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import net.minecraft.enchantment.Enchantments;
+import com.ant.anomalous_advancement.util.MagicBenchEnchantmentSelector;
 
 import java.util.Optional;
 
@@ -46,23 +46,9 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
         ItemStack reagent = this.getStack(REAGENT_SLOT);
         if (tool.isEmpty() || reagent.isEmpty()) return Optional.empty();
 
-        // Example mapping: wooden pickaxe + slimeball => add Unbreaking I
-        if (tool.isOf(Items.WOODEN_PICKAXE) && reagent.isOf(Items.SLIME_BALL)) {
-            ItemStack result = tool.copy(); // preserves existing enchants if any
-
-            Optional<RegistryEntry.Reference<Enchantment>> entryOpt = this.getWorld()
-                    .getRegistryManager()
-                    .get(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.UNBREAKING.getValue());
-
-            entryOpt.ifPresent(entry -> result.addEnchantment(entry, 1));
-            return Optional.of(result);
-        }
-
-        // extend with more reagent-to-enchantment rules here
-
-        return Optional.empty();
+        return MagicBenchEnchantmentSelector.applyEnchantment(tool, reagent, this.getWorld());
     }
+
 
     public void updatePreviewOutput() {
         Optional<ItemStack> out = getOutputForInputs();

@@ -1,9 +1,0 @@
-{
-"type": "anomalous_advancement:magic_bench",
-  "ingredient": {
-    "item": "minecraft:wooden_pickaxe"
-  },
-  "result": {
-    "id": "minecraft:wooden_pickaxe"
-  }
-}
