@@ -2,6 +2,7 @@ package com.ant.anomalous_advancement.datagen;
 
 import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.item.ModItems;
+import com.ant.anomalous_advancement.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;
@@ -20,6 +21,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+
+        getOrCreateTagBuilder(ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR)
+                .add(ModItems.PIGLIN_BRONZE_INGOT);
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
                 .add(ModItems.FLINT_SWORD);

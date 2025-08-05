@@ -14,14 +14,16 @@ import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.RegistryEntryLookup;
+
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.item.ItemPredicate;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -39,15 +41,17 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     }
 
     private LootTable.Builder gravelLoot(){
+
+        RegistryEntryLookup<Item> itemLookup = this.registries.getOrThrow(RegistryKeys.ITEM);
                 LootPool.Builder pickaxePool = LootPool.builder()
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.PICKAXES)))
+                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(itemLookup,ItemTags.PICKAXES)))
                         .with(ItemEntry.builder(Items.FLINT)
                                 .conditionally(RandomChanceLootCondition.builder(0.1f))
-                                .apply(ApplyBonusLootFunction.oreDrops(this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE))))
+                                .apply(ApplyBonusLootFunction.oreDrops(this.registries.getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE))))
                         .rolls(UniformLootNumberProvider.create(1.0F, 1.0F));
 
                 LootPool.Builder shovelPool = LootPool.builder()
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.SHOVELS)))
+                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(itemLookup,ItemTags.SHOVELS)))
                         .with(ItemEntry.builder(Blocks.GRAVEL))
                         .rolls(UniformLootNumberProvider.create(1.0F, 1.0F));
         return LootTable.builder()
@@ -55,7 +59,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 .pool(shovelPool);
     }
 public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops){
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ((LeafEntry.Builder<?>)
                 ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minDrops, maxDrops))))
                 .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));

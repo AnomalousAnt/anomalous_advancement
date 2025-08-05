@@ -23,7 +23,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.GRAVEL)
                 .add(Blocks.IRON_DOOR);
 
-
         getOrCreateTagBuilder(ModTags.Blocks.INCORRECT_FOR_WOOD_TOOL)
                 .add(Blocks.ANVIL)
                 .add(Blocks.REDSTONE_BLOCK)
@@ -518,15 +517,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.RED_NETHER_BRICK_STAIRS)
                 .add(ModBlocks.GILDED_ALTAR)
                 .add(Blocks.SEA_LANTERN);
-
-
-   // getOrCreateTagBuilder(ModTags.Blocks.NEEDS_FLINT_TOOL)
-    //            .add(ModBlocks.ALTAR);
-
-    //    getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-    //            .add(ModBlocks.GILDED_ALTAR);
-
-
     }
 }
 

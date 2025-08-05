@@ -3,6 +3,7 @@ package com.ant.anomalous_advancement.block.entity;
 import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.block.entity.custom.MagicBenchEntity;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -17,7 +18,7 @@ public class ModBlockEntities {
             Registry.register(
                     Registries.BLOCK_ENTITY_TYPE,
                     Identifier.of(Anomalous_Advancement.MOD_ID, "magic_bench_be"),
-                    BlockEntityType.Builder.create(MagicBenchEntity::new, ModBlocks.ALTAR).build(null)
+                    FabricBlockEntityTypeBuilder.create(MagicBenchEntity::new, ModBlocks.ALTAR).build(null)
             );
 
     public static void registerBlockEntities() {

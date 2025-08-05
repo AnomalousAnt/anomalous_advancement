@@ -6,19 +6,15 @@ import com.ant.anomalous_advancement.screen.custom.MagicBenchScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -53,7 +49,6 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
     public void updatePreviewOutput() {
         Optional<ItemStack> out = getOutputForInputs();
         if (out.isPresent()) {
-            // always show a single result preview
             ItemStack preview = out.get();
             preview.setCount(1);
             this.setStack(OUTPUT_SLOT, preview);

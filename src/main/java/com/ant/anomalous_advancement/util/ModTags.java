@@ -22,6 +22,8 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> MODDED_STONE_TOOL_MATERIALS = createTag("modded_stone_tool_materials");
+        public static final TagKey<Item> FLINT_REPAIR = createTag("flint_repair");
+        public static final TagKey<Item> PIGLIN_BRONZE_INGOT_REPAIR = createTag("piglin_bronze_ingot_repair");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name));

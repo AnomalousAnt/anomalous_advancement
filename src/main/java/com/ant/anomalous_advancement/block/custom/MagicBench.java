@@ -14,7 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -56,7 +56,7 @@ public class MagicBench extends BlockWithEntity implements BlockEntityProvider {
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
+    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
                                              PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
             NamedScreenHandlerFactory screenHandlerFactory = ((MagicBenchEntity) world.getBlockEntity(pos));
@@ -64,7 +64,7 @@ public class MagicBench extends BlockWithEntity implements BlockEntityProvider {
                 player.openHandledScreen(screenHandlerFactory);
             }
         }
-        return ItemActionResult.SUCCESS;
+        return ActionResult.SUCCESS;
     }
 
     @Nullable
@@ -76,7 +76,6 @@ public class MagicBench extends BlockWithEntity implements BlockEntityProvider {
         return checkType(type, ModBlockEntities.MAGIC_BENCH_BE, MagicBenchEntity::tick);
     }
 
-    // Custom checkType helper to fix 'Cannot resolve method checkType'
     @SuppressWarnings("unchecked")
     private static <T extends BlockEntity> BlockEntityTicker<T> checkType(
             BlockEntityType<T> givenType,
