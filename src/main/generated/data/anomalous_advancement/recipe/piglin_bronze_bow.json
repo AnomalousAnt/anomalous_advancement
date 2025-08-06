@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "anomalous_advancement:piglin_bronze_ingot",
+    "X": "minecraft:breeze_rod",
+    "Y": "minecraft:leather"
+  },
+  "pattern": [
+    "#XY",
+    "X#Y",
+    "#XY"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:piglin_bronze_bow"
+  }
+}

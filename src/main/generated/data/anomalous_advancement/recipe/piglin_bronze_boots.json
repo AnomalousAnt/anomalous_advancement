@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "anomalous_advancement:piglin_bronze_ingot",
+    "Y": "minecraft:leather"
+  },
+  "pattern": [
+    "Y Y",
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:piglin_bronze_boots"
+  }
+}
