@@ -5,12 +5,12 @@
   "item.anomalous_advancement.flint_axe": "Flint Axe",
   "item.anomalous_advancement.flint_hoe": "Flint Hoe",
 
-  "block.anomalous_advancement.altar": "Altar",
-  "block.anomalous_advancement.gilded_altar": "Gilded Altar",
-
-  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions",
-
-  "item.anomalous_advancement.mashed_potatoes": "Mashed Potatoes",
+  "item.anomalous_advancement.piglin_bronze_pickaxe": "Piglin Bronze Pickaxe",
+  "item.anomalous_advancement.piglin_bronze_sword": "Piglin Bronze Sword",
+  "item.anomalous_advancement.piglin_bronze_shovel": "Piglin Bronze Shovel",
+  "item.anomalous_advancement.piglin_bronze_axe": "Piglin Bronze Axe",
+  "item.anomalous_advancement.piglin_bronze_hoe": "Piglin Bronze Hoe",
+  "item.anomalous_advancement.piglin_bronze_bow": "Piglin Bronze Bow",
 
   "item.anomalous_advancement.piglin_bronze_ingot": "Piglin Bronze Ingot",
   "item.anomalous_advancement.piglin_bronze_helmet": "Piglin Bronze Helmet",
@@ -18,13 +18,16 @@
   "item.anomalous_advancement.piglin_bronze_leggings": "Piglin Bronze Leggings",
   "item.anomalous_advancement.piglin_bronze_boots": "Piglin Bronze Boots",
 
-  "item.anomalous_advancement.piglin_bronze_bow": "Piglin Bronze Bow",
-
   "item.anomalous_advancement.piglin_bronze_horse_armor": "Piglin Bronze Horse Armor",
 
   "trim_material.anomalous_advancement.piglin_bronze_ingot": "Piglin Bronze Material",
 
-  "item.anomalous_advancement.cloaked_chauffeur_music_disc": "Cloaked Chauffeur Music Disc",
-  "item.anomalous_advancement.cloaked_chauffeur_music_disc.desc": "Cloaked Chauffeur - Anomalous_Ant"
+  "block.anomalous_advancement.altar": "Altar",
+  "block.anomalous_advancement.gilded_altar": "Gilded Altar",
 
+  "item.anomalous_advancement.mashed_potatoes": "Mashed Potatoes",
+  "item.anomalous_advancement.cloaked_chauffeur_music_disc": "Cloaked Chauffeur Music Disc",
+  "item.anomalous_advancement.cloaked_chauffeur_music_disc.desc": "Cloaked Chauffeur - Anomalous_Ant",
+
+  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions"
 }

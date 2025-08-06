@@ -2,9 +2,6 @@
   "values": [
     "minecraft:polished_andesite",
     "minecraft:polished_diorite",
-    "minecraft:polished_granite",
-    "minecraft:polished_tuff",
-    "minecraft:polished_basalt",
-    "minecraft:polished_blackstone"
+    "minecraft:polished_granite"
   ]
 }

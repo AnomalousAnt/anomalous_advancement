@@ -26,10 +26,19 @@ public class ModItems {
     public static final Item FLINT_HOE = registerItem("flint_hoe",
             setting -> new HoeItem(ModToolMaterials.FLINT, 0, -3f, setting));
 
-public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",
-        setting -> new Item(setting.jukeboxPlayable(ModSounds.CLOAKED_CHAUFFEUR_KEY).maxCount(1)));
 
-    public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", setting -> new Item(setting.food(ModFoodComponents.MASHED_POTATOES)));
+    public static final Item PIGLIN_BRONZE_PICKAXE = registerItem("piglin_bronze_pickaxe",
+            setting -> new PickaxeItem(ModToolMaterials.FLINT, 1, -2.8f, setting));
+    public static final Item PIGLIN_BRONZE_SWORD = registerItem("piglin_bronze_sword",
+            setting -> new SwordItem(ModToolMaterials.FLINT, 3, -2.4f, setting));
+    public static final Item PIGLIN_BRONZE_AXE = registerItem("piglin_bronze_axe",
+            setting -> new AxeItem(ModToolMaterials.FLINT,  6, -3.2f, setting));
+    public static final Item PIGLIN_BRONZE_SHOVEL = registerItem("piglin_bronze_shovel",
+            setting -> new ShovelItem(ModToolMaterials.FLINT,  1.5f, -3.8f, setting));
+    public static final Item PIGLIN_BRONZE_HOE = registerItem("piglin_bronze_hoe",
+            setting -> new HoeItem(ModToolMaterials.FLINT, 0, -3f, setting));
+    public static final Item PIGLIN_BRONZE_BOW = registerItem("piglin_bronze_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item PIGLIN_BRONZE_INGOT = registerItem("piglin_bronze_ingot", Item::new);
     public static final Item PIGLIN_BRONZE_HELMET = registerItem("piglin_bronze_helmet",
@@ -44,12 +53,13 @@ public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_ch
     public static final Item PIGLIN_BRONZE_BOOTS = registerItem("piglin_bronze_boots",
             setting -> new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.BOOTS, setting
                     .maxDamage(EquipmentType.HELMET.getMaxDamage(15))));
-
-    public static final Item PIGLIN_BRONZE_BOW = registerItem("piglin_bronze_bow",
-            setting -> new BowItem(setting.maxDamage(500)));
-
     public static final Item PIGLIN_BRONZE_HORSE_ARMOR = registerItem("piglin_bronze_horse_armor",
             setting -> new AnimalArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, setting.maxCount(1)));
+
+
+    public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",
+            setting -> new Item(setting.jukeboxPlayable(ModSounds.CLOAKED_CHAUFFEUR_KEY).maxCount(1)));
+    public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", setting -> new Item(setting.food(ModFoodComponents.MASHED_POTATOES)));
 
     private static Item registerItem(String name, Function<Item.Settings, Item> function) {
         return Registry.register(Registries.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name),
@@ -64,10 +74,19 @@ public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_ch
             entries.add(FLINT_PICKAXE);
             entries.add(FLINT_AXE);
             entries.add(FLINT_HOE);
+            entries.add(PIGLIN_BRONZE_SHOVEL);
+            entries.add(PIGLIN_BRONZE_PICKAXE);
+            entries.add(PIGLIN_BRONZE_AXE);
+            entries.add(PIGLIN_BRONZE_HOE);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
             entries.add(FLINT_SWORD);
             entries.add(FLINT_AXE);
+            entries.add(PIGLIN_BRONZE_SWORD);
+            entries.add(PIGLIN_BRONZE_AXE);
+            entries.add(PIGLIN_BRONZE_BOW);
+
+
         });
     }
 }

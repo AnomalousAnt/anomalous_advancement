@@ -31,10 +31,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FLINT_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FLINT_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FLINT_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.MASHED_POTATOES, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_INGOT, Models.GENERATED);
-
+        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_SWORD, Models.HANDHELD);
         itemModelGenerator.upload(ModItems.PIGLIN_BRONZE_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.PIGLIN_BRONZE_BOW);
 
@@ -46,6 +49,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_HORSE_ARMOR, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.CLOAKED_CHAUFFEUR_MUSIC_DISC, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MASHED_POTATOES, Models.GENERATED);
 
     }
 }

@@ -22,15 +22,24 @@ public class ModItemGroups {
                         entries.add(ModItems.FLINT_AXE);
                         entries.add(ModItems.FLINT_HOE);
                         entries.add(ModItems.FLINT_SWORD);
-                        entries.add(ModBlocks.ALTAR);
-                        entries.add(ModBlocks.GILDED_ALTAR);
+
+                        entries.add(ModItems.PIGLIN_BRONZE_SHOVEL);
+                        entries.add(ModItems.PIGLIN_BRONZE_PICKAXE);
+                        entries.add(ModItems.PIGLIN_BRONZE_AXE);
+                        entries.add(ModItems.PIGLIN_BRONZE_HOE);
+                        entries.add(ModItems.PIGLIN_BRONZE_SWORD);
+                        entries.add(ModItems.PIGLIN_BRONZE_BOW);
+
                         entries.add(ModItems.PIGLIN_BRONZE_INGOT);
                         entries.add(ModItems.PIGLIN_BRONZE_HELMET);
                         entries.add(ModItems.PIGLIN_BRONZE_CHESTPLATE);
                         entries.add(ModItems.PIGLIN_BRONZE_LEGGINGS);
                         entries.add(ModItems.PIGLIN_BRONZE_BOOTS);
                         entries.add(ModItems.PIGLIN_BRONZE_HORSE_ARMOR);
-                        entries.add(ModItems.PIGLIN_BRONZE_BOW);
+
+                        entries.add(ModBlocks.ALTAR);
+                        entries.add(ModBlocks.GILDED_ALTAR);
+
                         entries.add(ModItems.MASHED_POTATOES);
                         entries.add(ModItems.CLOAKED_CHAUFFEUR_MUSIC_DISC);
                     }).build());

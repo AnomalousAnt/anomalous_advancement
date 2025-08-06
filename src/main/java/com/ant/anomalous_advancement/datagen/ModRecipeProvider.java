@@ -34,16 +34,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
-                        .pattern("###")
-                        .pattern(" XY")
-                        .pattern(" X ")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Y', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-                        .offerTo(exporter);
-
                 createShaped(RecipeCategory.TOOLS, ModItems.FLINT_AXE)
                         .pattern("## ")
                         .pattern("#XY")
@@ -52,16 +42,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('#', Items.FLINT)
                         .input('Y', Items.STRING)
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_AXE)
-                        .pattern("## ")
-                        .pattern("#XY")
-                        .pattern(" X ")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Y', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                         .offerTo(exporter);
 
                 createShaped(RecipeCategory.TOOLS, ModItems.FLINT_HOE)
@@ -74,17 +54,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, Items.STONE_HOE)
-                        .pattern("## ")
-                        .pattern(" XY")
-                        .pattern(" X ")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Y', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-                        .offerTo(exporter);
-
-
                 createShaped(RecipeCategory.TOOLS, ModItems.FLINT_SHOVEL)
                         .pattern(" # ")
                         .pattern(" XY")
@@ -93,16 +62,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('#', Items.FLINT)
                         .input('Y', Items.STRING)
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
-                        .pattern(" # ")
-                        .pattern(" XY")
-                        .pattern(" X ")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Y', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                         .offerTo(exporter);
 
                 createShaped(RecipeCategory.TOOLS, ModItems.FLINT_SWORD)
@@ -115,6 +74,47 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                         .offerTo(exporter);
 
+
+                createShaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
+                        .pattern("###")
+                        .pattern(" XY")
+                        .pattern(" X ")
+                        .input('X', Items.STICK)
+                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                        .input('Y', Items.STRING)
+                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, Items.STONE_AXE)
+                        .pattern("## ")
+                        .pattern("#XY")
+                        .pattern(" X ")
+                        .input('X', Items.STICK)
+                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                        .input('Y', Items.STRING)
+                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, Items.STONE_HOE)
+                        .pattern("## ")
+                        .pattern(" XY")
+                        .pattern(" X ")
+                        .input('X', Items.STICK)
+                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                        .input('Y', Items.STRING)
+                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
+                        .pattern(" # ")
+                        .pattern(" XY")
+                        .pattern(" X ")
+                        .input('X', Items.STICK)
+                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
+                        .input('Y', Items.STRING)
+                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                        .offerTo(exporter);
+
                 createShaped(RecipeCategory.TOOLS, Items.STONE_SWORD)
                         .pattern(" # ")
                         .pattern(" #Y")
@@ -125,6 +125,102 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                         .offerTo(exporter);
 
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_PICKAXE)
+                        .pattern("###")
+                        .pattern(" XY")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_AXE)
+                        .pattern("## ")
+                        .pattern("#XY")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_HOE)
+                        .pattern("## ")
+                        .pattern(" XY")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_SHOVEL)
+                        .pattern(" # ")
+                        .pattern(" XY")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_SWORD)
+                        .pattern(" # ")
+                        .pattern(" #Y")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_BOW)
+                        .pattern("#XY")
+                        .pattern("X#Y")
+                        .pattern("#XY")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_HELMET)
+                        .pattern("   ")
+                        .pattern("###")
+                        .pattern("#Y#")
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_CHESTPLATE)
+                        .pattern("#Y#")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_LEGGINGS)
+                        .pattern("###")
+                        .pattern("#Y#")
+                        .pattern("# #")
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_BOOTS)
+                        .pattern("Y Y")
+                        .pattern("# #")
+                        .pattern("# #")
+                        .input('#', ModItems.PIGLIN_BRONZE_INGOT)
+                        .input('Y', Items.LEATHER)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
 
                 createShaped(RecipeCategory.TOOLS, ModBlocks.ALTAR)
                         .pattern("###")
