@@ -3,7 +3,7 @@ package com.ant.anomalous_advancement.trim;
 import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.item.ModItems;
 import net.minecraft.item.Item;
-import net.minecraft.item.trim.ArmorTrimMaterial;
+import net.minecraft.item.equipment.trim.ArmorTrimMaterial;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;

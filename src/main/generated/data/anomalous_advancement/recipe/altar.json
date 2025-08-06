@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:smooth_stone"
-    },
-    "X": {
-      "item": "minecraft:cobblestone"
-    },
-    "Y": {
-      "item": "minecraft:coal"
-    }
+    "#": "minecraft:smooth_stone",
+    "X": "minecraft:cobblestone",
+    "Y": "minecraft:coal"
   },
   "pattern": [
     "###",

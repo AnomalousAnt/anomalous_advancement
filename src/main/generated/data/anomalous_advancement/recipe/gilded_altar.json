@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "anomalous_advancement:altar"
-    },
-    "X": {
-      "item": "minecraft:gold_ingot"
-    },
-    "Y": {
-      "item": "minecraft:iron_ingot"
-    },
-    "Z": {
-      "item": "minecraft:copper_ingot"
-    }
+    "#": "anomalous_advancement:altar",
+    "X": "minecraft:gold_ingot",
+    "Y": "minecraft:iron_ingot",
+    "Z": "minecraft:copper_ingot"
   },
   "pattern": [
     "XXX",

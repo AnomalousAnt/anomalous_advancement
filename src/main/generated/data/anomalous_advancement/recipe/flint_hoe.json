@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:flint"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    },
-    "Y": {
-      "item": "minecraft:string"
-    }
+    "#": "minecraft:flint",
+    "X": "minecraft:stick",
+    "Y": "minecraft:string"
   },
   "pattern": [
     "## ",

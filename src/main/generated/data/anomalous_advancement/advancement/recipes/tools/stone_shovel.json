@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "anomalous_advancement:stone_shovel"
+        "recipe": "minecraft:stone_shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "anomalous_advancement:stone_shovel"
+      "minecraft:stone_shovel"
     ]
   }
 }

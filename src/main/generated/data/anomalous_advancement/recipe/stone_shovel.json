@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "tag": "anomalous_advancement:modded_stone_tool_materials"
-    },
-    "X": {
-      "item": "minecraft:stick"
-    },
-    "Y": {
-      "item": "minecraft:string"
-    }
+    "#": "#anomalous_advancement:modded_stone_tool_materials",
+    "X": "minecraft:stick",
+    "Y": "minecraft:string"
   },
   "pattern": [
     " # ",
