@@ -1,15 +1,14 @@
 package com.ant.anomalous_advancement.datagen;
 
-import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModArmorMaterials;
 import com.ant.anomalous_advancement.item.ModItems;
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.client.data.BlockStateModelGenerator;
+import net.minecraft.client.data.ItemModelGenerator;
+import net.minecraft.client.data.Models;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -36,14 +35,13 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_INGOT, Models.GENERATED);
 
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_HELMET), Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_helmet"),
-                ModArmorMaterials.PIGLIN_BRONZE_INGOT, EquipmentSlot.HEAD);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_CHESTPLATE), Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_chestplate"),
-                ModArmorMaterials.PIGLIN_BRONZE_INGOT, EquipmentSlot.CHEST);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_LEGGINGS), Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_leggings"),
-                ModArmorMaterials.PIGLIN_BRONZE_INGOT, EquipmentSlot.LEGS);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_BOOTS), Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_boots"),
-                ModArmorMaterials.PIGLIN_BRONZE_INGOT, EquipmentSlot.FEET);
+        itemModelGenerator.upload(ModItems.PIGLIN_BRONZE_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.PIGLIN_BRONZE_BOW);
+
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_HELMET), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "helmet", false);
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_CHESTPLATE), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "chestplate", false);
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_LEGGINGS), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "leggings", false);
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_BOOTS), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "boots", false);
 
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_HORSE_ARMOR, Models.GENERATED);
 

@@ -18,14 +18,13 @@ public class ModBlockEntities {
             Registry.register(
                     Registries.BLOCK_ENTITY_TYPE,
                     Identifier.of(Anomalous_Advancement.MOD_ID, "magic_bench_be"),
-                    FabricBlockEntityTypeBuilder.create(MagicBenchEntity::new, ModBlocks.ALTAR).build(null)
+                    FabricBlockEntityTypeBuilder.create(MagicBenchEntity::new, ModBlocks.ALTAR).build()
             );
 
     public static void registerBlockEntities() {
         Anomalous_Advancement.LOGGER.info("Registering Block Entities for " + Anomalous_Advancement.MOD_ID);
     }
 
-    // ✅ Utility method to return the ticker
     public static <T extends BlockEntity> BlockEntityTicker<T> getTicker(
             World world,
             BlockEntityType<T> type,

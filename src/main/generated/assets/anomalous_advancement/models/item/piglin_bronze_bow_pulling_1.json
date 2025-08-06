@@ -1,5 +1,5 @@
 {
-  "parent": "anomalous_advancement:item/piglin_bronze_bow",
+  "parent": "minecraft:item/bow",
   "textures": {
     "layer0": "anomalous_advancement:item/piglin_bronze_bow_pulling_1"
   }
