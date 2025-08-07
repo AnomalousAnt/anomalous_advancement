@@ -1,21 +1,7 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "anomalous_advancement:block/altar"
-      },
-      {
-        "model": "anomalous_advancement:block/altar",
-        "y": 90
-      },
-      {
-        "model": "anomalous_advancement:block/altar",
-        "y": 180
-      },
-      {
-        "model": "anomalous_advancement:block/altar",
-        "y": 270
-      }
-    ]
+    "": {
+      "model": "anomalous_advancement:block/altar"
+    }
   }
 }

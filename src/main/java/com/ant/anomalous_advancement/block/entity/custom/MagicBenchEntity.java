@@ -3,6 +3,7 @@ package com.ant.anomalous_advancement.block.entity.custom;
 import com.ant.anomalous_advancement.block.entity.ImplementedInventory;
 import com.ant.anomalous_advancement.block.entity.ModBlockEntities;
 import com.ant.anomalous_advancement.screen.custom.MagicBenchScreenHandler;
+import com.ant.anomalous_advancement.util.MagicBenchEnchantmentSelector;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -22,9 +23,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import com.ant.anomalous_advancement.util.MagicBenchEnchantmentSelector;
-
-import java.util.Optional;
 
 public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
@@ -37,19 +35,33 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
         super(ModBlockEntities.MAGIC_BENCH_BE, pos, state);
     }
 
-    private Optional<ItemStack> getOutputForInputs() {
+    private MagicBenchEnchantmentSelector.EnchantmentResult getOutputForInputs() {
         ItemStack tool = this.getStack(TOOL_SLOT);
         ItemStack reagent = this.getStack(REAGENT_SLOT);
-        if (tool.isEmpty() || reagent.isEmpty()) return Optional.empty();
+        if (tool.isEmpty() || reagent.isEmpty() || this.getWorld() == null) {
+            return new MagicBenchEnchantmentSelector.EnchantmentResult(ItemStack.EMPTY, 0);
+        }
 
         return MagicBenchEnchantmentSelector.applyEnchantment(tool, reagent, this.getWorld());
     }
 
+    private int currentCost = 0;
 
-    public void updatePreviewOutput() {
-        Optional<ItemStack> out = getOutputForInputs();
-        if (out.isPresent()) {
-            ItemStack preview = out.get();
+    public int getCurrentCost() {
+        return currentCost;
+    }
+
+    public void updatePreviewOutput(@Nullable PlayerEntity player) {
+        MagicBenchEnchantmentSelector.EnchantmentResult result = getOutputForInputs();
+        ItemStack preview = result.result().copy();
+        this.currentCost = result.cost();
+
+        boolean hasEnoughExp = true;
+        if (player != null && !player.isCreative()) {
+            hasEnoughExp = player.experienceLevel >= currentCost;
+        }
+
+        if (!preview.isEmpty() && hasEnoughExp) {
             preview.setCount(1);
             this.setStack(OUTPUT_SLOT, preview);
         } else {
@@ -57,9 +69,9 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
         }
     }
 
+
     public void tick(World world, BlockPos pos, BlockState state) {
         if (!world.isClient()) {
-            updatePreviewOutput();
             markDirty(world, pos, state);
         }
     }
@@ -69,7 +81,6 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
             magicBenchEntity.tick(world, pos, state);
         }
     }
-
 
     @Override
     public DefaultedList<ItemStack> getItems() {
@@ -91,7 +102,6 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new MagicBenchScreenHandler(syncId, playerInventory, this.pos);
     }
-
 
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
@@ -115,4 +125,9 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
     public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
         return createNbt(registryLookup);
     }
+
+    public int getCurrentExpCost() {
+        return currentCost;
+    }
+
 }

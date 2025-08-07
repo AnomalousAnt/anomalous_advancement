@@ -33,13 +33,29 @@ public class MagicBenchScreenHandler extends ScreenHandler {
         this.blockEntity = (MagicBenchEntity) blockEntity;
         this.inventory = this.blockEntity;
 
-        this.addSlot(new Slot(inventory, MagicBenchEntity.TOOL_SLOT, 54, 34));
-        this.addSlot(new Slot(inventory, MagicBenchEntity.REAGENT_SLOT, 13, 15));
+
+        this.addSlot(new Slot(inventory, MagicBenchEntity.TOOL_SLOT, 54, 34) {
+            @Override
+            public void markDirty() {
+                super.markDirty();
+                MagicBenchScreenHandler.this.blockEntity.updatePreviewOutput(playerInventory.player);
+            }
+        });
+
+
+        this.addSlot(new Slot(inventory, MagicBenchEntity.REAGENT_SLOT, 13, 15) {
+            @Override
+            public void markDirty() {
+                super.markDirty();
+                MagicBenchScreenHandler.this.blockEntity.updatePreviewOutput(playerInventory.player);
+            }
+        });
+
+
         this.addSlot(new OutputSlot(inventory, this.blockEntity, MagicBenchEntity.OUTPUT_SLOT, 104, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
-
     }
 
     private static class OutputSlot extends Slot {
@@ -56,14 +72,34 @@ public class MagicBenchScreenHandler extends ScreenHandler {
         }
 
         @Override
+        public boolean canTakeItems(PlayerEntity player) {
+            if (player.isCreative()) return true;
+            int cost = blockEntity.getCurrentCost();
+            return player.experienceLevel >= cost;
+        }
+
+        @Override
         public void onTakeItem(PlayerEntity player, ItemStack stack) {
+            int cost = blockEntity.getCurrentCost();
+
+            if (!player.isCreative()) {
+                player.addExperienceLevels(-cost);
+            }
+
             // Consume inputs
             blockEntity.removeStack(MagicBenchEntity.TOOL_SLOT, 1);
             blockEntity.removeStack(MagicBenchEntity.REAGENT_SLOT, 1);
 
-            // Clear output (optional—typically unnecessary if result is removed by crafting logic)
-            this.setStack(ItemStack.EMPTY);
+            player.getWorld().playSound(
+                    null,
+                    blockEntity.getPos(),
+                    net.minecraft.sound.SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,
+                    net.minecraft.sound.SoundCategory.BLOCKS,
+                    1.0F,
+                    1.0F
+            );
 
+            this.setStack(ItemStack.EMPTY);
             super.onTakeItem(player, stack);
         }
     }
@@ -97,13 +133,18 @@ public class MagicBenchScreenHandler extends ScreenHandler {
 
             int inventorySize = inventory.size();
 
-            if (invSlot < inventorySize) {
-                // Moving from block inventory to player inventory
+            if (slot instanceof OutputSlot) {
+
+                if (!this.insertItem(originalStack, inventorySize, this.slots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+                slot.onTakeItem(player, originalStack);
+                slot.setStack(ItemStack.EMPTY);
+            } else if (invSlot < inventorySize) {
                 if (!this.insertItem(originalStack, inventorySize, this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }
             } else {
-                // Moving from player inventory to block inventory
                 if (!this.insertItem(originalStack, 0, inventorySize - 1, false)) {
                     return ItemStack.EMPTY;
                 }
@@ -114,7 +155,14 @@ public class MagicBenchScreenHandler extends ScreenHandler {
             } else {
                 slot.markDirty();
             }
+
+            this.sendContentUpdates();
         }
         return newStack;
     }
+
+    public MagicBenchEntity getBlockEntity() {
+        return this.blockEntity;
+    }
+
 }

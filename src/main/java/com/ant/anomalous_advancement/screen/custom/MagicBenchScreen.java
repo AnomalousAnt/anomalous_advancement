@@ -1,6 +1,7 @@
 package com.ant.anomalous_advancement.screen.custom;
 
 import com.ant.anomalous_advancement.Anomalous_Advancement;
+import com.ant.anomalous_advancement.block.entity.custom.MagicBenchEntity;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.RenderLayer;
@@ -18,11 +19,29 @@ public class MagicBenchScreen extends HandledScreen<MagicBenchScreenHandler> {
 
     @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
 
         context.drawTexture(RenderLayer::getGuiTextured, GUI_TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight, 256, 256);
+    }
+
+    @Override
+    protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
+        super.drawForeground(context, mouseX, mouseY);
+
+        MagicBenchEntity bench = handler.getBlockEntity();
+        int cost = bench.getCurrentExpCost();
+
+        if (cost > 0) {
+            int playerXP = this.client.player.experienceLevel;
+            int color = playerXP >= cost ? 0x00FF00 : 0xFF5555; // Green or red
+            String costText = "EXP Cost: " + cost;
+
+            int x = 60;
+            int y = 60;
+
+            context.drawText(textRenderer, costText, x, y, color, false);
+        }
     }
 
     @Override

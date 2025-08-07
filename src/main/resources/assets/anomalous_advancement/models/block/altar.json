@@ -1,8 +1,0 @@
-{
-	"parent": "minecraft:block/cube_bottom_top",
-	"textures": {
-		"top": "anomalous_advancement:block/altar_top",
-		"bottom": "anomalous_advancement:block/altar_bottom",
-		"side": "anomalous_advancement:block/altar_side"
-	}
-}
