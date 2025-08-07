@@ -16,9 +16,9 @@ import java.util.function.Function;
 public class ModItems {
 
    public static final Item FLINT_PICKAXE = registerItem("flint_pickaxe",
-           setting -> new PickaxeItem(ModToolMaterials.FLINT, 1, -2.8f, setting));
+           setting -> new Item(setting.pickaxe(ModToolMaterials.FLINT, 1, -2.8f)));
     public static final Item FLINT_SWORD = registerItem("flint_sword",
-            setting -> new SwordItem(ModToolMaterials.FLINT, 3, -2.4f, setting));
+            setting -> new Item(setting.sword(ModToolMaterials.FLINT, 3, -2.4f)));
     public static final Item FLINT_AXE = registerItem("flint_axe",
             setting -> new AxeItem(ModToolMaterials.FLINT,  6, -3.2f, setting));
     public static final Item FLINT_SHOVEL = registerItem("flint_shovel",
@@ -28,9 +28,9 @@ public class ModItems {
 
 
     public static final Item PIGLIN_BRONZE_PICKAXE = registerItem("piglin_bronze_pickaxe",
-            setting -> new PickaxeItem(ModToolMaterials.FLINT, 1, -2.8f, setting));
+            setting -> new Item(setting.pickaxe(ModToolMaterials.FLINT, 1, -2.8f)));
     public static final Item PIGLIN_BRONZE_SWORD = registerItem("piglin_bronze_sword",
-            setting -> new SwordItem(ModToolMaterials.FLINT, 3, -2.4f, setting));
+            setting -> new Item(setting.sword(ModToolMaterials.FLINT, 3, -2.4f)));
     public static final Item PIGLIN_BRONZE_AXE = registerItem("piglin_bronze_axe",
             setting -> new AxeItem(ModToolMaterials.FLINT,  6, -3.2f, setting));
     public static final Item PIGLIN_BRONZE_SHOVEL = registerItem("piglin_bronze_shovel",
@@ -41,20 +41,17 @@ public class ModItems {
             setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item PIGLIN_BRONZE_INGOT = registerItem("piglin_bronze_ingot", Item::new);
+
     public static final Item PIGLIN_BRONZE_HELMET = registerItem("piglin_bronze_helmet",
-            setting -> new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.HELMET, setting
-                    .maxDamage(EquipmentType.HELMET.getMaxDamage(15))));
+            setting -> new Item(setting.armor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.HELMET)));
     public static final Item PIGLIN_BRONZE_CHESTPLATE = registerItem("piglin_bronze_chestplate",
-            setting -> new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, setting
-                    .maxDamage(EquipmentType.HELMET.getMaxDamage(15))));
+            setting -> new Item(setting.armor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
     public static final Item PIGLIN_BRONZE_LEGGINGS = registerItem("piglin_bronze_leggings",
-            setting -> new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.LEGGINGS, setting
-                    .maxDamage(EquipmentType.HELMET.getMaxDamage(15))));
+            setting -> new Item(setting.armor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PIGLIN_BRONZE_BOOTS = registerItem("piglin_bronze_boots",
-            setting -> new ArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.BOOTS, setting
-                    .maxDamage(EquipmentType.HELMET.getMaxDamage(15))));
+            setting -> new Item(setting.armor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.BOOTS)));
     public static final Item PIGLIN_BRONZE_HORSE_ARMOR = registerItem("piglin_bronze_horse_armor",
-            setting -> new AnimalArmorItem(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, setting.maxCount(1)));
+            setting -> new Item(setting.horseArmor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL).maxCount(1)));
 
 
     public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",

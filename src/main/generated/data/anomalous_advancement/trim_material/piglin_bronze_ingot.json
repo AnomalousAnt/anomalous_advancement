@@ -3,6 +3,5 @@
   "description": {
     "color": "#BC7410",
     "translate": "trim_material.anomalous_advancement.piglin_bronze_ingot"
-  },
-  "ingredient": "anomalous_advancement:piglin_bronze_ingot"
+  }
 }

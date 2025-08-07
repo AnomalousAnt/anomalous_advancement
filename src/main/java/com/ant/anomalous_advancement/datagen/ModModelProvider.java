@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
-import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -41,10 +40,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.upload(ModItems.PIGLIN_BRONZE_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.PIGLIN_BRONZE_BOW);
 
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_HELMET), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_CHESTPLATE), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_LEGGINGS), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PIGLIN_BRONZE_BOOTS), ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_HELMET, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_CHESTPLATE, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_LEGGINGS, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_BOOTS, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_HORSE_ARMOR, Models.GENERATED);
 

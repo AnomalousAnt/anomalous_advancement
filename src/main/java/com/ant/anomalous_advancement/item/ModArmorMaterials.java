@@ -23,6 +23,7 @@ public class ModArmorMaterials {
         map.put(EquipmentType.CHESTPLATE, 6);
         map.put(EquipmentType.HELMET, 2);
         map.put(EquipmentType.BODY, 4);
+
     }), 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0, 0, ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR, PIGLIN_BRONZE_INGOT_KEY);
 
 }
