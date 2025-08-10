@@ -7,7 +7,6 @@ import com.ant.anomalous_advancement.item.ModItems;
 import com.ant.anomalous_advancement.screen.ModScreenHandlers;
 import com.ant.anomalous_advancement.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
