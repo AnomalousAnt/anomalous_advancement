@@ -3,12 +3,11 @@
   "category": "equipment",
   "key": {
     "#": "anomalous_advancement:piglin_bronze_ingot",
-    "X": "minecraft:breeze_rod",
-    "Y": "minecraft:leather"
+    "X": "minecraft:breeze_rod"
   },
   "pattern": [
     "###",
-    " XY",
+    " X ",
     " X "
   ],
   "result": {

@@ -1,5 +1,5 @@
-[01:55:25] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.5 with Fabric Loader 0.16.14
-[01:55:25] [main/INFO] (FabricLoader) Loading 55 mods:
+[02:41:26] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.5 with Fabric Loader 0.16.14
+[02:41:27] [main/INFO] (FabricLoader) Loading 55 mods:
 	- anomalous_advancement 1.0.0
 	- fabric-api 0.128.1+1.21.5
 	- fabric-api-base 0.4.62+73a52b4b49
@@ -55,35 +55,35 @@
 	- java 22
 	- minecraft 1.21.5
 	- mixinextras 0.4.1
-[01:55:25] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/Ant/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/22f9eb729e216a091673a574a5906dc1b9027fb3/sponge-mixin-0.15.5+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[01:55:25] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[01:55:25] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
-[01:55:26] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[01:55:27] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[01:55:27] [Datafixer Bootstrap/INFO] (Minecraft) 263 Datafixer optimizations took 837 milliseconds
-[01:55:31] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[01:55:31] [Render thread/INFO] (Minecraft) Setting user: Player218
-[01:55:31] [Render thread/INFO] (anomalous_advancement) Registering Item Groups for anomalous_advancement
-[01:55:31] [Render thread/INFO] (anomalous_advancement) Registering Mod Items for anomalous_advancement
-[01:55:31] [Render thread/INFO] (anomalous_advancement) Registering Mod Blocks for anomalous_advancement
-[01:55:31] [Render thread/INFO] (anomalous_advancement) Registering Mod Sounds for anomalous_advancement
-[01:55:31] [Render thread/INFO] (anomalous_advancement) Registering Block Entities for anomalous_advancement
-[01:55:31] [Render thread/INFO] (anomalous_advancement) Registering Screen Handlers for anomalous_advancement
-[01:55:31] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[01:55:32] [Render thread/INFO] (FabricDataGenHelper) Running data generator for anomalous_advancement
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Tags for minecraft:block
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Tags for minecraft:block finished after 12 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Tags for minecraft:item
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Tags for minecraft:item finished after 1 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Block Loot Tables
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Block Loot Tables finished after 9 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Model Definitions
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Model Definitions finished after 45 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Anomalous_Advancement Recipes
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Anomalous_Advancement Recipes finished after 26 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Mixin JSON Provider
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Mixin JSON Provider finished after 0 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/
-[01:55:32] [Render thread/INFO] (Minecraft) Anomalous_Advancement/ finished after 2 ms
-[01:55:32] [Render thread/INFO] (Minecraft) All providers took: 99 ms
-[01:55:32] [Render thread/INFO] (Minecraft) Caching: total files: 155, old count: 155, new count: 156, removed stale: 0, written: 0
+[02:41:27] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/Ant/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/22f9eb729e216a091673a574a5906dc1b9027fb3/sponge-mixin-0.15.5+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[02:41:27] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[02:41:27] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[02:41:28] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[02:41:29] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[02:41:29] [Datafixer Bootstrap/INFO] (Minecraft) 263 Datafixer optimizations took 871 milliseconds
+[02:41:32] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[02:41:32] [Render thread/INFO] (Minecraft) Setting user: Player799
+[02:41:32] [Render thread/INFO] (anomalous_advancement) Registering Item Groups for anomalous_advancement
+[02:41:32] [Render thread/INFO] (anomalous_advancement) Registering Mod Items for anomalous_advancement
+[02:41:32] [Render thread/INFO] (anomalous_advancement) Registering Mod Blocks for anomalous_advancement
+[02:41:32] [Render thread/INFO] (anomalous_advancement) Registering Mod Sounds for anomalous_advancement
+[02:41:32] [Render thread/INFO] (anomalous_advancement) Registering Block Entities for anomalous_advancement
+[02:41:32] [Render thread/INFO] (anomalous_advancement) Registering Screen Handlers for anomalous_advancement
+[02:41:32] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[02:41:33] [Render thread/INFO] (FabricDataGenHelper) Running data generator for anomalous_advancement
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Tags for minecraft:block
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Tags for minecraft:block finished after 12 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Tags for minecraft:item
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Tags for minecraft:item finished after 0 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Block Loot Tables
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Block Loot Tables finished after 8 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Model Definitions
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Model Definitions finished after 42 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Anomalous_Advancement Recipes
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Anomalous_Advancement Recipes finished after 25 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/Mixin JSON Provider
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/Mixin JSON Provider finished after 0 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Starting provider: Anomalous_Advancement/
+[02:41:33] [Render thread/INFO] (Minecraft) Anomalous_Advancement/ finished after 2 ms
+[02:41:33] [Render thread/INFO] (Minecraft) All providers took: 94 ms
+[02:41:33] [Render thread/INFO] (Minecraft) Caching: total files: 155, old count: 155, new count: 156, removed stale: 0, written: 20
