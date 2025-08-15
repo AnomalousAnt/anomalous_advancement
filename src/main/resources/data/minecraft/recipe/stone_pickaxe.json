@@ -1,1 +1,18 @@
-{}
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "#anomalous_advancement:modded_stone_tool_materials",
+    "X": "minecraft:stick",
+    "Z": "minecraft:string"
+  },
+  "pattern": [
+    "###",
+    "ZX ",
+    " X "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:stone_pickaxe"
+  }
+}

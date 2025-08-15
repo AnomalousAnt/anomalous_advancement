@@ -2,20 +2,14 @@ package com.ant.anomalous_advancement.datagen;
 
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModItems;
-import com.ant.anomalous_advancement.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -77,57 +71,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('#', Items.FLINT)
                         .input('Z', Items.STRING)
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
-                        .offerTo(exporter);
-
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
-                        .pattern("###")
-                        .pattern("ZX ")
-                        .pattern(" X ")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Z', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_AXE)
-                        .pattern("##")
-                        .pattern("#X")
-                        .pattern("ZX")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Z', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_HOE)
-                        .pattern("##")
-                        .pattern(" X")
-                        .pattern("ZX")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Z', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
-                        .pattern(" #")
-                        .pattern(" X")
-                        .pattern("ZX")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Z', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.TOOLS, Items.STONE_SWORD)
-                        .pattern(" #")
-                        .pattern(" #")
-                        .pattern("ZX")
-                        .input('X', Items.STICK)
-                        .input('#', ModTags.Items.MODDED_STONE_TOOL_MATERIALS)
-                        .input('Z', Items.STRING)
-                        .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                         .offerTo(exporter);
 
                 createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_PICKAXE)

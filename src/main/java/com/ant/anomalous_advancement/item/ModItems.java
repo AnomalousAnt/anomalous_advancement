@@ -28,15 +28,15 @@ public class ModItems {
 
 
     public static final Item PIGLIN_BRONZE_PICKAXE = registerItem("piglin_bronze_pickaxe",
-            setting -> new Item(setting.pickaxe(ModToolMaterials.FLINT, 1, -2.8f)));
+            setting -> new Item(setting.pickaxe(ModToolMaterials.PIGLIN_BRONZE_INGOT, 1, -2.8f)));
     public static final Item PIGLIN_BRONZE_SWORD = registerItem("piglin_bronze_sword",
-            setting -> new Item(setting.sword(ModToolMaterials.FLINT, 3, -2.4f)));
+            setting -> new Item(setting.sword(ModToolMaterials.PIGLIN_BRONZE_INGOT, 3, -2.4f)));
     public static final Item PIGLIN_BRONZE_AXE = registerItem("piglin_bronze_axe",
-            setting -> new AxeItem(ModToolMaterials.FLINT,  6, -3.2f, setting));
+            setting -> new AxeItem(ModToolMaterials.PIGLIN_BRONZE_INGOT,  6, -3.2f, setting));
     public static final Item PIGLIN_BRONZE_SHOVEL = registerItem("piglin_bronze_shovel",
-            setting -> new ShovelItem(ModToolMaterials.FLINT,  1.5f, -3.8f, setting));
+            setting -> new ShovelItem(ModToolMaterials.PIGLIN_BRONZE_INGOT,  1.5f, -3.8f, setting));
     public static final Item PIGLIN_BRONZE_HOE = registerItem("piglin_bronze_hoe",
-            setting -> new HoeItem(ModToolMaterials.FLINT, 0, -3f, setting));
+            setting -> new HoeItem(ModToolMaterials.PIGLIN_BRONZE_INGOT, 0, -3f, setting));
     public static final Item PIGLIN_BRONZE_BOW = registerItem("piglin_bronze_bow",
             setting -> new BowItem(setting.maxDamage(500)));
 

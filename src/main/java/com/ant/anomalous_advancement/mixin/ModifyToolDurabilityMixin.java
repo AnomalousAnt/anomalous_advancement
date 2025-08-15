@@ -25,54 +25,54 @@ public class ModifyToolDurabilityMixin {
 
         WOOD = new ToolMaterial(
                 BlockTags.INCORRECT_FOR_WOODEN_TOOL,
-                1, // durability
-                2.0F, // speed
-                0.0F, // attackDamageBonus
+                16, // durability
+                1.0F, // speed
+                -1.5F, // attackDamageBonus
                 15,   // enchantmentValue
                 ItemTags.WOODEN_TOOL_MATERIALS
         );
 
         STONE = new ToolMaterial(
                 BlockTags.INCORRECT_FOR_STONE_TOOL,
-                1, // durability
-                4.0F,
-                1.0F,
+                64,
+                2.0F,
+                -0.5F,
                 5,
                 ItemTags.STONE_TOOL_MATERIALS
         );
 
         IRON = new ToolMaterial(
                 BlockTags.INCORRECT_FOR_IRON_TOOL,
-                1,
-                6.0F,
-                2.0F,
+                192,
+                3.0F,
+                0.5F,
                 14,
                 ItemTags.IRON_TOOL_MATERIALS
         );
 
-        DIAMOND = new ToolMaterial(
-                BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
-                1,
-                8.0F,
-                3.0F,
-                10,
-                ItemTags.DIAMOND_TOOL_MATERIALS
-        );
-
         GOLD = new ToolMaterial(
                 BlockTags.INCORRECT_FOR_GOLD_TOOL,
-                1,
-                12.0F,
-                0.0F,
+                320,
+                3.5F,
+                1.0F,
                 22,
                 ItemTags.GOLD_TOOL_MATERIALS
         );
 
+        DIAMOND = new ToolMaterial(
+                BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+                1088,
+                5.0F,
+                2.5F,
+                10,
+                ItemTags.DIAMOND_TOOL_MATERIALS
+        );
+
         NETHERITE = new ToolMaterial(
                 BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
-                1,
-                9.0F,
-                4.0F,
+                1472,
+                5.5F,
+                3.0F,
                 15,
                 ItemTags.NETHERITE_TOOL_MATERIALS
         );
