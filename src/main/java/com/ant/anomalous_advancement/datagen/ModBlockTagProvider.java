@@ -17,13 +17,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.ALTAR)
                 .add(ModBlocks.GILDED_ALTAR)
                 .add(Blocks.GRAVEL)
                 .add(Blocks.IRON_DOOR);
 
-        getOrCreateTagBuilder(ModTags.Blocks.INCORRECT_FOR_WOOD_TOOL)
+        valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_WOOD_TOOL)
                 .add(Blocks.ANVIL)
                 .add(Blocks.REDSTONE_BLOCK)
                 .add(Blocks.CHAIN)
@@ -264,7 +264,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ALTAR)
                 .add(ModBlocks.GILDED_ALTAR);
 
-        getOrCreateTagBuilder(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL)
+        valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL)
                 .add(Blocks.ANVIL)
                 .add(Blocks.REDSTONE_BLOCK)
                 .add(Blocks.CHAIN)
@@ -427,7 +427,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.GILDED_ALTAR)
                 .add(Blocks.SEA_LANTERN);
 
-        getOrCreateTagBuilder(ModTags.Blocks.INCORRECT_FOR_STONE_TOOL)
+        valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_STONE_TOOL)
                 .add(Blocks.ANVIL)
                 .add(Blocks.REDSTONE_BLOCK)
                 .add(Blocks.CHAIN)

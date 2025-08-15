@@ -22,46 +22,46 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
-        getOrCreateTagBuilder(ItemTags.SWORDS)
+        valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.FLINT_SWORD)
                 .add(ModItems.PIGLIN_BRONZE_SWORD);
-        getOrCreateTagBuilder(ItemTags.PICKAXES)
+        valueLookupBuilder(ItemTags.PICKAXES)
                 .add(ModItems.FLINT_PICKAXE)
                 .add(ModItems.PIGLIN_BRONZE_PICKAXE);
-        getOrCreateTagBuilder(ItemTags.AXES)
+        valueLookupBuilder(ItemTags.AXES)
                 .add(ModItems.FLINT_AXE)
                 .add(ModItems.PIGLIN_BRONZE_AXE);
-        getOrCreateTagBuilder(ItemTags.SHOVELS)
+        valueLookupBuilder(ItemTags.SHOVELS)
                 .add(ModItems.FLINT_SHOVEL)
                 .add(ModItems.PIGLIN_BRONZE_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.HOES)
+        valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.FLINT_HOE)
                 .add(ModItems.PIGLIN_BRONZE_HOE);
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, "modded_stone_tool_materials")))
+        valueLookupBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, "modded_stone_tool_materials")))
                 .add(Items.POLISHED_ANDESITE)
                 .add(Items.POLISHED_DIORITE)
                 .add(Items.POLISHED_GRANITE);
 
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.PIGLIN_BRONZE_HELMET)
                 .add(ModItems.PIGLIN_BRONZE_CHESTPLATE)
                 .add(ModItems.PIGLIN_BRONZE_LEGGINGS)
                 .add(ModItems.PIGLIN_BRONZE_BOOTS);
 
 
-        getOrCreateTagBuilder(ModTags.Items.FLINT_REPAIR)
+        valueLookupBuilder(ModTags.Items.FLINT_REPAIR)
                 .add(Items.FLINT);
 
-        getOrCreateTagBuilder(ModTags.Items.MODDED_STONE_TOOL_MATERIALS_REPAIR)
+        valueLookupBuilder(ModTags.Items.MODDED_STONE_TOOL_MATERIALS_REPAIR)
                 .add(Items.POLISHED_ANDESITE)
                 .add(Items.POLISHED_DIORITE)
                 .add(Items.POLISHED_GRANITE);
 
-        getOrCreateTagBuilder(ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR)
+        valueLookupBuilder(ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR)
                 .add(ModItems.PIGLIN_BRONZE_INGOT);
 
-        getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+        valueLookupBuilder(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.PIGLIN_BRONZE_INGOT);
     }
 }
