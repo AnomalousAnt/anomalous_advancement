@@ -3,12 +3,13 @@
   "category": "equipment",
   "key": {
     "#": "#anomalous_advancement:modded_stone_tool_materials",
-    "X": "minecraft:stick"
+    "X": "minecraft:stick",
+    "Z": "minecraft:string"
   },
   "pattern": [
     "##",
     " X",
-    " X"
+    "ZX"
   ],
   "result": {
     "count": 1,

@@ -3,11 +3,12 @@
   "category": "equipment",
   "key": {
     "#": "minecraft:flint",
-    "X": "minecraft:stick"
+    "X": "minecraft:stick",
+    "Z": "minecraft:string"
   },
   "pattern": [
     "##",
-    " X",
+    "ZX",
     " X"
   ],
   "result": {

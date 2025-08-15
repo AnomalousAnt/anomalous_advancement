@@ -4,12 +4,12 @@
   "key": {
     "#": "anomalous_advancement:piglin_bronze_ingot",
     "X": "minecraft:breeze_rod",
-    "Y": "minecraft:string"
+    "Z": "minecraft:leather"
   },
   "pattern": [
-    "#XY",
-    "X#Y",
-    "#XY"
+    "#XZ",
+    "X#Z",
+    "#XZ"
   ],
   "result": {
     "count": 1,

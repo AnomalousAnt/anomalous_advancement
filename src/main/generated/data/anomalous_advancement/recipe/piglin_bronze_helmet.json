@@ -2,12 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": "anomalous_advancement:piglin_bronze_ingot"
+    "#": "anomalous_advancement:piglin_bronze_ingot",
+    "Z": "minecraft:leather"
   },
   "pattern": [
     "   ",
     "###",
-    "# #"
+    "#Z#"
   ],
   "result": {
     "count": 1,
