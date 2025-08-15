@@ -7,6 +7,12 @@ classes/
 
 # eclipse
 
+# dev logs
+logs/
+
+# Ignore generated data cache
+src/main/generated/.cache/
+
 *.launch
 
 # idea
