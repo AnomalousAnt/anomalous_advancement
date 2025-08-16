@@ -39,6 +39,7 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.ALTAR);
                         entries.add(ModBlocks.GILDED_ALTAR);
+                        entries.add(ModBlocks.RESPLENDENT_ALTAR);
 
                         entries.add(ModItems.MASHED_POTATOES);
                         entries.add(ModItems.CLOAKED_CHAUFFEUR_MUSIC_DISC);

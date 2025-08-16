@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "anomalous_advancement:gilded_altar",
+    "X": "minecraft:gold_ingot",
+    "Y": "minecraft:iron_ingot",
+    "Z": "minecraft:diamond_block"
+  },
+  "pattern": [
+    "XXX",
+    "Z#Z",
+    "YYY"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:resplendent_altar"
+  }
+}

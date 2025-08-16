@@ -20,6 +20,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.ALTAR)
                 .add(ModBlocks.GILDED_ALTAR)
+                .add(ModBlocks.RESPLENDENT_ALTAR)
                 .add(Blocks.GRAVEL)
                 .add(Blocks.IRON_DOOR);
 

@@ -189,6 +189,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('Z', Items. COPPER_INGOT)
                         .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
                         .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModBlocks.RESPLENDENT_ALTAR)
+                        .pattern("XXX")
+                        .pattern("Z#Z")
+                        .pattern("YYY")
+                        .input('X', Items.GOLD_INGOT)
+                        .input('#', ModBlocks.GILDED_ALTAR)
+                        .input('Y', Items.IRON_INGOT)
+                        .input('Z', Items. DIAMOND_BLOCK)
+                        .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                        .offerTo(exporter);
             }
         };
     }

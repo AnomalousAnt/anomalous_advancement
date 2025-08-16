@@ -25,7 +25,11 @@ public class ModBlocks {
                     .requiresTool().sounds(BlockSoundGroup.STONE)));
 
     public static final Block GILDED_ALTAR = registerBlock("gilded_altar",
-           properties -> new Block(properties.strength(5f)
+           properties -> new DoubleMagicBench(properties.strength(5f)
+                    .requiresTool().sounds(BlockSoundGroup.STONE)));
+
+    public static final Block RESPLENDENT_ALTAR = registerBlock("resplendent_altar",
+            properties -> new TripleMagicBench(properties.strength(5f)
                     .requiresTool().sounds(BlockSoundGroup.STONE)));
 
 

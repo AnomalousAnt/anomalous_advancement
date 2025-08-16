@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALTAR);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GILDED_ALTAR);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RESPLENDENT_ALTAR);
     }
 
     @Override
