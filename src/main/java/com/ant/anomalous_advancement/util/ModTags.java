@@ -21,6 +21,9 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_PIGLIN_BRONZE_INGOT_TOOL = createTag("needs_piglin_bronze_ingot_tool");
         public static final TagKey<Block> INCORRECT_FOR_PIGLIN_BRONZE_INGOT_TOOL = createTag("incorrect_for_piglin_bronze_ingot_tool");
 
+        public static final TagKey<Block> NEEDS_DAMASCUS_STEEL_INGOT_TOOL = createTag("needs_damascus_steel_ingot_tool");
+        public static final TagKey<Block> INCORRECT_FOR_DAMASCUS_STEEL_INGOT_TOOL = createTag("incorrect_for_damascus_steel_ingot_tool");
+
         private static TagKey<Block> createTag(String name){
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Anomalous_Advancement.MOD_ID, name));
         }
@@ -31,6 +34,7 @@ public class ModTags {
         public static final TagKey<Item> MODDED_STONE_TOOL_MATERIALS_REPAIR = createTag("modded_stone_tool_materials_repair");
         public static final TagKey<Item> FLINT_REPAIR = createTag("flint_repair");
         public static final TagKey<Item> PIGLIN_BRONZE_INGOT_REPAIR = createTag("piglin_bronze_ingot_repair");
+        public static final TagKey<Item> DAMASCUS_STEEL_INGOT_REPAIR = createTag("damascus_steel_ingot_repair");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name));

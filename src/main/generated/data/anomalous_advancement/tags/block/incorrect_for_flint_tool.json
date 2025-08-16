@@ -159,7 +159,10 @@
     "minecraft:tuff_brick_stairs",
     "minecraft:packed_ice",
     "minecraft:blue_ice",
+    "minecraft:sea_lantern",
     "anomalous_advancement:gilded_altar",
-    "minecraft:sea_lantern"
+    "anomalous_advancement:resplendent_altar",
+    "anomalous_advancement:block_of_piglin_bronze",
+    "anomalous_advancement:block_of_damascus_steel"
   ]
 }

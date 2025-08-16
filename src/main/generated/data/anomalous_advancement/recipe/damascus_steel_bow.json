@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "anomalous_advancement:damascus_steel_ingot",
+    "X": "minecraft:breeze_rod",
+    "Y": "minecraft:blaze_rod",
+    "Z": "minecraft:leather"
+  },
+  "pattern": [
+    "#XZ",
+    "Y#Z",
+    "#XZ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:damascus_steel_bow"
+  }
+}

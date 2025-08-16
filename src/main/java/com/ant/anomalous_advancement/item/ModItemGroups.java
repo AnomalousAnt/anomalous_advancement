@@ -37,6 +37,20 @@ public class ModItemGroups {
                         entries.add(ModItems.PIGLIN_BRONZE_BOOTS);
                         entries.add(ModItems.PIGLIN_BRONZE_HORSE_ARMOR);
 
+                        entries.add(ModItems.DAMASCUS_STEEL_SHOVEL);
+                        entries.add(ModItems.DAMASCUS_STEEL_PICKAXE);
+                        entries.add(ModItems.DAMASCUS_STEEL_AXE);
+                        entries.add(ModItems.DAMASCUS_STEEL_HOE);
+                        entries.add(ModItems.DAMASCUS_STEEL_SWORD);
+                        entries.add(ModItems.DAMASCUS_STEEL_BOW);
+
+                        entries.add(ModItems.DAMASCUS_STEEL_INGOT);
+                        entries.add(ModItems.DAMASCUS_STEEL_HELMET);
+                        entries.add(ModItems.DAMASCUS_STEEL_CHESTPLATE);
+                        entries.add(ModItems.DAMASCUS_STEEL_LEGGINGS);
+                        entries.add(ModItems.DAMASCUS_STEEL_BOOTS);
+                        entries.add(ModItems.DAMASCUS_STEEL_HORSE_ARMOR);
+
                         entries.add(ModBlocks.ALTAR);
                         entries.add(ModBlocks.GILDED_ALTAR);
                         entries.add(ModBlocks.RESPLENDENT_ALTAR);

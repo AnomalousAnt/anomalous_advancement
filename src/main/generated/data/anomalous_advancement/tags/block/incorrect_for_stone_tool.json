@@ -87,7 +87,10 @@
     "minecraft:deepslate_tile_stairs",
     "minecraft:end_stone_brick_stairs",
     "minecraft:red_nether_brick_stairs",
+    "minecraft:sea_lantern",
     "anomalous_advancement:gilded_altar",
-    "minecraft:sea_lantern"
+    "anomalous_advancement:resplendent_altar",
+    "anomalous_advancement:block_of_piglin_bronze",
+    "anomalous_advancement:block_of_damascus_steel"
   ]
 }

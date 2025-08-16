@@ -16,5 +16,11 @@ public class ModToolMaterials {
             4.0F,
             1.5F,
             5, ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR);
+
+    public static ToolMaterial DAMASCUS_STEEL_INGOT = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_DAMASCUS_STEEL_INGOT_TOOL,
+            768,
+            4.5F,
+            2.0F,
+            5, ModTags.Items.DAMASCUS_STEEL_INGOT_REPAIR);
 }
 

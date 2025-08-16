@@ -53,6 +53,32 @@ public class ModItems {
     public static final Item PIGLIN_BRONZE_HORSE_ARMOR = registerItem("piglin_bronze_horse_armor",
             setting -> new Item(setting.horseArmor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL).maxCount(1)));
 
+    public static final Item DAMASCUS_STEEL_PICKAXE = registerItem("damascus_steel_pickaxe",
+            setting -> new Item(setting.pickaxe(ModToolMaterials.DAMASCUS_STEEL_INGOT, 1, -2.8f)));
+    public static final Item DAMASCUS_STEEL_SWORD = registerItem("damascus_steel_sword",
+            setting -> new Item(setting.sword(ModToolMaterials.DAMASCUS_STEEL_INGOT, 3, -2.4f)));
+    public static final Item DAMASCUS_STEEL_AXE = registerItem("damascus_steel_axe",
+            setting -> new AxeItem(ModToolMaterials.DAMASCUS_STEEL_INGOT,  6, -3.2f, setting));
+    public static final Item DAMASCUS_STEEL_SHOVEL = registerItem("damascus_steel_shovel",
+            setting -> new ShovelItem(ModToolMaterials.DAMASCUS_STEEL_INGOT,  1.5f, -3.8f, setting));
+    public static final Item DAMASCUS_STEEL_HOE = registerItem("damascus_steel_hoe",
+            setting -> new HoeItem(ModToolMaterials.DAMASCUS_STEEL_INGOT, 0, -3f, setting));
+    public static final Item DAMASCUS_STEEL_BOW = registerItem("damascus_steel_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
+
+    public static final Item DAMASCUS_STEEL_INGOT = registerItem("damascus_steel_ingot", Item::new);
+
+    public static final Item DAMASCUS_STEEL_HELMET = registerItem("damascus_steel_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item DAMASCUS_STEEL_CHESTPLATE = registerItem("damascus_steel_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item DAMASCUS_STEEL_LEGGINGS = registerItem("damascus_steel_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item DAMASCUS_STEEL_BOOTS = registerItem("damascus_steel_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+    public static final Item DAMASCUS_STEEL_HORSE_ARMOR = registerItem("damascus_steel_horse_armor",
+            setting -> new Item(setting.horseArmor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL).maxCount(1)));
+
 
     public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",
             setting -> new Item(setting.jukeboxPlayable(ModSounds.CLOAKED_CHAUFFEUR_KEY).maxCount(1)));
@@ -75,6 +101,12 @@ public class ModItems {
             entries.add(PIGLIN_BRONZE_PICKAXE);
             entries.add(PIGLIN_BRONZE_AXE);
             entries.add(PIGLIN_BRONZE_HOE);
+            entries.add(DAMASCUS_STEEL_SHOVEL);
+            entries.add(DAMASCUS_STEEL_PICKAXE);
+            entries.add(DAMASCUS_STEEL_AXE);
+            entries.add(DAMASCUS_STEEL_HOE);
+
+
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
             entries.add(FLINT_SWORD);
@@ -82,7 +114,9 @@ public class ModItems {
             entries.add(PIGLIN_BRONZE_SWORD);
             entries.add(PIGLIN_BRONZE_AXE);
             entries.add(PIGLIN_BRONZE_BOW);
-
+            entries.add(DAMASCUS_STEEL_SWORD);
+            entries.add(DAMASCUS_STEEL_AXE);
+            entries.add(DAMASCUS_STEEL_BOW);
 
         });
     }

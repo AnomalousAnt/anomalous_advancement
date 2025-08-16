@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "anomalous_advancement:block_of_piglin_bronze"
+  ],
+  "result": {
+    "count": 9,
+    "id": "anomalous_advancement:piglin_bronze_ingot"
+  }
+}

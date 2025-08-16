@@ -21,6 +21,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.ALTAR)
                 .add(ModBlocks.GILDED_ALTAR)
                 .add(ModBlocks.RESPLENDENT_ALTAR)
+                .add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                .add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL)
                 .add(Blocks.GRAVEL)
                 .add(Blocks.IRON_DOOR);
 
@@ -263,7 +265,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.BLUE_ICE)
                 .add(Blocks.SEA_LANTERN)
                 .add(ModBlocks.ALTAR)
-                .add(ModBlocks.GILDED_ALTAR);
+                .add(ModBlocks.GILDED_ALTAR)
+                .add(ModBlocks.RESPLENDENT_ALTAR)
+                .add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                .add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
 
         valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_FLINT_TOOL)
                 .add(Blocks.ANVIL)
@@ -425,8 +430,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.TUFF_BRICK_STAIRS)
                 .add(Blocks.PACKED_ICE)
                 .add(Blocks.BLUE_ICE)
+                .add(Blocks.SEA_LANTERN)
                 .add(ModBlocks.GILDED_ALTAR)
-                .add(Blocks.SEA_LANTERN);
+                .add(ModBlocks.RESPLENDENT_ALTAR)
+                .add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                .add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
 
         valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_STONE_TOOL)
                 .add(Blocks.ANVIL)
@@ -516,8 +524,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.DEEPSLATE_TILE_STAIRS)
                 .add(Blocks.END_STONE_BRICK_STAIRS)
                 .add(Blocks.RED_NETHER_BRICK_STAIRS)
+                .add(Blocks.SEA_LANTERN)
                 .add(ModBlocks.GILDED_ALTAR)
-                .add(Blocks.SEA_LANTERN);
+                .add(ModBlocks.RESPLENDENT_ALTAR)
+                .add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                .add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
     }
 }
 

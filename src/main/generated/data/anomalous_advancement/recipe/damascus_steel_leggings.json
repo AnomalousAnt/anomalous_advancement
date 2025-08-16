@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "anomalous_advancement:damascus_steel_ingot",
+    "Z": "minecraft:leather"
+  },
+  "pattern": [
+    "###",
+    "#Z#",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:damascus_steel_leggings"
+  }
+}

@@ -37,6 +37,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ALTAR);
         addDrop(ModBlocks.GILDED_ALTAR);
         addDrop(ModBlocks.RESPLENDENT_ALTAR);
+        addDrop(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
+        addDrop(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
 
         addDrop(Blocks.GRAVEL, gravelLoot());
     }

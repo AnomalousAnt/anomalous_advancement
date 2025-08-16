@@ -3,6 +3,8 @@
     "anomalous_advancement:altar",
     "anomalous_advancement:gilded_altar",
     "anomalous_advancement:resplendent_altar",
+    "anomalous_advancement:block_of_piglin_bronze",
+    "anomalous_advancement:block_of_damascus_steel",
     "minecraft:gravel",
     "minecraft:iron_door"
   ]

@@ -22,8 +22,26 @@
 
   "trim_material.anomalous_advancement.piglin_bronze_ingot": "Piglin Bronze Material",
 
+  "item.anomalous_advancement.damascus_steel_pickaxe": "Damascus Steel Pickaxe",
+  "item.anomalous_advancement.damascus_steel_sword": "Damascus Steel Sword",
+  "item.anomalous_advancement.damascus_steel_shovel": "Damascus Steel Shovel",
+  "item.anomalous_advancement.damascus_steel_axe": "Damascus Steel Axe",
+  "item.anomalous_advancement.damascus_steel_hoe": "Damascus Steel Hoe",
+  "item.anomalous_advancement.damascus_steel_bow": "Damascus Steel Bow",
+
+  "item.anomalous_advancement.damascus_steel_ingot": "Damascus Steel Ingot",
+  "item.anomalous_advancement.damascus_steel_helmet": "Damascus Steel Helmet",
+  "item.anomalous_advancement.damascus_steel_chestplate": "Damascus Steel Chestplate",
+  "item.anomalous_advancement.damascus_steel_leggings": "Damascus Steel Leggings",
+  "item.anomalous_advancement.damascus_steel_boots": "Damascus Steel Boots",
+
+  "item.anomalous_advancement.damascus_steel_horse_armor": "Damascus Steel Horse Armor",
+
+  "trim_material.anomalous_advancement.damascus_steel_ingot": "Damascus Steel Material",
+
   "block.anomalous_advancement.altar": "Altar",
   "block.anomalous_advancement.gilded_altar": "Gilded Altar",
+  "block.anomalous_advancement.resplendent_altar": "Resplendent Altar",
 
   "item.anomalous_advancement.mashed_potatoes": "Mashed Potatoes",
   "item.anomalous_advancement.cloaked_chauffeur_music_disc": "Cloaked Chauffeur Music Disc",

@@ -26,11 +26,19 @@ public class ModBlocks {
 
     public static final Block GILDED_ALTAR = registerBlock("gilded_altar",
            properties -> new DoubleMagicBench(properties.strength(5f)
-                    .requiresTool().sounds(BlockSoundGroup.STONE)));
+                    .requiresTool().sounds(BlockSoundGroup.IRON)));
 
     public static final Block RESPLENDENT_ALTAR = registerBlock("resplendent_altar",
             properties -> new TripleMagicBench(properties.strength(5f)
-                    .requiresTool().sounds(BlockSoundGroup.STONE)));
+                    .requiresTool().sounds(BlockSoundGroup.IRON)));
+
+    public static final Block BLOCK_OF_PIGLIN_BRONZE = registerBlock("block_of_piglin_bronze",
+            properties -> new Block(properties.strength(5f)
+                    .requiresTool().sounds(BlockSoundGroup.IRON)));
+
+    public static final Block BLOCK_OF_DAMASCUS_STEEL = registerBlock("block_of_damascus_steel",
+            properties -> new Block(properties.strength(5f)
+                    .requiresTool().sounds(BlockSoundGroup.IRON)));
 
 
 
@@ -52,6 +60,8 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.add(ModBlocks.ALTAR);
             entries.add(ModBlocks.GILDED_ALTAR);
+            entries.add(ModBlocks.RESPLENDENT_ALTAR);
         });
+
     }
 }

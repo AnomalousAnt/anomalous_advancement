@@ -15,6 +15,7 @@ import java.util.EnumMap;
 
 public class ModArmorMaterials {
     static RegistryKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY = RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset"));
+
     public static final RegistryKey<EquipmentAsset> PIGLIN_BRONZE_INGOT_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_ingot"));
     public static final ArmorMaterial PIGLIN_BRONZE_ARMOR_MATERIAL = new ArmorMaterial(500, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
@@ -25,5 +26,16 @@ public class ModArmorMaterials {
         map.put(EquipmentType.BODY, 4);
 
     }), 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0, 0, ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR, PIGLIN_BRONZE_INGOT_KEY);
+
+    public static final RegistryKey<EquipmentAsset> DAMASCUS_STEEL_INGOT_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "damascus_steel_ingot"));
+    public static final ArmorMaterial DAMASCUS_STEEL_ARMOR_MATERIAL = new ArmorMaterial(500, Util.make(new EnumMap<>(EquipmentType.class), map -> {
+
+        map.put(EquipmentType.BOOTS, 2);
+        map.put(EquipmentType.LEGGINGS, 4);
+        map.put(EquipmentType.CHESTPLATE, 6);
+        map.put(EquipmentType.HELMET, 2);
+        map.put(EquipmentType.BODY, 4);
+
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0, 0, ModTags.Items.DAMASCUS_STEEL_INGOT_REPAIR, DAMASCUS_STEEL_INGOT_KEY);
 
 }

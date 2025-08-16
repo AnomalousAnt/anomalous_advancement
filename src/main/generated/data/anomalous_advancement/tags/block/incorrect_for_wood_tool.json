@@ -238,6 +238,9 @@
     "minecraft:blue_ice",
     "minecraft:sea_lantern",
     "anomalous_advancement:altar",
-    "anomalous_advancement:gilded_altar"
+    "anomalous_advancement:gilded_altar",
+    "anomalous_advancement:resplendent_altar",
+    "anomalous_advancement:block_of_piglin_bronze",
+    "anomalous_advancement:block_of_damascus_steel"
   ]
 }

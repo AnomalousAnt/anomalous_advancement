@@ -24,19 +24,24 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.FLINT_SWORD)
-                .add(ModItems.PIGLIN_BRONZE_SWORD);
+                .add(ModItems.PIGLIN_BRONZE_SWORD)
+                .add(ModItems.DAMASCUS_STEEL_SWORD);
         valueLookupBuilder(ItemTags.PICKAXES)
                 .add(ModItems.FLINT_PICKAXE)
-                .add(ModItems.PIGLIN_BRONZE_PICKAXE);
+                .add(ModItems.PIGLIN_BRONZE_PICKAXE)
+                .add(ModItems.DAMASCUS_STEEL_PICKAXE);
         valueLookupBuilder(ItemTags.AXES)
                 .add(ModItems.FLINT_AXE)
-                .add(ModItems.PIGLIN_BRONZE_AXE);
+                .add(ModItems.PIGLIN_BRONZE_AXE)
+                .add(ModItems.DAMASCUS_STEEL_AXE);
         valueLookupBuilder(ItemTags.SHOVELS)
                 .add(ModItems.FLINT_SHOVEL)
-                .add(ModItems.PIGLIN_BRONZE_SHOVEL);
+                .add(ModItems.PIGLIN_BRONZE_SHOVEL)
+                .add(ModItems.DAMASCUS_STEEL_SHOVEL);
         valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.FLINT_HOE)
-                .add(ModItems.PIGLIN_BRONZE_HOE);
+                .add(ModItems.PIGLIN_BRONZE_HOE)
+                .add(ModItems.DAMASCUS_STEEL_HOE);
 
         valueLookupBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, "modded_stone_tool_materials")))
                 .add(Items.POLISHED_ANDESITE)
@@ -47,7 +52,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PIGLIN_BRONZE_HELMET)
                 .add(ModItems.PIGLIN_BRONZE_CHESTPLATE)
                 .add(ModItems.PIGLIN_BRONZE_LEGGINGS)
-                .add(ModItems.PIGLIN_BRONZE_BOOTS);
+                .add(ModItems.PIGLIN_BRONZE_BOOTS)
+                .add(ModItems.DAMASCUS_STEEL_HELMET)
+                .add(ModItems.DAMASCUS_STEEL_CHESTPLATE)
+                .add(ModItems.DAMASCUS_STEEL_LEGGINGS)
+                .add(ModItems.DAMASCUS_STEEL_BOOTS);
 
 
         valueLookupBuilder(ModTags.Items.FLINT_REPAIR)
@@ -61,7 +70,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         valueLookupBuilder(ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR)
                 .add(ModItems.PIGLIN_BRONZE_INGOT);
 
+        valueLookupBuilder(ModTags.Items.DAMASCUS_STEEL_INGOT_REPAIR)
+                .add(ModItems.DAMASCUS_STEEL_INGOT);
+
         valueLookupBuilder(ItemTags.TRIM_MATERIALS)
-                .add(ModItems.PIGLIN_BRONZE_INGOT);
+                .add(ModItems.PIGLIN_BRONZE_INGOT)
+                .add(ModItems.DAMASCUS_STEEL_INGOT);
     }
 }

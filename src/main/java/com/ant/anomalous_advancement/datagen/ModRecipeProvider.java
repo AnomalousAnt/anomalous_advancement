@@ -73,6 +73,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
                         .offerTo(exporter);
 
+                createShapeless(RecipeCategory.MISC, ModItems.PIGLIN_BRONZE_INGOT, 9)
+                        .input(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter);
+
                 createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_PICKAXE)
                         .pattern("###")
                         .pattern("ZX ")
@@ -133,7 +138,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_HELMET)
+                createShaped(RecipeCategory.COMBAT, ModItems.PIGLIN_BRONZE_HELMET)
                         .pattern("   ")
                         .pattern("###")
                         .pattern("#Z#")
@@ -142,7 +147,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_CHESTPLATE)
+                createShaped(RecipeCategory.COMBAT, ModItems.PIGLIN_BRONZE_CHESTPLATE)
                         .pattern("#Z#")
                         .pattern("###")
                         .pattern("###")
@@ -151,7 +156,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_LEGGINGS)
+                createShaped(RecipeCategory.COMBAT, ModItems.PIGLIN_BRONZE_LEGGINGS)
                         .pattern("###")
                         .pattern("#Z#")
                         .pattern("# #")
@@ -160,7 +165,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModItems.PIGLIN_BRONZE_BOOTS)
+                createShaped(RecipeCategory.COMBAT, ModItems.PIGLIN_BRONZE_BOOTS)
                         .pattern("Z Z")
                         .pattern("# #")
                         .pattern("# #")
@@ -169,7 +174,114 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModBlocks.ALTAR)
+                createShapeless(RecipeCategory.MISC, ModItems.DAMASCUS_STEEL_INGOT, 9)
+                        .input(ModBlocks.BLOCK_OF_DAMASCUS_STEEL)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DAMASCUS_STEEL_PICKAXE)
+                        .pattern("###")
+                        .pattern("ZXY")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('Y', Items.BLAZE_ROD)
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DAMASCUS_STEEL_AXE)
+                        .pattern("## ")
+                        .pattern("#XY")
+                        .pattern("ZX ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('Y', Items.BLAZE_ROD)
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DAMASCUS_STEEL_HOE)
+                        .pattern("## ")
+                        .pattern("ZXY")
+                        .pattern(" X ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('Y', Items.BLAZE_ROD)
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DAMASCUS_STEEL_SHOVEL)
+                        .pattern(" # ")
+                        .pattern(" XY")
+                        .pattern("ZX ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('Y', Items.BLAZE_ROD)
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DAMASCUS_STEEL_SWORD)
+                        .pattern(" # ")
+                        .pattern(" #Y")
+                        .pattern("ZX ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('Y', Items.BLAZE_ROD)
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DAMASCUS_STEEL_BOW)
+                        .pattern("#XZ")
+                        .pattern("Y#Z")
+                        .pattern("#XZ")
+                        .input('X', Items.BREEZE_ROD)
+                        .input('Y', Items.BLAZE_ROD)
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.DAMASCUS_STEEL_HELMET)
+                        .pattern("   ")
+                        .pattern("###")
+                        .pattern("#Z#")
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.DAMASCUS_STEEL_CHESTPLATE)
+                        .pattern("#Z#")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.DAMASCUS_STEEL_LEGGINGS)
+                        .pattern("###")
+                        .pattern("#Z#")
+                        .pattern("# #")
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.DAMASCUS_STEEL_BOOTS)
+                        .pattern("Z Z")
+                        .pattern("# #")
+                        .pattern("# #")
+                        .input('#', ModItems.DAMASCUS_STEEL_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.MISC, ModBlocks.ALTAR)
                         .pattern("###")
                         .pattern("YXY")
                         .pattern("YXY")
@@ -179,7 +291,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModBlocks.GILDED_ALTAR)
+                createShaped(RecipeCategory.MISC, ModBlocks.GILDED_ALTAR)
                         .pattern("XXX")
                         .pattern("Z#Z")
                         .pattern("YYY")
@@ -190,7 +302,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.TOOLS, ModBlocks.RESPLENDENT_ALTAR)
+                createShaped(RecipeCategory.MISC, ModBlocks.RESPLENDENT_ALTAR)
                         .pattern("XXX")
                         .pattern("Z#Z")
                         .pattern("YYY")
