@@ -17,29 +17,190 @@ public class MagicBenchEnchantmentSelector {
 
     public static EnchantmentResult applyEnchantment(ItemStack tool, ItemStack reagent, World world) {
         Optional<RegistryEntry.Reference<Enchantment>> entryOpt = Optional.empty();
-        int cost = 0;
+        int cost = 3;
 
-        if (reagent.isOf(Items.SLIME_BALL)) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.UNBREAKING.getValue());
-            cost = 3;
-        } else if (reagent.isOf(Items.FLINT)) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SHARPNESS.getValue());
-            cost = 5;
-        } else if (reagent.isOf(Items.LAPIS_LAZULI)) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FORTUNE.getValue());
-            cost = 8;
-        } else if (reagent.isOf(Items.SPIDER_EYE)) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
-            cost = 2;
-        }
+            if (reagent.isOf(Items.SPIDER_EYE)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
+
+            } else if (reagent.isOf(Items.BRICKS)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.BLAST_PROTECTION.getValue());
+
+            } else if (reagent.isOf(Items.BRICK)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.BREACH.getValue());
+
+            } else if (reagent.isOf(Items.SUSPICIOUS_STEW)) {
+                    entryOpt = world.getRegistryManager()
+                            .getOrThrow(RegistryKeys.ENCHANTMENT)
+                            .getEntry(Enchantments.BINDING_CURSE.getValue());
+
+            } else if (reagent.isOf(Items.CHORUS_FRUIT)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.VANISHING_CURSE.getValue());
+
+            } else if (reagent.isOf(Items.SMOOTH_STONE)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.DENSITY.getValue());
+
+            } else if (reagent.isOf(Items.PRISMARINE_SHARD)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.DEPTH_STRIDER.getValue());
+
+            } else if (reagent.isOf(Items.CLOCK)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.EFFICIENCY.getValue());
+
+            } else if (reagent.isOf(Items.FEATHER)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.FEATHER_FALLING.getValue());
+
+            } else if (reagent.isOf(Items.GUNPOWDER)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.FIRE_ASPECT.getValue());
+
+            } else if (reagent.isOf(Items.CLAY_BALL)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.FIRE_PROTECTION.getValue());
+
+            } else if (reagent.isOf(Items.FIREWORK_STAR)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.FLAME.getValue());
+
+            } else if (reagent.isOf(Items.LAPIS_LAZULI)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.FORTUNE.getValue());
+
+            } else if (reagent.isOf(Items.STICK)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.IMPALING.getValue());
+
+            } else if (reagent.isOf(Items.LODESTONE)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.KNOCKBACK.getValue());
+
+            } else if (reagent.isOf(Items.ECHO_SHARD)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.LOOTING.getValue());
+
+            } else if (reagent.isOf(Items.LEAD)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.LOYALTY.getValue());
+
+            } else if (reagent.isOf(Items.TROPICAL_FISH)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
+
+            } else if (reagent.isOf(Items.COOKIE)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.LURE.getValue());
+
+            } else if (reagent.isOf(Items.TRIPWIRE_HOOK)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.MULTISHOT.getValue());
+
+            } else if (reagent.isOf(Items.SPECTRAL_ARROW)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.PIERCING.getValue());
+
+            } else if (reagent.isOf(Items.STRING)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.POWER.getValue());
+
+            } else if (reagent.isOf(Items.WHEAT)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.PROJECTILE_PROTECTION.getValue());
+
+            } else if (reagent.isOf(Items.COPPER_BLOCK)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.PROTECTION.getValue());
+
+            } else if (reagent.isOf(Items.TIPPED_ARROW)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.PUNCH.getValue());
+
+            } else if (reagent.isOf(Items.SUGAR)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.QUICK_CHARGE.getValue());
+
+            } else if (reagent.isOf(Items.INK_SAC)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.RESPIRATION.getValue());
+
+            } else if (reagent.isOf(Items.HEART_OF_THE_SEA)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.RIPTIDE.getValue());
+
+            } else if (reagent.isOf(Items.FLINT)) {
+                    entryOpt = world.getRegistryManager()
+                            .getOrThrow(RegistryKeys.ENCHANTMENT)
+                            .getEntry(Enchantments.SHARPNESS.getValue());
+
+            } else if (reagent.isOf(Items.ROTTEN_FLESH)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.SMITE.getValue());
+
+            } else if (reagent.isOf(Items.GHAST_TEAR)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.SOUL_SPEED.getValue());
+
+            } else if (reagent.isOf(Items.AMETHYST_SHARD)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.SWEEPING_EDGE.getValue());
+
+            } else if (reagent.isOf(Items.RABBIT_FOOT)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.SWIFT_SNEAK.getValue());
+
+            } else if (reagent.isOf(Items.VINE)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.THORNS.getValue());
+
+            } else if (reagent.isOf(Items.SLIME_BALL)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.UNBREAKING.getValue());
+
+            } else if (reagent.isOf(Items.WIND_CHARGE)) {
+                entryOpt = world.getRegistryManager()
+                        .getOrThrow(RegistryKeys.ENCHANTMENT)
+                        .getEntry(Enchantments.WIND_BURST.getValue());
+            }
+
+
 
         if (entryOpt.isPresent()) {
             Enchantment enchantment = entryOpt.get().value();

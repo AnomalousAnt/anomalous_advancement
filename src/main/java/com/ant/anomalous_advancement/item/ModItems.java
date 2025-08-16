@@ -114,9 +114,17 @@ public class ModItems {
             entries.add(PIGLIN_BRONZE_SWORD);
             entries.add(PIGLIN_BRONZE_AXE);
             entries.add(PIGLIN_BRONZE_BOW);
+            entries.add(PIGLIN_BRONZE_HELMET);
+            entries.add(PIGLIN_BRONZE_CHESTPLATE);
+            entries.add(PIGLIN_BRONZE_LEGGINGS);
+            entries.add(PIGLIN_BRONZE_BOOTS);
             entries.add(DAMASCUS_STEEL_SWORD);
             entries.add(DAMASCUS_STEEL_AXE);
             entries.add(DAMASCUS_STEEL_BOW);
+            entries.add(DAMASCUS_STEEL_HELMET);
+            entries.add(DAMASCUS_STEEL_CHESTPLATE);
+            entries.add(DAMASCUS_STEEL_LEGGINGS);
+            entries.add(DAMASCUS_STEEL_BOOTS);
 
         });
     }

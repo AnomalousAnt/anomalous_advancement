@@ -3,8 +3,7 @@
 	"package": "com.ant.anomalous_advancement.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ModifyToolDurabilityMixin",
-		"ModifyVanillaToolsMixin"
+		"ModifyToolDurabilityMixin"
 	],
 	"client": [
 		"AbstractClientPlayerEntityMixin"

@@ -5,7 +5,7 @@
   },
   "minVersion": "0.8",
   "mixins": [
-    "ModifyVanillaToolsMixin"
+    "ModifyToolDurabilityMixin"
   ],
   "package": "com.ant.anomalous_advancement.mixin",
   "required": true
