@@ -135,8 +135,56 @@ public class MagicBenchEntity extends BlockEntity implements ExtendedScreenHandl
 
     @Override
     public void onBlockReplaced(BlockPos pos, BlockState oldState) {
-        ItemScatterer.spawn(world, pos, (this));
+        if (!world.isClient) {
+            dropInputItems(null); // drop at block location if no player
+        }
         super.onBlockReplaced(pos, oldState);
     }
 
+    public void dropInputItems(@Nullable PlayerEntity player) {
+        if (world == null || world.isClient) return;
+
+        boolean hasItems = false;
+        for (int i = 0; i < getItems().size(); i++) {
+            if (!getStack(i).isEmpty()) {
+                hasItems = true;
+                break;
+            }
+        }
+        if (!hasItems) return; // nothing to drop
+
+        double dropX;
+        double dropY;
+        double dropZ;
+
+        if (player != null) {
+            dropX = player.getX();
+            dropY = player.getY();
+            dropZ = player.getZ();
+        } else {
+            dropX = pos.getX();
+            dropY = pos.getY();
+            dropZ = pos.getZ();
+        }
+
+        for (int i = 0; i < getItems().size(); i++) {
+            if (i == OUTPUT_SLOT) {
+                // Just clear preview output without dropping it
+                setStack(i, ItemStack.EMPTY);
+                continue;
+            }
+
+            ItemStack stack = getStack(i);
+            if (!stack.isEmpty()) {
+                if (player != null && player.getInventory().insertStack(stack.copy())) {
+                    // Item went directly into inventory
+                    setStack(i, ItemStack.EMPTY);
+                } else {
+                    // Couldn't fit in inventory → drop in world
+                    ItemScatterer.spawn(world, dropX, dropY, dropZ, stack);
+                    setStack(i, ItemStack.EMPTY);
+                }
+            }
+        }
+    }
 }

@@ -165,4 +165,11 @@ public class MagicBenchScreenHandler extends ScreenHandler {
         return this.blockEntity;
     }
 
+    @Override
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
+        if (!player.getWorld().isClient) {
+            blockEntity.dropInputItems(player); // try inventory first
+        }
+    }
 }
