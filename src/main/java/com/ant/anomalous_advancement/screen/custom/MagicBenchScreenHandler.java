@@ -34,7 +34,7 @@ public class MagicBenchScreenHandler extends ScreenHandler {
         this.inventory = this.blockEntity;
 
 
-        this.addSlot(new Slot(inventory, MagicBenchEntity.TOOL_SLOT, 54, 34) {
+        this.addSlot(new Slot(inventory, MagicBenchEntity.TOOL_SLOT, 76, 34) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -43,7 +43,7 @@ public class MagicBenchScreenHandler extends ScreenHandler {
         });
 
 
-        this.addSlot(new Slot(inventory, MagicBenchEntity.REAGENT_SLOT, 13, 15) {
+        this.addSlot(new Slot(inventory, MagicBenchEntity.REAGENT_SLOT, 35, 34) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -52,7 +52,7 @@ public class MagicBenchScreenHandler extends ScreenHandler {
         });
 
 
-        this.addSlot(new OutputSlot(inventory, this.blockEntity, MagicBenchEntity.OUTPUT_SLOT, 104, 34));
+        this.addSlot(new OutputSlot(inventory, this.blockEntity, MagicBenchEntity.OUTPUT_SLOT, 126, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

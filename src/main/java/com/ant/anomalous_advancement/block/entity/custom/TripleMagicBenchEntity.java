@@ -101,7 +101,7 @@ public class TripleMagicBenchEntity extends BlockEntity implements ExtendedScree
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("block.anomalous_advancement.gilded_altar");
+        return Text.translatable("block.anomalous_advancement.resplendent_altar");
     }
 
     @Nullable

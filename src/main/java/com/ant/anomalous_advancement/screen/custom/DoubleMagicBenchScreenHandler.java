@@ -34,7 +34,7 @@ public class DoubleMagicBenchScreenHandler extends ScreenHandler {
         this.inventory = this.blockEntity;
 
 
-        this.addSlot(new Slot(inventory, DoubleMagicBenchEntity.TOOL_SLOT, 54, 34) {
+        this.addSlot(new Slot(inventory, DoubleMagicBenchEntity.TOOL_SLOT, 76, 34) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -43,7 +43,7 @@ public class DoubleMagicBenchScreenHandler extends ScreenHandler {
         });
 
 
-        this.addSlot(new Slot(inventory, DoubleMagicBenchEntity.REAGENT_SLOT_1, 13, 15) {
+        this.addSlot(new Slot(inventory, DoubleMagicBenchEntity.REAGENT_SLOT_1, 35, 15) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -51,7 +51,7 @@ public class DoubleMagicBenchScreenHandler extends ScreenHandler {
             }
         });
 
-        this.addSlot(new Slot(inventory, DoubleMagicBenchEntity.REAGENT_SLOT_2, 13, 54) {
+        this.addSlot(new Slot(inventory, DoubleMagicBenchEntity.REAGENT_SLOT_2, 35, 54) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -60,7 +60,7 @@ public class DoubleMagicBenchScreenHandler extends ScreenHandler {
         });
 
 
-        this.addSlot(new OutputSlot(inventory, this.blockEntity, DoubleMagicBenchEntity.OUTPUT_SLOT, 104, 34));
+        this.addSlot(new OutputSlot(inventory, this.blockEntity, DoubleMagicBenchEntity.OUTPUT_SLOT, 126, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

@@ -34,7 +34,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
         this.inventory = this.blockEntity;
 
 
-        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.TOOL_SLOT, 54, 34) {
+        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.TOOL_SLOT, 76, 34) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -43,7 +43,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
         });
 
 
-        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.REAGENT_SLOT_1, 13, 15) {
+        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.REAGENT_SLOT_1, 35, 15) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -51,7 +51,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
             }
         });
 
-        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.REAGENT_SLOT_2, 13, 33) {
+        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.REAGENT_SLOT_2, 35, 34) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -59,7 +59,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
             }
         });
 
-        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.REAGENT_SLOT_3, 13, 53) {
+        this.addSlot(new Slot(inventory, TripleMagicBenchEntity.REAGENT_SLOT_3, 35, 53) {
             @Override
             public void markDirty() {
                 super.markDirty();
@@ -67,7 +67,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
             }
         });
 
-        this.addSlot(new OutputSlot(inventory, this.blockEntity, TripleMagicBenchEntity.OUTPUT_SLOT, 104, 34));
+        this.addSlot(new OutputSlot(inventory, this.blockEntity, TripleMagicBenchEntity.OUTPUT_SLOT, 126, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
