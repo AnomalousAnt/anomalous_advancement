@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "anomalous_advancement:block_of_damascus_steel"
+  ],
+  "result": {
+    "count": 9,
+    "id": "anomalous_advancement:damascus_steel_ingot"
+  }
+}

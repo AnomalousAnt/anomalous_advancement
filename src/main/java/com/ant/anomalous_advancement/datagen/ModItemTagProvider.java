@@ -58,6 +58,32 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.DAMASCUS_STEEL_LEGGINGS)
                 .add(ModItems.DAMASCUS_STEEL_BOOTS);
 
+        valueLookupBuilder(ItemTags.ARMOR_ENCHANTABLE)
+                .add(ModItems.PIGLIN_BRONZE_HELMET)
+                .add(ModItems.PIGLIN_BRONZE_CHESTPLATE)
+                .add(ModItems.PIGLIN_BRONZE_LEGGINGS)
+                .add(ModItems.PIGLIN_BRONZE_BOOTS)
+                .add(ModItems.DAMASCUS_STEEL_HELMET)
+                .add(ModItems.DAMASCUS_STEEL_CHESTPLATE)
+                .add(ModItems.DAMASCUS_STEEL_LEGGINGS)
+                .add(ModItems.DAMASCUS_STEEL_BOOTS);
+
+        valueLookupBuilder(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ModItems.PIGLIN_BRONZE_HELMET)
+                .add(ModItems.PIGLIN_BRONZE_CHESTPLATE)
+                .add(ModItems.PIGLIN_BRONZE_LEGGINGS)
+                .add(ModItems.PIGLIN_BRONZE_BOOTS)
+                .add(ModItems.DAMASCUS_STEEL_HELMET)
+                .add(ModItems.DAMASCUS_STEEL_CHESTPLATE)
+                .add(ModItems.DAMASCUS_STEEL_LEGGINGS)
+                .add(ModItems.DAMASCUS_STEEL_BOOTS)
+                .add(ModItems.PIGLIN_BRONZE_BOW)
+                .add(ModItems.DAMASCUS_STEEL_BOW);
+
+        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.PIGLIN_BRONZE_BOW)
+                .add(ModItems.DAMASCUS_STEEL_BOW);
+
 
         valueLookupBuilder(ModTags.Items.FLINT_REPAIR)
                 .add(Items.FLINT);

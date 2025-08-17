@@ -63,5 +63,9 @@ public class ModBlocks {
             entries.add(ModBlocks.RESPLENDENT_ALTAR);
         });
 
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(entries -> {
+            entries.add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
+            entries.add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
+        });
     }
 }

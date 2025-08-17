@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gold_ingot": {
+    "has_damascus_steel_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:gold_ingot"
+            "items": "anomalous_advancement:damascus_steel_ingot"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "anomalous_advancement:piglin_bronze_ingot"
+        "recipe": "anomalous_advancement:damascus_steel_ingot_from_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_gold_ingot"
+      "has_damascus_steel_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "anomalous_advancement:piglin_bronze_ingot"
+      "anomalous_advancement:damascus_steel_ingot_from_block"
     ]
   }
 }

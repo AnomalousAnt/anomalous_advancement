@@ -51,6 +51,9 @@ public class ModItemGroups {
                         entries.add(ModItems.DAMASCUS_STEEL_BOOTS);
                         entries.add(ModItems.DAMASCUS_STEEL_HORSE_ARMOR);
 
+                        entries.add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
+                        entries.add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
+
                         entries.add(ModBlocks.ALTAR);
                         entries.add(ModBlocks.GILDED_ALTAR);
                         entries.add(ModBlocks.RESPLENDENT_ALTAR);

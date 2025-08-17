@@ -1,5 +1,6 @@
 package com.ant.anomalous_advancement.datagen;
 
+import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -9,6 +10,7 @@ import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -75,6 +77,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 createShapeless(RecipeCategory.MISC, ModItems.PIGLIN_BRONZE_INGOT, 9)
                         .input(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                        .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
+                        .offerTo(exporter,"piglin_bronze_ingot_from_block");
+
+                createShaped(RecipeCategory.MISC, ModItems.PIGLIN_BRONZE_INGOT)
+                        .pattern("XXX")
+                        .pattern("XZZ")
+                        .pattern("ZZZ")
+                        .input('X', Items.COPPER_INGOT)
+                        .input('Z', Items.GOLD_INGOT)
+                        .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.MISC, ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
+                        .pattern("XXX")
+                        .pattern("XXX")
+                        .pattern("XXX")
+                        .input('X', ModItems.PIGLIN_BRONZE_INGOT)
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
                         .offerTo(exporter);
 
@@ -176,6 +195,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 createShapeless(RecipeCategory.MISC, ModItems.DAMASCUS_STEEL_INGOT, 9)
                         .input(ModBlocks.BLOCK_OF_DAMASCUS_STEEL)
+                        .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter, "damascus_steel_ingot_from_block");
+
+                createShaped(RecipeCategory.MISC, ModItems.DAMASCUS_STEEL_INGOT)
+                        .pattern("XXX")
+                        .pattern("XZZ")
+                        .pattern("ZZZ")
+                        .input('X', Items.POLISHED_TUFF)
+                        .input('Z', Items.DEEPSLATE_IRON_ORE)
+                        .criterion(hasItem(Items.TUFF), conditionsFromItem(Items.TUFF))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.MISC, ModBlocks.BLOCK_OF_DAMASCUS_STEEL)
+                        .pattern("XXX")
+                        .pattern("XXX")
+                        .pattern("XXX")
+                        .input('X', ModItems.DAMASCUS_STEEL_INGOT)
                         .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
                         .offerTo(exporter);
 

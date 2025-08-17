@@ -2,16 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "X": "minecraft:copper_ingot",
-    "Z": "minecraft:gold_ingot"
+    "X": "anomalous_advancement:damascus_steel_ingot"
   },
   "pattern": [
     "XXX",
-    "XZZ",
-    "ZZZ"
+    "XXX",
+    "XXX"
   ],
   "result": {
     "count": 1,
-    "id": "anomalous_advancement:piglin_bronze_ingot"
+    "id": "anomalous_advancement:block_of_damascus_steel"
   }
 }
