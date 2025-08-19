@@ -1,5 +1,25 @@
 {
   "values": [
+    "anomalous_advancement:pleather_helmet",
+    "anomalous_advancement:pleather_chestplate",
+    "anomalous_advancement:pleather_leggings",
+    "anomalous_advancement:pleather_boots",
+    "anomalous_advancement:pcopper_helmet",
+    "anomalous_advancement:pcopper_chestplate",
+    "anomalous_advancement:pcopper_leggings",
+    "anomalous_advancement:pcopper_boots",
+    "anomalous_advancement:pchain_helmet",
+    "anomalous_advancement:pchain_chestplate",
+    "anomalous_advancement:pchain_leggings",
+    "anomalous_advancement:pchain_boots",
+    "anomalous_advancement:piron_helmet",
+    "anomalous_advancement:piron_chestplate",
+    "anomalous_advancement:piron_leggings",
+    "anomalous_advancement:piron_boots",
+    "anomalous_advancement:pgold_helmet",
+    "anomalous_advancement:pgold_chestplate",
+    "anomalous_advancement:pgold_leggings",
+    "anomalous_advancement:pgold_boots",
     "anomalous_advancement:piglin_bronze_helmet",
     "anomalous_advancement:piglin_bronze_chestplate",
     "anomalous_advancement:piglin_bronze_leggings",
@@ -7,6 +27,14 @@
     "anomalous_advancement:damascus_steel_helmet",
     "anomalous_advancement:damascus_steel_chestplate",
     "anomalous_advancement:damascus_steel_leggings",
-    "anomalous_advancement:damascus_steel_boots"
+    "anomalous_advancement:damascus_steel_boots",
+    "anomalous_advancement:pdiamond_helmet",
+    "anomalous_advancement:pdiamond_chestplate",
+    "anomalous_advancement:pdiamond_leggings",
+    "anomalous_advancement:pdiamond_boots",
+    "anomalous_advancement:pnetherite_helmet",
+    "anomalous_advancement:pnetherite_chestplate",
+    "anomalous_advancement:pnetherite_leggings",
+    "anomalous_advancement:pnetherite_boots"
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "anomalous_advancement:item/pcopper_helmet",
+    "layer1": "minecraft:trims/items/helmet_trim_netherite"
+  }
+}

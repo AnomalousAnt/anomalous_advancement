@@ -11,16 +11,14 @@
   "item.anomalous_advancement.piglin_bronze_axe": "Piglin Bronze Axe",
   "item.anomalous_advancement.piglin_bronze_hoe": "Piglin Bronze Hoe",
   "item.anomalous_advancement.piglin_bronze_bow": "Piglin Bronze Bow",
-
   "item.anomalous_advancement.piglin_bronze_ingot": "Piglin Bronze Ingot",
   "item.anomalous_advancement.piglin_bronze_helmet": "Piglin Bronze Helmet",
   "item.anomalous_advancement.piglin_bronze_chestplate": "Piglin Bronze Chestplate",
   "item.anomalous_advancement.piglin_bronze_leggings": "Piglin Bronze Leggings",
   "item.anomalous_advancement.piglin_bronze_boots": "Piglin Bronze Boots",
-
   "item.anomalous_advancement.piglin_bronze_horse_armor": "Piglin Bronze Horse Armor",
-
   "trim_material.anomalous_advancement.piglin_bronze_ingot": "Piglin Bronze Material",
+  "block.anomalous_advancement.block_of_piglin_bronze": "Block of Piglin Bronze",
 
   "item.anomalous_advancement.damascus_steel_pickaxe": "Damascus Steel Pickaxe",
   "item.anomalous_advancement.damascus_steel_sword": "Damascus Steel Sword",
@@ -34,10 +32,9 @@
   "item.anomalous_advancement.damascus_steel_chestplate": "Damascus Steel Chestplate",
   "item.anomalous_advancement.damascus_steel_leggings": "Damascus Steel Leggings",
   "item.anomalous_advancement.damascus_steel_boots": "Damascus Steel Boots",
-
   "item.anomalous_advancement.damascus_steel_horse_armor": "Damascus Steel Horse Armor",
-
   "trim_material.anomalous_advancement.damascus_steel_ingot": "Damascus Steel Material",
+  "block.anomalous_advancement.block_of_damascus_steel": "Block of Damascus Steel",
 
   "block.anomalous_advancement.altar": "Altar",
   "block.anomalous_advancement.gilded_altar": "Gilded Altar",

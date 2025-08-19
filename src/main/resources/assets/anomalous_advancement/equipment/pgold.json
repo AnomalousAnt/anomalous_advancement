@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "wolf_body": [
+      {
+        "texture": "anomalous_advancement:pgold"
+      }
+    ],
+    "horse_body": [
+      {
+        "texture": "anomalous_advancement:pgold"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "anomalous_advancement:pgold"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "anomalous_advancement:pgold"
+      }
+    ]
+  }
+}

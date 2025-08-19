@@ -1,17 +1,18 @@
 {
-	"required": true,
-	"package": "com.ant.anomalous_advancement.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ModifyToolDurabilityMixin"
-	],
-	"client": [
-		"AbstractClientPlayerEntityMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "com.ant.anomalous_advancement.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ModifyMobEquipmentMixin",
+    "ModifyVanillaToolsMixin"
+  ],
+  "client": [
+    "AbstractClientPlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }

@@ -26,6 +26,50 @@ public class ModItems {
     public static final Item FLINT_HOE = registerItem("flint_hoe",
             setting -> new HoeItem(ModToolMaterials.FLINT, 0, -3f, setting));
 
+    public static final Item PLEATHER_HELMET = registerItem("pleather_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PLEATHER_CHESTPLATE = registerItem("pleather_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PLEATHER_LEGGINGS = registerItem("pleather_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PLEATHER_BOOTS = registerItem("pleather_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
+    public static final Item PCOPPER_HELMET = registerItem("pcopper_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PCOPPER_CHESTPLATE = registerItem("pcopper_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PCOPPER_LEGGINGS = registerItem("pcopper_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PCOPPER_BOOTS = registerItem("pcopper_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
+    public static final Item PCHAIN_HELMET = registerItem("pchain_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCHAIN_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PCHAIN_CHESTPLATE = registerItem("pchain_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCHAIN_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PCHAIN_LEGGINGS = registerItem("pchain_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCHAIN_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PCHAIN_BOOTS = registerItem("pchain_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PCHAIN_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
+    public static final Item PIRON_HELMET = registerItem("piron_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PIRON_CHESTPLATE = registerItem("piron_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PIRON_LEGGINGS = registerItem("piron_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PIRON_BOOTS = registerItem("piron_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
+    public static final Item PGOLD_HELMET = registerItem("pgold_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PGOLD_CHESTPLATE = registerItem("pgold_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PGOLD_LEGGINGS = registerItem("pgold_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PGOLD_BOOTS = registerItem("pgold_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.BOOTS)));
 
     public static final Item PIGLIN_BRONZE_PICKAXE = registerItem("piglin_bronze_pickaxe",
             setting -> new Item(setting.pickaxe(ModToolMaterials.PIGLIN_BRONZE_INGOT, 1, -2.8f)));
@@ -79,6 +123,24 @@ public class ModItems {
     public static final Item DAMASCUS_STEEL_HORSE_ARMOR = registerItem("damascus_steel_horse_armor",
             setting -> new Item(setting.horseArmor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL).maxCount(1)));
 
+    public static final Item PDIAMOND_HELMET = registerItem("pdiamond_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PDIAMOND_CHESTPLATE = registerItem("pdiamond_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PDIAMOND_LEGGINGS = registerItem("pdiamond_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PDIAMOND_BOOTS = registerItem("pdiamond_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
+    public static final Item PNETHERITE_HELMET = registerItem("pnetherite_helmet",
+            setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.HELMET)));
+    public static final Item PNETHERITE_CHESTPLATE = registerItem("pnetherite_chestplate",
+            setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)));
+    public static final Item PNETHERITE_LEGGINGS = registerItem("pnetherite_leggings",
+            setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
+    public static final Item PNETHERITE_BOOTS = registerItem("pnetherite_boots",
+            setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
 
     public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",
             setting -> new Item(setting.jukeboxPlayable(ModSounds.CLOAKED_CHAUFFEUR_KEY).maxCount(1)));
@@ -97,10 +159,12 @@ public class ModItems {
             entries.add(FLINT_PICKAXE);
             entries.add(FLINT_AXE);
             entries.add(FLINT_HOE);
+
             entries.add(PIGLIN_BRONZE_SHOVEL);
             entries.add(PIGLIN_BRONZE_PICKAXE);
             entries.add(PIGLIN_BRONZE_AXE);
             entries.add(PIGLIN_BRONZE_HOE);
+
             entries.add(DAMASCUS_STEEL_SHOVEL);
             entries.add(DAMASCUS_STEEL_PICKAXE);
             entries.add(DAMASCUS_STEEL_AXE);
@@ -111,6 +175,32 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
             entries.add(FLINT_SWORD);
             entries.add(FLINT_AXE);
+
+            entries.add(PLEATHER_HELMET);
+            entries.add(PLEATHER_CHESTPLATE);
+            entries.add(PLEATHER_LEGGINGS);
+            entries.add(PLEATHER_BOOTS);
+
+            entries.add(PCOPPER_HELMET);
+            entries.add(PCOPPER_CHESTPLATE);
+            entries.add(PCOPPER_LEGGINGS);
+            entries.add(PCOPPER_BOOTS);
+
+            entries.add(PCHAIN_HELMET);
+            entries.add(PCHAIN_CHESTPLATE);
+            entries.add(PCHAIN_LEGGINGS);
+            entries.add(PCHAIN_BOOTS);
+
+            entries.add(PIRON_HELMET);
+            entries.add(PIRON_CHESTPLATE);
+            entries.add(PIRON_LEGGINGS);
+            entries.add(PIRON_BOOTS);
+
+            entries.add(PGOLD_HELMET);
+            entries.add(PGOLD_CHESTPLATE);
+            entries.add(PGOLD_LEGGINGS);
+            entries.add(PGOLD_BOOTS);
+
             entries.add(PIGLIN_BRONZE_SWORD);
             entries.add(PIGLIN_BRONZE_AXE);
             entries.add(PIGLIN_BRONZE_BOW);
@@ -118,6 +208,7 @@ public class ModItems {
             entries.add(PIGLIN_BRONZE_CHESTPLATE);
             entries.add(PIGLIN_BRONZE_LEGGINGS);
             entries.add(PIGLIN_BRONZE_BOOTS);
+
             entries.add(DAMASCUS_STEEL_SWORD);
             entries.add(DAMASCUS_STEEL_AXE);
             entries.add(DAMASCUS_STEEL_BOW);
@@ -126,6 +217,15 @@ public class ModItems {
             entries.add(DAMASCUS_STEEL_LEGGINGS);
             entries.add(DAMASCUS_STEEL_BOOTS);
 
+            entries.add(PDIAMOND_HELMET);
+            entries.add(PDIAMOND_CHESTPLATE);
+            entries.add(PDIAMOND_LEGGINGS);
+            entries.add(PDIAMOND_BOOTS);
+
+            entries.add(PNETHERITE_HELMET);
+            entries.add(PNETHERITE_CHESTPLATE);
+            entries.add(PNETHERITE_LEGGINGS);
+            entries.add(PNETHERITE_BOOTS);
         });
     }
 }

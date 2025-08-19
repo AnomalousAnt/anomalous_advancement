@@ -36,7 +36,7 @@ public class MixinProvider implements DataProvider {
         root.addProperty("package", "com.ant.anomalous_advancement.mixin");
 
         JsonArray mixins = new JsonArray();
-        mixins.add("ModifyToolDurabilityMixin");
+        mixins.add("ModifyVanillaToolsMixin");
         root.add("mixins", mixins);
 
         JsonObject injectors = new JsonObject();

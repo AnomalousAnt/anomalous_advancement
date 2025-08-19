@@ -33,8 +33,15 @@ public class ModTags {
         public static final TagKey<Item> MODDED_STONE_TOOL_MATERIALS = createTag("modded_stone_tool_materials");
         public static final TagKey<Item> MODDED_STONE_TOOL_MATERIALS_REPAIR = createTag("modded_stone_tool_materials_repair");
         public static final TagKey<Item> FLINT_REPAIR = createTag("flint_repair");
+        public static final TagKey<Item> PLEATHER_REPAIR = createTag("pleather_repair");
+        public static final TagKey<Item> PCOPPER_REPAIR = createTag("pcopper_repair");
+        public static final TagKey<Item> PCHAIN_REPAIR = createTag("pchain_repair");
+        public static final TagKey<Item> PIRON_REPAIR = createTag("piron_repair");
+        public static final TagKey<Item> PGOLD_REPAIR = createTag("pgold_repair");
         public static final TagKey<Item> PIGLIN_BRONZE_INGOT_REPAIR = createTag("piglin_bronze_ingot_repair");
         public static final TagKey<Item> DAMASCUS_STEEL_INGOT_REPAIR = createTag("damascus_steel_ingot_repair");
+        public static final TagKey<Item> PDIAMOND_REPAIR = createTag("pdiamond_repair");
+        public static final TagKey<Item> PNETHERITE_REPAIR = createTag("pnetherite_repair");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name));
