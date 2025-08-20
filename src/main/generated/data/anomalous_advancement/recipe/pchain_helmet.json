@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": "anomalous_advancement:piglin_bronze_ingot",
+    "#": "minecraft:chain",
     "Z": "anomalous_advancement:pleather_helmet"
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "anomalous_advancement:piglin_bronze_helmet"
+    "id": "anomalous_advancement:pchain_helmet"
   }
 }

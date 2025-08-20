@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": "anomalous_advancement:piglin_bronze_ingot",
-    "Z": "minecraft:leather"
+    "Z": "anomalous_advancement:pleather_chestplate"
   },
   "pattern": [
     "#Z#",

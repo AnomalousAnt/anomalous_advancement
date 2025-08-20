@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": "anomalous_advancement:damascus_steel_ingot",
-    "Z": "minecraft:leather"
+    "Z": "anomalous_advancement:pleather_chestplate"
   },
   "pattern": [
     "   ",

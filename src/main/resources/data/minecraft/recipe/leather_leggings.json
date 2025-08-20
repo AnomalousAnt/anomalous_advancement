@@ -5,11 +5,12 @@
     "X": "minecraft:leather"
   },
   "pattern": [
+    "XXX",
     "X X",
     "X X"
   ],
   "result": {
     "count": 1,
-    "id": "anomalous_advancement:pleather_boots"
+    "id": "anomalous_advancement:pleather_leggings"
   }
 }

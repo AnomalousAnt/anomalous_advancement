@@ -6,10 +6,11 @@
   },
   "pattern": [
     "X X",
-    "X X"
+    "XXX",
+    "XXX"
   ],
   "result": {
     "count": 1,
-    "id": "anomalous_advancement:pleather_boots"
+    "id": "anomalous_advancement:pleather_chestplate"
   }
 }

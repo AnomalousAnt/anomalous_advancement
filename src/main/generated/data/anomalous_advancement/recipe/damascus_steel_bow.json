@@ -5,7 +5,7 @@
     "#": "anomalous_advancement:damascus_steel_ingot",
     "X": "minecraft:breeze_rod",
     "Y": "minecraft:blaze_rod",
-    "Z": "minecraft:leather"
+    "Z": "minecraft:resin_brick"
   },
   "pattern": [
     "#XZ",
