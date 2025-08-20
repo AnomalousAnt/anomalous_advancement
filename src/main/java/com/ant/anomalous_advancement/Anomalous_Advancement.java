@@ -7,7 +7,7 @@ import com.ant.anomalous_advancement.item.ModItems;
 import com.ant.anomalous_advancement.screen.ModScreenHandlers;
 import com.ant.anomalous_advancement.sound.ModSounds;
 
-import com.ant.anomalous_advancement.util.ModLootTableModifiers;
+
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -25,7 +25,6 @@ public class Anomalous_Advancement implements ModInitializer {
 		ModSounds.registerSounds();
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
-		ModLootTableModifiers.modifyLootTables();
 	}
 
 }
