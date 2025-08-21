@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "minecraft:copper_ingot",
+    "Y": "anomalous_advancement:pleather_helmet"
+  },
+  "pattern": [
+    "XXX",
+    "XYX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:pcopper_helmet"
+  }
+}

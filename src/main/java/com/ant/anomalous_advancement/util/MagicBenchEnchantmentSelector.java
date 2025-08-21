@@ -19,7 +19,7 @@ public class MagicBenchEnchantmentSelector {
         Optional<RegistryEntry.Reference<Enchantment>> entryOpt = Optional.empty();
         int cost = 3;
 
-            if (reagent.isOf(Items.SPIDER_EYE)) {
+            if (reagent.isOf(Items.FERMENTED_SPIDER_EYE)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
@@ -94,7 +94,7 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.KNOCKBACK.getValue());
 
-            } else if (reagent.isOf(Items.ECHO_SHARD)) {
+            } else if (reagent.isOf(Items.EMERALD)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.LOOTING.getValue());
@@ -114,7 +114,7 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.LURE.getValue());
 
-            } else if (reagent.isOf(Items.TRIPWIRE_HOOK)) {
+            } else if (reagent.isOf(Items.CROSSBOW)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.MULTISHOT.getValue());
@@ -139,7 +139,7 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.PROTECTION.getValue());
 
-            } else if (reagent.isOf(Items.TIPPED_ARROW)) {
+            } else if (reagent.isOf(Items.ARROW)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.PUNCH.getValue());
@@ -179,12 +179,12 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.SWEEPING_EDGE.getValue());
 
-            } else if (reagent.isOf(Items.RABBIT_FOOT)) {
+            } else if (reagent.isOf(Items.ECHO_SHARD)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.SWIFT_SNEAK.getValue());
 
-            } else if (reagent.isOf(Items.VINE)) {
+            } else if (reagent.isOf(Items.CACTUS)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.THORNS.getValue());

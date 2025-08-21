@@ -31,16 +31,19 @@ public class TripleMagicBenchScreen extends HandledScreen<TripleMagicBenchScreen
 
         TripleMagicBenchEntity bench = handler.getBlockEntity();
         int cost = bench.getCurrentExpCost();
-
+        String costText = "";
         if (cost > 0) {
             int playerXP = this.client.player.experienceLevel;
             int color = playerXP >= cost ? 0xFF00FF00 : 0xFFFF5555; // Green or red
-            String costText = "EXP Cost: " + cost;
-
+            if (cost == 42069) {
+                costText = "Need Lower Tier First!";
+            }
+            else {
+                costText = "EXP Cost: " + cost;
+            }
             int x = 60;
             int y = 60;
-
-            context.drawText(textRenderer, costText, x, y, color, false);
+            context.drawText(textRenderer, costText, x, y, color, true);
         }
     }
 

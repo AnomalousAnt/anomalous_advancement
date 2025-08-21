@@ -138,7 +138,7 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
     @Override
     public void onBlockReplaced(BlockPos pos, BlockState oldState) {
         if (!world.isClient) {
-            dropInputItems(null); // drop at block location if no player
+            dropInputItems(null);
         }
         super.onBlockReplaced(pos, oldState);
     }
@@ -153,7 +153,7 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
                 break;
             }
         }
-        if (!hasItems) return; // nothing to drop
+        if (!hasItems) return;
 
         double dropX;
         double dropY;
@@ -171,7 +171,6 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
 
         for (int i = 0; i < getItems().size(); i++) {
             if (i == OUTPUT_SLOT) {
-                // Just clear preview output without dropping it
                 setStack(i, ItemStack.EMPTY);
                 continue;
             }
@@ -179,10 +178,8 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
             ItemStack stack = getStack(i);
             if (!stack.isEmpty()) {
                 if (player != null && player.getInventory().insertStack(stack.copy())) {
-                    // Item went directly into inventory
                     setStack(i, ItemStack.EMPTY);
                 } else {
-                    // Couldn't fit in inventory → drop in world
                     ItemScatterer.spawn(world, dropX, dropY, dropZ, stack);
                     setStack(i, ItemStack.EMPTY);
                 }
