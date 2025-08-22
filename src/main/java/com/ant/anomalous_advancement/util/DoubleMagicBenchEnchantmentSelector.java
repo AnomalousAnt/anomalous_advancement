@@ -30,7 +30,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 1;
         }
 
-        if ((reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.SPIDER_EYE)) ||
+        else if ((reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.SPIDER_EYE)) ||
                 (reagent1.isOf(Items.SPIDER_EYE) && reagent2.isOf(Items.FERMENTED_SPIDER_EYE))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -39,7 +39,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS)) ||
+        else if ((reagent1.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS)) ||
                 (reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.BRICKS))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -48,7 +48,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK)) ||
+        else if ((reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK)) ||
                 (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.BRICK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -57,8 +57,8 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.SMOOTH_STONE) && reagent2.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.SMOOTH_STONE))) {
+        else if ((reagent1.isOf(Items.COPPER_BLOCK) && reagent2.isOf(Items.OBSIDIAN)) ||
+                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.COPPER_BLOCK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.DENSITY.getValue());
@@ -66,7 +66,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.OBSIDIAN)) ||
+        else if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.OBSIDIAN)) ||
                 (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.PRISMARINE_SHARD))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -75,7 +75,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.COMPASS)) ||
+        else if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.COMPASS)) ||
                 (reagent1.isOf(Items.COMPASS) && reagent2.isOf(Items.CLOCK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -84,7 +84,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.FEATHER) && reagent2.isOf(Items.RABBIT_FOOT)) ||
+        else if ((reagent1.isOf(Items.FEATHER) && reagent2.isOf(Items.RABBIT_FOOT)) ||
                 (reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isOf(Items.FEATHER))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -93,7 +93,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.GUNPOWDER) && reagent2.isOf(Items.FIRE_CHARGE)) ||
+        else if ((reagent1.isOf(Items.GUNPOWDER) && reagent2.isOf(Items.FIRE_CHARGE)) ||
                 (reagent1.isOf(Items.FIRE_CHARGE) && reagent2.isOf(Items.GUNPOWDER))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -102,7 +102,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.CLAY) && reagent2.isOf(Items.RESIN_BRICK)) ||
+        else if ((reagent1.isOf(Items.CLAY) && reagent2.isOf(Items.RESIN_BRICK)) ||
                 (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.CLAY))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -111,7 +111,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.LAPIS_LAZULI) && reagent2.isOf(Items.AMETHYST_SHARD)) ||
+        else if ((reagent1.isOf(Items.LAPIS_LAZULI) && reagent2.isOf(Items.AMETHYST_SHARD)) ||
                 (reagent1.isOf(Items.AMETHYST_SHARD) && reagent2.isOf(Items.LAPIS_LAZULI))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -120,7 +120,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.PACKED_ICE) && reagent2.isOf(Items.WIND_CHARGE)) ||
+        else if ((reagent1.isOf(Items.PACKED_ICE) && reagent2.isOf(Items.WIND_CHARGE)) ||
                 (reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.PACKED_ICE))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -129,7 +129,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 1;
         }
 
-        if ((reagent1.isOf(Items.STICK) && reagent2.isOf(Items.POINTED_DRIPSTONE)) ||
+        else if ((reagent1.isOf(Items.STICK) && reagent2.isOf(Items.POINTED_DRIPSTONE)) ||
                 (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.STICK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -138,7 +138,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.LODESTONE) && reagent2.isOf(Items.PISTON)) ||
+        else if ((reagent1.isOf(Items.LODESTONE) && reagent2.isOf(Items.PISTON)) ||
                 (reagent1.isOf(Items.PISTON) && reagent2.isOf(Items.LODESTONE))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -147,7 +147,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.EMERALD) && reagent2.isOf(Items.NAUTILUS_SHELL)) ||
+        else if ((reagent1.isOf(Items.EMERALD) && reagent2.isOf(Items.NAUTILUS_SHELL)) ||
                 (reagent1.isOf(Items.NAUTILUS_SHELL) && reagent2.isOf(Items.EMERALD))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -156,7 +156,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.PRISMARINE_CRYSTALS)) ||
+        else if ((reagent1.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.PRISMARINE_CRYSTALS)) ||
                 (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.FISHING_ROD))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -165,7 +165,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.SALMON) && reagent2.isOf(Items.COD)) ||
+        else if ((reagent1.isOf(Items.SALMON) && reagent2.isOf(Items.COD)) ||
                 (reagent1.isOf(Items.COD) && reagent2.isOf(Items.SALMON))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -174,7 +174,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.BREAD) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
+        else if ((reagent1.isOf(Items.BREAD) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
                 (reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.BREAD))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -183,7 +183,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE)) ||
+        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE)) ||
                 (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.SPECTRAL_ARROW))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -192,7 +192,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.BOW) && reagent2.isOf(Items.LEATHER)) ||
+        else if ((reagent1.isOf(Items.BOW) && reagent2.isOf(Items.LEATHER)) ||
                 (reagent1.isOf(Items.LEATHER) && reagent2.isOf(Items.BOW))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -201,7 +201,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.WHEAT)) ||
+        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.WHEAT)) ||
                 (reagent1.isOf(Items.WHEAT) && reagent2.isOf(Items.HAY_BLOCK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -210,7 +210,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.IRON_BLOCK) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
+        else if ((reagent1.isOf(Items.IRON_BLOCK) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
                 (reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isOf(Items.IRON_BLOCK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -219,7 +219,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.TIPPED_ARROW) && reagent2.isOf(Items.BRICK)) ||
+        else if ((reagent1.isOf(Items.TIPPED_ARROW) && reagent2.isOf(Items.BRICK)) ||
                 (reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.TIPPED_ARROW))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -228,7 +228,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.MILK_BUCKET)) ||
+        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.MILK_BUCKET)) ||
                 (reagent1.isOf(Items.MILK_BUCKET) && reagent2.isOf(Items.SPECTRAL_ARROW))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -237,7 +237,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.GLASS_BOTTLE) && reagent2.isOf(Items.RESIN_BRICK)) ||
+        else if ((reagent1.isOf(Items.GLASS_BOTTLE) && reagent2.isOf(Items.RESIN_BRICK)) ||
                 (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.GLASS_BOTTLE))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -246,7 +246,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.ENDER_PEARL)) ||
+        else if ((reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.ENDER_PEARL)) ||
                 (reagent1.isOf(Items.ENDER_PEARL) && reagent2.isOf(Items.HEART_OF_THE_SEA))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -255,7 +255,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.FLINT) && reagent2.isOf(Items.PRISMARINE_SHARD)) ||
+        else if ((reagent1.isOf(Items.FLINT) && reagent2.isOf(Items.PRISMARINE_SHARD)) ||
                 (reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.FLINT))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -264,7 +264,16 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE)) ||
+        else if ((reagent1.isOf(Items.ECHO_SHARD) && reagent2.isOf(Items.MAGMA_CREAM)) ||
+                (reagent1.isOf(Items.MAGMA_CREAM) && reagent2.isOf(Items.ECHO_SHARD))) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.SMITE.getValue());
+            cost = 8;
+            level = 2;
+        }
+
+        else if ((reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE)) ||
                 (reagent1.isOf(Items.BONE) && reagent2.isOf(Items.ROTTEN_FLESH))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -273,7 +282,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.CRYING_OBSIDIAN) && reagent2.isOf(Items.NETHER_SPROUTS)) ||
+        else if ((reagent1.isOf(Items.CRYING_OBSIDIAN) && reagent2.isOf(Items.NETHER_SPROUTS)) ||
                 (reagent1.isOf(Items.NETHER_SPROUTS) && reagent2.isOf(Items.CRYING_OBSIDIAN))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -282,7 +291,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.BRUSH) && reagent2.isOf(Items.QUARTZ)) ||
+        else if ((reagent1.isOf(Items.BRUSH) && reagent2.isOf(Items.QUARTZ)) ||
                 (reagent1.isOf(Items.QUARTZ) && reagent2.isOf(Items.BRUSH))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -291,7 +300,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.PINK_WOOL) && reagent2.isOf(Items.RABBIT_FOOT)) ||
+        else if ((reagent1.isOf(Items.PINK_WOOL) && reagent2.isOf(Items.RABBIT_FOOT)) ||
                 (reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isOf(Items.PINK_WOOL))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -300,7 +309,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.VINE) && reagent2.isOf(Items.WEEPING_VINES)) ||
+        else if ((reagent1.isOf(Items.VINE) && reagent2.isOf(Items.WEEPING_VINES)) ||
                 (reagent1.isOf(Items.WEEPING_VINES) && reagent2.isOf(Items.VINE))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -309,7 +318,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.SLIME_BALL)) ||
+        else if ((reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.SLIME_BALL)) ||
                 (reagent1.isOf(Items.SLIME_BALL) && reagent2.isOf(Items.RESIN_BRICKS))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -318,7 +327,7 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        if ((reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.TNT)) ||
+        else if ((reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.TNT)) ||
                 (reagent1.isOf(Items.TNT) && reagent2.isOf(Items.WIND_CHARGE))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
