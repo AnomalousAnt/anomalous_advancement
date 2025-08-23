@@ -1047,12 +1047,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.BOW) && reagent2.isOf(Items.LEATHER) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.LEATHER) && reagent2.isOf(Items.BOW) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BOW) && reagent2.isEmpty() && reagent3.isOf(Items.LEATHER)) ||
-                (reagent1.isOf(Items.LEATHER) && reagent2.isEmpty() && reagent3.isOf(Items.BOW)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BOW) && reagent3.isOf(Items.LEATHER)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.LEATHER) && reagent3.isOf(Items.BOW))
+        else if ((reagent1.isOf(ModItems.PBOW) && reagent2.isOf(Items.LEATHER) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.LEATHER) && reagent2.isOf(ModItems.PBOW) && reagent3.isEmpty()) ||
+                (reagent1.isOf(ModItems.PBOW) && reagent2.isEmpty() && reagent3.isOf(Items.LEATHER)) ||
+                (reagent1.isOf(Items.LEATHER) && reagent2.isEmpty() && reagent3.isOf(ModItems.PBOW)) ||
+                (reagent1.isEmpty() && reagent2.isOf(ModItems.PBOW) && reagent3.isOf(Items.LEATHER)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.LEATHER) && reagent3.isOf(ModItems.PBOW))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)

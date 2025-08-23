@@ -1,5 +1,6 @@
 package com.ant.anomalous_advancement.util;
 
+import com.ant.anomalous_advancement.item.ModItems;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -192,8 +193,8 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.BOW) && reagent2.isOf(Items.LEATHER)) ||
-                (reagent1.isOf(Items.LEATHER) && reagent2.isOf(Items.BOW))) {
+        else if ((reagent1.isOf(ModItems.PBOW) && reagent2.isOf(Items.LEATHER)) ||
+                (reagent1.isOf(Items.LEATHER) && reagent2.isOf(ModItems.PBOW))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.POWER.getValue());

@@ -33,6 +33,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FLINT_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FLINT_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FLINT_SWORD, Models.HANDHELD);
+        itemModelGenerator.upload(ModItems.PBOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.PBOW);
 
         itemModelGenerator.registerArmor(ModItems.PLEATHER_HELMET, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, true);
         itemModelGenerator.registerArmor(ModItems.PLEATHER_CHESTPLATE, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, true);

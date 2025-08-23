@@ -22,6 +22,7 @@ public class ModItemGroups {
                         entries.add(ModItems.FLINT_AXE);
                         entries.add(ModItems.FLINT_HOE);
                         entries.add(ModItems.FLINT_SWORD);
+                        entries.add(ModItems.PBOW);
 
                         entries.add(ModItems.COPPER_BOW);
                         entries.add(ModItems.IRON_BOW);

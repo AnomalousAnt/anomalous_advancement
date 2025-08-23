@@ -190,6 +190,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PLEATHER_CHESTPLATE)
                 .add(ModItems.PLEATHER_LEGGINGS)
                 .add(ModItems.PLEATHER_BOOTS)
+                .add(ModItems.PBOW)
 
                 .add(ModItems.PCOPPER_HELMET)
                 .add(ModItems.PCOPPER_CHESTPLATE)
@@ -242,6 +243,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PIGLIN_BRONZE_BOW)
                 .add(ModItems.DAMASCUS_STEEL_BOW)
                 .add(ModItems.COPPER_BOW)
+                .add(ModItems.PBOW)
                 .add(ModItems.IRON_BOW)
                 .add(ModItems.GOLD_BOW)
                 .add(ModItems.DIAMOND_BOW)
