@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:diamond",
+    "Y": "anomalous_advancement:damascus_steel_bow"
+  },
+  "pattern": [
+    "###",
+    "#Y#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:diamond_bow"
+  }
+}

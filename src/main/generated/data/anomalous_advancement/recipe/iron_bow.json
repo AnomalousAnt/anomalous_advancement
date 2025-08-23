@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:iron_ingot",
+    "X": "minecraft:stick",
+    "Y": "minecraft:bow",
+    "Z": "minecraft:leather"
+  },
+  "pattern": [
+    "#XZ",
+    "XYZ",
+    "#XZ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:iron_bow"
+  }
+}

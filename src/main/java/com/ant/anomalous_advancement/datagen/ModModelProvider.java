@@ -43,6 +43,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PCOPPER_CHESTPLATE, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCOPPER_LEGGINGS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCOPPER_BOOTS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.upload(ModItems.COPPER_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.COPPER_BOW);
 
         itemModelGenerator.registerArmor(ModItems.PCHAIN_HELMET, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCHAIN_CHESTPLATE, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
@@ -53,11 +55,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PIRON_CHESTPLATE, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PIRON_LEGGINGS, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PIRON_BOOTS, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.upload(ModItems.IRON_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.IRON_BOW);
 
         itemModelGenerator.registerArmor(ModItems.PGOLD_HELMET, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PGOLD_CHESTPLATE, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PGOLD_LEGGINGS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PGOLD_BOOTS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.upload(ModItems.GOLD_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.GOLD_BOW);
 
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.PIGLIN_BRONZE_AXE, Models.HANDHELD);
@@ -95,12 +101,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_CHESTPLATE, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_LEGGINGS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_BOOTS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.upload(ModItems.DIAMOND_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.DIAMOND_BOW);
 
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_HELMET, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_CHESTPLATE, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_LEGGINGS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_BOOTS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-
+        itemModelGenerator.upload(ModItems.NETHERITE_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.NETHERITE_BOW);
 
         itemModelGenerator.register(ModItems.CLOAKED_CHAUFFEUR_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModItems.MASHED_POTATOES, Models.GENERATED);

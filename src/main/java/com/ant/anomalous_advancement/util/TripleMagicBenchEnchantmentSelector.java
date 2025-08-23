@@ -1,6 +1,7 @@
 package com.ant.anomalous_advancement.util;
 
 import com.ant.anomalous_advancement.block.ModBlocks;
+import com.ant.anomalous_advancement.item.ModItems;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -385,6 +386,132 @@ public class TripleMagicBenchEnchantmentSelector {
                     .getEntry(Enchantments.LOOTING.getValue());
             cost = 18;
             level = 3;
+        }
+
+        else if ((reagent1.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.HONEY_BLOCK)) ||
+                (reagent1.isOf(Items.FISHING_ROD) && reagent3.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.HONEY_BLOCK)) ||
+                (reagent2.isOf(Items.FISHING_ROD) && reagent1.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.HONEY_BLOCK)) ||
+                (reagent2.isOf(Items.FISHING_ROD) && reagent3.isOf(Items.SLIME_BLOCK) && reagent1.isOf(Items.HONEY_BLOCK)) ||
+                (reagent3.isOf(Items.FISHING_ROD) && reagent1.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.HONEY_BLOCK)) ||
+                (reagent3.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.SLIME_BLOCK) && reagent1.isOf(Items.HONEY_BLOCK))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.LOYALTY.getValue());
+            cost = 18;
+            level = 3;
+        }
+
+        else if ((reagent1.isOf(Items.TROPICAL_FISH) && reagent2.isOf(Items.SEA_PICKLE) && reagent3.isOf(Items.GLOW_INK_SAC)) ||
+                (reagent1.isOf(Items.TROPICAL_FISH) && reagent3.isOf(Items.SEA_PICKLE) && reagent2.isOf(Items.GLOW_INK_SAC)) ||
+                (reagent2.isOf(Items.TROPICAL_FISH) && reagent1.isOf(Items.SEA_PICKLE) && reagent3.isOf(Items.GLOW_INK_SAC)) ||
+                (reagent2.isOf(Items.TROPICAL_FISH) && reagent3.isOf(Items.SEA_PICKLE) && reagent1.isOf(Items.GLOW_INK_SAC)) ||
+                (reagent3.isOf(Items.TROPICAL_FISH) && reagent1.isOf(Items.SEA_PICKLE) && reagent2.isOf(Items.GLOW_INK_SAC)) ||
+                (reagent3.isOf(Items.TROPICAL_FISH) && reagent2.isOf(Items.SEA_PICKLE) && reagent1.isOf(Items.GLOW_INK_SAC))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
+            cost = 18;
+            level = 3;
+        }
+
+        else if ((reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.CAKE) && reagent3.isOf(Items.HONEY_BOTTLE)) ||
+                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.CAKE) && reagent2.isOf(Items.HONEY_BOTTLE)) ||
+                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.CAKE) && reagent3.isOf(Items.HONEY_BOTTLE)) ||
+                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.CAKE) && reagent1.isOf(Items.HONEY_BOTTLE)) ||
+                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.CAKE) && reagent2.isOf(Items.HONEY_BOTTLE)) ||
+                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.CAKE) && reagent1.isOf(Items.HONEY_BOTTLE))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.LURE.getValue());
+            cost = 18;
+            level = 3;
+        }
+
+        else if ((reagent1.isOf(Items.NETHER_STAR) && reagent2.isOf(Items.TOTEM_OF_UNDYING) && reagent3.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent1.isOf(Items.NETHER_STAR) && reagent3.isOf(Items.TOTEM_OF_UNDYING) && reagent2.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent2.isOf(Items.NETHER_STAR) && reagent1.isOf(Items.TOTEM_OF_UNDYING) && reagent3.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent2.isOf(Items.NETHER_STAR) && reagent3.isOf(Items.TOTEM_OF_UNDYING) && reagent1.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent3.isOf(Items.NETHER_STAR) && reagent1.isOf(Items.TOTEM_OF_UNDYING) && reagent2.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent3.isOf(Items.NETHER_STAR) && reagent2.isOf(Items.TOTEM_OF_UNDYING) && reagent1.isOf(Items.ENCHANTED_GOLDEN_APPLE))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.MENDING.getValue());
+            cost = 30;
+            level = 1;
+        }
+
+        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
+                (reagent1.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
+                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
+                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS)) ||
+                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
+                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.PIERCING.getValue());
+            cost = 12;
+            level = 3;
+        }
+
+        else if ((reagent1.isOf(Items.FIREWORK_ROCKET) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
+                (reagent1.isOf(Items.FIREWORK_ROCKET) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
+                (reagent2.isOf(Items.FIREWORK_ROCKET) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
+                (reagent2.isOf(Items.FIREWORK_ROCKET) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS)) ||
+                (reagent3.isOf(Items.FIREWORK_ROCKET) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
+                (reagent3.isOf(Items.FIREWORK_ROCKET) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.PIERCING.getValue());
+            cost = 15;
+            level = 4;
+        }
+
+        else if ((reagent1.isOf(ModItems.IRON_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent1.isOf(ModItems.IRON_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent2.isOf(ModItems.IRON_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent2.isOf(ModItems.IRON_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent3.isOf(ModItems.IRON_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent3.isOf(ModItems.IRON_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.POWER.getValue());
+            cost = 12;
+            level = 3;
+        }
+
+        else if ((reagent1.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent1.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent2.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent2.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent3.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent3.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.POWER.getValue());
+            cost = 15;
+            level = 4;
+        }
+
+        else if ((reagent1.isOf(ModItems.DIAMOND_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent1.isOf(ModItems.DIAMOND_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent2.isOf(ModItems.DIAMOND_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent2.isOf(ModItems.DIAMOND_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent3.isOf(ModItems.DIAMOND_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
+                (reagent3.isOf(ModItems.DIAMOND_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET))
+        ) {
+            entryOpt = world.getRegistryManager()
+                    .getOrThrow(RegistryKeys.ENCHANTMENT)
+                    .getEntry(Enchantments.POWER.getValue());
+            cost = 18;
+            level = 5;
         }
 
         // Double-reagent enchantments

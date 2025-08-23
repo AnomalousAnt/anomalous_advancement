@@ -23,6 +23,10 @@ public class ModItemGroups {
                         entries.add(ModItems.FLINT_HOE);
                         entries.add(ModItems.FLINT_SWORD);
 
+                        entries.add(ModItems.COPPER_BOW);
+                        entries.add(ModItems.IRON_BOW);
+                        entries.add(ModItems.GOLD_BOW);
+
                         entries.add(ModItems.PIGLIN_BRONZE_SHOVEL);
                         entries.add(ModItems.PIGLIN_BRONZE_PICKAXE);
                         entries.add(ModItems.PIGLIN_BRONZE_AXE);
@@ -50,6 +54,9 @@ public class ModItemGroups {
                         entries.add(ModItems.DAMASCUS_STEEL_LEGGINGS);
                         entries.add(ModItems.DAMASCUS_STEEL_BOOTS);
                         entries.add(ModItems.DAMASCUS_STEEL_HORSE_ARMOR);
+
+                        entries.add(ModItems.DIAMOND_BOW);
+                        entries.add(ModItems.NETHERITE_BOW);
 
                         entries.add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
                         entries.add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);

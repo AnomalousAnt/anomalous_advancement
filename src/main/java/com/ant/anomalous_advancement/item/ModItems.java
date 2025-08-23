@@ -43,6 +43,8 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PCOPPER_BOOTS = registerItem("pcopper_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+    public static final Item COPPER_BOW = registerItem("copper_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item PCHAIN_HELMET = registerItem("pchain_helmet",
             setting -> new Item(setting.armor(ModArmorMaterials.PCHAIN_ARMOR_MATERIAL, EquipmentType.HELMET)));
@@ -61,6 +63,8 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PIRON_BOOTS = registerItem("piron_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+    public static final Item IRON_BOW = registerItem("iron_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item PGOLD_HELMET = registerItem("pgold_helmet",
             setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.HELMET)));
@@ -70,6 +74,8 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PGOLD_BOOTS = registerItem("pgold_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+    public static final Item GOLD_BOW = registerItem("gold_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item PIGLIN_BRONZE_PICKAXE = registerItem("piglin_bronze_pickaxe",
             setting -> new Item(setting.pickaxe(ModToolMaterials.PIGLIN_BRONZE_INGOT, 1, -2.8f)));
@@ -131,6 +137,8 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PDIAMOND_BOOTS = registerItem("pdiamond_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+    public static final Item DIAMOND_BOW = registerItem("diamond_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item PNETHERITE_HELMET = registerItem("pnetherite_helmet",
             setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.HELMET)));
@@ -140,6 +148,8 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PNETHERITE_BOOTS = registerItem("pnetherite_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PNETHERITE_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+    public static final Item NETHERITE_BOW = registerItem("netherite_bow",
+            setting -> new BowItem(setting.maxDamage(500)));
 
 
     public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",

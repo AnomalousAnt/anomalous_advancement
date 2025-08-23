@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:netherite_ingot",
+    "Z": "anomalous_advancement:pdiamond_boots"
+  },
+  "pattern": [
+    "   ",
+    "#Z#",
+    "# #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "anomalous_advancement:pnetherite_boots"
+  }
+}

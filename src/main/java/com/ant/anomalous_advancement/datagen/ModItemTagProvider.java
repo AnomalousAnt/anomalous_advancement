@@ -195,6 +195,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PCOPPER_CHESTPLATE)
                 .add(ModItems.PCOPPER_LEGGINGS)
                 .add(ModItems.PCOPPER_BOOTS)
+                .add(ModItems.COPPER_BOW)
 
                 .add(ModItems.PCHAIN_HELMET)
                 .add(ModItems.PCHAIN_CHESTPLATE)
@@ -205,11 +206,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PIRON_CHESTPLATE)
                 .add(ModItems.PIRON_LEGGINGS)
                 .add(ModItems.PIRON_BOOTS)
+                .add(ModItems.IRON_BOW)
 
                 .add(ModItems.PGOLD_HELMET)
                 .add(ModItems.PGOLD_CHESTPLATE)
                 .add(ModItems.PGOLD_LEGGINGS)
                 .add(ModItems.PGOLD_BOOTS)
+                .add(ModItems.GOLD_BOW)
 
                 .add(ModItems.PIGLIN_BRONZE_HELMET)
                 .add(ModItems.PIGLIN_BRONZE_CHESTPLATE)
@@ -227,15 +230,22 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PDIAMOND_CHESTPLATE)
                 .add(ModItems.PDIAMOND_LEGGINGS)
                 .add(ModItems.PDIAMOND_BOOTS)
+                .add(ModItems.DIAMOND_BOW)
 
                 .add(ModItems.PNETHERITE_HELMET)
                 .add(ModItems.PNETHERITE_CHESTPLATE)
                 .add(ModItems.PNETHERITE_LEGGINGS)
-                .add(ModItems.PNETHERITE_BOOTS);
+                .add(ModItems.PNETHERITE_BOOTS)
+                .add(ModItems.NETHERITE_BOW);
 
         valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.PIGLIN_BRONZE_BOW)
-                .add(ModItems.DAMASCUS_STEEL_BOW);
+                .add(ModItems.DAMASCUS_STEEL_BOW)
+                .add(ModItems.COPPER_BOW)
+                .add(ModItems.IRON_BOW)
+                .add(ModItems.GOLD_BOW)
+                .add(ModItems.DIAMOND_BOW)
+                .add(ModItems.NETHERITE_BOW);
 
 
         valueLookupBuilder(ModTags.Items.FLINT_REPAIR)

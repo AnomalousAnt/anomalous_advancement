@@ -109,6 +109,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .offerTo(exporter);
 
+                createShaped(RecipeCategory.TOOLS, ModItems.COPPER_BOW)
+                        .pattern("#XZ")
+                        .pattern("XYZ")
+                        .pattern("#XZ")
+                        .input('X', Items.STICK)
+                        .input('#', Items.COPPER_INGOT)
+                        .input('Z', Items.STRING)
+                        .input('Y', Items.BOW)
+                        .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.IRON_BOW)
+                        .pattern("#XZ")
+                        .pattern("XYZ")
+                        .pattern("#XZ")
+                        .input('X', Items.STICK)
+                        .input('#', Items.IRON_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .input('Y', Items.BOW)
+                        .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.GOLD_BOW)
+                        .pattern("#XZ")
+                        .pattern("XYZ")
+                        .pattern("#XZ")
+                        .input('X', Items.STICK)
+                        .input('#', Items.GOLD_INGOT)
+                        .input('Z', Items.LEATHER)
+                        .input('Y', ModItems.IRON_BOW)
+                        .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.MISC, ModItems.PIGLIN_BRONZE_INGOT, 9)
                         .input(ModBlocks.BLOCK_OF_PIGLIN_BRONZE)
                         .criterion(hasItem(ModItems.PIGLIN_BRONZE_INGOT), conditionsFromItem(ModItems.PIGLIN_BRONZE_INGOT))
@@ -320,7 +353,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("###")
                         .pattern("#Z#")
                         .input('#', ModItems.DAMASCUS_STEEL_INGOT)
-                        .input('Z', ModItems.PLEATHER_CHESTPLATE)
+                        .input('Z', ModItems.PLEATHER_HELMET)
                         .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
                         .offerTo(exporter);
 
@@ -349,6 +382,60 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('#', ModItems.DAMASCUS_STEEL_INGOT)
                         .input('Z', ModItems.PLEATHER_BOOTS)
                         .criterion(hasItem(ModItems.DAMASCUS_STEEL_INGOT), conditionsFromItem(ModItems.DAMASCUS_STEEL_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.DIAMOND_BOW)
+                        .pattern("###")
+                        .pattern("#Y#")
+                        .pattern("###")
+                        .input('#', Items.DIAMOND)
+                        .input('Y', ModItems.DAMASCUS_STEEL_BOW)
+                        .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_HELMET)
+                        .pattern("   ")
+                        .pattern("###")
+                        .pattern("#Z#")
+                        .input('#', Items.NETHERITE_INGOT)
+                        .input('Z', ModItems.PDIAMOND_HELMET)
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_CHESTPLATE)
+                        .pattern("#Z#")
+                        .pattern("###")
+                        .pattern("###")
+                        .input('#', Items.NETHERITE_INGOT)
+                        .input('Z', ModItems.PDIAMOND_CHESTPLATE)
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_LEGGINGS)
+                        .pattern("###")
+                        .pattern("#Z#")
+                        .pattern("# #")
+                        .input('#', Items.NETHERITE_INGOT)
+                        .input('Z', ModItems.PDIAMOND_LEGGINGS)
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_BOOTS)
+                        .pattern("   ")
+                        .pattern("#Z#")
+                        .pattern("# #")
+                        .input('#', Items.NETHERITE_INGOT)
+                        .input('Z', ModItems.PDIAMOND_BOOTS)
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.TOOLS, ModItems.NETHERITE_BOW)
+                        .pattern("###")
+                        .pattern("#Y#")
+                        .pattern("###")
+                        .input('#', Items.NETHERITE_INGOT)
+                        .input('Y', ModItems.NETHERITE_BOW)
+                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
                         .offerTo(exporter);
 
                 createShaped(RecipeCategory.MISC, ModBlocks.ALTAR)

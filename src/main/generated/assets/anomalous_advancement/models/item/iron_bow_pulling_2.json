@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "anomalous_advancement:item/iron_bow_pulling_2"
+  }
+}
