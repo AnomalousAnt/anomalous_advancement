@@ -40,11 +40,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PLEATHER_CHESTPLATE, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, true);
         itemModelGenerator.registerArmor(ModItems.PLEATHER_LEGGINGS, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, true);
         itemModelGenerator.registerArmor(ModItems.PLEATHER_BOOTS, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, true);
+        itemModelGenerator.register(ModItems.PLEATHER_HORSE_ARMOR, Models.GENERATED);
 
         itemModelGenerator.registerArmor(ModItems.PCOPPER_HELMET, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCOPPER_CHESTPLATE, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCOPPER_LEGGINGS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCOPPER_BOOTS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.register(ModItems.PCOPPER_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.upload(ModItems.COPPER_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.COPPER_BOW);
 
@@ -52,11 +54,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PCHAIN_CHESTPLATE, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCHAIN_LEGGINGS, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PCHAIN_BOOTS, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.register(ModItems.PCHAIN_HORSE_ARMOR, Models.GENERATED);
 
         itemModelGenerator.registerArmor(ModItems.PIRON_HELMET, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PIRON_CHESTPLATE, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PIRON_LEGGINGS, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PIRON_BOOTS, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.register(ModItems.PIRON_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.upload(ModItems.IRON_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.IRON_BOW);
 
@@ -64,6 +68,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PGOLD_CHESTPLATE, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PGOLD_LEGGINGS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PGOLD_BOOTS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.register(ModItems.PGOLD_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.upload(ModItems.GOLD_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.GOLD_BOW);
 
@@ -96,13 +101,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_CHESTPLATE, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_LEGGINGS, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_BOOTS, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-
         itemModelGenerator.register(ModItems.DAMASCUS_STEEL_HORSE_ARMOR, Models.GENERATED);
 
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_HELMET, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_CHESTPLATE, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_LEGGINGS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PDIAMOND_BOOTS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.register(ModItems.PDIAMOND_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.upload(ModItems.DIAMOND_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.DIAMOND_BOW);
 
@@ -110,6 +115,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_CHESTPLATE, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_LEGGINGS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerArmor(ModItems.PNETHERITE_BOOTS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.register(ModItems.NETHERITE_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.upload(ModItems.NETHERITE_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.NETHERITE_BOW);
 

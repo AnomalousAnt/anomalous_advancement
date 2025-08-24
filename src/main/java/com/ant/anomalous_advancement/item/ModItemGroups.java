@@ -36,6 +36,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PIGLIN_BRONZE_BOW);
 
                         entries.add(ModItems.PIGLIN_BRONZE_INGOT);
+                        entries.add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
                         entries.add(ModItems.PIGLIN_BRONZE_HELMET);
                         entries.add(ModItems.PIGLIN_BRONZE_CHESTPLATE);
                         entries.add(ModItems.PIGLIN_BRONZE_LEGGINGS);
@@ -50,6 +51,7 @@ public class ModItemGroups {
                         entries.add(ModItems.DAMASCUS_STEEL_BOW);
 
                         entries.add(ModItems.DAMASCUS_STEEL_INGOT);
+                        entries.add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
                         entries.add(ModItems.DAMASCUS_STEEL_HELMET);
                         entries.add(ModItems.DAMASCUS_STEEL_CHESTPLATE);
                         entries.add(ModItems.DAMASCUS_STEEL_LEGGINGS);
@@ -58,9 +60,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.DIAMOND_BOW);
                         entries.add(ModItems.NETHERITE_BOW);
+                        entries.add(ModItems.NETHERITE_HORSE_ARMOR);
 
-                        entries.add(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
-                        entries.add(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
 
                         entries.add(ModBlocks.ALTAR);
                         entries.add(ModBlocks.GILDED_ALTAR);

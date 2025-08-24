@@ -20,15 +20,21 @@ import java.util.Map;
 
 public class ModTrimMaterials {
     public static final RegistryKey<ArmorTrimMaterial> PIGLIN_BRONZE_INGOT = RegistryKey.of(RegistryKeys.TRIM_MATERIAL, Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_ingot"));
+    public static final RegistryKey<ArmorTrimMaterial> DAMASCUS_STEEL_INGOT = RegistryKey.of(RegistryKeys.TRIM_MATERIAL, Identifier.of(Anomalous_Advancement.MOD_ID, "damascus_steel_ingot"));
 
     public static void bootstrap(Registerable<ArmorTrimMaterial> registerable){
         register(registerable, PIGLIN_BRONZE_INGOT, Registries.ITEM.getEntry(ModItems.PIGLIN_BRONZE_INGOT), Style.EMPTY.withColor(TextColor.parse("#bc7410").getOrThrow()));
+        register(registerable, DAMASCUS_STEEL_INGOT, Registries.ITEM.getEntry(ModItems.DAMASCUS_STEEL_INGOT), Style.EMPTY.withColor(TextColor.parse("#86a5d8").getOrThrow()));
     }
 
     private static void register(Registerable<ArmorTrimMaterial> registerable, RegistryKey<ArmorTrimMaterial> armorTrimKey, RegistryEntry<Item> item, Style style){
 
-        ArmorTrimMaterial trimMaterial = new ArmorTrimMaterial(ArmorTrimAssets.of("piglin_bronze_ingot"),
-                Text.translatable(Util.createTranslationKey("trim_material", armorTrimKey.getValue())).fillStyle(style));
+        String assetName = armorTrimKey.getValue().getPath();
+
+        ArmorTrimMaterial trimMaterial = new ArmorTrimMaterial(
+                ArmorTrimAssets.of(assetName),
+                Text.translatable(Util.createTranslationKey("trim_material", armorTrimKey.getValue())).fillStyle(style)
+        );
 
         registerable.register(armorTrimKey, trimMaterial);
     }

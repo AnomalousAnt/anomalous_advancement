@@ -1,0 +1,8 @@
+{
+  "asset_name": "damascus_steel_ingot",
+  "ingredient": "anomalous_advancement:damascus_steel_ingot",
+  "description": {
+    "color": "#86a5d8",
+    "translate": "trim_material.anomalous_advancement.damascus_steel_ingot"
+  }
+}
