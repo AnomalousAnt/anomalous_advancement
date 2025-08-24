@@ -113,8 +113,5 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.upload(ModItems.NETHERITE_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.NETHERITE_BOW);
 
-        itemModelGenerator.register(ModItems.CLOAKED_CHAUFFEUR_MUSIC_DISC, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MASHED_POTATOES, Models.GENERATED);
-
     }
 }

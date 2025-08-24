@@ -155,11 +155,6 @@ public class ModItems {
     public static final Item NETHERITE_BOW = registerItem("netherite_bow",
             setting -> new ModBowItem(setting.maxDamage(288),1.0f,1.5f,1.2f));
 
-
-    public static final Item CLOAKED_CHAUFFEUR_MUSIC_DISC = registerItem("cloaked_chauffeur_music_disc",
-            setting -> new Item(setting.jukeboxPlayable(ModSounds.CLOAKED_CHAUFFEUR_KEY).maxCount(1)));
-    public static final Item MASHED_POTATOES = registerItem("mashed_potatoes", setting -> new Item(setting.food(ModFoodComponents.MASHED_POTATOES)));
-
     private static Item registerItem(String name, Function<Item.Settings, Item> function) {
         return Registry.register(Registries.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name),
                 function.apply(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name)))));
