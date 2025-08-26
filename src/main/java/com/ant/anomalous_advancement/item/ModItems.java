@@ -3,6 +3,8 @@ package com.ant.anomalous_advancement.item;
 import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.item.custom.ModBowItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ProvidesTrimMaterialComponent;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
@@ -103,7 +105,10 @@ public class ModItems {
     public static final Item PIGLIN_BRONZE_BOW = registerItem("piglin_bronze_bow",
             setting -> new ModBowItem(setting.maxDamage(192), 1.0f, 1.0f,0.9f));
 
-    public static final Item PIGLIN_BRONZE_INGOT = registerItem("piglin_bronze_ingot", Item::new);
+    public static final Item PIGLIN_BRONZE_INGOT = registerItem("piglin_bronze_ingot", settings ->
+            new Item(settings.component(DataComponentTypes.PROVIDES_TRIM_MATERIAL,
+                    new ProvidesTrimMaterialComponent(RegistryKey.of(RegistryKeys.TRIM_MATERIAL,
+                            Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_ingot"))))));
 
     public static final Item PIGLIN_BRONZE_HELMET = registerItem("piglin_bronze_helmet",
             setting -> new Item(setting.armor(ModArmorMaterials.PIGLIN_BRONZE_ARMOR_MATERIAL, EquipmentType.HELMET)));
@@ -129,7 +134,10 @@ public class ModItems {
     public static final Item DAMASCUS_STEEL_BOW = registerItem("damascus_steel_bow",
             setting -> new ModBowItem(setting.maxDamage(224),1.1f,1.1f,1.0f));
 
-    public static final Item DAMASCUS_STEEL_INGOT = registerItem("damascus_steel_ingot", Item::new);
+    public static final Item DAMASCUS_STEEL_INGOT = registerItem("damascus_steel_ingot", settings ->
+            new Item(settings.component(DataComponentTypes.PROVIDES_TRIM_MATERIAL,
+                    new ProvidesTrimMaterialComponent(RegistryKey.of(RegistryKeys.TRIM_MATERIAL,
+                            Identifier.of(Anomalous_Advancement.MOD_ID, "damascus_steel_ingot"))))));
 
     public static final Item DAMASCUS_STEEL_HELMET = registerItem("damascus_steel_helmet",
             setting -> new Item(setting.armor(ModArmorMaterials.DAMASCUS_STEEL_ARMOR_MATERIAL, EquipmentType.HELMET)));
