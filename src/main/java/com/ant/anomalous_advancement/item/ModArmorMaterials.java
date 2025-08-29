@@ -23,7 +23,7 @@ public class ModArmorMaterials {
         map.put(EquipmentType.LEGGINGS, 2);
         map.put(EquipmentType.CHESTPLATE, 3);
         map.put(EquipmentType.HELMET, 1);
-        map.put(EquipmentType.BODY, 3);
+        map.put(EquipmentType.BODY, 1);
 
     }), 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0, ModTags.Items.PLEATHER_REPAIR, PLEATHER_KEY);
 
@@ -34,20 +34,20 @@ public class ModArmorMaterials {
         map.put(EquipmentType.LEGGINGS, 2);
         map.put(EquipmentType.CHESTPLATE, 3);
         map.put(EquipmentType.HELMET, 1);
-        map.put(EquipmentType.BODY, 3);
+        map.put(EquipmentType.BODY, 2);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 1, 0, ModTags.Items.PCOPPER_REPAIR, PCOPPER_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, .05F, ModTags.Items.PCOPPER_REPAIR, PCOPPER_KEY);
 
     public static final RegistryKey<EquipmentAsset> PCHAIN_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "pchain"));
     public static final ArmorMaterial PCHAIN_ARMOR_MATERIAL = new ArmorMaterial(90, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
-        map.put(EquipmentType.BOOTS, 2);
-        map.put(EquipmentType.LEGGINGS, 3);
-        map.put(EquipmentType.CHESTPLATE, 4);
-        map.put(EquipmentType.HELMET, 2);
-        map.put(EquipmentType.BODY, 4);
+        map.put(EquipmentType.BOOTS, 1);
+        map.put(EquipmentType.LEGGINGS, 2);
+        map.put(EquipmentType.CHESTPLATE, 3);
+        map.put(EquipmentType.HELMET, 1);
+        map.put(EquipmentType.BODY, 3);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 1, 0, ModTags.Items.PCHAIN_REPAIR, PCHAIN_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 1, .05F, ModTags.Items.PCHAIN_REPAIR, PCHAIN_KEY);
 
     public static final RegistryKey<EquipmentAsset> PIRON_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "piron"));
     public static final ArmorMaterial PIRON_ARMOR_MATERIAL = new ArmorMaterial(120, Util.make(new EnumMap<>(EquipmentType.class), map -> {
@@ -58,62 +58,62 @@ public class ModArmorMaterials {
         map.put(EquipmentType.HELMET, 2);
         map.put(EquipmentType.BODY, 4);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2, 0, ModTags.Items.PIRON_REPAIR, PIRON_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1, .05F, ModTags.Items.PIRON_REPAIR, PIRON_KEY);
 
     public static final RegistryKey<EquipmentAsset> PGOLD_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "pgold"));
     public static final ArmorMaterial PGOLD_ARMOR_MATERIAL = new ArmorMaterial(150, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
-        map.put(EquipmentType.BOOTS, 3);
-        map.put(EquipmentType.LEGGINGS, 4);
-        map.put(EquipmentType.CHESTPLATE, 5);
-        map.put(EquipmentType.HELMET, 3);
+        map.put(EquipmentType.BOOTS, 2);
+        map.put(EquipmentType.LEGGINGS, 3);
+        map.put(EquipmentType.CHESTPLATE, 4);
+        map.put(EquipmentType.HELMET, 2);
         map.put(EquipmentType.BODY, 5);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2, 0, ModTags.Items.PGOLD_REPAIR, PGOLD_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 1, .1F, ModTags.Items.PGOLD_REPAIR, PGOLD_KEY);
 
     public static final RegistryKey<EquipmentAsset> PIGLIN_BRONZE_INGOT_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "piglin_bronze_ingot"));
     public static final ArmorMaterial PIGLIN_BRONZE_ARMOR_MATERIAL = new ArmorMaterial(180, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
-        map.put(EquipmentType.BOOTS, 3);
-        map.put(EquipmentType.LEGGINGS, 4);
-        map.put(EquipmentType.CHESTPLATE, 5);
-        map.put(EquipmentType.HELMET, 3);
-        map.put(EquipmentType.BODY, 5);
+        map.put(EquipmentType.BOOTS, 2);
+        map.put(EquipmentType.LEGGINGS, 3);
+        map.put(EquipmentType.CHESTPLATE, 4);
+        map.put(EquipmentType.HELMET, 2);
+        map.put(EquipmentType.BODY, 6);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 3, 0, ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR, PIGLIN_BRONZE_INGOT_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 2, .1F, ModTags.Items.PIGLIN_BRONZE_INGOT_REPAIR, PIGLIN_BRONZE_INGOT_KEY);
 
     public static final RegistryKey<EquipmentAsset> DAMASCUS_STEEL_INGOT_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "damascus_steel_ingot"));
     public static final ArmorMaterial DAMASCUS_STEEL_ARMOR_MATERIAL = new ArmorMaterial(210, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
-        map.put(EquipmentType.BOOTS, 4);
-        map.put(EquipmentType.LEGGINGS, 5);
-        map.put(EquipmentType.CHESTPLATE, 6);
-        map.put(EquipmentType.HELMET, 4);
-        map.put(EquipmentType.BODY, 4);
+        map.put(EquipmentType.BOOTS, 3);
+        map.put(EquipmentType.LEGGINGS, 4);
+        map.put(EquipmentType.CHESTPLATE, 5);
+        map.put(EquipmentType.HELMET, 3);
+        map.put(EquipmentType.BODY, 7);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3, 0, ModTags.Items.DAMASCUS_STEEL_INGOT_REPAIR, DAMASCUS_STEEL_INGOT_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2, .1F, ModTags.Items.DAMASCUS_STEEL_INGOT_REPAIR, DAMASCUS_STEEL_INGOT_KEY);
 
     public static final RegistryKey<EquipmentAsset> PDIAMOND_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "pdiamond"));
     public static final ArmorMaterial PDIAMOND_ARMOR_MATERIAL = new ArmorMaterial(240, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
-        map.put(EquipmentType.BOOTS, 4);
-        map.put(EquipmentType.LEGGINGS, 5);
-        map.put(EquipmentType.CHESTPLATE, 6);
-        map.put(EquipmentType.HELMET, 4);
-        map.put(EquipmentType.BODY, 4);
+        map.put(EquipmentType.BOOTS, 3);
+        map.put(EquipmentType.LEGGINGS, 4);
+        map.put(EquipmentType.CHESTPLATE, 5);
+        map.put(EquipmentType.HELMET, 3);
+        map.put(EquipmentType.BODY, 8);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4, 0, ModTags.Items.PDIAMOND_REPAIR, PDIAMOND_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2, .15F, ModTags.Items.PDIAMOND_REPAIR, PDIAMOND_KEY);
 
     public static final RegistryKey<EquipmentAsset> PNETHERITE_KEY = RegistryKey.of(REGISTRY_KEY, Identifier.of(Anomalous_Advancement.MOD_ID, "pnetherite"));
     public static final ArmorMaterial PNETHERITE_ARMOR_MATERIAL = new ArmorMaterial(270, Util.make(new EnumMap<>(EquipmentType.class), map -> {
 
-        map.put(EquipmentType.BOOTS, 5);
-        map.put(EquipmentType.LEGGINGS, 6);
-        map.put(EquipmentType.CHESTPLATE, 7);
-        map.put(EquipmentType.HELMET, 5);
-        map.put(EquipmentType.BODY, 4);
+        map.put(EquipmentType.BOOTS, 3);
+        map.put(EquipmentType.LEGGINGS, 4);
+        map.put(EquipmentType.CHESTPLATE, 5);
+        map.put(EquipmentType.HELMET, 3);
+        map.put(EquipmentType.BODY, 9);
 
-    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4, 0, ModTags.Items.PNETHERITE_REPAIR, PNETHERITE_KEY);
+    }), 20, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3, .15F, ModTags.Items.PNETHERITE_REPAIR, PNETHERITE_KEY);
 
 
 }
