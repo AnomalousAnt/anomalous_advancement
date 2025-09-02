@@ -18,11 +18,26 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_STONE_TOOL = createTag("needs_stone_tool");
         public static final TagKey<Block> INCORRECT_FOR_STONE_TOOL = createTag("incorrect_for_stone_tool");
 
+        public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
+        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
+
+        public static final TagKey<Block> NEEDS_IRON_TOOL = createTag("needs_iron_tool");
+        public static final TagKey<Block> INCORRECT_FOR_IRON_TOOL = createTag("incorrect_for_iron_tool");
+
+        public static final TagKey<Block> NEEDS_GOLD_TOOL = createTag("needs_gold_tool");
+        public static final TagKey<Block> INCORRECT_FOR_GOLD_TOOL = createTag("incorrect_for_gold_tool");
+
         public static final TagKey<Block> NEEDS_PIGLIN_BRONZE_INGOT_TOOL = createTag("needs_piglin_bronze_ingot_tool");
         public static final TagKey<Block> INCORRECT_FOR_PIGLIN_BRONZE_INGOT_TOOL = createTag("incorrect_for_piglin_bronze_ingot_tool");
 
         public static final TagKey<Block> NEEDS_DAMASCUS_STEEL_INGOT_TOOL = createTag("needs_damascus_steel_ingot_tool");
         public static final TagKey<Block> INCORRECT_FOR_DAMASCUS_STEEL_INGOT_TOOL = createTag("incorrect_for_damascus_steel_ingot_tool");
+
+        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = createTag("needs_diamond_tool");
+        public static final TagKey<Block> INCORRECT_FOR_DIAMOND_TOOL = createTag("incorrect_for_diamond_tool");
+
+        public static final TagKey<Block> NEEDS_NETHERITE_TOOL = createTag("needs_netherite_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NETHERITE_TOOL = createTag("incorrect_for_netherite_tool");
 
         private static TagKey<Block> createTag(String name){
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Anomalous_Advancement.MOD_ID, name));
