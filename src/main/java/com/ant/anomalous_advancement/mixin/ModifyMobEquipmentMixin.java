@@ -31,7 +31,7 @@ public class ModifyMobEquipmentMixin {
             mob.equipStack(EquipmentSlot.FEET, new ItemStack(ModItems.PIRON_BOOTS));
         }
         if (feet.isOf(Items.DIAMOND_BOOTS)) {
-            mob.equipStack(EquipmentSlot.FEET, new ItemStack(ModItems.PDIAMOND_BOOTS));
+            mob.equipStack(EquipmentSlot.FEET, new ItemStack(ModItems.PIGLIN_BRONZE_BOOTS));
         }
 
         ItemStack legs = mob.getEquippedStack(EquipmentSlot.LEGS);
@@ -48,7 +48,7 @@ public class ModifyMobEquipmentMixin {
             mob.equipStack(EquipmentSlot.LEGS, new ItemStack(ModItems.PIRON_LEGGINGS));
         }
         if (legs.isOf(Items.DIAMOND_LEGGINGS)) {
-            mob.equipStack(EquipmentSlot.LEGS, new ItemStack(ModItems.PDIAMOND_LEGGINGS));
+            mob.equipStack(EquipmentSlot.LEGS, new ItemStack(ModItems.PIGLIN_BRONZE_LEGGINGS));
         }
 
         ItemStack chest = mob.getEquippedStack(EquipmentSlot.CHEST);
@@ -65,7 +65,7 @@ public class ModifyMobEquipmentMixin {
             mob.equipStack(EquipmentSlot.CHEST, new ItemStack(ModItems.PIRON_CHESTPLATE));
         }
         if (chest.isOf(Items.DIAMOND_CHESTPLATE)) {
-            mob.equipStack(EquipmentSlot.CHEST, new ItemStack(ModItems.PDIAMOND_CHESTPLATE));
+            mob.equipStack(EquipmentSlot.CHEST, new ItemStack(ModItems.PIGLIN_BRONZE_CHESTPLATE));
         }
 
         ItemStack head = mob.getEquippedStack(EquipmentSlot.HEAD);
@@ -82,7 +82,7 @@ public class ModifyMobEquipmentMixin {
             mob.equipStack(EquipmentSlot.HEAD, new ItemStack(ModItems.PIRON_HELMET));
         }
         if (head.isOf(Items.DIAMOND_HELMET)) {
-            mob.equipStack(EquipmentSlot.HEAD, new ItemStack(ModItems.PDIAMOND_HELMET));
+            mob.equipStack(EquipmentSlot.HEAD, new ItemStack(ModItems.PIGLIN_BRONZE_HELMET));
         }
     }
 }

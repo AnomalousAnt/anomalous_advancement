@@ -6,6 +6,7 @@ import com.ant.anomalous_advancement.item.ModItemGroups;
 import com.ant.anomalous_advancement.item.ModItems;
 import com.ant.anomalous_advancement.screen.ModScreenHandlers;
 
+import com.ant.anomalous_advancement.util.ModTrades;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -22,6 +23,7 @@ public class Anomalous_Advancement implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
+		ModTrades.registerModTrades();
 	}
 
 }
