@@ -14,6 +14,7 @@ public class ModTrades {
     public static void registerModTrades() {
 
         //ARMORER
+
         var armorerTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.ARMORER);
         if (armorerTrades == null) return;
 
@@ -194,5 +195,81 @@ public class ModTrades {
                     };
                 }
         });
+
+        //LEATHERWORKER
+
+        var leatherworkerTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.LEATHERWORKER);
+        if (leatherworkerTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        leatherworkerTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.LEATHER, 3),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(ModItems.PLEATHER_BOOTS),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        leatherworkerTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.FLINT, 2),
+                        2, 12, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(ModItems.PLEATHER_HELMET),
+                        2, 12, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        leatherworkerTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.RABBIT_HIDE, 1),
+                        2, 16, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(ModItems.PLEATHER_LEGGINGS),
+                        2, 32, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        leatherworkerTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(ModItems.PLEATHER_HORSE_ARMOR),
+                        2, 60, 0.05f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(ModItems.PLEATHER_CHESTPLATE),
+                        2, 40, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        leatherworkerTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 5),
+                        new ItemStack(Items.TURTLE_SCUTE),
+                        2, 40, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 5),
+                        new ItemStack(Items.SADDLE),
+                        2, 40, 0.2f
+                )
+        });
+
     }
 }
