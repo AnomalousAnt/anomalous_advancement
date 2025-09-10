@@ -1,8 +1,20 @@
 package com.ant.anomalous_advancement.util;
 
 import com.ant.anomalous_advancement.item.ModItems;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.component.type.MapPostProcessingComponent;
+import net.minecraft.item.map.MapState;
+import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameters;
+import net.minecraft.loot.context.LootContextTypes;
+import net.minecraft.loot.function.ExplorationMapLootFunction;
+import net.minecraft.loot.function.LootFunction;
+import net.minecraft.registry.tag.StructureTags;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.village.TradedItem;
@@ -49,7 +61,7 @@ public class ModTrades {
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.SHIELD),
-                        2, 36, 0.2f
+                        2, 32, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
@@ -85,6 +97,104 @@ public class ModTrades {
                         2, 20, 0.2f
                 )
         });
+
+        //BUTCHER
+
+        var butcherTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.BUTCHER);
+        if (butcherTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        butcherTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.CHICKEN, 6),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.RABBIT, 6),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        butcherTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.MUTTON, 5),
+                        2, 12, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.PORKCHOP, 5),
+                        2, 12, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        butcherTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.BEEF, 5),
+                        2, 16, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.COOKED_CHICKEN, 4),
+                        2, 16, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        butcherTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.COOKED_RABBIT, 4),
+                        2, 20, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 4),
+                        new ItemStack(Items.RABBIT_STEW, 4),
+                        2, 20, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        butcherTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.COOKED_BEEF, 3),
+                        2, 20, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.SUSPICIOUS_STEW, 1),
+                        2, 20, 0.2f
+                )
+        });
+
+        //CARTOGRAPHER
+
+        var cartographerTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.CARTOGRAPHER);
+        if (cartographerTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        cartographerTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.PAPER, 8),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(Items.MAP),
+                        2, 2, 0.2f
+                )
+        });
+        // ----- APPRENTICE (level 2) -----
+        // ----- JOURNEYMAN (level 3) -----
+        // ----- EXPERT (level 4) -----
+        // ----- MASTER (level 5) -----
 
         //FLETCHER
 

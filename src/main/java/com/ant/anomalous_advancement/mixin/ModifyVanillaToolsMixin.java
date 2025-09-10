@@ -2,7 +2,6 @@ package com.ant.anomalous_advancement.mixin;
 
 import com.ant.anomalous_advancement.util.ModTags;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
