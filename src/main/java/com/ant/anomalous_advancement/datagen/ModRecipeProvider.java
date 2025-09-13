@@ -393,48 +393,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                         .offerTo(exporter);
 
-                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_HELMET)
-                        .pattern("   ")
-                        .pattern("###")
-                        .pattern("#Z#")
-                        .input('#', Items.NETHERITE_INGOT)
-                        .input('Z', ModItems.PDIAMOND_HELMET)
-                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_CHESTPLATE)
-                        .pattern("#Z#")
-                        .pattern("###")
-                        .pattern("###")
-                        .input('#', Items.NETHERITE_INGOT)
-                        .input('Z', ModItems.PDIAMOND_CHESTPLATE)
-                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_LEGGINGS)
-                        .pattern("###")
-                        .pattern("#Z#")
-                        .pattern("# #")
-                        .input('#', Items.NETHERITE_INGOT)
-                        .input('Z', ModItems.PDIAMOND_LEGGINGS)
-                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                        .offerTo(exporter);
-
-                createShaped(RecipeCategory.COMBAT, ModItems.PNETHERITE_BOOTS)
-                        .pattern("   ")
-                        .pattern("#Z#")
-                        .pattern("# #")
-                        .input('#', Items.NETHERITE_INGOT)
-                        .input('Z', ModItems.PDIAMOND_BOOTS)
-                        .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                        .offerTo(exporter);
-
                 createShaped(RecipeCategory.TOOLS, ModItems.NETHERITE_BOW)
                         .pattern("###")
                         .pattern("#Y#")
                         .pattern("###")
                         .input('#', Items.NETHERITE_INGOT)
-                        .input('Y', ModItems.NETHERITE_BOW)
+                        .input('Y', ModItems.DIAMOND_BOW)
                         .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
                         .offerTo(exporter);
 

@@ -3,15 +3,17 @@
   "category": "equipment",
   "key": {
     "#": "minecraft:netherite_ingot",
-    "Y": "anomalous_advancement:diamond_bow"
+    "X": "minecraft:breeze_rod",
+    "Y": "minecraft:blaze_rod",
+    "Z": "minecraft:resin_brick"
   },
   "pattern": [
     "###",
-    "#Y#",
-    "###"
+    " XY",
+    "ZXY"
   ],
   "result": {
     "count": 1,
-    "id": "anomalous_advancement:netherite_bow"
+    "id": "minecraft:netherite_pickaxe"
   }
 }
