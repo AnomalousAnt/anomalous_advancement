@@ -3,6 +3,8 @@ package com.ant.anomalous_advancement.util;
 import com.ant.anomalous_advancement.item.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.map.MapDecorationTypes;
+import net.minecraft.registry.tag.StructureTags;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 import net.minecraft.village.TradedItem;
@@ -174,16 +176,79 @@ public class ModTrades {
                         2, 2, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
-                        new TradedItem(Items.EMERALD, 3),
+                        new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.MAP),
                         2, 2, 0.2f
                 )
         });
         // ----- APPRENTICE (level 2) -----
+        cartographerTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.COMPASS),
+                        2, 12, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(Items.CLOCK),
+                        2, 24, 0.2f
+                )
+        });
         // ----- JOURNEYMAN (level 3) -----
+        cartographerTrades.put(3, new TradeOffers.Factory[]{
+                new TradeOffers.SellMapFactory(
+                        6,
+                        StructureTags.ON_OCEAN_EXPLORER_MAPS,
+                        "filled_map.monument",
+                        MapDecorationTypes.MONUMENT,
+                        2,
+                        96
+                ),
+                new TradeOffers.SellMapFactory(
+                        8,
+                        StructureTags.ON_JUNGLE_EXPLORER_MAPS,
+                        "filled_map.explorer_jungle",
+                        MapDecorationTypes.JUNGLE_TEMPLE,
+                        2,
+                        160
+                ),
+        });
         // ----- EXPERT (level 4) -----
-        // ----- MASTER (level 5) -----
+        cartographerTrades.put(4, new TradeOffers.Factory[]{
 
+                new TradeOffers.SellMapFactory(
+                        12,
+                        StructureTags.ON_TRIAL_CHAMBERS_MAPS,
+                        "filled_map.trial_chambers",
+                        MapDecorationTypes.TRIAL_CHAMBERS,
+                        2,
+                        240
+                ),
+                new TradeOffers.SellMapFactory(
+                        12,
+                        StructureTags.ON_SWAMP_EXPLORER_MAPS,
+                        "filled_map.explorer_swamp",
+                        MapDecorationTypes.SWAMP_HUT,
+                        2,
+                        240
+                )
+        });
+        // ----- MASTER (level 5) -----
+        cartographerTrades.put(5, new TradeOffers.Factory[]{
+                new TradeOffers.SellMapFactory(
+                        16,
+                        StructureTags.ON_WOODLAND_EXPLORER_MAPS,
+                        "filled_map.mansion",
+                        MapDecorationTypes.MANSION,
+                        2,
+                        320
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 32),
+                        new ItemStack(Items.WITHER_SKELETON_SKULL),
+                        2, 640, 0.2f
+                )
+        });
         //CLERIC
 
         var clericTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.CLERIC);
@@ -709,7 +774,7 @@ public class ModTrades {
                 )
         });
 
-        //MASON
+        //SHEPHERD
 
         var shepherdTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.SHEPHERD);
         if (shepherdTrades == null) return;
@@ -781,6 +846,156 @@ public class ModTrades {
                         new TradedItem(Items.EMERALD, 16),
                         new ItemStack(Items.RABBIT_FOOT),
                         2, 20, 0.2f
+                )
+        });
+
+        //TOOLSMITH
+
+        var toolsmithTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.TOOLSMITH);
+        if (toolsmithTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        toolsmithTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.STONE_SHOVEL),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.STONE_HOE),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        toolsmithTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(Items.STONE_PICKAXE),
+                        2, 24, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Shovel
+                        2, 24, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        toolsmithTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Hoe
+                        2, 32, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Pickaxe
+                        2, 48, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        toolsmithTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(Items.IRON_SHOVEL),
+                        2, 60, 0.05f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(Items.IRON_HOE),
+                        2, 60, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        toolsmithTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 4),
+                        new ItemStack(Items.IRON_PICKAXE),
+                        2, 80, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(Items.GOLD_INGOT),
+                        2, 40, 0.2f
+                )
+        });
+
+        //WEAPONSMITH
+
+        var weaponsmithTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.WEAPONSMITH);
+        if (weaponsmithTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        weaponsmithTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(ModItems.FLINT_AXE),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(ModItems.FLINT_SWORD),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        weaponsmithTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(Items.STONE_AXE),
+                        2, 24, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 2),
+                        new ItemStack(Items.STONE_SWORD),
+                        2, 24, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        weaponsmithTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Axe
+                        2, 48, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 3),
+                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Sword
+                        2, 48, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        weaponsmithTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 4),
+                        new ItemStack(Items.IRON_AXE),
+                        2, 80, 0.05f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 4),
+                        new ItemStack(Items.IRON_SWORD),
+                        2, 80, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        weaponsmithTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 5),
+                        new ItemStack(Items.GOLDEN_AXE),
+                        2, 100, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 5),
+                        new ItemStack(Items.GOLDEN_SWORD),
+                        2, 100, 0.2f
                 )
         });
     }
