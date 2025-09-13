@@ -221,7 +221,7 @@ public class ModTrades {
         clericTrades.put(3, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
-                        new ItemStack(Items.INK_SAC),
+                        new ItemStack(Items.GLOW_INK_SAC),
                         2, 16, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
@@ -384,8 +384,8 @@ public class ModTrades {
         // ----- EXPERT (level 4) -----
         fishermanTrades.put(4, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
-                        new TradedItem(Items.EMERALD, 5),
-                        new ItemStack(Items.NAME_TAG),
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.PRISMARINE_CRYSTALS, 3),
                         2, 100, 0.05f
                 ),
                 (entity, random) -> new TradeOffer(
@@ -398,8 +398,8 @@ public class ModTrades {
         // ----- MASTER (level 5) -----
         fishermanTrades.put(5, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
-                        new TradedItem(Items.EMERALD, 1),
-                        new ItemStack(Items.PRISMARINE_CRYSTALS, 3),
+                        new TradedItem(Items.EMERALD, 5),
+                        new ItemStack(Items.TURTLE_SCUTE),
                         2, 20, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
@@ -549,7 +549,7 @@ public class ModTrades {
         leatherworkerTrades.put(5, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
-                        new ItemStack(Items.TURTLE_SCUTE),
+                        new ItemStack(Items.ARMADILLO_SCUTE),
                         2, 40, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
@@ -559,5 +559,229 @@ public class ModTrades {
                 )
         });
 
+        //LIBRARIAN
+
+        var librarianTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.LIBRARIAN);
+        if (librarianTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        librarianTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.PAPER, 3),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.INK_SAC, 2),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        librarianTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.BOOK, 2),
+                        2, 12, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.BRUSH),
+                        2, 12, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        librarianTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.HONEY_BOTTLE),
+                        2, 16, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.LANTERN, 4),
+                        2, 16, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        librarianTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.WRITABLE_BOOK),
+                        2, 20, 0.05f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.BOOKSHELF),
+                        2, 20, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        librarianTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.SPYGLASS),
+                        2, 20, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 5),
+                        new ItemStack(Items.NAME_TAG),
+                        2, 100, 0.2f
+                )
+        });
+
+        //MASON
+
+        var masonTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.MASON);
+        if (masonTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        masonTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.POLISHED_ANDESITE, 12),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.POLISHED_DIORITE, 12),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        masonTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.POLISHED_GRANITE, 12),
+                        2, 12, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.SMOOTH_STONE, 12),
+                        2, 12, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        masonTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.DRIPSTONE_BLOCK, 4),
+                        2, 16, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.BRICK, 32),
+                        2, 16, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        masonTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.LODESTONE),
+                        2, 20, 0.05f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.TERRACOTTA, 16),
+                        2, 20, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        masonTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.QUARTZ_BLOCK, 4),
+                        2, 20, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.TUFF, 4),
+                        2, 20, 0.2f
+                )
+        });
+
+        //MASON
+
+        var shepherdTrades = TradeOffers.PROFESSION_TO_LEVELED_TRADE.get(VillagerProfession.SHEPHERD);
+        if (shepherdTrades == null) return;
+
+        // ----- NOVICE (level 1) -----
+        shepherdTrades.put(1, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.WHITE_WOOL, 4),
+                        2, 2, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.SHEARS),
+                        2, 2, 0.2f
+                )
+        });
+
+        // ----- APPRENTICE (level 2) -----
+        shepherdTrades.put(2, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.EGG, 12),
+                        2, 12, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.WHITE_CARPET, 12),
+                        2, 12, 0.2f
+                )
+        });
+
+        // ----- JOURNEYMAN (level 3) -----
+        shepherdTrades.put(3, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.WHITE_BANNER, 2),
+                        2, 16, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.WHITE_BED, 2),
+                        2, 16, 0.2f
+                )
+        });
+
+        // ----- EXPERT (level 4) -----
+        shepherdTrades.put(4, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.PAINTING, 1),
+                        2, 20, 0.05f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.WHITE_HARNESS),
+                        2, 20, 0.2f
+                )
+        });
+
+        // ----- MASTER (level 5) -----
+        shepherdTrades.put(5, new TradeOffers.Factory[]{
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 1),
+                        new ItemStack(Items.PINK_DYE, 16),
+                        2, 20, 0.2f
+                ),
+                (entity, random) -> new TradeOffer(
+                        new TradedItem(Items.EMERALD, 16),
+                        new ItemStack(Items.RABBIT_FOOT),
+                        2, 20, 0.2f
+                )
+        });
     }
 }
