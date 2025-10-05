@@ -45,7 +45,7 @@ public class TripleMagicBench extends BlockWithEntity implements BlockEntityProv
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
                                          PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
+        if (!world.isClient()) {
             NamedScreenHandlerFactory screenHandlerFactory = ((TripleMagicBenchEntity) world.getBlockEntity(pos));
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
@@ -57,7 +57,7 @@ public class TripleMagicBench extends BlockWithEntity implements BlockEntityProv
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        if (world.isClient) {
+        if (world.isClient()) {
             return null;
         }
         return checkType(type, ModBlockEntities.TRIPLE_MAGIC_BENCH_BE, TripleMagicBenchEntity::tick);

@@ -19,7 +19,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
     public final TripleMagicBenchEntity blockEntity;
 
     public TripleMagicBenchScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(2));
+        this(syncId, playerInventory, playerInventory.player.getEntityWorld().getBlockEntity(pos), new ArrayPropertyDelegate(2));
     }
 
     public TripleMagicBenchScreenHandler(int syncId, PlayerInventory playerInventory,
@@ -107,7 +107,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
             blockEntity.removeStack(TripleMagicBenchEntity.REAGENT_SLOT_2, 1);
             blockEntity.removeStack(TripleMagicBenchEntity.REAGENT_SLOT_3, 1);
 
-            player.getWorld().playSound(
+            player.getEntityWorld().playSound(
                     null,
                     blockEntity.getPos(),
                     net.minecraft.sound.SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,
@@ -185,7 +185,7 @@ public class TripleMagicBenchScreenHandler extends ScreenHandler {
     @Override
     public void onClosed(PlayerEntity player) {
         super.onClosed(player);
-        if (!player.getWorld().isClient) {
+        if (!player.getEntityWorld().isClient()) {
             blockEntity.dropInputItems(player); // try inventory first
         }
     }

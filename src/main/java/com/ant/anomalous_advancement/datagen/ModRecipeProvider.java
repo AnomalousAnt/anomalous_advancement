@@ -77,7 +77,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("   ")
                         .pattern("###")
                         .pattern("#Z#")
-                        .input('#', Items.CHAIN)
+                        .input('#', Items.IRON_CHAIN)
                         .input('Z', ModItems.PLEATHER_HELMET)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .offerTo(exporter);
@@ -86,7 +86,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("#Z#")
                         .pattern("###")
                         .pattern("###")
-                        .input('#', Items.CHAIN)
+                        .input('#', Items.IRON_CHAIN)
                         .input('Z', ModItems.PLEATHER_CHESTPLATE)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .offerTo(exporter);
@@ -95,7 +95,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("###")
                         .pattern("#Z#")
                         .pattern("# #")
-                        .input('#', Items.CHAIN)
+                        .input('#', Items.IRON_CHAIN)
                         .input('Z', ModItems.PLEATHER_LEGGINGS)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .offerTo(exporter);
@@ -104,7 +104,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("   ")
                         .pattern("#Z#")
                         .pattern("# #")
-                        .input('#', Items.CHAIN)
+                        .input('#', Items.IRON_CHAIN)
                         .input('Z', ModItems.PLEATHER_BOOTS)
                         .criterion(hasItem(Items.IRON_NUGGET), conditionsFromItem(Items.IRON_NUGGET))
                         .offerTo(exporter);

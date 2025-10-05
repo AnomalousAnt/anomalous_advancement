@@ -137,14 +137,14 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
 
     @Override
     public void onBlockReplaced(BlockPos pos, BlockState oldState) {
-        if (!world.isClient) {
+        if (!world.isClient()) {
             dropInputItems(null);
         }
         super.onBlockReplaced(pos, oldState);
     }
 
     public void dropInputItems(@Nullable PlayerEntity player) {
-        if (world == null || world.isClient) return;
+        if (world == null || world.isClient()) return;
 
         boolean hasItems = false;
         for (int i = 0; i < getItems().size(); i++) {

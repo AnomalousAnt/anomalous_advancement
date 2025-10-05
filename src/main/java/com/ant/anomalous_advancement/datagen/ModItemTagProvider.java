@@ -266,7 +266,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         valueLookupBuilder(ModTags.Items.PCHAIN_REPAIR)
                 .add(Items.IRON_NUGGET)
-                .add(Items.CHAIN);
+                .add(Items.IRON_CHAIN);
 
         valueLookupBuilder(ModTags.Items.PIRON_REPAIR)
                 .add(Items.IRON_INGOT);
