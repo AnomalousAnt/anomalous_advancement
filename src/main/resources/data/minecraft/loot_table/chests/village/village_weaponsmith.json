@@ -17,7 +17,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:diamond",
+          "name": "minecraft:copper_ingot",
           "weight": 3
         },
         {
@@ -33,7 +33,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:iron_ingot",
+          "name": "minecraft:copper_nugget",
           "weight": 10
         },
         {
@@ -43,13 +43,29 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 7.0,
-                "min": 2.0
+                "max": 3.0,
+                "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gold_ingot",
+          "name": "minecraft:iron_nugget",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:bread",
           "weight": 15
         },
         {
@@ -65,40 +81,38 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:bamboo",
+          "name": "minecraft:apple",
           "weight": 15
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:emerald",
-          "weight": 2
+          "name": "minecraft:copper_pickaxe",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 6.0,
-                "min": 4.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone",
-          "weight": 20
+          "name": "minecraft:copper_sword",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "anomalous_advancement:pcopper_chestplate",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "anomalous_advancement:pcopper_helmet",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "anomalous_advancement:pcopper_leggings",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "anomalous_advancement:pcopper_boots",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -113,8 +127,8 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rotten_flesh",
-          "weight": 16
+          "name": "minecraft:obsidian",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -123,66 +137,64 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 1.0
+                "max": 7.0,
+                "min": 3.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:leather",
+          "name": "minecraft:oak_sapling",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle",
           "weight": 3
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:iron_horse_armor"
+          "name": "anomalous_advancement:pcopper_horse_armor"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_horse_armor"
+          "name": "anomalous_advancement:piron_horse_armor"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_horse_armor"
+          "name": "anomalous_advancement:pgold_horse_armor"
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30.0,
-              "options": "#minecraft:on_random_loot"
-            }
-          ],
-          "name": "minecraft:book"
+          "name": "anomalous_advancement:pdiamond_horse_armor"
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 6.0,
-        "min": 2.0
+        "max": 8.0,
+        "min": 3.0
       }
     },
     {
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "minecraft:empty",
-          "weight": 2
-        },
-        {
           "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 2.0,
+              "count": 1.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:wild_armor_trim_smithing_template"
+          "name": "minecraft:bundle"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 2
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraft:chests/jungle_temple"
+  "random_sequence": "minecraft:chests/village/village_weaponsmith"
 }

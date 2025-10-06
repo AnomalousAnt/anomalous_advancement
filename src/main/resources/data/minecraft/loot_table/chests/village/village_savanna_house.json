@@ -17,28 +17,16 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:map",
-          "weight": 10
+          "name": "minecraft:copper_nugget"
         },
         {
           "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 5.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:paper",
-          "weight": 15
+          "name": "minecraft:short_grass",
+          "weight": 5
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:compass",
+          "name": "minecraft:tall_grass",
           "weight": 5
         },
         {
@@ -55,7 +43,39 @@
             }
           ],
           "name": "minecraft:bread",
-          "weight": 15
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:wheat_seeds",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:emerald",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
@@ -70,14 +90,37 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:stick",
-          "weight": 5
+          "name": "minecraft:acacia_sapling",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:torch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bucket"
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 5.0,
-        "min": 1.0
+        "max": 8.0,
+        "min": 3.0
       }
     },
     {
@@ -102,5 +145,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraft:chests/village/village_cartographer"
+  "random_sequence": "minecraft:chests/village/village_savanna_house"
 }
