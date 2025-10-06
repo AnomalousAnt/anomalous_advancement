@@ -15,6 +15,7 @@ public class ModifyVanillaToolsMixin {
 
     @Shadow @Mutable public static ToolMaterial WOOD;
     @Shadow @Mutable public static ToolMaterial STONE;
+    @Shadow @Mutable public static ToolMaterial COPPER;
     @Shadow @Mutable public static ToolMaterial IRON;
     @Shadow @Mutable public static ToolMaterial DIAMOND;
     @Shadow @Mutable public static ToolMaterial GOLD;
@@ -37,6 +38,15 @@ public class ModifyVanillaToolsMixin {
                 64,
                 2.0F,
                 -0.5F,
+                5,
+                ItemTags.STONE_TOOL_MATERIALS
+        );
+
+        COPPER = new ToolMaterial(
+                ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL,
+                128,
+                2.5F,
+                0F,
                 5,
                 ItemTags.STONE_TOOL_MATERIALS
         );

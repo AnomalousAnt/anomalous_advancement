@@ -24,6 +24,9 @@ public class ModifyMobEquipmentMixin {
         if (feet.isOf(Items.CHAINMAIL_BOOTS)) {
             mob.equipStack(EquipmentSlot.FEET, new ItemStack(ModItems.PCHAIN_BOOTS));
         }
+        if (feet.isOf(Items.COPPER_BOOTS)) {
+            mob.equipStack(EquipmentSlot.FEET, new ItemStack(ModItems.PCOPPER_BOOTS));
+        }
         if (feet.isOf(Items.GOLDEN_BOOTS)) {
             mob.equipStack(EquipmentSlot.FEET, new ItemStack(ModItems.PGOLD_BOOTS));
         }
@@ -40,6 +43,9 @@ public class ModifyMobEquipmentMixin {
         }
         if (legs.isOf(Items.CHAINMAIL_LEGGINGS)) {
             mob.equipStack(EquipmentSlot.LEGS, new ItemStack(ModItems.PCHAIN_LEGGINGS));
+        }
+        if (legs.isOf(Items.COPPER_LEGGINGS)) {
+            mob.equipStack(EquipmentSlot.LEGS, new ItemStack(ModItems.PCOPPER_LEGGINGS));
         }
         if (legs.isOf(Items.GOLDEN_LEGGINGS)) {
             mob.equipStack(EquipmentSlot.LEGS, new ItemStack(ModItems.PGOLD_LEGGINGS));
@@ -58,6 +64,9 @@ public class ModifyMobEquipmentMixin {
         if (chest.isOf(Items.CHAINMAIL_CHESTPLATE)) {
             mob.equipStack(EquipmentSlot.CHEST, new ItemStack(ModItems.PCHAIN_CHESTPLATE));
         }
+        if (chest.isOf(Items.COPPER_CHESTPLATE)) {
+            mob.equipStack(EquipmentSlot.CHEST, new ItemStack(ModItems.PCOPPER_CHESTPLATE));
+        }
         if (chest.isOf(Items.GOLDEN_CHESTPLATE)) {
             mob.equipStack(EquipmentSlot.CHEST, new ItemStack(ModItems.PGOLD_CHESTPLATE));
         }
@@ -74,6 +83,9 @@ public class ModifyMobEquipmentMixin {
         }
         if (head.isOf(Items.CHAINMAIL_HELMET)) {
             mob.equipStack(EquipmentSlot.HEAD, new ItemStack(ModItems.PCHAIN_HELMET));
+        }
+        if (head.isOf(Items.COPPER_HELMET)) {
+            mob.equipStack(EquipmentSlot.HEAD, new ItemStack(ModItems.PCOPPER_HELMET));
         }
         if (head.isOf(Items.GOLDEN_HELMET)) {
             mob.equipStack(EquipmentSlot.HEAD, new ItemStack(ModItems.PGOLD_HELMET));

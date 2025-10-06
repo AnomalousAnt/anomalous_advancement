@@ -877,7 +877,7 @@ public class ModTrades {
                 ),
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
-                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Shovel
+                        new ItemStack(Items.COPPER_SHOVEL),
                         2, 24, 0.2f
                 )
         });
@@ -886,12 +886,12 @@ public class ModTrades {
         toolsmithTrades.put(3, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
-                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Hoe
+                        new ItemStack(Items.COPPER_HOE),
                         2, 32, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
-                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Pickaxe
+                        new ItemStack(Items.COPPER_PICKAXE),
                         2, 48, 0.2f
                 )
         });
@@ -961,12 +961,12 @@ public class ModTrades {
         weaponsmithTrades.put(3, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
-                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Axe
+                        new ItemStack(Items.COPPER_AXE),
                         2, 48, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
-                        new ItemStack(ModItems.PCOPPER_HELMET), // To Be Replaced with Copper Sword
+                        new ItemStack(Items.COPPER_SWORD),
                         2, 48, 0.2f
                 )
         });
