@@ -17,7 +17,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:iron_nugget"
+          "name": "minecraft:copper_ingot"
         },
         {
           "type": "minecraft:item",
@@ -48,7 +48,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:copper_ingot"
+          "name": "minecraft:copper_nugget"
         },
         {
           "type": "minecraft:item",

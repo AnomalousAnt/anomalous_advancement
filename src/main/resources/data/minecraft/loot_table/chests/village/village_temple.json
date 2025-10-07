@@ -80,7 +80,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gold_nugget"
+          "name": "minecraft:copper_nugget"
         },
         {
           "type": "minecraft:item",
