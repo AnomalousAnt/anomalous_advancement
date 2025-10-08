@@ -124,7 +124,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gold_nugget"
+          "name": "minecraft:iron_ingot"
         },
         {
           "type": "minecraft:item",
@@ -295,7 +295,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:gold_nugget"
+          "name": "minecraft:iron_ingot"
         }
       ],
       "rolls": {

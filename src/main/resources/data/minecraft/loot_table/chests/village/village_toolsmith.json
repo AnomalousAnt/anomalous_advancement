@@ -48,7 +48,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:copper_nugget"
+          "name": "minecraft:flint"
         },
         {
           "type": "minecraft:item",

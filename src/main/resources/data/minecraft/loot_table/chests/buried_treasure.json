@@ -6,19 +6,29 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:heart_of_the_sea"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
+                "max": 4.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "minecraft:copper_ingot",
-          "weight": 3
+          "weight": 20
         },
         {
           "type": "minecraft:item",
@@ -27,7 +37,7 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 5.0,
+                "max": 4.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
@@ -43,135 +53,20 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:flint",
+          "name": "minecraft:tnt",
           "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bread",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 3.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:apple",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:copper_pickaxe",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:copper_sword",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pleather_chestplate",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pleather_helmet",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pleather_leggings",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pleather_boots",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 7.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:obsidian",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 7.0,
-                "min": 3.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:oak_sapling",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:saddle",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pleather_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pcopper_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:pbow"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "anomalous_advancement:copper_bow"
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
         "max": 8.0,
-        "min": 3.0
+        "min": 5.0
       }
     },
     {
@@ -182,19 +77,130 @@
           "functions": [
             {
               "add": false,
-              "count": 1.0,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 8.0,
+                "min": 4.0
+              },
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:bundle"
+          "name": "minecraft:emerald",
+          "weight": 5
         },
         {
-          "type": "minecraft:empty",
-          "weight": 2
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:iron_nugget",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 5.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:prismarine_crystals",
+          "weight": 5
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3.0,
+        "min": 1.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_chestplate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_sword"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 2.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:cooked_cod"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4.0,
+                "min": 2.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:cooked_salmon"
+        }
+      ],
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion"
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_potion",
+          "id": "minecraft:water_breathing"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 0.0
+      }
     }
   ],
-  "random_sequence": "minecraft:chests/village/village_weaponsmith"
+  "random_sequence": "minecraft:chests/buried_treasure"
 }
