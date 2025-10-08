@@ -41,6 +41,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PCHAIN_CHESTPLATE);
                         entries.add(ModItems.PCHAIN_LEGGINGS);
                         entries.add(ModItems.PCHAIN_BOOTS);
+                        entries.add(ModItems.PCHAIN_HORSE_ARMOR);
 
                         entries.add(ModItems.PIRON_HELMET);
                         entries.add(ModItems.PIRON_CHESTPLATE);
