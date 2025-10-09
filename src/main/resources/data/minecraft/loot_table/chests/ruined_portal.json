@@ -49,7 +49,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:copper_ingot",
+          "name": "minecraft:copper_nugget",
           "weight": 40
         },
         {
@@ -242,7 +242,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:copper_ingot",
+          "name": "minecraft:flint",
           "weight": 5
         },
         {

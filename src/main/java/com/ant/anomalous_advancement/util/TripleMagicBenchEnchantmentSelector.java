@@ -178,12 +178,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.HONEY_BLOCK)) ||
-                (reagent1.isOf(Items.PRISMARINE_SHARD) && reagent3.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.HONEY_BLOCK)) ||
-                (reagent2.isOf(Items.PRISMARINE_SHARD) && reagent1.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.HONEY_BLOCK)) ||
-                (reagent2.isOf(Items.PRISMARINE_SHARD) && reagent3.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.HONEY_BLOCK)) ||
-                (reagent3.isOf(Items.PRISMARINE_SHARD) && reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.HONEY_BLOCK)) ||
-                (reagent3.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.HONEY_BLOCK))
+        else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.HONEY_BLOCK)) ||
+                (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.HONEY_BLOCK)) ||
+                (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.HONEY_BLOCK)) ||
+                (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.HONEY_BLOCK)) ||
+                (reagent3.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.HONEY_BLOCK)) ||
+                (reagent3.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.HONEY_BLOCK))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -416,12 +416,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.CAKE) && reagent3.isOf(Items.HONEY_BOTTLE)) ||
-                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.CAKE) && reagent2.isOf(Items.HONEY_BOTTLE)) ||
-                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.CAKE) && reagent3.isOf(Items.HONEY_BOTTLE)) ||
-                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.CAKE) && reagent1.isOf(Items.HONEY_BOTTLE)) ||
-                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.CAKE) && reagent2.isOf(Items.HONEY_BOTTLE)) ||
-                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.CAKE) && reagent1.isOf(Items.HONEY_BOTTLE))
+        else if ((reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.COOKIE) && reagent3.isOf(Items.BREAD)) ||
+                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.COOKIE) && reagent2.isOf(Items.BREAD)) ||
+                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.COOKIE) && reagent3.isOf(Items.BREAD)) ||
+                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.COOKIE) && reagent1.isOf(Items.BREAD)) ||
+                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.COOKIE) && reagent2.isOf(Items.BREAD)) ||
+                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.COOKIE) && reagent1.isOf(Items.BREAD))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -514,12 +514,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.WHEAT) && reagent3.isOf(Items.CLAY_BALL)) ||
-                (reagent1.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.WHEAT) && reagent2.isOf(Items.CLAY_BALL)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.WHEAT) && reagent3.isOf(Items.CLAY_BALL)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.WHEAT) && reagent1.isOf(Items.CLAY_BALL)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.WHEAT) && reagent2.isOf(Items.CLAY_BALL)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.WHEAT) && reagent1.isOf(Items.CLAY_BALL))
+        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY_BALL)) ||
+                (reagent1.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY_BALL)) ||
+                (reagent2.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY_BALL)) ||
+                (reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY_BALL)) ||
+                (reagent3.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY_BALL)) ||
+                (reagent3.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY_BALL))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -528,12 +528,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.CLAY)) ||
-                (reagent1.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.CLAY)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.CLAY)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.CLAY)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.CLAY)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.CLAY))
+        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY)) ||
+                (reagent1.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY)) ||
+                (reagent2.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY)) ||
+                (reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY)) ||
+                (reagent3.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY)) ||
+                (reagent3.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -851,12 +851,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.PRISMARINE_SHARD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isEmpty() && reagent3.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isEmpty() && reagent3.isOf(Items.PRISMARINE_SHARD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PRISMARINE_SHARD) && reagent3.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.PRISMARINE_SHARD))
+        else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.isOf(Items.OBSIDIAN)) ||
+                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isEmpty() && reagent3.isOf(Items.PRISMARINE_CRYSTALS)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.OBSIDIAN)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.PRISMARINE_CRYSTALS))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -865,12 +865,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.COMPASS) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.COMPASS) && reagent2.isOf(Items.CLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.CLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.COMPASS)) ||
-                (reagent1.isOf(Items.COMPASS) && reagent2.isEmpty() && reagent3.isOf(Items.CLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.CLOCK) && reagent3.isOf(Items.COMPASS)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.COMPASS) && reagent3.isOf(Items.CLOCK))
+        else if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.SUGAR) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.SUGAR) && reagent2.isOf(Items.CLOCK) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.CLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.SUGAR)) ||
+                (reagent1.isOf(Items.SUGAR) && reagent2.isEmpty() && reagent3.isOf(Items.CLOCK)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.CLOCK) && reagent3.isOf(Items.SUGAR)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.SUGAR) && reagent3.isOf(Items.CLOCK))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -1022,7 +1022,7 @@ public class TripleMagicBenchEnchantmentSelector {
         else if ((reagent1.isOf(Items.BREAD) && reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isEmpty()) ||
                 (reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.BREAD) && reagent3.isEmpty()) ||
                 (reagent1.isOf(Items.BREAD) && reagent2.isEmpty() && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isEmpty() && reagent3.isOf(Items.GLOW_INK_SAC)) ||
+                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isEmpty() && reagent3.isOf(Items.BREAD)) ||
                 (reagent1.isEmpty() && reagent2.isOf(Items.BREAD) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
                 (reagent1.isEmpty() && reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.BREAD))
         ) {
@@ -1061,12 +1061,12 @@ public class TripleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.WHEAT) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.WHEAT) && reagent2.isOf(Items.HAY_BLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.HAY_BLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.WHEAT)) ||
-                (reagent1.isOf(Items.WHEAT) && reagent2.isEmpty() && reagent3.isOf(Items.HAY_BLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.WHEAT)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.WHEAT) && reagent3.isOf(Items.HAY_BLOCK))
+        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.HAY_BLOCK) && reagent3.isEmpty()) ||
+                (reagent1.isOf(Items.HAY_BLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.IRON_CHAIN)) ||
+                (reagent1.isOf(Items.IRON_CHAIN) && reagent2.isEmpty() && reagent3.isOf(Items.HAY_BLOCK)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN)) ||
+                (reagent1.isEmpty() && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.HAY_BLOCK))
         ) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
@@ -1320,17 +1320,17 @@ public class TripleMagicBenchEnchantmentSelector {
                     .getEntry(Enchantments.DENSITY.getValue());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.PRISMARINE_SHARD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.PRISMARINE_SHARD) && reagent1.isEmpty() && reagent2.isEmpty())) {
+        } else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty() && reagent2.isEmpty())) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.DEPTH_STRIDER.getValue());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.CLOCK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.CLOCK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.CLOCK) && reagent1.isEmpty() && reagent2.isEmpty())) {
+        } else if ((reagent1.isOf(Items.SUGAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.isOf(Items.SUGAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.isOf(Items.SUGAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.EFFICIENCY.getValue());
@@ -1416,9 +1416,9 @@ public class TripleMagicBenchEnchantmentSelector {
                     .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.COOKIE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.COOKIE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.COOKIE) && reagent1.isEmpty() && reagent2.isEmpty())) {
+        } else if ((reagent1.isOf(Items.BREAD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.isOf(Items.BREAD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.isOf(Items.BREAD) && reagent1.isEmpty() && reagent2.isEmpty())) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.LURE.getValue());
@@ -1472,9 +1472,9 @@ public class TripleMagicBenchEnchantmentSelector {
                     .getEntry(Enchantments.PUNCH.getValue());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SUGAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SUGAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SUGAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
+        } else if ((reagent1.isOf(Items.SUGAR_CANE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.isOf(Items.SUGAR_CANE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.isOf(Items.SUGAR_CANE) && reagent1.isEmpty() && reagent2.isEmpty())) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.QUICK_CHARGE.getValue());

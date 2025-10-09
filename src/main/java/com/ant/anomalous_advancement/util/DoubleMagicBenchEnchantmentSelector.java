@@ -67,8 +67,8 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.PRISMARINE_SHARD))) {
+        else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN)) ||
+                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.PRISMARINE_CRYSTALS))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.DEPTH_STRIDER.getValue());
@@ -76,8 +76,8 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.COMPASS)) ||
-                (reagent1.isOf(Items.COMPASS) && reagent2.isOf(Items.CLOCK))) {
+        else if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.SUGAR)) ||
+                (reagent1.isOf(Items.SUGAR) && reagent2.isOf(Items.CLOCK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.EFFICIENCY.getValue());
@@ -202,8 +202,8 @@ public class DoubleMagicBenchEnchantmentSelector {
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.WHEAT)) ||
-                (reagent1.isOf(Items.WHEAT) && reagent2.isOf(Items.HAY_BLOCK))) {
+        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN)) ||
+                (reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.HAY_BLOCK))) {
             entryOpt = world.getRegistryManager()
                     .getOrThrow(RegistryKeys.ENCHANTMENT)
                     .getEntry(Enchantments.PROJECTILE_PROTECTION.getValue());
@@ -380,15 +380,15 @@ public class DoubleMagicBenchEnchantmentSelector {
                         .getEntry(Enchantments.DENSITY.getValue());
             cost = 3;
             level = 1;
-            } else if ((reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isEmpty()) ||
-        (reagent2.isOf(Items.PRISMARINE_SHARD) && reagent1.isEmpty())) {
+            } else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty()) ||
+        (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty())) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.DEPTH_STRIDER.getValue());
             cost = 3;
             level = 1;
-            } else if ((reagent1.isOf(Items.CLOCK) && reagent2.isEmpty()) ||
-        (reagent2.isOf(Items.CLOCK) && reagent1.isEmpty())) {
+            } else if ((reagent1.isOf(Items.SUGAR) && reagent2.isEmpty()) ||
+        (reagent2.isOf(Items.SUGAR) && reagent1.isEmpty())) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.EFFICIENCY.getValue());
@@ -464,8 +464,8 @@ public class DoubleMagicBenchEnchantmentSelector {
                         .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
             cost = 3;
             level = 1;
-            } else if ((reagent1.isOf(Items.COOKIE) && reagent2.isEmpty()) ||
-        (reagent2.isOf(Items.COOKIE) && reagent1.isEmpty())) {
+            } else if ((reagent1.isOf(Items.BREAD) && reagent2.isEmpty()) ||
+        (reagent2.isOf(Items.BREAD) && reagent1.isEmpty())) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.LURE.getValue());
@@ -513,8 +513,8 @@ public class DoubleMagicBenchEnchantmentSelector {
                         .getEntry(Enchantments.PUNCH.getValue());
             cost = 3;
             level = 1;
-            } else if ((reagent1.isOf(Items.SUGAR) && reagent2.isEmpty()) ||
-        (reagent2.isOf(Items.SUGAR) && reagent1.isEmpty())) {
+            } else if ((reagent1.isOf(Items.SUGAR_CANE) && reagent2.isEmpty()) ||
+        (reagent2.isOf(Items.SUGAR_CANE) && reagent1.isEmpty())) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.QUICK_CHARGE.getValue());

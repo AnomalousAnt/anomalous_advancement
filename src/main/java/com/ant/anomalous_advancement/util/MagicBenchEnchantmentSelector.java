@@ -49,12 +49,12 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.DENSITY.getValue());
 
-            } else if (reagent.isOf(Items.PRISMARINE_SHARD)) {
+            } else if (reagent.isOf(Items.PRISMARINE_CRYSTALS)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.DEPTH_STRIDER.getValue());
 
-            } else if (reagent.isOf(Items.CLOCK)) {
+            } else if (reagent.isOf(Items.SUGAR)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.EFFICIENCY.getValue());
@@ -109,7 +109,7 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
 
-            } else if (reagent.isOf(Items.COOKIE)) {
+            } else if (reagent.isOf(Items.BREAD)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.LURE.getValue());
@@ -144,7 +144,7 @@ public class MagicBenchEnchantmentSelector {
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.PUNCH.getValue());
 
-            } else if (reagent.isOf(Items.SUGAR)) {
+            } else if (reagent.isOf(Items.SUGAR_CANE)) {
                 entryOpt = world.getRegistryManager()
                         .getOrThrow(RegistryKeys.ENCHANTMENT)
                         .getEntry(Enchantments.QUICK_CHARGE.getValue());
