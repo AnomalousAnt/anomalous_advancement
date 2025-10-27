@@ -600,7 +600,7 @@ public class ModTrades {
         leatherworkerTrades.put(4, new TradeOffers.Factory[]{
                 (entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
-                        new ItemStack(ModItems.PLEATHER_HORSE_ARMOR),
+                        new ItemStack(Items.LEATHER_HORSE_ARMOR),
                         2, 60, 0.2f
                 ),
                 (entity, random) -> new TradeOffer(

@@ -28,14 +28,12 @@ public class ModItemGroups {
                         entries.add(ModItems.PLEATHER_LEGGINGS);
                         entries.add(ModItems.PLEATHER_BOOTS);
                         entries.add(ModItems.PBOW);
-                        entries.add(ModItems.PLEATHER_HORSE_ARMOR);
 
                         entries.add(ModItems.PCOPPER_HELMET);
                         entries.add(ModItems.PCOPPER_CHESTPLATE);
                         entries.add(ModItems.PCOPPER_LEGGINGS);
                         entries.add(ModItems.PCOPPER_BOOTS);
                         entries.add(ModItems.COPPER_BOW);
-                        entries.add(ModItems.PCOPPER_HORSE_ARMOR);
 
                         entries.add(ModItems.PCHAIN_HELMET);
                         entries.add(ModItems.PCHAIN_CHESTPLATE);
@@ -48,14 +46,12 @@ public class ModItemGroups {
                         entries.add(ModItems.PIRON_LEGGINGS);
                         entries.add(ModItems.PIRON_BOOTS);
                         entries.add(ModItems.IRON_BOW);
-                        entries.add(ModItems.PIRON_HORSE_ARMOR);
 
                         entries.add(ModItems.PGOLD_HELMET);
                         entries.add(ModItems.PGOLD_CHESTPLATE);
                         entries.add(ModItems.PGOLD_LEGGINGS);
                         entries.add(ModItems.PGOLD_BOOTS);
                         entries.add(ModItems.GOLD_BOW);
-                        entries.add(ModItems.PGOLD_HORSE_ARMOR);
 
                         entries.add(ModItems.PIGLIN_BRONZE_SHOVEL);
                         entries.add(ModItems.PIGLIN_BRONZE_PICKAXE);
@@ -92,7 +88,6 @@ public class ModItemGroups {
                         entries.add(ModItems.PDIAMOND_LEGGINGS);
                         entries.add(ModItems.PDIAMOND_BOOTS);
                         entries.add(ModItems.DIAMOND_BOW);
-                        entries.add(ModItems.PDIAMOND_HORSE_ARMOR);
 
                         entries.add(ModItems.PNETHERITE_HELMET);
                         entries.add(ModItems.PNETHERITE_CHESTPLATE);

@@ -156,7 +156,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:pcopper_horse_armor"
+          "name": "minecraft:copper_horse_armor"
         },
         {
           "type": "minecraft:item",
@@ -164,11 +164,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:piron_horse_armor"
+          "name": "minecraft:iron_horse_armor"
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:pgold_horse_armor"
+          "name": "minecraft:golden_horse_armor"
         },
         {
           "type": "minecraft:item",

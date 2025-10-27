@@ -5,13 +5,11 @@
   "item.anomalous_advancement.flint_axe": "Flint Axe",
   "item.anomalous_advancement.flint_hoe": "Flint Hoe",
   "item.anomalous_advancement.pbow": "Bow",
-  "item.anomalous_advancement.pleather_horse_armor": "Leather Horse Armor",
   "item.anomalous_advancement.pleather_helmet": "Leather Helmet",
   "item.anomalous_advancement.pleather_chestplate": "Leather Chestplate",
   "item.anomalous_advancement.pleather_leggings": "Leather Leggings",
   "item.anomalous_advancement.pleather_boots": "Leather Boots",
 
-  "item.anomalous_advancement.pcopper_horse_armor": "Copper Horse Armor",
   "item.anomalous_advancement.pcopper_helmet": "Copper Helmet",
   "item.anomalous_advancement.pcopper_chestplate": "Copper Chestplate",
   "item.anomalous_advancement.pcopper_leggings": "Copper Leggings",
@@ -24,14 +22,12 @@
   "item.anomalous_advancement.pchain_leggings": "Chain Leggings",
   "item.anomalous_advancement.pchain_boots": "Chain Boots",
 
-  "item.anomalous_advancement.piron_horse_armor": "Iron Horse Armor",
   "item.anomalous_advancement.piron_helmet": "Iron Helmet",
   "item.anomalous_advancement.piron_chestplate": "Iron Chestplate",
   "item.anomalous_advancement.piron_leggings": "Iron Leggings",
   "item.anomalous_advancement.piron_boots": "Iron Boots",
   "item.anomalous_advancement.iron_bow": "Iron Bow",
 
-  "item.anomalous_advancement.pgold_horse_armor": "Gold Horse Armor",
   "item.anomalous_advancement.pgold_helmet": "Gold Helmet",
   "item.anomalous_advancement.pgold_chestplate": "Gold Chestplate",
   "item.anomalous_advancement.pgold_leggings": "Gold Leggings",
@@ -70,7 +66,6 @@
   "trim_material.anomalous_advancement.damascus_steel_ingot": "Damascus Steel Material",
   "block.anomalous_advancement.block_of_damascus_steel": "Block of Damascus Steel",
 
-  "item.anomalous_advancement.pdiamond_horse_armor": "Diamond Horse Armor",
   "item.anomalous_advancement.pdiamond_helmet": "Diamond Helmet",
   "item.anomalous_advancement.pdiamond_chestplate": "Diamond Chestplate",
   "item.anomalous_advancement.pdiamond_leggings": "Diamond Leggings",

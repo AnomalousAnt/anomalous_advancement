@@ -40,8 +40,6 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PLEATHER_BOOTS = registerItem("pleather_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL, EquipmentType.BOOTS)));
-    public static final Item PLEATHER_HORSE_ARMOR = registerItem("pleather_horse_armor",
-            setting -> new Item(setting.horseArmor(ModArmorMaterials.PLEATHER_ARMOR_MATERIAL).maxCount(1)));
 
     public static final Item PCOPPER_HELMET = registerItem("pcopper_helmet",
             setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.HELMET)));
@@ -51,8 +49,6 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PCOPPER_BOOTS = registerItem("pcopper_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL, EquipmentType.BOOTS)));
-    public static final Item PCOPPER_HORSE_ARMOR = registerItem("pcopper_horse_armor",
-            setting -> new Item(setting.horseArmor(ModArmorMaterials.PCOPPER_ARMOR_MATERIAL).maxCount(1)));
     public static final Item COPPER_BOW = registerItem("copper_bow",
             setting -> new ModBowItem(setting.maxDamage(96), 1.0f, 0.7f, 0.6f));
 
@@ -75,8 +71,6 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PIRON_BOOTS = registerItem("piron_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PIRON_ARMOR_MATERIAL, EquipmentType.BOOTS)));
-    public static final Item PIRON_HORSE_ARMOR = registerItem("piron_horse_armor",
-            setting -> new Item(setting.horseArmor(ModArmorMaterials.PIRON_ARMOR_MATERIAL).maxCount(1)));
     public static final Item IRON_BOW = registerItem("iron_bow",
             setting -> new ModBowItem(setting.maxDamage(128), 1.0f, 0.8f,0.7f));
 
@@ -88,8 +82,6 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PGOLD_BOOTS = registerItem("pgold_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL, EquipmentType.BOOTS)));
-    public static final Item PGOLD_HORSE_ARMOR = registerItem("pgold_horse_armor",
-            setting -> new Item(setting.horseArmor(ModArmorMaterials.PGOLD_ARMOR_MATERIAL).maxCount(1)));
     public static final Item GOLD_BOW = registerItem("gold_bow",
             setting -> new ModBowItem(setting.maxDamage(160), 1.0f,0.9f,0.8f));
 
@@ -165,8 +157,6 @@ public class ModItems {
             setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
     public static final Item PDIAMOND_BOOTS = registerItem("pdiamond_boots",
             setting -> new Item(setting.armor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL, EquipmentType.BOOTS)));
-    public static final Item PDIAMOND_HORSE_ARMOR = registerItem("pdiamond_horse_armor",
-            setting -> new Item(setting.horseArmor(ModArmorMaterials.PDIAMOND_ARMOR_MATERIAL).maxCount(1)));
     public static final Item DIAMOND_BOW = registerItem("diamond_bow",
             setting -> new ModBowItem(setting.maxDamage(256),1.0f,1.3f,1.1f));
 

@@ -134,12 +134,12 @@
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:pleather_horse_armor",
+          "name": "minecraft:leather_horse_armor",
           "weight": 15
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:pcopper_horse_armor",
+          "name": "minecraft:copper_horse_armor",
           "weight": 15
         },
         {
@@ -149,7 +149,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:piron_horse_armor",
+          "name": "minecraft:iron_horse_armor",
           "weight": 5
         },
         {

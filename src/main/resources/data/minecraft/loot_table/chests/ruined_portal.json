@@ -200,7 +200,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "anomalous_advancement:pcopper_horse_armor",
+          "name": "minecraft:copper_horse_armor",
           "weight": 5
         },
         {
