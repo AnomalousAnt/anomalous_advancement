@@ -20,12 +20,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         armorerTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COAL, 4),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(ModItems.PCOPPER_BOOTS),
                         2, 4, 0.2f
@@ -34,12 +34,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         armorerTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BELL),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(ModItems.PCOPPER_HELMET),
                         2, 24, 0.2f
@@ -48,12 +48,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         armorerTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.SHIELD),
                         2, 32, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(ModItems.PCOPPER_LEGGINGS, 8),
                         2, 48, 0.2f
@@ -62,12 +62,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         armorerTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COPPER_INGOT),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(ModItems.PCOPPER_CHESTPLATE),
                         2, 80, 0.2f
@@ -76,12 +76,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         armorerTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.IRON_INGOT),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.RESIN_CLUMP),
                         2, 20, 0.2f
@@ -95,12 +95,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         butcherTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.CHICKEN, 6),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.RABBIT, 6),
                         2, 2, 0.2f
@@ -109,12 +109,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         butcherTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.MUTTON, 5),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PORKCHOP, 5),
                         2, 12, 0.2f
@@ -123,12 +123,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         butcherTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BEEF, 5),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COOKED_CHICKEN, 4),
                         2, 16, 0.2f
@@ -137,12 +137,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         butcherTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COOKED_RABBIT, 4),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.RABBIT_STEW, 4),
                         2, 20, 0.2f
@@ -151,12 +151,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         butcherTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COOKED_BEEF, 3),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SUSPICIOUS_STEW, 1),
                         2, 20, 0.2f
@@ -170,12 +170,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         cartographerTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PAPER, 8),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.MAP),
                         2, 2, 0.2f
@@ -183,12 +183,12 @@ public class ModTrades {
         });
         // ----- APPRENTICE (level 2) -----
         cartographerTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COMPASS),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.CLOCK),
                         2, 24, 0.2f
@@ -243,7 +243,7 @@ public class ModTrades {
                         2,
                         320
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 32),
                         new ItemStack(Items.WITHER_SKELETON_SKULL),
                         2, 640, 0.2f
@@ -256,12 +256,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         clericTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.REDSTONE, 2),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.CLAY_BALL, 8),
                         2, 2, 0.2f
@@ -270,12 +270,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         clericTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.LAPIS_LAZULI, 1),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.AMETHYST_SHARD, 1),
                         2, 36, 0.2f
@@ -284,12 +284,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         clericTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.GLOW_INK_SAC),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.NAUTILUS_SHELL),
                         2, 48, 0.2f
@@ -298,12 +298,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         clericTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.FIRE_CHARGE),
                         2, 80, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.GOAT_HORN),
                         2, 80, 0.2f
@@ -312,12 +312,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         clericTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.WIND_CHARGE),
                         2, 80, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.EXPERIENCE_BOTTLE),
                         2, 80, 0.2f
@@ -331,12 +331,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         farmerTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WHEAT_SEEDS, 32),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.POTATO, 32),
                         2, 2, 0.2f
@@ -345,12 +345,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         farmerTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SWEET_BERRIES, 32),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BEETROOT_SEEDS, 32),
                         2, 12, 0.2f
@@ -359,12 +359,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         farmerTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.CARROT, 32),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SUGAR_CANE, 16),
                         2, 32, 0.2f
@@ -373,12 +373,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         farmerTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.MELON_SEEDS, 16),
                         2, 40, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.PUMPKIN_SEEDS, 16),
                         2, 40, 0.2f
@@ -387,12 +387,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         farmerTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.BAMBOO, 12),
                         2, 80, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.APPLE, 8),
                         2, 60, 0.2f
@@ -406,12 +406,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         fishermanTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.COD, 6),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SALMON, 6),
                         2, 2, 0.2f
@@ -420,12 +420,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         fishermanTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PUFFERFISH, 4),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.TROPICAL_FISH, 4),
                         2, 12, 0.2f
@@ -434,12 +434,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         fishermanTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.LILY_PAD, 8),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.FISHING_ROD),
                         2, 16, 0.2f
@@ -448,12 +448,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         fishermanTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PRISMARINE_CRYSTALS, 3),
                         2, 100, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.COCOA_BEANS, 16),
                         2, 40, 0.2f
@@ -462,12 +462,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         fishermanTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.TURTLE_SCUTE),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 16),
                         new ItemStack(Items.HEART_OF_THE_SEA, 8),
                         2, 320, 0.2f
@@ -481,12 +481,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         fletcherTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.STRING, 3),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.ARROW, 8),
                         2, 2, 0.2f
@@ -495,12 +495,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         fletcherTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.FEATHER, 3),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.CROSSBOW),
                         2, 24, 0.2f
@@ -509,12 +509,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         fletcherTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(ModItems.COPPER_BOW),
                         2, 48, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.SPECTRAL_ARROW, 8),
                         2, 32, 0.2f
@@ -523,12 +523,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         fletcherTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(ModItems.IRON_BOW),
                         2, 80, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.FIREWORK_STAR),
                         2, 60, 0.2f
@@ -537,12 +537,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         fletcherTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.FIREWORK_ROCKET),
                         2, 80, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.TIPPED_ARROW, 8),
                         2, 60, 0.2f
@@ -556,12 +556,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         leatherworkerTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.LEATHER, 3),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(ModItems.PLEATHER_BOOTS),
                         2, 2, 0.2f
@@ -570,12 +570,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         leatherworkerTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.FLINT, 2),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(ModItems.PLEATHER_HELMET),
                         2, 12, 0.2f
@@ -584,12 +584,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         leatherworkerTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.RABBIT_HIDE, 1),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(ModItems.PLEATHER_LEGGINGS),
                         2, 32, 0.2f
@@ -598,12 +598,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         leatherworkerTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.LEATHER_HORSE_ARMOR),
                         2, 60, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(ModItems.PLEATHER_CHESTPLATE),
                         2, 40, 0.2f
@@ -612,12 +612,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         leatherworkerTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.ARMADILLO_SCUTE),
                         2, 40, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.SADDLE),
                         2, 40, 0.2f
@@ -631,12 +631,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         librarianTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PAPER, 3),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.INK_SAC, 2),
                         2, 2, 0.2f
@@ -645,12 +645,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         librarianTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BOOK, 2),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BRUSH),
                         2, 12, 0.2f
@@ -659,12 +659,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         librarianTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.HONEY_BOTTLE),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.LANTERN, 4),
                         2, 16, 0.2f
@@ -673,12 +673,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         librarianTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WRITABLE_BOOK),
                         2, 20, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BOOKSHELF),
                         2, 20, 0.2f
@@ -687,12 +687,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         librarianTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SPYGLASS),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.NAME_TAG),
                         2, 100, 0.2f
@@ -706,12 +706,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         masonTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.POLISHED_ANDESITE, 12),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.POLISHED_DIORITE, 12),
                         2, 2, 0.2f
@@ -720,12 +720,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         masonTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.POLISHED_GRANITE, 12),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SMOOTH_STONE, 12),
                         2, 12, 0.2f
@@ -734,12 +734,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         masonTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.DRIPSTONE_BLOCK, 4),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.BRICK, 32),
                         2, 16, 0.2f
@@ -748,12 +748,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         masonTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.LODESTONE),
                         2, 20, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.TERRACOTTA, 16),
                         2, 20, 0.2f
@@ -762,12 +762,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         masonTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.QUARTZ_BLOCK, 4),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.TUFF, 4),
                         2, 20, 0.2f
@@ -781,12 +781,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         shepherdTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WHITE_WOOL, 4),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.SHEARS),
                         2, 2, 0.2f
@@ -795,12 +795,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         shepherdTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.EGG, 12),
                         2, 12, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WHITE_CARPET, 12),
                         2, 12, 0.2f
@@ -809,12 +809,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         shepherdTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WHITE_BANNER, 2),
                         2, 16, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WHITE_BED, 2),
                         2, 16, 0.2f
@@ -823,12 +823,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         shepherdTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PAINTING, 1),
                         2, 20, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.WHITE_HARNESS),
                         2, 20, 0.2f
@@ -837,12 +837,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         shepherdTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.PINK_DYE, 16),
                         2, 20, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 16),
                         new ItemStack(Items.RABBIT_FOOT),
                         2, 20, 0.2f
@@ -856,12 +856,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         toolsmithTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.STONE_SHOVEL),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(Items.STONE_HOE),
                         2, 2, 0.2f
@@ -870,12 +870,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         toolsmithTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.STONE_PICKAXE),
                         2, 24, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.COPPER_SHOVEL),
                         2, 24, 0.2f
@@ -884,12 +884,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         toolsmithTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.COPPER_HOE),
                         2, 32, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.COPPER_PICKAXE),
                         2, 48, 0.2f
@@ -898,12 +898,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         toolsmithTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.IRON_SHOVEL),
                         2, 60, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.IRON_HOE),
                         2, 60, 0.2f
@@ -912,12 +912,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         toolsmithTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.IRON_PICKAXE),
                         2, 80, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.GOLD_INGOT),
                         2, 40, 0.2f
@@ -931,12 +931,12 @@ public class ModTrades {
 
         // ----- NOVICE (level 1) -----
         weaponsmithTrades.put(1, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(ModItems.FLINT_AXE),
                         2, 2, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 1),
                         new ItemStack(ModItems.FLINT_SWORD),
                         2, 2, 0.2f
@@ -945,12 +945,12 @@ public class ModTrades {
 
         // ----- APPRENTICE (level 2) -----
         weaponsmithTrades.put(2, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.STONE_AXE),
                         2, 24, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 2),
                         new ItemStack(Items.STONE_SWORD),
                         2, 24, 0.2f
@@ -959,12 +959,12 @@ public class ModTrades {
 
         // ----- JOURNEYMAN (level 3) -----
         weaponsmithTrades.put(3, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.COPPER_AXE),
                         2, 48, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 3),
                         new ItemStack(Items.COPPER_SWORD),
                         2, 48, 0.2f
@@ -973,12 +973,12 @@ public class ModTrades {
 
         // ----- EXPERT (level 4) -----
         weaponsmithTrades.put(4, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.IRON_AXE),
                         2, 80, 0.05f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 4),
                         new ItemStack(Items.IRON_SWORD),
                         2, 80, 0.2f
@@ -987,12 +987,12 @@ public class ModTrades {
 
         // ----- MASTER (level 5) -----
         weaponsmithTrades.put(5, new TradeOffers.Factory[]{
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.GOLDEN_AXE),
                         2, 100, 0.2f
                 ),
-                (entity, random) -> new TradeOffer(
+                (entity, random, level) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 5),
                         new ItemStack(Items.GOLDEN_SWORD),
                         2, 100, 0.2f
