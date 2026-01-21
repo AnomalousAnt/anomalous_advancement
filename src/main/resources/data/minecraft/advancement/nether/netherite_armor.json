@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:nether/obtain_ancient_debris",
+  "criteria": {
+    "netherite_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "anomalous_advancement:pnetherite_helmet"
+          },
+          {
+            "items": "anomalous_advancement:pnetherite_chestplate"
+          },
+          {
+            "items": "anomalous_advancement:pnetherite_leggings"
+          },
+          {
+            "items": "anomalous_advancement:pnetherite_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.nether.netherite_armor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "anomalous_advancement:pnetherite_chestplate"
+    },
+    "title": {
+      "translate": "advancements.nether.netherite_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "netherite_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
