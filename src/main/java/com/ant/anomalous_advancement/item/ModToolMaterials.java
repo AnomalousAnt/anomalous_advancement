@@ -1,7 +1,7 @@
 package com.ant.anomalous_advancement.item;
 
 import com.ant.anomalous_advancement.util.ModTags;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.item.ToolMaterial;
 
 
 public class ModToolMaterials {

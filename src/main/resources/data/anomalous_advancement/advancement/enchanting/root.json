@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "coal": {
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:coal"]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:gui/advancements/backgrounds/stone",
+    "description": {
+      "translate": "advancements.enchanting.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "anomalous_advancement:resplendent_altar"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.enchanting.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "coal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

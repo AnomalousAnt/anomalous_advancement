@@ -1,11 +1,11 @@
 package com.ant.anomalous_advancement.util;
 
 import com.ant.anomalous_advancement.Anomalous_Advancement;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks{
@@ -40,7 +40,7 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_NETHERITE_TOOL = createTag("incorrect_for_netherite_tool");
 
         private static TagKey<Block> createTag(String name){
-            return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Anomalous_Advancement.MOD_ID, name));
+            return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Anomalous_Advancement.MOD_ID, name));
         }
     }
 
@@ -57,9 +57,10 @@ public class ModTags {
         public static final TagKey<Item> DAMASCUS_STEEL_INGOT_REPAIR = createTag("damascus_steel_ingot_repair");
         public static final TagKey<Item> PDIAMOND_REPAIR = createTag("pdiamond_repair");
         public static final TagKey<Item> PNETHERITE_REPAIR = createTag("pnetherite_repair");
+        public static final TagKey<Item> CUSTOM_BOWS = createTag("custom_bows");
 
         private static TagKey<Item> createTag(String name) {
-            return TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, name));
+            return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Anomalous_Advancement.MOD_ID, name));
         }
     }
 }

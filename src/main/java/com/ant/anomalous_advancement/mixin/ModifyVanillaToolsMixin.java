@@ -1,8 +1,8 @@
 package com.ant.anomalous_advancement.mixin;
 
 import com.ant.anomalous_advancement.util.ModTags;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ToolMaterial;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;

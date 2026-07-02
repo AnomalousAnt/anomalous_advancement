@@ -3,24 +3,23 @@ package com.ant.anomalous_advancement.datagen;
 import com.ant.anomalous_advancement.Anomalous_Advancement;
 import com.ant.anomalous_advancement.item.ModItems;
 import com.ant.anomalous_advancement.util.ModTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
-
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
+public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
+    public ModItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(output, completableFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void addTags(HolderLookup.Provider wrapperLookup) {
 
         valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.FLINT_SWORD)
@@ -43,7 +42,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PIGLIN_BRONZE_HOE)
                 .add(ModItems.DAMASCUS_STEEL_HOE);
 
-        valueLookupBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of(Anomalous_Advancement.MOD_ID, "modded_stone_tool_materials")))
+        valueLookupBuilder(TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Anomalous_Advancement.MOD_ID, "modded_stone_tool_materials")))
                 .add(Items.POLISHED_ANDESITE)
                 .add(Items.POLISHED_DIORITE)
                 .add(Items.POLISHED_GRANITE);
@@ -246,6 +245,16 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.PBOW)
                 .add(ModItems.IRON_BOW)
                 .add(ModItems.GOLD_BOW)
+                .add(ModItems.DIAMOND_BOW)
+                .add(ModItems.NETHERITE_BOW);
+
+        valueLookupBuilder(ModTags.Items.CUSTOM_BOWS)
+                .add(ModItems.PBOW)
+                .add(ModItems.COPPER_BOW)
+                .add(ModItems.IRON_BOW)
+                .add(ModItems.GOLD_BOW)
+                .add(ModItems.PIGLIN_BRONZE_BOW)
+                .add(ModItems.DAMASCUS_STEEL_BOW)
                 .add(ModItems.DIAMOND_BOW)
                 .add(ModItems.NETHERITE_BOW);
 

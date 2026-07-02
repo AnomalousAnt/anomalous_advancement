@@ -4,115 +4,115 @@ import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModArmorMaterials;
 import com.ant.anomalous_advancement.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.ItemModelGenerator;
-import net.minecraft.client.data.Models;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 
 public class ModModelProvider extends FabricModelProvider {
-    public ModModelProvider(FabricDataOutput output) {
+    public ModModelProvider(FabricPackOutput output) {
         super(output);
     }
 
 
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ALTAR);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GILDED_ALTAR);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RESPLENDENT_ALTAR);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.ALTAR);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.GILDED_ALTAR);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.RESPLENDENT_ALTAR);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
+        blockStateModelGenerator.createTrivialCube(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.FLINT_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.FLINT_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.FLINT_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.FLINT_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.FLINT_SWORD, Models.HANDHELD);
-        itemModelGenerator.upload(ModItems.PBOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.PBOW);
+    public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+        itemModelGenerator.generateFlatItem(ModItems.FLINT_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.FLINT_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.FLINT_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.FLINT_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.FLINT_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.createFlatItemModel(ModItems.PBOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.PBOW);
 
-        itemModelGenerator.registerArmor(ModItems.PLEATHER_HELMET, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, true);
-        itemModelGenerator.registerArmor(ModItems.PLEATHER_CHESTPLATE, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, true);
-        itemModelGenerator.registerArmor(ModItems.PLEATHER_LEGGINGS, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, true);
-        itemModelGenerator.registerArmor(ModItems.PLEATHER_BOOTS, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, true);
+        itemModelGenerator.generateTrimmableItem(ModItems.PLEATHER_HELMET, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, true);
+        itemModelGenerator.generateTrimmableItem(ModItems.PLEATHER_CHESTPLATE, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, true);
+        itemModelGenerator.generateTrimmableItem(ModItems.PLEATHER_LEGGINGS, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, true);
+        itemModelGenerator.generateTrimmableItem(ModItems.PLEATHER_BOOTS, ModArmorMaterials.PLEATHER_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, true);
 
-        itemModelGenerator.registerArmor(ModItems.PCOPPER_HELMET, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PCOPPER_CHESTPLATE, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PCOPPER_LEGGINGS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PCOPPER_BOOTS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.upload(ModItems.COPPER_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.COPPER_BOW);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCOPPER_HELMET, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCOPPER_CHESTPLATE, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCOPPER_LEGGINGS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCOPPER_BOOTS, ModArmorMaterials.PCOPPER_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.createFlatItemModel(ModItems.COPPER_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.COPPER_BOW);
 
-        itemModelGenerator.registerArmor(ModItems.PCHAIN_HELMET, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PCHAIN_CHESTPLATE, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PCHAIN_LEGGINGS, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PCHAIN_BOOTS, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.register(ModItems.PCHAIN_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCHAIN_HELMET, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCHAIN_CHESTPLATE, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCHAIN_LEGGINGS, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PCHAIN_BOOTS, ModArmorMaterials.PCHAIN_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.generateFlatItem(ModItems.PCHAIN_HORSE_ARMOR, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.registerArmor(ModItems.PIRON_HELMET, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PIRON_CHESTPLATE, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PIRON_LEGGINGS, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PIRON_BOOTS, ModArmorMaterials.PIRON_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.upload(ModItems.IRON_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.IRON_BOW);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIRON_HELMET, ModArmorMaterials.PIRON_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIRON_CHESTPLATE, ModArmorMaterials.PIRON_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIRON_LEGGINGS, ModArmorMaterials.PIRON_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIRON_BOOTS, ModArmorMaterials.PIRON_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.createFlatItemModel(ModItems.IRON_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.IRON_BOW);
 
-        itemModelGenerator.registerArmor(ModItems.PGOLD_HELMET, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PGOLD_CHESTPLATE, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PGOLD_LEGGINGS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PGOLD_BOOTS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.upload(ModItems.GOLD_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.GOLD_BOW);
+        itemModelGenerator.generateTrimmableItem(ModItems.PGOLD_HELMET, ModArmorMaterials.PGOLD_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PGOLD_CHESTPLATE, ModArmorMaterials.PGOLD_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PGOLD_LEGGINGS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PGOLD_BOOTS, ModArmorMaterials.PGOLD_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.createFlatItemModel(ModItems.GOLD_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.GOLD_BOW);
 
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_SWORD, Models.HANDHELD);
-        itemModelGenerator.upload(ModItems.PIGLIN_BRONZE_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.PIGLIN_BRONZE_BOW);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_INGOT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.createFlatItemModel(ModItems.PIGLIN_BRONZE_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.PIGLIN_BRONZE_BOW);
 
-        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_HELMET, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_CHESTPLATE, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_LEGGINGS, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PIGLIN_BRONZE_BOOTS, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIGLIN_BRONZE_HELMET, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIGLIN_BRONZE_CHESTPLATE, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIGLIN_BRONZE_LEGGINGS, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PIGLIN_BRONZE_BOOTS, ModArmorMaterials.PIGLIN_BRONZE_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
 
-        itemModelGenerator.register(ModItems.PIGLIN_BRONZE_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.generateFlatItem(ModItems.PIGLIN_BRONZE_HORSE_ARMOR, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_SWORD, Models.HANDHELD);
-        itemModelGenerator.upload(ModItems.DAMASCUS_STEEL_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.DAMASCUS_STEEL_BOW);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_INGOT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModelGenerator.createFlatItemModel(ModItems.DAMASCUS_STEEL_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.DAMASCUS_STEEL_BOW);
 
-        itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_HELMET, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_CHESTPLATE, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_LEGGINGS, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.DAMASCUS_STEEL_BOOTS, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.register(ModItems.DAMASCUS_STEEL_HORSE_ARMOR, Models.GENERATED);
+        itemModelGenerator.generateTrimmableItem(ModItems.DAMASCUS_STEEL_HELMET, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.DAMASCUS_STEEL_CHESTPLATE, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.DAMASCUS_STEEL_LEGGINGS, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.DAMASCUS_STEEL_BOOTS, ModArmorMaterials.DAMASCUS_STEEL_INGOT_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.generateFlatItem(ModItems.DAMASCUS_STEEL_HORSE_ARMOR, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.registerArmor(ModItems.PDIAMOND_HELMET, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PDIAMOND_CHESTPLATE, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PDIAMOND_LEGGINGS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PDIAMOND_BOOTS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.upload(ModItems.DIAMOND_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.DIAMOND_BOW);
+        itemModelGenerator.generateTrimmableItem(ModItems.PDIAMOND_HELMET, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PDIAMOND_CHESTPLATE, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PDIAMOND_LEGGINGS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PDIAMOND_BOOTS, ModArmorMaterials.PDIAMOND_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.createFlatItemModel(ModItems.DIAMOND_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.DIAMOND_BOW);
 
-        itemModelGenerator.registerArmor(ModItems.PNETHERITE_HELMET, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PNETHERITE_CHESTPLATE, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PNETHERITE_LEGGINGS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.PNETHERITE_BOOTS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.register(ModItems.NETHERITE_HORSE_ARMOR, Models.GENERATED);
-        itemModelGenerator.upload(ModItems.NETHERITE_BOW, Models.BOW);
-        itemModelGenerator.registerBow(ModItems.NETHERITE_BOW);
+        itemModelGenerator.generateTrimmableItem(ModItems.PNETHERITE_HELMET, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PNETHERITE_CHESTPLATE, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PNETHERITE_LEGGINGS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModelGenerator.generateTrimmableItem(ModItems.PNETHERITE_BOOTS, ModArmorMaterials.PNETHERITE_KEY, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModelGenerator.generateFlatItem(ModItems.NETHERITE_HORSE_ARMOR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.createFlatItemModel(ModItems.NETHERITE_BOW, ModelTemplates.BOW);
+        itemModelGenerator.generateBow(ModItems.NETHERITE_BOW);
 
     }
 }

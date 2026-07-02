@@ -1,0 +1,11 @@
+{
+  "gives": {
+    "id": "minecraft:suspicious_stew",
+    "count": 1
+  },
+  "wants": {
+    "id": "minecraft:emerald"
+  },
+  "max_uses": 2,
+  "reputation_discount": 0.1
+}

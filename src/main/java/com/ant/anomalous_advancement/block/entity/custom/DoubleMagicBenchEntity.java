@@ -4,31 +4,31 @@ import com.ant.anomalous_advancement.block.entity.ImplementedInventory;
 import com.ant.anomalous_advancement.block.entity.ModBlockEntities;
 import com.ant.anomalous_advancement.screen.custom.DoubleMagicBenchScreenHandler;
 import com.ant.anomalous_advancement.util.DoubleMagicBenchEnchantmentSelector;
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.listener.ClientPlayPacketListener;
-import net.minecraft.network.packet.Packet;
-import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.storage.ReadView;
-import net.minecraft.storage.WriteView;
-import net.minecraft.text.Text;
-import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.Containers;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
+import net.fabricmc.fabric.api.menu.v1.ExtendedMenuProvider;
 
-public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScreenHandlerFactory<BlockPos>, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
+public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedMenuProvider<BlockPos>, ImplementedInventory {
+    private final NonNullList<ItemStack> inventory = NonNullList.withSize(4, ItemStack.EMPTY);
 
     public static final int TOOL_SLOT = 0;
     public static final int REAGENT_SLOT_1 = 1;
@@ -40,14 +40,14 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
     }
 
     private DoubleMagicBenchEnchantmentSelector.EnchantmentResult getOutputForInputs() {
-        ItemStack tool = this.getStack(TOOL_SLOT);
-        ItemStack reagent1 = this.getStack(REAGENT_SLOT_1);
-        ItemStack reagent2 = this.getStack(REAGENT_SLOT_2);
-        if (tool.isEmpty() || reagent1.isEmpty() && reagent2.isEmpty() || this.getWorld() == null) {
+        ItemStack tool = this.getItem(TOOL_SLOT);
+        ItemStack reagent1 = this.getItem(REAGENT_SLOT_1);
+        ItemStack reagent2 = this.getItem(REAGENT_SLOT_2);
+        if (tool.isEmpty() || reagent1.isEmpty() && reagent2.isEmpty() || this.getLevel() == null) {
             return new DoubleMagicBenchEnchantmentSelector.EnchantmentResult(ItemStack.EMPTY, 0);
         }
 
-        return DoubleMagicBenchEnchantmentSelector.applyEnchantment(tool, reagent1, reagent2, this.getWorld());
+        return DoubleMagicBenchEnchantmentSelector.applyEnchantment(tool, reagent1, reagent2, this.getLevel());
     }
 
     private int currentCost = 0;
@@ -56,7 +56,7 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
         return currentCost;
     }
 
-    public void updatePreviewOutput(@Nullable PlayerEntity player) {
+    public void updatePreviewOutput(@Nullable Player player) {
        DoubleMagicBenchEnchantmentSelector.EnchantmentResult result = getOutputForInputs();
         ItemStack preview = result.result().copy();
         this.currentCost = result.cost();
@@ -68,67 +68,76 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
 
         if (!preview.isEmpty() && hasEnoughExp) {
             preview.setCount(1);
-            this.setStack(OUTPUT_SLOT, preview);
+            this.setItem(OUTPUT_SLOT, preview);
         } else {
-            this.setStack(OUTPUT_SLOT, ItemStack.EMPTY);
+            this.setItem(OUTPUT_SLOT, ItemStack.EMPTY);
         }
     }
 
 
-    public void tick(World world, BlockPos pos, BlockState state) {
-        if (!world.isClient()) {
-            markDirty(world, pos, state);
+    public void tick(Level world, BlockPos pos, BlockState state) {
+        if (!world.isClientSide()) {
+            setChanged(world, pos, state);
         }
     }
 
-    public static <T extends BlockEntity> void tick(World world, BlockPos pos, BlockState state, T entity) {
+    public static <T extends BlockEntity> void tick(Level world, BlockPos pos, BlockState state, T entity) {
         if (entity instanceof DoubleMagicBenchEntity doublemagicBenchEntity) {
             doublemagicBenchEntity.tick(world, pos, state);
         }
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public void setChanged() {
+        super.setChanged();
+
+        if (level != null && !level.isClientSide()) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+        }
+    }
+
+    @Override
+    public BlockPos getScreenOpeningData(ServerPlayer player) {
+        return this.worldPosition;
+    }
+
+    @Override
+    public NonNullList<ItemStack> getItems() {
         return inventory;
     }
 
     @Override
-    public BlockPos getScreenOpeningData(ServerPlayerEntity serverPlayerEntity) {
-        return this.pos;
-    }
-
-    @Override
-    public Text getDisplayName() {
-        return Text.translatable("block.anomalous_advancement.gilded_altar");
+    public Component getDisplayName() {
+        return Component.translatable("block.anomalous_advancement.gilded_altar");
     }
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new DoubleMagicBenchScreenHandler(syncId, playerInventory, this.pos);
+    public AbstractContainerMenu createMenu(int syncId, Inventory playerInventory, Player player) {
+        return new DoubleMagicBenchScreenHandler(syncId, playerInventory, this.worldPosition);
     }
 
     @Override
-    protected void writeData(WriteView view) {
-        super.writeData(view);
-        Inventories.writeData(view, inventory);
+    protected void saveAdditional(ValueOutput view) {
+        super.saveAdditional(view);
+        ContainerHelper.saveAllItems(view, inventory);
     }
 
     @Override
-    protected void readData(ReadView view) {
-        super.readData(view);
-        Inventories.readData(view, inventory);
+    protected void loadAdditional(ValueInput view) {
+        super.loadAdditional(view);
+        ContainerHelper.loadAllItems(view, inventory);
     }
 
     @Nullable
     @Override
-    public Packet<ClientPlayPacketListener> toUpdatePacket() {
-        return BlockEntityUpdateS2CPacket.create(this);
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     @Override
-    public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
-        return createNbt(registryLookup);
+    public CompoundTag getUpdateTag(HolderLookup.Provider registryLookup) {
+        return saveWithoutMetadata(registryLookup);
     }
 
     public int getCurrentExpCost() {
@@ -136,19 +145,19 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
     }
 
     @Override
-    public void onBlockReplaced(BlockPos pos, BlockState oldState) {
-        if (!world.isClient()) {
+    public void preRemoveSideEffects(BlockPos pos, BlockState oldState) {
+        if (!level.isClientSide()) {
             dropInputItems(null);
         }
-        super.onBlockReplaced(pos, oldState);
+        super.preRemoveSideEffects(pos, oldState);
     }
 
-    public void dropInputItems(@Nullable PlayerEntity player) {
-        if (world == null || world.isClient()) return;
+    public void dropInputItems(@Nullable Player player) {
+        if (level == null || level.isClientSide()) return;
 
         boolean hasItems = false;
         for (int i = 0; i < getItems().size(); i++) {
-            if (!getStack(i).isEmpty()) {
+            if (!getItem(i).isEmpty()) {
                 hasItems = true;
                 break;
             }
@@ -164,24 +173,24 @@ public class DoubleMagicBenchEntity extends BlockEntity implements ExtendedScree
             dropY = player.getY();
             dropZ = player.getZ();
         } else {
-            dropX = pos.getX();
-            dropY = pos.getY();
-            dropZ = pos.getZ();
+            dropX = worldPosition.getX();
+            dropY = worldPosition.getY();
+            dropZ = worldPosition.getZ();
         }
 
         for (int i = 0; i < getItems().size(); i++) {
             if (i == OUTPUT_SLOT) {
-                setStack(i, ItemStack.EMPTY);
+                setItem(i, ItemStack.EMPTY);
                 continue;
             }
 
-            ItemStack stack = getStack(i);
+            ItemStack stack = getItem(i);
             if (!stack.isEmpty()) {
-                if (player != null && player.getInventory().insertStack(stack.copy())) {
-                    setStack(i, ItemStack.EMPTY);
+                if (player != null && player.getInventory().add(stack.copy())) {
+                    setItem(i, ItemStack.EMPTY);
                 } else {
-                    ItemScatterer.spawn(world, dropX, dropY, dropZ, stack);
-                    setStack(i, ItemStack.EMPTY);
+                    Containers.dropItemStack(level, dropX, dropY, dropZ, stack);
+                    setItem(i, ItemStack.EMPTY);
                 }
             }
         }

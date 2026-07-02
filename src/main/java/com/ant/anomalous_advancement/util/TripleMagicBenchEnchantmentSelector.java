@@ -2,1570 +2,1569 @@ package com.ant.anomalous_advancement.util;
 
 import com.ant.anomalous_advancement.block.ModBlocks;
 import com.ant.anomalous_advancement.item.ModItems;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.world.World;
-
 import java.util.*;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
 
 public class TripleMagicBenchEnchantmentSelector {
 
     public record EnchantmentResult(ItemStack result, int cost) {}
 
-    public static EnchantmentResult applyEnchantment(ItemStack tool, ItemStack reagent1, ItemStack reagent2, ItemStack reagent3, World world) {
-        Optional<RegistryEntry.Reference<Enchantment>> entryOpt = Optional.empty();
+    public static EnchantmentResult applyEnchantment(ItemStack tool, ItemStack reagent1, ItemStack reagent2, ItemStack reagent3, Level world) {
+        Optional<Holder.Reference<Enchantment>> entryOpt = Optional.empty();
         int cost = 0;
         int level = 1;
         // I LOVE IF STATEMENTS
 
         // Triple-reagent enchantments
-        if ((reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.SPIDER_EYE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent3.isOf(Items.SPIDER_EYE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent1.isOf(Items.SPIDER_EYE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent3.isOf(Items.SPIDER_EYE) && reagent1.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.FERMENTED_SPIDER_EYE) && reagent1.isOf(Items.SPIDER_EYE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.SPIDER_EYE) && reagent1.isOf(Items.POISONOUS_POTATO))
+        if ((reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent2.is(Items.SPIDER_EYE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent3.is(Items.SPIDER_EYE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent1.is(Items.SPIDER_EYE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent3.is(Items.SPIDER_EYE) && reagent1.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.FERMENTED_SPIDER_EYE) && reagent1.is(Items.SPIDER_EYE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.FERMENTED_SPIDER_EYE) && reagent2.is(Items.SPIDER_EYE) && reagent1.is(Items.POISONOUS_POTATO))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BANE_OF_ARTHROPODS.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.HONEY_BOTTLE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent3.isOf(Items.HONEY_BOTTLE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent1.isOf(Items.HONEY_BOTTLE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent3.isOf(Items.HONEY_BOTTLE) && reagent1.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.FERMENTED_SPIDER_EYE) && reagent1.isOf(Items.HONEY_BOTTLE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.HONEY_BOTTLE) && reagent1.isOf(Items.POISONOUS_POTATO))
+        else if ((reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent2.is(Items.HONEY_BOTTLE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent3.is(Items.HONEY_BOTTLE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent1.is(Items.HONEY_BOTTLE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent3.is(Items.HONEY_BOTTLE) && reagent1.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.FERMENTED_SPIDER_EYE) && reagent1.is(Items.HONEY_BOTTLE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.FERMENTED_SPIDER_EYE) && reagent2.is(Items.HONEY_BOTTLE) && reagent1.is(Items.POISONOUS_POTATO))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BANE_OF_ARTHROPODS.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.NETHER_WART) && reagent2.isOf(Items.HONEY_BOTTLE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.NETHER_WART) && reagent3.isOf(Items.HONEY_BOTTLE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.NETHER_WART) && reagent1.isOf(Items.HONEY_BOTTLE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.NETHER_WART) && reagent3.isOf(Items.HONEY_BOTTLE) && reagent1.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.NETHER_WART) && reagent1.isOf(Items.HONEY_BOTTLE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.NETHER_WART) && reagent2.isOf(Items.HONEY_BOTTLE) && reagent1.isOf(Items.POISONOUS_POTATO))
+        else if ((reagent1.is(Items.NETHER_WART) && reagent2.is(Items.HONEY_BOTTLE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.NETHER_WART) && reagent3.is(Items.HONEY_BOTTLE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.NETHER_WART) && reagent1.is(Items.HONEY_BOTTLE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.NETHER_WART) && reagent3.is(Items.HONEY_BOTTLE) && reagent1.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.NETHER_WART) && reagent1.is(Items.HONEY_BOTTLE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.NETHER_WART) && reagent2.is(Items.HONEY_BOTTLE) && reagent1.is(Items.POISONOUS_POTATO))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BANE_OF_ARTHROPODS.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS) && reagent3.isOf(Items.NETHER_BRICKS)) ||
-                (reagent1.isOf(Items.BRICKS) && reagent3.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.NETHER_BRICKS)) ||
-                (reagent2.isOf(Items.BRICKS) && reagent1.isOf(Items.RESIN_BRICKS) && reagent3.isOf(Items.NETHER_BRICKS)) ||
-                (reagent2.isOf(Items.BRICKS) && reagent3.isOf(Items.RESIN_BRICKS) && reagent1.isOf(Items.NETHER_BRICKS)) ||
-                (reagent3.isOf(Items.BRICKS) && reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.NETHER_BRICKS)) ||
-                (reagent3.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS) && reagent1.isOf(Items.NETHER_BRICKS))
+        else if ((reagent1.is(Items.BRICKS) && reagent2.is(Items.RESIN_BRICKS) && reagent3.is(Items.NETHER_BRICKS)) ||
+                (reagent1.is(Items.BRICKS) && reagent3.is(Items.RESIN_BRICKS) && reagent2.is(Items.NETHER_BRICKS)) ||
+                (reagent2.is(Items.BRICKS) && reagent1.is(Items.RESIN_BRICKS) && reagent3.is(Items.NETHER_BRICKS)) ||
+                (reagent2.is(Items.BRICKS) && reagent3.is(Items.RESIN_BRICKS) && reagent1.is(Items.NETHER_BRICKS)) ||
+                (reagent3.is(Items.BRICKS) && reagent1.is(Items.RESIN_BRICKS) && reagent2.is(Items.NETHER_BRICKS)) ||
+                (reagent3.is(Items.BRICKS) && reagent2.is(Items.RESIN_BRICKS) && reagent1.is(Items.NETHER_BRICKS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BLAST_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BLAST_PROTECTION.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS) && reagent3.isOf(Items.TUFF_BRICKS)) ||
-                (reagent1.isOf(Items.BRICKS) && reagent3.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.TUFF_BRICKS)) ||
-                (reagent2.isOf(Items.BRICKS) && reagent1.isOf(Items.RESIN_BRICKS) && reagent3.isOf(Items.TUFF_BRICKS)) ||
-                (reagent2.isOf(Items.BRICKS) && reagent3.isOf(Items.RESIN_BRICKS) && reagent1.isOf(Items.TUFF_BRICKS)) ||
-                (reagent3.isOf(Items.BRICKS) && reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.TUFF_BRICKS)) ||
-                (reagent3.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS) && reagent1.isOf(Items.TUFF_BRICKS))
+        else if ((reagent1.is(Items.BRICKS) && reagent2.is(Items.RESIN_BRICKS) && reagent3.is(Items.TUFF_BRICKS)) ||
+                (reagent1.is(Items.BRICKS) && reagent3.is(Items.RESIN_BRICKS) && reagent2.is(Items.TUFF_BRICKS)) ||
+                (reagent2.is(Items.BRICKS) && reagent1.is(Items.RESIN_BRICKS) && reagent3.is(Items.TUFF_BRICKS)) ||
+                (reagent2.is(Items.BRICKS) && reagent3.is(Items.RESIN_BRICKS) && reagent1.is(Items.TUFF_BRICKS)) ||
+                (reagent3.is(Items.BRICKS) && reagent1.is(Items.RESIN_BRICKS) && reagent2.is(Items.TUFF_BRICKS)) ||
+                (reagent3.is(Items.BRICKS) && reagent2.is(Items.RESIN_BRICKS) && reagent1.is(Items.TUFF_BRICKS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BLAST_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BLAST_PROTECTION.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.NETHER_BRICK)) ||
-                (reagent1.isOf(Items.BRICK) && reagent3.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.NETHER_BRICK)) ||
-                (reagent2.isOf(Items.BRICK) && reagent1.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.NETHER_BRICK)) ||
-                (reagent2.isOf(Items.BRICK) && reagent3.isOf(Items.RESIN_BRICK) && reagent1.isOf(Items.NETHER_BRICK)) ||
-                (reagent3.isOf(Items.BRICK) && reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.NETHER_BRICK)) ||
-                (reagent3.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK) && reagent1.isOf(Items.NETHER_BRICK))
+        else if ((reagent1.is(Items.BRICK) && reagent2.is(Items.RESIN_BRICK) && reagent3.is(Items.NETHER_BRICK)) ||
+                (reagent1.is(Items.BRICK) && reagent3.is(Items.RESIN_BRICK) && reagent2.is(Items.NETHER_BRICK)) ||
+                (reagent2.is(Items.BRICK) && reagent1.is(Items.RESIN_BRICK) && reagent3.is(Items.NETHER_BRICK)) ||
+                (reagent2.is(Items.BRICK) && reagent3.is(Items.RESIN_BRICK) && reagent1.is(Items.NETHER_BRICK)) ||
+                (reagent3.is(Items.BRICK) && reagent1.is(Items.RESIN_BRICK) && reagent2.is(Items.NETHER_BRICK)) ||
+                (reagent3.is(Items.BRICK) && reagent2.is(Items.RESIN_BRICK) && reagent1.is(Items.NETHER_BRICK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BREACH.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BREACH.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.TUFF_BRICK_SLAB)) ||
-                (reagent1.isOf(Items.BRICK) && reagent3.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.TUFF_BRICK_SLAB)) ||
-                (reagent2.isOf(Items.BRICK) && reagent1.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.TUFF_BRICK_SLAB)) ||
-                (reagent2.isOf(Items.BRICK) && reagent3.isOf(Items.RESIN_BRICK) && reagent1.isOf(Items.TUFF_BRICK_SLAB)) ||
-                (reagent3.isOf(Items.BRICK) && reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.TUFF_BRICK_SLAB)) ||
-                (reagent3.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK) && reagent1.isOf(Items.TUFF_BRICK_SLAB))
+        else if ((reagent1.is(Items.BRICK) && reagent2.is(Items.RESIN_BRICK) && reagent3.is(Items.TUFF_BRICK_SLAB)) ||
+                (reagent1.is(Items.BRICK) && reagent3.is(Items.RESIN_BRICK) && reagent2.is(Items.TUFF_BRICK_SLAB)) ||
+                (reagent2.is(Items.BRICK) && reagent1.is(Items.RESIN_BRICK) && reagent3.is(Items.TUFF_BRICK_SLAB)) ||
+                (reagent2.is(Items.BRICK) && reagent3.is(Items.RESIN_BRICK) && reagent1.is(Items.TUFF_BRICK_SLAB)) ||
+                (reagent3.is(Items.BRICK) && reagent1.is(Items.RESIN_BRICK) && reagent2.is(Items.TUFF_BRICK_SLAB)) ||
+                (reagent3.is(Items.BRICK) && reagent2.is(Items.RESIN_BRICK) && reagent1.is(Items.TUFF_BRICK_SLAB))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BREACH.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BREACH.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.CONDUIT) && reagent2.isOf(Items.SEA_PICKLE) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent1.isOf(Items.CONDUIT) && reagent3.isOf(Items.SEA_PICKLE) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent2.isOf(Items.CONDUIT) && reagent1.isOf(Items.SEA_PICKLE) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent2.isOf(Items.CONDUIT) && reagent3.isOf(Items.SEA_PICKLE) && reagent1.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent3.isOf(Items.CONDUIT) && reagent1.isOf(Items.SEA_PICKLE) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent3.isOf(Items.CONDUIT) && reagent2.isOf(Items.SEA_PICKLE) && reagent1.isOf(Items.PHANTOM_MEMBRANE))
+        else if ((reagent1.is(Items.CONDUIT) && reagent2.is(Items.SEA_PICKLE) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent1.is(Items.CONDUIT) && reagent3.is(Items.SEA_PICKLE) && reagent2.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent2.is(Items.CONDUIT) && reagent1.is(Items.SEA_PICKLE) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent2.is(Items.CONDUIT) && reagent3.is(Items.SEA_PICKLE) && reagent1.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent3.is(Items.CONDUIT) && reagent1.is(Items.SEA_PICKLE) && reagent2.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent3.is(Items.CONDUIT) && reagent2.is(Items.SEA_PICKLE) && reagent1.is(Items.PHANTOM_MEMBRANE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.CHANNELING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.CHANNELING.identifier());
             cost = 18;
             level = 1;
         }
 
-        else if ((reagent1.isOf(Items.COPPER_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.IRON_BLOCK)) ||
-                (reagent1.isOf(Items.COPPER_BLOCK) && reagent3.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.IRON_BLOCK)) ||
-                (reagent2.isOf(Items.COPPER_BLOCK) && reagent1.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.IRON_BLOCK)) ||
-                (reagent2.isOf(Items.COPPER_BLOCK) && reagent3.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.IRON_BLOCK)) ||
-                (reagent3.isOf(Items.COPPER_BLOCK) && reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.IRON_BLOCK)) ||
-                (reagent3.isOf(Items.COPPER_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.IRON_BLOCK))
+        else if ((reagent1.is(Items.COPPER_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent3.is(Items.IRON_BLOCK)) ||
+                (reagent1.is(Items.COPPER_BLOCK) && reagent3.is(Items.OBSIDIAN) && reagent2.is(Items.IRON_BLOCK)) ||
+                (reagent2.is(Items.COPPER_BLOCK) && reagent1.is(Items.OBSIDIAN) && reagent3.is(Items.IRON_BLOCK)) ||
+                (reagent2.is(Items.COPPER_BLOCK) && reagent3.is(Items.OBSIDIAN) && reagent1.is(Items.IRON_BLOCK)) ||
+                (reagent3.is(Items.COPPER_BLOCK) && reagent1.is(Items.OBSIDIAN) && reagent2.is(Items.IRON_BLOCK)) ||
+                (reagent3.is(Items.COPPER_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent1.is(Items.IRON_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DENSITY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DENSITY.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.GOLD_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.IRON_BLOCK)) ||
-                (reagent1.isOf(Items.GOLD_BLOCK) && reagent3.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.IRON_BLOCK)) ||
-                (reagent2.isOf(Items.GOLD_BLOCK) && reagent1.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.IRON_BLOCK)) ||
-                (reagent2.isOf(Items.GOLD_BLOCK) && reagent3.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.IRON_BLOCK)) ||
-                (reagent3.isOf(Items.GOLD_BLOCK) && reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.IRON_BLOCK)) ||
-                (reagent3.isOf(Items.GOLD_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.IRON_BLOCK))
+        else if ((reagent1.is(Items.GOLD_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent3.is(Items.IRON_BLOCK)) ||
+                (reagent1.is(Items.GOLD_BLOCK) && reagent3.is(Items.OBSIDIAN) && reagent2.is(Items.IRON_BLOCK)) ||
+                (reagent2.is(Items.GOLD_BLOCK) && reagent1.is(Items.OBSIDIAN) && reagent3.is(Items.IRON_BLOCK)) ||
+                (reagent2.is(Items.GOLD_BLOCK) && reagent3.is(Items.OBSIDIAN) && reagent1.is(Items.IRON_BLOCK)) ||
+                (reagent3.is(Items.GOLD_BLOCK) && reagent1.is(Items.OBSIDIAN) && reagent2.is(Items.IRON_BLOCK)) ||
+                (reagent3.is(Items.GOLD_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent1.is(Items.IRON_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DENSITY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DENSITY.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.DIAMOND_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.POLISHED_DEEPSLATE)) ||
-                (reagent1.isOf(Items.DIAMOND_BLOCK) && reagent3.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.POLISHED_DEEPSLATE)) ||
-                (reagent2.isOf(Items.DIAMOND_BLOCK) && reagent1.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.POLISHED_DEEPSLATE)) ||
-                (reagent2.isOf(Items.DIAMOND_BLOCK) && reagent3.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.POLISHED_DEEPSLATE)) ||
-                (reagent3.isOf(Items.DIAMOND_BLOCK) && reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.POLISHED_DEEPSLATE)) ||
-                (reagent3.isOf(Items.DIAMOND_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.POLISHED_DEEPSLATE))
+        else if ((reagent1.is(Items.DIAMOND_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent3.is(Items.POLISHED_DEEPSLATE)) ||
+                (reagent1.is(Items.DIAMOND_BLOCK) && reagent3.is(Items.OBSIDIAN) && reagent2.is(Items.POLISHED_DEEPSLATE)) ||
+                (reagent2.is(Items.DIAMOND_BLOCK) && reagent1.is(Items.OBSIDIAN) && reagent3.is(Items.POLISHED_DEEPSLATE)) ||
+                (reagent2.is(Items.DIAMOND_BLOCK) && reagent3.is(Items.OBSIDIAN) && reagent1.is(Items.POLISHED_DEEPSLATE)) ||
+                (reagent3.is(Items.DIAMOND_BLOCK) && reagent1.is(Items.OBSIDIAN) && reagent2.is(Items.POLISHED_DEEPSLATE)) ||
+                (reagent3.is(Items.DIAMOND_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent1.is(Items.POLISHED_DEEPSLATE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DENSITY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DENSITY.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.HONEY_BLOCK)) ||
-                (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.HONEY_BLOCK)) ||
-                (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.HONEY_BLOCK)) ||
-                (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.HONEY_BLOCK)) ||
-                (reagent3.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.HONEY_BLOCK)) ||
-                (reagent3.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN) && reagent1.isOf(Items.HONEY_BLOCK))
+        else if ((reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent2.is(Items.OBSIDIAN) && reagent3.is(Items.HONEY_BLOCK)) ||
+                (reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent3.is(Items.OBSIDIAN) && reagent2.is(Items.HONEY_BLOCK)) ||
+                (reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent1.is(Items.OBSIDIAN) && reagent3.is(Items.HONEY_BLOCK)) ||
+                (reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent3.is(Items.OBSIDIAN) && reagent1.is(Items.HONEY_BLOCK)) ||
+                (reagent3.is(Items.PRISMARINE_CRYSTALS) && reagent1.is(Items.OBSIDIAN) && reagent2.is(Items.HONEY_BLOCK)) ||
+                (reagent3.is(Items.PRISMARINE_CRYSTALS) && reagent2.is(Items.OBSIDIAN) && reagent1.is(Items.HONEY_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DEPTH_STRIDER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DEPTH_STRIDER.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.GLOWSTONE) && reagent2.isOf(Items.CLOCK) && reagent3.isOf(Items.COMPASS)) ||
-                (reagent1.isOf(Items.GLOWSTONE) && reagent3.isOf(Items.CLOCK) && reagent2.isOf(Items.COMPASS)) ||
-                (reagent2.isOf(Items.GLOWSTONE) && reagent1.isOf(Items.CLOCK) && reagent3.isOf(Items.COMPASS)) ||
-                (reagent2.isOf(Items.GLOWSTONE) && reagent3.isOf(Items.CLOCK) && reagent1.isOf(Items.COMPASS)) ||
-                (reagent3.isOf(Items.GLOWSTONE) && reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.COMPASS)) ||
-                (reagent3.isOf(Items.GLOWSTONE) && reagent2.isOf(Items.CLOCK) && reagent1.isOf(Items.COMPASS))
+        else if ((reagent1.is(Items.GLOWSTONE) && reagent2.is(Items.CLOCK) && reagent3.is(Items.COMPASS)) ||
+                (reagent1.is(Items.GLOWSTONE) && reagent3.is(Items.CLOCK) && reagent2.is(Items.COMPASS)) ||
+                (reagent2.is(Items.GLOWSTONE) && reagent1.is(Items.CLOCK) && reagent3.is(Items.COMPASS)) ||
+                (reagent2.is(Items.GLOWSTONE) && reagent3.is(Items.CLOCK) && reagent1.is(Items.COMPASS)) ||
+                (reagent3.is(Items.GLOWSTONE) && reagent1.is(Items.CLOCK) && reagent2.is(Items.COMPASS)) ||
+                (reagent3.is(Items.GLOWSTONE) && reagent2.is(Items.CLOCK) && reagent1.is(Items.COMPASS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.EFFICIENCY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.EFFICIENCY.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.GLOWSTONE) && reagent2.isOf(Items.CLOCK) && reagent3.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent1.isOf(Items.GLOWSTONE) && reagent3.isOf(Items.CLOCK) && reagent2.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent2.isOf(Items.GLOWSTONE) && reagent1.isOf(Items.CLOCK) && reagent3.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent2.isOf(Items.GLOWSTONE) && reagent3.isOf(Items.CLOCK) && reagent1.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent3.isOf(Items.GLOWSTONE) && reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent3.isOf(Items.GLOWSTONE) && reagent2.isOf(Items.CLOCK) && reagent1.isOf(Items.RECOVERY_COMPASS))
+        else if ((reagent1.is(Items.GLOWSTONE) && reagent2.is(Items.CLOCK) && reagent3.is(Items.RECOVERY_COMPASS)) ||
+                (reagent1.is(Items.GLOWSTONE) && reagent3.is(Items.CLOCK) && reagent2.is(Items.RECOVERY_COMPASS)) ||
+                (reagent2.is(Items.GLOWSTONE) && reagent1.is(Items.CLOCK) && reagent3.is(Items.RECOVERY_COMPASS)) ||
+                (reagent2.is(Items.GLOWSTONE) && reagent3.is(Items.CLOCK) && reagent1.is(Items.RECOVERY_COMPASS)) ||
+                (reagent3.is(Items.GLOWSTONE) && reagent1.is(Items.CLOCK) && reagent2.is(Items.RECOVERY_COMPASS)) ||
+                (reagent3.is(Items.GLOWSTONE) && reagent2.is(Items.CLOCK) && reagent1.is(Items.RECOVERY_COMPASS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.EFFICIENCY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.EFFICIENCY.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.GLOWSTONE) && reagent2.isOf(Items.PITCHER_PLANT) && reagent3.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent1.isOf(Items.GLOWSTONE) && reagent3.isOf(Items.PITCHER_PLANT) && reagent2.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent2.isOf(Items.GLOWSTONE) && reagent1.isOf(Items.PITCHER_PLANT) && reagent3.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent2.isOf(Items.GLOWSTONE) && reagent3.isOf(Items.PITCHER_PLANT) && reagent1.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent3.isOf(Items.GLOWSTONE) && reagent1.isOf(Items.PITCHER_PLANT) && reagent2.isOf(Items.RECOVERY_COMPASS)) ||
-                (reagent3.isOf(Items.GLOWSTONE) && reagent2.isOf(Items.PITCHER_PLANT) && reagent1.isOf(Items.RECOVERY_COMPASS))
+        else if ((reagent1.is(Items.GLOWSTONE) && reagent2.is(Items.PITCHER_PLANT) && reagent3.is(Items.RECOVERY_COMPASS)) ||
+                (reagent1.is(Items.GLOWSTONE) && reagent3.is(Items.PITCHER_PLANT) && reagent2.is(Items.RECOVERY_COMPASS)) ||
+                (reagent2.is(Items.GLOWSTONE) && reagent1.is(Items.PITCHER_PLANT) && reagent3.is(Items.RECOVERY_COMPASS)) ||
+                (reagent2.is(Items.GLOWSTONE) && reagent3.is(Items.PITCHER_PLANT) && reagent1.is(Items.RECOVERY_COMPASS)) ||
+                (reagent3.is(Items.GLOWSTONE) && reagent1.is(Items.PITCHER_PLANT) && reagent2.is(Items.RECOVERY_COMPASS)) ||
+                (reagent3.is(Items.GLOWSTONE) && reagent2.is(Items.PITCHER_PLANT) && reagent1.is(Items.RECOVERY_COMPASS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.EFFICIENCY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.EFFICIENCY.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.WATER_BUCKET) && reagent2.isOf(Items.PINK_WOOL) && reagent3.isOf(Items.HAY_BLOCK)) ||
-                (reagent1.isOf(Items.WATER_BUCKET) && reagent3.isOf(Items.PINK_WOOL) && reagent2.isOf(Items.HAY_BLOCK)) ||
-                (reagent2.isOf(Items.WATER_BUCKET) && reagent1.isOf(Items.PINK_WOOL) && reagent3.isOf(Items.HAY_BLOCK)) ||
-                (reagent2.isOf(Items.WATER_BUCKET) && reagent3.isOf(Items.PINK_WOOL) && reagent1.isOf(Items.HAY_BLOCK)) ||
-                (reagent3.isOf(Items.WATER_BUCKET) && reagent1.isOf(Items.PINK_WOOL) && reagent2.isOf(Items.HAY_BLOCK)) ||
-                (reagent3.isOf(Items.WATER_BUCKET) && reagent2.isOf(Items.PINK_WOOL) && reagent1.isOf(Items.HAY_BLOCK))
+        else if ((reagent1.is(Items.WATER_BUCKET) && reagent2.is(Items.PINK_WOOL) && reagent3.is(Items.HAY_BLOCK)) ||
+                (reagent1.is(Items.WATER_BUCKET) && reagent3.is(Items.PINK_WOOL) && reagent2.is(Items.HAY_BLOCK)) ||
+                (reagent2.is(Items.WATER_BUCKET) && reagent1.is(Items.PINK_WOOL) && reagent3.is(Items.HAY_BLOCK)) ||
+                (reagent2.is(Items.WATER_BUCKET) && reagent3.is(Items.PINK_WOOL) && reagent1.is(Items.HAY_BLOCK)) ||
+                (reagent3.is(Items.WATER_BUCKET) && reagent1.is(Items.PINK_WOOL) && reagent2.is(Items.HAY_BLOCK)) ||
+                (reagent3.is(Items.WATER_BUCKET) && reagent2.is(Items.PINK_WOOL) && reagent1.is(Items.HAY_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FEATHER_FALLING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FEATHER_FALLING.identifier());
             cost = 15;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.POWDER_SNOW_BUCKET) && reagent2.isOf(Items.PINK_HARNESS) && reagent3.isOf(Items.HAY_BLOCK)) ||
-                (reagent1.isOf(Items.POWDER_SNOW_BUCKET) && reagent3.isOf(Items.PINK_HARNESS) && reagent2.isOf(Items.HAY_BLOCK)) ||
-                (reagent2.isOf(Items.POWDER_SNOW_BUCKET) && reagent1.isOf(Items.PINK_HARNESS) && reagent3.isOf(Items.HAY_BLOCK)) ||
-                (reagent2.isOf(Items.POWDER_SNOW_BUCKET) && reagent3.isOf(Items.PINK_HARNESS) && reagent1.isOf(Items.HAY_BLOCK)) ||
-                (reagent3.isOf(Items.POWDER_SNOW_BUCKET) && reagent1.isOf(Items.PINK_HARNESS) && reagent2.isOf(Items.HAY_BLOCK)) ||
-                (reagent3.isOf(Items.POWDER_SNOW_BUCKET) && reagent2.isOf(Items.PINK_HARNESS) && reagent1.isOf(Items.HAY_BLOCK))
+        else if ((reagent1.is(Items.POWDER_SNOW_BUCKET) && reagent2.is(Items.PINK_HARNESS) && reagent3.is(Items.HAY_BLOCK)) ||
+                (reagent1.is(Items.POWDER_SNOW_BUCKET) && reagent3.is(Items.PINK_HARNESS) && reagent2.is(Items.HAY_BLOCK)) ||
+                (reagent2.is(Items.POWDER_SNOW_BUCKET) && reagent1.is(Items.PINK_HARNESS) && reagent3.is(Items.HAY_BLOCK)) ||
+                (reagent2.is(Items.POWDER_SNOW_BUCKET) && reagent3.is(Items.PINK_HARNESS) && reagent1.is(Items.HAY_BLOCK)) ||
+                (reagent3.is(Items.POWDER_SNOW_BUCKET) && reagent1.is(Items.PINK_HARNESS) && reagent2.is(Items.HAY_BLOCK)) ||
+                (reagent3.is(Items.POWDER_SNOW_BUCKET) && reagent2.is(Items.PINK_HARNESS) && reagent1.is(Items.HAY_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FEATHER_FALLING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FEATHER_FALLING.identifier());
             cost = 18;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.CLAY) && reagent2.isOf(Items.WATER_BUCKET) && reagent3.isOf(Items.RESIN_BLOCK)) ||
-                (reagent1.isOf(Items.CLAY) && reagent3.isOf(Items.WATER_BUCKET) && reagent2.isOf(Items.RESIN_BLOCK)) ||
-                (reagent2.isOf(Items.CLAY) && reagent1.isOf(Items.WATER_BUCKET) && reagent3.isOf(Items.RESIN_BLOCK)) ||
-                (reagent2.isOf(Items.CLAY) && reagent3.isOf(Items.WATER_BUCKET) && reagent1.isOf(Items.RESIN_BLOCK)) ||
-                (reagent3.isOf(Items.CLAY) && reagent1.isOf(Items.WATER_BUCKET) && reagent2.isOf(Items.RESIN_BLOCK)) ||
-                (reagent3.isOf(Items.CLAY) && reagent2.isOf(Items.WATER_BUCKET) && reagent1.isOf(Items.RESIN_BLOCK))
+        else if ((reagent1.is(Items.CLAY) && reagent2.is(Items.WATER_BUCKET) && reagent3.is(Items.RESIN_BLOCK)) ||
+                (reagent1.is(Items.CLAY) && reagent3.is(Items.WATER_BUCKET) && reagent2.is(Items.RESIN_BLOCK)) ||
+                (reagent2.is(Items.CLAY) && reagent1.is(Items.WATER_BUCKET) && reagent3.is(Items.RESIN_BLOCK)) ||
+                (reagent2.is(Items.CLAY) && reagent3.is(Items.WATER_BUCKET) && reagent1.is(Items.RESIN_BLOCK)) ||
+                (reagent3.is(Items.CLAY) && reagent1.is(Items.WATER_BUCKET) && reagent2.is(Items.RESIN_BLOCK)) ||
+                (reagent3.is(Items.CLAY) && reagent2.is(Items.WATER_BUCKET) && reagent1.is(Items.RESIN_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FIRE_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FIRE_PROTECTION.identifier());
             cost = 15;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.MAGMA_CREAM) && reagent2.isOf(Items.WATER_BUCKET) && reagent3.isOf(Items.RESIN_BLOCK)) ||
-                (reagent1.isOf(Items.MAGMA_CREAM) && reagent3.isOf(Items.WATER_BUCKET) && reagent2.isOf(Items.RESIN_BLOCK)) ||
-                (reagent2.isOf(Items.MAGMA_CREAM) && reagent1.isOf(Items.WATER_BUCKET) && reagent3.isOf(Items.RESIN_BLOCK)) ||
-                (reagent2.isOf(Items.MAGMA_CREAM) && reagent3.isOf(Items.WATER_BUCKET) && reagent1.isOf(Items.RESIN_BLOCK)) ||
-                (reagent3.isOf(Items.MAGMA_CREAM) && reagent1.isOf(Items.WATER_BUCKET) && reagent2.isOf(Items.RESIN_BLOCK)) ||
-                (reagent3.isOf(Items.MAGMA_CREAM) && reagent2.isOf(Items.WATER_BUCKET) && reagent1.isOf(Items.RESIN_BLOCK))
+        else if ((reagent1.is(Items.MAGMA_CREAM) && reagent2.is(Items.WATER_BUCKET) && reagent3.is(Items.RESIN_BLOCK)) ||
+                (reagent1.is(Items.MAGMA_CREAM) && reagent3.is(Items.WATER_BUCKET) && reagent2.is(Items.RESIN_BLOCK)) ||
+                (reagent2.is(Items.MAGMA_CREAM) && reagent1.is(Items.WATER_BUCKET) && reagent3.is(Items.RESIN_BLOCK)) ||
+                (reagent2.is(Items.MAGMA_CREAM) && reagent3.is(Items.WATER_BUCKET) && reagent1.is(Items.RESIN_BLOCK)) ||
+                (reagent3.is(Items.MAGMA_CREAM) && reagent1.is(Items.WATER_BUCKET) && reagent2.is(Items.RESIN_BLOCK)) ||
+                (reagent3.is(Items.MAGMA_CREAM) && reagent2.is(Items.WATER_BUCKET) && reagent1.is(Items.RESIN_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FIRE_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FIRE_PROTECTION.identifier());
             cost = 18;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.GOLDEN_APPLE) && reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent3.isOf(Items.SKELETON_SKULL)) ||
-                (reagent1.isOf(Items.GOLDEN_APPLE) && reagent3.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.SKELETON_SKULL)) ||
-                (reagent2.isOf(Items.GOLDEN_APPLE) && reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent3.isOf(Items.SKELETON_SKULL)) ||
-                (reagent2.isOf(Items.GOLDEN_APPLE) && reagent3.isOf(Items.HEART_OF_THE_SEA) && reagent1.isOf(Items.SKELETON_SKULL)) ||
-                (reagent3.isOf(Items.GOLDEN_APPLE) && reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.SKELETON_SKULL)) ||
-                (reagent3.isOf(Items.GOLDEN_APPLE) && reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent1.isOf(Items.SKELETON_SKULL))
+        else if ((reagent1.is(Items.GOLDEN_APPLE) && reagent2.is(Items.HEART_OF_THE_SEA) && reagent3.is(Items.SKELETON_SKULL)) ||
+                (reagent1.is(Items.GOLDEN_APPLE) && reagent3.is(Items.HEART_OF_THE_SEA) && reagent2.is(Items.SKELETON_SKULL)) ||
+                (reagent2.is(Items.GOLDEN_APPLE) && reagent1.is(Items.HEART_OF_THE_SEA) && reagent3.is(Items.SKELETON_SKULL)) ||
+                (reagent2.is(Items.GOLDEN_APPLE) && reagent3.is(Items.HEART_OF_THE_SEA) && reagent1.is(Items.SKELETON_SKULL)) ||
+                (reagent3.is(Items.GOLDEN_APPLE) && reagent1.is(Items.HEART_OF_THE_SEA) && reagent2.is(Items.SKELETON_SKULL)) ||
+                (reagent3.is(Items.GOLDEN_APPLE) && reagent2.is(Items.HEART_OF_THE_SEA) && reagent1.is(Items.SKELETON_SKULL))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FORTUNE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FORTUNE.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.BLUE_ICE) && reagent2.isOf(Items.WIND_CHARGE) && reagent3.isOf(Items.POWDER_SNOW_BUCKET)) ||
-                (reagent1.isOf(Items.BLUE_ICE) && reagent3.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.POWDER_SNOW_BUCKET)) ||
-                (reagent2.isOf(Items.BLUE_ICE) && reagent1.isOf(Items.WIND_CHARGE) && reagent3.isOf(Items.POWDER_SNOW_BUCKET)) ||
-                (reagent2.isOf(Items.BLUE_ICE) && reagent3.isOf(Items.WIND_CHARGE) && reagent1.isOf(Items.POWDER_SNOW_BUCKET)) ||
-                (reagent3.isOf(Items.BLUE_ICE) && reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.POWDER_SNOW_BUCKET)) ||
-                (reagent3.isOf(Items.BLUE_ICE) && reagent2.isOf(Items.WIND_CHARGE) && reagent1.isOf(Items.POWDER_SNOW_BUCKET))
+        else if ((reagent1.is(Items.BLUE_ICE) && reagent2.is(Items.WIND_CHARGE) && reagent3.is(Items.POWDER_SNOW_BUCKET)) ||
+                (reagent1.is(Items.BLUE_ICE) && reagent3.is(Items.WIND_CHARGE) && reagent2.is(Items.POWDER_SNOW_BUCKET)) ||
+                (reagent2.is(Items.BLUE_ICE) && reagent1.is(Items.WIND_CHARGE) && reagent3.is(Items.POWDER_SNOW_BUCKET)) ||
+                (reagent2.is(Items.BLUE_ICE) && reagent3.is(Items.WIND_CHARGE) && reagent1.is(Items.POWDER_SNOW_BUCKET)) ||
+                (reagent3.is(Items.BLUE_ICE) && reagent1.is(Items.WIND_CHARGE) && reagent2.is(Items.POWDER_SNOW_BUCKET)) ||
+                (reagent3.is(Items.BLUE_ICE) && reagent2.is(Items.WIND_CHARGE) && reagent1.is(Items.POWDER_SNOW_BUCKET))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FROST_WALKER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FROST_WALKER.identifier());
             cost = 18;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.STICK) && reagent3.isOf(Items.FLINT)) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.STICK) && reagent2.isOf(Items.FLINT)) ||
-                (reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.STICK) && reagent3.isOf(Items.FLINT)) ||
-                (reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.STICK) && reagent1.isOf(Items.FLINT)) ||
-                (reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.STICK) && reagent2.isOf(Items.FLINT)) ||
-                (reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.STICK) && reagent1.isOf(Items.FLINT))
+        else if ((reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.STICK) && reagent3.is(Items.FLINT)) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.STICK) && reagent2.is(Items.FLINT)) ||
+                (reagent2.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.STICK) && reagent3.is(Items.FLINT)) ||
+                (reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.STICK) && reagent1.is(Items.FLINT)) ||
+                (reagent3.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.STICK) && reagent2.is(Items.FLINT)) ||
+                (reagent3.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.STICK) && reagent1.is(Items.FLINT))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.IMPALING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.IMPALING.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS) && reagent3.isOf(Items.FLINT)) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS) && reagent2.isOf(Items.FLINT)) ||
-                (reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS) && reagent3.isOf(Items.FLINT)) ||
-                (reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS) && reagent1.isOf(Items.FLINT)) ||
-                (reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS) && reagent2.isOf(Items.FLINT)) ||
-                (reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS) && reagent1.isOf(Items.FLINT))
+        else if ((reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS) && reagent3.is(Items.FLINT)) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS) && reagent2.is(Items.FLINT)) ||
+                (reagent2.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS) && reagent3.is(Items.FLINT)) ||
+                (reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS) && reagent1.is(Items.FLINT)) ||
+                (reagent3.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS) && reagent2.is(Items.FLINT)) ||
+                (reagent3.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS) && reagent1.is(Items.FLINT))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.IMPALING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.IMPALING.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS) && reagent3.isOf(Items.SWEET_BERRIES)) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS) && reagent2.isOf(Items.SWEET_BERRIES)) ||
-                (reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS) && reagent3.isOf(Items.SWEET_BERRIES)) ||
-                (reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS) && reagent1.isOf(Items.SWEET_BERRIES)) ||
-                (reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS) && reagent2.isOf(Items.SWEET_BERRIES)) ||
-                (reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS) && reagent1.isOf(Items.SWEET_BERRIES))
+        else if ((reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS) && reagent3.is(Items.SWEET_BERRIES)) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS) && reagent2.is(Items.SWEET_BERRIES)) ||
+                (reagent2.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS) && reagent3.is(Items.SWEET_BERRIES)) ||
+                (reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS) && reagent1.is(Items.SWEET_BERRIES)) ||
+                (reagent3.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS) && reagent2.is(Items.SWEET_BERRIES)) ||
+                (reagent3.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS) && reagent1.is(Items.SWEET_BERRIES))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.IMPALING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.IMPALING.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.ARROW) && reagent3.isOf(Items.TIPPED_ARROW)) ||
-                (reagent1.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.ARROW) && reagent2.isOf(Items.TIPPED_ARROW)) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.ARROW) && reagent3.isOf(Items.TIPPED_ARROW)) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.ARROW) && reagent1.isOf(Items.TIPPED_ARROW)) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.ARROW) && reagent2.isOf(Items.TIPPED_ARROW)) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.ARROW) && reagent1.isOf(Items.TIPPED_ARROW))
+        else if ((reagent1.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.ARROW) && reagent3.is(Items.TIPPED_ARROW)) ||
+                (reagent1.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.ARROW) && reagent2.is(Items.TIPPED_ARROW)) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent1.is(Items.ARROW) && reagent3.is(Items.TIPPED_ARROW)) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.ARROW) && reagent1.is(Items.TIPPED_ARROW)) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent1.is(Items.ARROW) && reagent2.is(Items.TIPPED_ARROW)) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.ARROW) && reagent1.is(Items.TIPPED_ARROW))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.INFINITY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.INFINITY.identifier());
             cost = 18;
             level = 1;
         }
 
-        else if ((reagent1.isOf(Items.EMERALD) && reagent2.isOf(Items.NAUTILUS_SHELL) && reagent3.isOf(Items.ZOMBIE_HEAD)) ||
-                (reagent1.isOf(Items.EMERALD) && reagent3.isOf(Items.NAUTILUS_SHELL) && reagent2.isOf(Items.ZOMBIE_HEAD)) ||
-                (reagent2.isOf(Items.EMERALD) && reagent1.isOf(Items.NAUTILUS_SHELL) && reagent3.isOf(Items.ZOMBIE_HEAD)) ||
-                (reagent2.isOf(Items.EMERALD) && reagent3.isOf(Items.NAUTILUS_SHELL) && reagent1.isOf(Items.ZOMBIE_HEAD)) ||
-                (reagent3.isOf(Items.EMERALD) && reagent1.isOf(Items.NAUTILUS_SHELL) && reagent2.isOf(Items.ZOMBIE_HEAD)) ||
-                (reagent3.isOf(Items.EMERALD) && reagent2.isOf(Items.NAUTILUS_SHELL) && reagent1.isOf(Items.ZOMBIE_HEAD))
+        else if ((reagent1.is(Items.EMERALD) && reagent2.is(Items.NAUTILUS_SHELL) && reagent3.is(Items.ZOMBIE_HEAD)) ||
+                (reagent1.is(Items.EMERALD) && reagent3.is(Items.NAUTILUS_SHELL) && reagent2.is(Items.ZOMBIE_HEAD)) ||
+                (reagent2.is(Items.EMERALD) && reagent1.is(Items.NAUTILUS_SHELL) && reagent3.is(Items.ZOMBIE_HEAD)) ||
+                (reagent2.is(Items.EMERALD) && reagent3.is(Items.NAUTILUS_SHELL) && reagent1.is(Items.ZOMBIE_HEAD)) ||
+                (reagent3.is(Items.EMERALD) && reagent1.is(Items.NAUTILUS_SHELL) && reagent2.is(Items.ZOMBIE_HEAD)) ||
+                (reagent3.is(Items.EMERALD) && reagent2.is(Items.NAUTILUS_SHELL) && reagent1.is(Items.ZOMBIE_HEAD))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LOOTING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LOOTING.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.HONEY_BLOCK)) ||
-                (reagent1.isOf(Items.FISHING_ROD) && reagent3.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.HONEY_BLOCK)) ||
-                (reagent2.isOf(Items.FISHING_ROD) && reagent1.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.HONEY_BLOCK)) ||
-                (reagent2.isOf(Items.FISHING_ROD) && reagent3.isOf(Items.SLIME_BLOCK) && reagent1.isOf(Items.HONEY_BLOCK)) ||
-                (reagent3.isOf(Items.FISHING_ROD) && reagent1.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.HONEY_BLOCK)) ||
-                (reagent3.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.SLIME_BLOCK) && reagent1.isOf(Items.HONEY_BLOCK))
+        else if ((reagent1.is(Items.FISHING_ROD) && reagent2.is(Items.SLIME_BLOCK) && reagent3.is(Items.HONEY_BLOCK)) ||
+                (reagent1.is(Items.FISHING_ROD) && reagent3.is(Items.SLIME_BLOCK) && reagent2.is(Items.HONEY_BLOCK)) ||
+                (reagent2.is(Items.FISHING_ROD) && reagent1.is(Items.SLIME_BLOCK) && reagent3.is(Items.HONEY_BLOCK)) ||
+                (reagent2.is(Items.FISHING_ROD) && reagent3.is(Items.SLIME_BLOCK) && reagent1.is(Items.HONEY_BLOCK)) ||
+                (reagent3.is(Items.FISHING_ROD) && reagent1.is(Items.SLIME_BLOCK) && reagent2.is(Items.HONEY_BLOCK)) ||
+                (reagent3.is(Items.FISHING_ROD) && reagent2.is(Items.SLIME_BLOCK) && reagent1.is(Items.HONEY_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LOYALTY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LOYALTY.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.TROPICAL_FISH) && reagent2.isOf(Items.SEA_PICKLE) && reagent3.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent1.isOf(Items.TROPICAL_FISH) && reagent3.isOf(Items.SEA_PICKLE) && reagent2.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent2.isOf(Items.TROPICAL_FISH) && reagent1.isOf(Items.SEA_PICKLE) && reagent3.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent2.isOf(Items.TROPICAL_FISH) && reagent3.isOf(Items.SEA_PICKLE) && reagent1.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent3.isOf(Items.TROPICAL_FISH) && reagent1.isOf(Items.SEA_PICKLE) && reagent2.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent3.isOf(Items.TROPICAL_FISH) && reagent2.isOf(Items.SEA_PICKLE) && reagent1.isOf(Items.GLOW_INK_SAC))
+        else if ((reagent1.is(Items.TROPICAL_FISH) && reagent2.is(Items.SEA_PICKLE) && reagent3.is(Items.GLOW_INK_SAC)) ||
+                (reagent1.is(Items.TROPICAL_FISH) && reagent3.is(Items.SEA_PICKLE) && reagent2.is(Items.GLOW_INK_SAC)) ||
+                (reagent2.is(Items.TROPICAL_FISH) && reagent1.is(Items.SEA_PICKLE) && reagent3.is(Items.GLOW_INK_SAC)) ||
+                (reagent2.is(Items.TROPICAL_FISH) && reagent3.is(Items.SEA_PICKLE) && reagent1.is(Items.GLOW_INK_SAC)) ||
+                (reagent3.is(Items.TROPICAL_FISH) && reagent1.is(Items.SEA_PICKLE) && reagent2.is(Items.GLOW_INK_SAC)) ||
+                (reagent3.is(Items.TROPICAL_FISH) && reagent2.is(Items.SEA_PICKLE) && reagent1.is(Items.GLOW_INK_SAC))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LUCK_OF_THE_SEA.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.COOKIE) && reagent3.isOf(Items.BREAD)) ||
-                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.COOKIE) && reagent2.isOf(Items.BREAD)) ||
-                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.COOKIE) && reagent3.isOf(Items.BREAD)) ||
-                (reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.COOKIE) && reagent1.isOf(Items.BREAD)) ||
-                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent1.isOf(Items.COOKIE) && reagent2.isOf(Items.BREAD)) ||
-                (reagent3.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.COOKIE) && reagent1.isOf(Items.BREAD))
+        else if ((reagent1.is(Items.POISONOUS_POTATO) && reagent2.is(Items.COOKIE) && reagent3.is(Items.BREAD)) ||
+                (reagent1.is(Items.POISONOUS_POTATO) && reagent3.is(Items.COOKIE) && reagent2.is(Items.BREAD)) ||
+                (reagent2.is(Items.POISONOUS_POTATO) && reagent1.is(Items.COOKIE) && reagent3.is(Items.BREAD)) ||
+                (reagent2.is(Items.POISONOUS_POTATO) && reagent3.is(Items.COOKIE) && reagent1.is(Items.BREAD)) ||
+                (reagent3.is(Items.POISONOUS_POTATO) && reagent1.is(Items.COOKIE) && reagent2.is(Items.BREAD)) ||
+                (reagent3.is(Items.POISONOUS_POTATO) && reagent2.is(Items.COOKIE) && reagent1.is(Items.BREAD))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LURE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LURE.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.NETHER_STAR) && reagent2.isOf(Items.TOTEM_OF_UNDYING) && reagent3.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
-                (reagent1.isOf(Items.NETHER_STAR) && reagent3.isOf(Items.TOTEM_OF_UNDYING) && reagent2.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
-                (reagent2.isOf(Items.NETHER_STAR) && reagent1.isOf(Items.TOTEM_OF_UNDYING) && reagent3.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
-                (reagent2.isOf(Items.NETHER_STAR) && reagent3.isOf(Items.TOTEM_OF_UNDYING) && reagent1.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
-                (reagent3.isOf(Items.NETHER_STAR) && reagent1.isOf(Items.TOTEM_OF_UNDYING) && reagent2.isOf(Items.ENCHANTED_GOLDEN_APPLE)) ||
-                (reagent3.isOf(Items.NETHER_STAR) && reagent2.isOf(Items.TOTEM_OF_UNDYING) && reagent1.isOf(Items.ENCHANTED_GOLDEN_APPLE))
+        else if ((reagent1.is(Items.NETHER_STAR) && reagent2.is(Items.TOTEM_OF_UNDYING) && reagent3.is(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent1.is(Items.NETHER_STAR) && reagent3.is(Items.TOTEM_OF_UNDYING) && reagent2.is(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent2.is(Items.NETHER_STAR) && reagent1.is(Items.TOTEM_OF_UNDYING) && reagent3.is(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent2.is(Items.NETHER_STAR) && reagent3.is(Items.TOTEM_OF_UNDYING) && reagent1.is(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent3.is(Items.NETHER_STAR) && reagent1.is(Items.TOTEM_OF_UNDYING) && reagent2.is(Items.ENCHANTED_GOLDEN_APPLE)) ||
+                (reagent3.is(Items.NETHER_STAR) && reagent2.is(Items.TOTEM_OF_UNDYING) && reagent1.is(Items.ENCHANTED_GOLDEN_APPLE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.MENDING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.MENDING.identifier());
             cost = 30;
             level = 1;
         }
 
-        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
-                (reagent1.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS)) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS))
+        else if ((reagent1.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS)) ||
+                (reagent1.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS)) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent1.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS)) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS)) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS)) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PIERCING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PIERCING.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.FIREWORK_ROCKET) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
-                (reagent1.isOf(Items.FIREWORK_ROCKET) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
-                (reagent2.isOf(Items.FIREWORK_ROCKET) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.IRON_BARS)) ||
-                (reagent2.isOf(Items.FIREWORK_ROCKET) && reagent3.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS)) ||
-                (reagent3.isOf(Items.FIREWORK_ROCKET) && reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.IRON_BARS)) ||
-                (reagent3.isOf(Items.FIREWORK_ROCKET) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent1.isOf(Items.IRON_BARS))
+        else if ((reagent1.is(Items.FIREWORK_ROCKET) && reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS)) ||
+                (reagent1.is(Items.FIREWORK_ROCKET) && reagent3.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS)) ||
+                (reagent2.is(Items.FIREWORK_ROCKET) && reagent1.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.IRON_BARS)) ||
+                (reagent2.is(Items.FIREWORK_ROCKET) && reagent3.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS)) ||
+                (reagent3.is(Items.FIREWORK_ROCKET) && reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.IRON_BARS)) ||
+                (reagent3.is(Items.FIREWORK_ROCKET) && reagent2.is(Items.POINTED_DRIPSTONE) && reagent1.is(Items.IRON_BARS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PIERCING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PIERCING.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(ModItems.IRON_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent1.isOf(ModItems.IRON_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent2.isOf(ModItems.IRON_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent2.isOf(ModItems.IRON_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent3.isOf(ModItems.IRON_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent3.isOf(ModItems.IRON_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET))
+        else if ((reagent1.is(ModItems.IRON_BOW) && reagent2.is(Items.CROSSBOW) && reagent3.is(Items.FIREWORK_ROCKET)) ||
+                (reagent1.is(ModItems.IRON_BOW) && reagent3.is(Items.CROSSBOW) && reagent2.is(Items.FIREWORK_ROCKET)) ||
+                (reagent2.is(ModItems.IRON_BOW) && reagent1.is(Items.CROSSBOW) && reagent3.is(Items.FIREWORK_ROCKET)) ||
+                (reagent2.is(ModItems.IRON_BOW) && reagent3.is(Items.CROSSBOW) && reagent1.is(Items.FIREWORK_ROCKET)) ||
+                (reagent3.is(ModItems.IRON_BOW) && reagent1.is(Items.CROSSBOW) && reagent2.is(Items.FIREWORK_ROCKET)) ||
+                (reagent3.is(ModItems.IRON_BOW) && reagent2.is(Items.CROSSBOW) && reagent1.is(Items.FIREWORK_ROCKET))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.POWER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.POWER.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent1.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent2.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent2.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent3.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent3.isOf(ModItems.PIGLIN_BRONZE_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET))
+        else if ((reagent1.is(ModItems.PIGLIN_BRONZE_BOW) && reagent2.is(Items.CROSSBOW) && reagent3.is(Items.FIREWORK_ROCKET)) ||
+                (reagent1.is(ModItems.PIGLIN_BRONZE_BOW) && reagent3.is(Items.CROSSBOW) && reagent2.is(Items.FIREWORK_ROCKET)) ||
+                (reagent2.is(ModItems.PIGLIN_BRONZE_BOW) && reagent1.is(Items.CROSSBOW) && reagent3.is(Items.FIREWORK_ROCKET)) ||
+                (reagent2.is(ModItems.PIGLIN_BRONZE_BOW) && reagent3.is(Items.CROSSBOW) && reagent1.is(Items.FIREWORK_ROCKET)) ||
+                (reagent3.is(ModItems.PIGLIN_BRONZE_BOW) && reagent1.is(Items.CROSSBOW) && reagent2.is(Items.FIREWORK_ROCKET)) ||
+                (reagent3.is(ModItems.PIGLIN_BRONZE_BOW) && reagent2.is(Items.CROSSBOW) && reagent1.is(Items.FIREWORK_ROCKET))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.POWER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.POWER.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(ModItems.DIAMOND_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent1.isOf(ModItems.DIAMOND_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent2.isOf(ModItems.DIAMOND_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent3.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent2.isOf(ModItems.DIAMOND_BOW) && reagent3.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent3.isOf(ModItems.DIAMOND_BOW) && reagent1.isOf(Items.CROSSBOW) && reagent2.isOf(Items.FIREWORK_ROCKET)) ||
-                (reagent3.isOf(ModItems.DIAMOND_BOW) && reagent2.isOf(Items.CROSSBOW) && reagent1.isOf(Items.FIREWORK_ROCKET))
+        else if ((reagent1.is(ModItems.DIAMOND_BOW) && reagent2.is(Items.CROSSBOW) && reagent3.is(Items.FIREWORK_ROCKET)) ||
+                (reagent1.is(ModItems.DIAMOND_BOW) && reagent3.is(Items.CROSSBOW) && reagent2.is(Items.FIREWORK_ROCKET)) ||
+                (reagent2.is(ModItems.DIAMOND_BOW) && reagent1.is(Items.CROSSBOW) && reagent3.is(Items.FIREWORK_ROCKET)) ||
+                (reagent2.is(ModItems.DIAMOND_BOW) && reagent3.is(Items.CROSSBOW) && reagent1.is(Items.FIREWORK_ROCKET)) ||
+                (reagent3.is(ModItems.DIAMOND_BOW) && reagent1.is(Items.CROSSBOW) && reagent2.is(Items.FIREWORK_ROCKET)) ||
+                (reagent3.is(ModItems.DIAMOND_BOW) && reagent2.is(Items.CROSSBOW) && reagent1.is(Items.FIREWORK_ROCKET))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.POWER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.POWER.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY_BALL)) ||
-                (reagent1.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY_BALL)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY_BALL)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY_BALL)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY_BALL)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY_BALL))
+        else if ((reagent1.is(Items.HAY_BLOCK) && reagent2.is(Items.IRON_CHAIN) && reagent3.is(Items.CLAY_BALL)) ||
+                (reagent1.is(Items.HAY_BLOCK) && reagent3.is(Items.IRON_CHAIN) && reagent2.is(Items.CLAY_BALL)) ||
+                (reagent2.is(Items.HAY_BLOCK) && reagent1.is(Items.IRON_CHAIN) && reagent3.is(Items.CLAY_BALL)) ||
+                (reagent2.is(Items.HAY_BLOCK) && reagent3.is(Items.IRON_CHAIN) && reagent1.is(Items.CLAY_BALL)) ||
+                (reagent3.is(Items.HAY_BLOCK) && reagent1.is(Items.IRON_CHAIN) && reagent2.is(Items.CLAY_BALL)) ||
+                (reagent3.is(Items.HAY_BLOCK) && reagent2.is(Items.IRON_CHAIN) && reagent1.is(Items.CLAY_BALL))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROJECTILE_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROJECTILE_PROTECTION.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY)) ||
-                (reagent1.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.CLAY)) ||
-                (reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.CLAY)) ||
-                (reagent3.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent1.isOf(Items.CLAY))
+        else if ((reagent1.is(Items.HAY_BLOCK) && reagent2.is(Items.IRON_CHAIN) && reagent3.is(Items.CLAY)) ||
+                (reagent1.is(Items.HAY_BLOCK) && reagent3.is(Items.IRON_CHAIN) && reagent2.is(Items.CLAY)) ||
+                (reagent2.is(Items.HAY_BLOCK) && reagent1.is(Items.IRON_CHAIN) && reagent3.is(Items.CLAY)) ||
+                (reagent2.is(Items.HAY_BLOCK) && reagent3.is(Items.IRON_CHAIN) && reagent1.is(Items.CLAY)) ||
+                (reagent3.is(Items.HAY_BLOCK) && reagent1.is(Items.IRON_CHAIN) && reagent2.is(Items.CLAY)) ||
+                (reagent3.is(Items.HAY_BLOCK) && reagent2.is(Items.IRON_CHAIN) && reagent1.is(Items.CLAY))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROJECTILE_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROJECTILE_PROTECTION.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.GOLD_BLOCK) && reagent2.isOf(Items.ARMADILLO_SCUTE) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent1.isOf(Items.GOLD_BLOCK) && reagent3.isOf(Items.ARMADILLO_SCUTE) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent2.isOf(Items.GOLD_BLOCK) && reagent1.isOf(Items.ARMADILLO_SCUTE) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent2.isOf(Items.GOLD_BLOCK) && reagent3.isOf(Items.ARMADILLO_SCUTE) && reagent1.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent3.isOf(Items.GOLD_BLOCK) && reagent1.isOf(Items.ARMADILLO_SCUTE) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent3.isOf(Items.GOLD_BLOCK) && reagent2.isOf(Items.ARMADILLO_SCUTE) && reagent1.isOf(Items.PHANTOM_MEMBRANE))
+        else if ((reagent1.is(Items.GOLD_BLOCK) && reagent2.is(Items.ARMADILLO_SCUTE) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent1.is(Items.GOLD_BLOCK) && reagent3.is(Items.ARMADILLO_SCUTE) && reagent2.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent2.is(Items.GOLD_BLOCK) && reagent1.is(Items.ARMADILLO_SCUTE) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent2.is(Items.GOLD_BLOCK) && reagent3.is(Items.ARMADILLO_SCUTE) && reagent1.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent3.is(Items.GOLD_BLOCK) && reagent1.is(Items.ARMADILLO_SCUTE) && reagent2.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent3.is(Items.GOLD_BLOCK) && reagent2.is(Items.ARMADILLO_SCUTE) && reagent1.is(Items.PHANTOM_MEMBRANE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROTECTION.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.DIAMOND_BLOCK) && reagent2.isOf(Items.SHULKER_SHELL) && reagent3.isOf(Items.CREEPER_HEAD)) ||
-                (reagent1.isOf(Items.DIAMOND_BLOCK) && reagent3.isOf(Items.SHULKER_SHELL) && reagent2.isOf(Items.CREEPER_HEAD)) ||
-                (reagent2.isOf(Items.DIAMOND_BLOCK) && reagent1.isOf(Items.SHULKER_SHELL) && reagent3.isOf(Items.CREEPER_HEAD)) ||
-                (reagent2.isOf(Items.DIAMOND_BLOCK) && reagent3.isOf(Items.SHULKER_SHELL) && reagent1.isOf(Items.CREEPER_HEAD)) ||
-                (reagent3.isOf(Items.DIAMOND_BLOCK) && reagent1.isOf(Items.SHULKER_SHELL) && reagent2.isOf(Items.CREEPER_HEAD)) ||
-                (reagent3.isOf(Items.DIAMOND_BLOCK) && reagent2.isOf(Items.SHULKER_SHELL) && reagent1.isOf(Items.CREEPER_HEAD))
+        else if ((reagent1.is(Items.DIAMOND_BLOCK) && reagent2.is(Items.SHULKER_SHELL) && reagent3.is(Items.CREEPER_HEAD)) ||
+                (reagent1.is(Items.DIAMOND_BLOCK) && reagent3.is(Items.SHULKER_SHELL) && reagent2.is(Items.CREEPER_HEAD)) ||
+                (reagent2.is(Items.DIAMOND_BLOCK) && reagent1.is(Items.SHULKER_SHELL) && reagent3.is(Items.CREEPER_HEAD)) ||
+                (reagent2.is(Items.DIAMOND_BLOCK) && reagent3.is(Items.SHULKER_SHELL) && reagent1.is(Items.CREEPER_HEAD)) ||
+                (reagent3.is(Items.DIAMOND_BLOCK) && reagent1.is(Items.SHULKER_SHELL) && reagent2.is(Items.CREEPER_HEAD)) ||
+                (reagent3.is(Items.DIAMOND_BLOCK) && reagent2.is(Items.SHULKER_SHELL) && reagent1.is(Items.CREEPER_HEAD))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROTECTION.identifier());
             cost = 18;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.MILK_BUCKET) && reagent3.isOf(Items.CAKE)) ||
-                (reagent1.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.MILK_BUCKET) && reagent2.isOf(Items.CAKE)) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.MILK_BUCKET) && reagent3.isOf(Items.CAKE)) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.MILK_BUCKET) && reagent1.isOf(Items.CAKE)) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent1.isOf(Items.MILK_BUCKET) && reagent2.isOf(Items.CAKE)) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.MILK_BUCKET) && reagent1.isOf(Items.CAKE))
+        else if ((reagent1.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.MILK_BUCKET) && reagent3.is(Items.CAKE)) ||
+                (reagent1.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.MILK_BUCKET) && reagent2.is(Items.CAKE)) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent1.is(Items.MILK_BUCKET) && reagent3.is(Items.CAKE)) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.MILK_BUCKET) && reagent1.is(Items.CAKE)) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent1.is(Items.MILK_BUCKET) && reagent2.is(Items.CAKE)) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.MILK_BUCKET) && reagent1.is(Items.CAKE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.QUICK_CHARGE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.QUICK_CHARGE.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.GLASS_BOTTLE) && reagent2.isOf(Items.INK_SAC) && reagent3.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent1.isOf(Items.GLASS_BOTTLE) && reagent3.isOf(Items.INK_SAC) && reagent2.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent2.isOf(Items.GLASS_BOTTLE) && reagent1.isOf(Items.INK_SAC) && reagent3.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent2.isOf(Items.GLASS_BOTTLE) && reagent3.isOf(Items.INK_SAC) && reagent1.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent3.isOf(Items.GLASS_BOTTLE) && reagent1.isOf(Items.INK_SAC) && reagent2.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent3.isOf(Items.GLASS_BOTTLE) && reagent2.isOf(Items.INK_SAC) && reagent1.isOf(Items.GLOW_INK_SAC))
+        else if ((reagent1.is(Items.GLASS_BOTTLE) && reagent2.is(Items.INK_SAC) && reagent3.is(Items.GLOW_INK_SAC)) ||
+                (reagent1.is(Items.GLASS_BOTTLE) && reagent3.is(Items.INK_SAC) && reagent2.is(Items.GLOW_INK_SAC)) ||
+                (reagent2.is(Items.GLASS_BOTTLE) && reagent1.is(Items.INK_SAC) && reagent3.is(Items.GLOW_INK_SAC)) ||
+                (reagent2.is(Items.GLASS_BOTTLE) && reagent3.is(Items.INK_SAC) && reagent1.is(Items.GLOW_INK_SAC)) ||
+                (reagent3.is(Items.GLASS_BOTTLE) && reagent1.is(Items.INK_SAC) && reagent2.is(Items.GLOW_INK_SAC)) ||
+                (reagent3.is(Items.GLASS_BOTTLE) && reagent2.is(Items.INK_SAC) && reagent1.is(Items.GLOW_INK_SAC))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.RESPIRATION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.RESPIRATION.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.ENDER_PEARL) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent3.isOf(Items.ENDER_PEARL) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent1.isOf(Items.ENDER_PEARL) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent3.isOf(Items.ENDER_PEARL) && reagent1.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent3.isOf(Items.HEART_OF_THE_SEA) && reagent1.isOf(Items.ENDER_PEARL) && reagent2.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent3.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.ENDER_PEARL) && reagent1.isOf(Items.PHANTOM_MEMBRANE))
+        else if ((reagent1.is(Items.HEART_OF_THE_SEA) && reagent2.is(Items.ENDER_PEARL) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent1.is(Items.HEART_OF_THE_SEA) && reagent3.is(Items.ENDER_PEARL) && reagent2.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent2.is(Items.HEART_OF_THE_SEA) && reagent1.is(Items.ENDER_PEARL) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent2.is(Items.HEART_OF_THE_SEA) && reagent3.is(Items.ENDER_PEARL) && reagent1.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent3.is(Items.HEART_OF_THE_SEA) && reagent1.is(Items.ENDER_PEARL) && reagent2.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent3.is(Items.HEART_OF_THE_SEA) && reagent2.is(Items.ENDER_PEARL) && reagent1.is(Items.PHANTOM_MEMBRANE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.RIPTIDE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.RIPTIDE.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.FLINT) && reagent2.isOf(Items.AMETHYST_SHARD) && reagent3.isOf(Items.QUARTZ)) ||
-                (reagent1.isOf(Items.FLINT) && reagent3.isOf(Items.AMETHYST_SHARD) && reagent2.isOf(Items.QUARTZ)) ||
-                (reagent2.isOf(Items.FLINT) && reagent1.isOf(Items.AMETHYST_SHARD) && reagent3.isOf(Items.QUARTZ)) ||
-                (reagent2.isOf(Items.FLINT) && reagent3.isOf(Items.AMETHYST_SHARD) && reagent1.isOf(Items.QUARTZ)) ||
-                (reagent3.isOf(Items.FLINT) && reagent1.isOf(Items.AMETHYST_SHARD) && reagent2.isOf(Items.QUARTZ)) ||
-                (reagent3.isOf(Items.FLINT) && reagent2.isOf(Items.AMETHYST_SHARD) && reagent1.isOf(Items.QUARTZ))
+        else if ((reagent1.is(Items.FLINT) && reagent2.is(Items.AMETHYST_SHARD) && reagent3.is(Items.QUARTZ)) ||
+                (reagent1.is(Items.FLINT) && reagent3.is(Items.AMETHYST_SHARD) && reagent2.is(Items.QUARTZ)) ||
+                (reagent2.is(Items.FLINT) && reagent1.is(Items.AMETHYST_SHARD) && reagent3.is(Items.QUARTZ)) ||
+                (reagent2.is(Items.FLINT) && reagent3.is(Items.AMETHYST_SHARD) && reagent1.is(Items.QUARTZ)) ||
+                (reagent3.is(Items.FLINT) && reagent1.is(Items.AMETHYST_SHARD) && reagent2.is(Items.QUARTZ)) ||
+                (reagent3.is(Items.FLINT) && reagent2.is(Items.AMETHYST_SHARD) && reagent1.is(Items.QUARTZ))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SHARPNESS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SHARPNESS.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.ECHO_SHARD) && reagent2.isOf(Items.AMETHYST_SHARD) && reagent3.isOf(Items.QUARTZ)) ||
-                (reagent1.isOf(Items.ECHO_SHARD) && reagent3.isOf(Items.AMETHYST_SHARD) && reagent2.isOf(Items.QUARTZ)) ||
-                (reagent2.isOf(Items.ECHO_SHARD) && reagent1.isOf(Items.AMETHYST_SHARD) && reagent3.isOf(Items.QUARTZ)) ||
-                (reagent2.isOf(Items.ECHO_SHARD) && reagent3.isOf(Items.AMETHYST_SHARD) && reagent1.isOf(Items.QUARTZ)) ||
-                (reagent3.isOf(Items.ECHO_SHARD) && reagent1.isOf(Items.AMETHYST_SHARD) && reagent2.isOf(Items.QUARTZ)) ||
-                (reagent3.isOf(Items.ECHO_SHARD) && reagent2.isOf(Items.AMETHYST_SHARD) && reagent1.isOf(Items.QUARTZ))
+        else if ((reagent1.is(Items.ECHO_SHARD) && reagent2.is(Items.AMETHYST_SHARD) && reagent3.is(Items.QUARTZ)) ||
+                (reagent1.is(Items.ECHO_SHARD) && reagent3.is(Items.AMETHYST_SHARD) && reagent2.is(Items.QUARTZ)) ||
+                (reagent2.is(Items.ECHO_SHARD) && reagent1.is(Items.AMETHYST_SHARD) && reagent3.is(Items.QUARTZ)) ||
+                (reagent2.is(Items.ECHO_SHARD) && reagent3.is(Items.AMETHYST_SHARD) && reagent1.is(Items.QUARTZ)) ||
+                (reagent3.is(Items.ECHO_SHARD) && reagent1.is(Items.AMETHYST_SHARD) && reagent2.is(Items.QUARTZ)) ||
+                (reagent3.is(Items.ECHO_SHARD) && reagent2.is(Items.AMETHYST_SHARD) && reagent1.is(Items.QUARTZ))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SHARPNESS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SHARPNESS.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.PIGLIN_HEAD) && reagent2.isOf(Items.TORCHFLOWER) && reagent3.isOf(Items.GOAT_HORN)) ||
-                (reagent1.isOf(Items.PIGLIN_HEAD) && reagent3.isOf(Items.TORCHFLOWER) && reagent2.isOf(Items.GOAT_HORN)) ||
-                (reagent2.isOf(Items.PIGLIN_HEAD) && reagent1.isOf(Items.TORCHFLOWER) && reagent3.isOf(Items.GOAT_HORN)) ||
-                (reagent2.isOf(Items.PIGLIN_HEAD) && reagent3.isOf(Items.TORCHFLOWER) && reagent1.isOf(Items.GOAT_HORN)) ||
-                (reagent3.isOf(Items.PIGLIN_HEAD) && reagent1.isOf(Items.TORCHFLOWER) && reagent2.isOf(Items.GOAT_HORN)) ||
-                (reagent3.isOf(Items.PIGLIN_HEAD) && reagent2.isOf(Items.TORCHFLOWER) && reagent1.isOf(Items.GOAT_HORN))
+        else if ((reagent1.is(Items.PIGLIN_HEAD) && reagent2.is(Items.TORCHFLOWER) && reagent3.is(Items.GOAT_HORN)) ||
+                (reagent1.is(Items.PIGLIN_HEAD) && reagent3.is(Items.TORCHFLOWER) && reagent2.is(Items.GOAT_HORN)) ||
+                (reagent2.is(Items.PIGLIN_HEAD) && reagent1.is(Items.TORCHFLOWER) && reagent3.is(Items.GOAT_HORN)) ||
+                (reagent2.is(Items.PIGLIN_HEAD) && reagent3.is(Items.TORCHFLOWER) && reagent1.is(Items.GOAT_HORN)) ||
+                (reagent3.is(Items.PIGLIN_HEAD) && reagent1.is(Items.TORCHFLOWER) && reagent2.is(Items.GOAT_HORN)) ||
+                (reagent3.is(Items.PIGLIN_HEAD) && reagent2.is(Items.TORCHFLOWER) && reagent1.is(Items.GOAT_HORN))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SHARPNESS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SHARPNESS.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.ROTTEN_FLESH) && reagent3.isOf(Items.BONE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.ROTTEN_FLESH) && reagent1.isOf(Items.BONE) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.ROTTEN_FLESH) && reagent3.isOf(Items.BONE) && reagent1.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.ROTTEN_FLESH) && reagent1.isOf(Items.BONE) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE) && reagent1.isOf(Items.POISONOUS_POTATO))
+        else if ((reagent1.is(Items.ROTTEN_FLESH) && reagent2.is(Items.BONE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.ROTTEN_FLESH) && reagent3.is(Items.BONE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.ROTTEN_FLESH) && reagent1.is(Items.BONE) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.ROTTEN_FLESH) && reagent3.is(Items.BONE) && reagent1.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.ROTTEN_FLESH) && reagent1.is(Items.BONE) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.ROTTEN_FLESH) && reagent2.is(Items.BONE) && reagent1.is(Items.POISONOUS_POTATO))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SMITE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SMITE.identifier());
             cost = 12;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE_MEAL) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.ROTTEN_FLESH) && reagent3.isOf(Items.BONE_MEAL) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.ROTTEN_FLESH) && reagent1.isOf(Items.BONE_MEAL) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.ROTTEN_FLESH) && reagent3.isOf(Items.BONE_MEAL) && reagent1.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.ROTTEN_FLESH) && reagent1.isOf(Items.BONE_MEAL) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE_MEAL) && reagent1.isOf(Items.POISONOUS_POTATO))
+        else if ((reagent1.is(Items.ROTTEN_FLESH) && reagent2.is(Items.BONE_MEAL) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.ROTTEN_FLESH) && reagent3.is(Items.BONE_MEAL) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.ROTTEN_FLESH) && reagent1.is(Items.BONE_MEAL) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.ROTTEN_FLESH) && reagent3.is(Items.BONE_MEAL) && reagent1.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.ROTTEN_FLESH) && reagent1.is(Items.BONE_MEAL) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.ROTTEN_FLESH) && reagent2.is(Items.BONE_MEAL) && reagent1.is(Items.POISONOUS_POTATO))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SMITE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SMITE.identifier());
             cost = 15;
             level = 4;
         }
 
-        else if ((reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isOf(Items.BONE_MEAL) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent3.isOf(Items.BONE_MEAL) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.PHANTOM_MEMBRANE) && reagent1.isOf(Items.BONE_MEAL) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent2.isOf(Items.PHANTOM_MEMBRANE) && reagent3.isOf(Items.BONE_MEAL) && reagent1.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.PHANTOM_MEMBRANE) && reagent1.isOf(Items.BONE_MEAL) && reagent2.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent3.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isOf(Items.BONE_MEAL) && reagent1.isOf(Items.POISONOUS_POTATO))
+        else if ((reagent1.is(Items.PHANTOM_MEMBRANE) && reagent2.is(Items.BONE_MEAL) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.PHANTOM_MEMBRANE) && reagent3.is(Items.BONE_MEAL) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.PHANTOM_MEMBRANE) && reagent1.is(Items.BONE_MEAL) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent2.is(Items.PHANTOM_MEMBRANE) && reagent3.is(Items.BONE_MEAL) && reagent1.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.PHANTOM_MEMBRANE) && reagent1.is(Items.BONE_MEAL) && reagent2.is(Items.POISONOUS_POTATO)) ||
+                (reagent3.is(Items.PHANTOM_MEMBRANE) && reagent2.is(Items.BONE_MEAL) && reagent1.is(Items.POISONOUS_POTATO))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SMITE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SMITE.identifier());
             cost = 18;
             level = 5;
         }
 
-        else if ((reagent1.isOf(Items.CRYING_OBSIDIAN) && reagent2.isOf(Items.NETHER_SPROUTS) && reagent3.isOf(Items.SOUL_SOIL)) ||
-                (reagent1.isOf(Items.CRYING_OBSIDIAN) && reagent3.isOf(Items.NETHER_SPROUTS) && reagent2.isOf(Items.SOUL_SOIL)) ||
-                (reagent2.isOf(Items.CRYING_OBSIDIAN) && reagent1.isOf(Items.NETHER_SPROUTS) && reagent3.isOf(Items.SOUL_SOIL)) ||
-                (reagent2.isOf(Items.CRYING_OBSIDIAN) && reagent3.isOf(Items.NETHER_SPROUTS) && reagent1.isOf(Items.SOUL_SOIL)) ||
-                (reagent3.isOf(Items.CRYING_OBSIDIAN) && reagent1.isOf(Items.NETHER_SPROUTS) && reagent2.isOf(Items.SOUL_SOIL)) ||
-                (reagent3.isOf(Items.CRYING_OBSIDIAN) && reagent2.isOf(Items.NETHER_SPROUTS) && reagent1.isOf(Items.SOUL_SOIL))
+        else if ((reagent1.is(Items.CRYING_OBSIDIAN) && reagent2.is(Items.NETHER_SPROUTS) && reagent3.is(Items.SOUL_SOIL)) ||
+                (reagent1.is(Items.CRYING_OBSIDIAN) && reagent3.is(Items.NETHER_SPROUTS) && reagent2.is(Items.SOUL_SOIL)) ||
+                (reagent2.is(Items.CRYING_OBSIDIAN) && reagent1.is(Items.NETHER_SPROUTS) && reagent3.is(Items.SOUL_SOIL)) ||
+                (reagent2.is(Items.CRYING_OBSIDIAN) && reagent3.is(Items.NETHER_SPROUTS) && reagent1.is(Items.SOUL_SOIL)) ||
+                (reagent3.is(Items.CRYING_OBSIDIAN) && reagent1.is(Items.NETHER_SPROUTS) && reagent2.is(Items.SOUL_SOIL)) ||
+                (reagent3.is(Items.CRYING_OBSIDIAN) && reagent2.is(Items.NETHER_SPROUTS) && reagent1.is(Items.SOUL_SOIL))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SOUL_SPEED.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SOUL_SPEED.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.BRUSH) && reagent2.isOf(Items.QUARTZ) && reagent3.isOf(Items.GOAT_HORN)) ||
-                (reagent1.isOf(Items.BRUSH) && reagent3.isOf(Items.QUARTZ) && reagent2.isOf(Items.GOAT_HORN)) ||
-                (reagent2.isOf(Items.BRUSH) && reagent1.isOf(Items.QUARTZ) && reagent3.isOf(Items.GOAT_HORN)) ||
-                (reagent2.isOf(Items.BRUSH) && reagent3.isOf(Items.QUARTZ) && reagent1.isOf(Items.GOAT_HORN)) ||
-                (reagent3.isOf(Items.BRUSH) && reagent1.isOf(Items.QUARTZ) && reagent2.isOf(Items.GOAT_HORN)) ||
-                (reagent3.isOf(Items.BRUSH) && reagent2.isOf(Items.QUARTZ) && reagent1.isOf(Items.GOAT_HORN))
+        else if ((reagent1.is(Items.BRUSH) && reagent2.is(Items.QUARTZ) && reagent3.is(Items.GOAT_HORN)) ||
+                (reagent1.is(Items.BRUSH) && reagent3.is(Items.QUARTZ) && reagent2.is(Items.GOAT_HORN)) ||
+                (reagent2.is(Items.BRUSH) && reagent1.is(Items.QUARTZ) && reagent3.is(Items.GOAT_HORN)) ||
+                (reagent2.is(Items.BRUSH) && reagent3.is(Items.QUARTZ) && reagent1.is(Items.GOAT_HORN)) ||
+                (reagent3.is(Items.BRUSH) && reagent1.is(Items.QUARTZ) && reagent2.is(Items.GOAT_HORN)) ||
+                (reagent3.is(Items.BRUSH) && reagent2.is(Items.QUARTZ) && reagent1.is(Items.GOAT_HORN))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SWEEPING_EDGE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SWEEPING_EDGE.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isOf(Items.SCULK_CATALYST) && reagent3.isOf(Items.PINK_WOOL)) ||
-                (reagent1.isOf(Items.RABBIT_FOOT) && reagent3.isOf(Items.SCULK_CATALYST) && reagent2.isOf(Items.PINK_WOOL)) ||
-                (reagent2.isOf(Items.RABBIT_FOOT) && reagent1.isOf(Items.SCULK_CATALYST) && reagent3.isOf(Items.PINK_WOOL)) ||
-                (reagent2.isOf(Items.RABBIT_FOOT) && reagent3.isOf(Items.SCULK_CATALYST) && reagent1.isOf(Items.PINK_WOOL)) ||
-                (reagent3.isOf(Items.RABBIT_FOOT) && reagent1.isOf(Items.SCULK_CATALYST) && reagent2.isOf(Items.PINK_WOOL)) ||
-                (reagent3.isOf(Items.RABBIT_FOOT) && reagent2.isOf(Items.SCULK_CATALYST) && reagent1.isOf(Items.PINK_WOOL))
+        else if ((reagent1.is(Items.RABBIT_FOOT) && reagent2.is(Items.SCULK_CATALYST) && reagent3.is(Items.PINK_WOOL)) ||
+                (reagent1.is(Items.RABBIT_FOOT) && reagent3.is(Items.SCULK_CATALYST) && reagent2.is(Items.PINK_WOOL)) ||
+                (reagent2.is(Items.RABBIT_FOOT) && reagent1.is(Items.SCULK_CATALYST) && reagent3.is(Items.PINK_WOOL)) ||
+                (reagent2.is(Items.RABBIT_FOOT) && reagent3.is(Items.SCULK_CATALYST) && reagent1.is(Items.PINK_WOOL)) ||
+                (reagent3.is(Items.RABBIT_FOOT) && reagent1.is(Items.SCULK_CATALYST) && reagent2.is(Items.PINK_WOOL)) ||
+                (reagent3.is(Items.RABBIT_FOOT) && reagent2.is(Items.SCULK_CATALYST) && reagent1.is(Items.PINK_WOOL))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SWIFT_SNEAK.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SWIFT_SNEAK.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.SWEET_BERRIES) && reagent2.isOf(Items.PUFFERFISH) && reagent3.isOf(Items.BEEHIVE)) ||
-                (reagent1.isOf(Items.SWEET_BERRIES) && reagent3.isOf(Items.PUFFERFISH) && reagent2.isOf(Items.BEEHIVE)) ||
-                (reagent2.isOf(Items.SWEET_BERRIES) && reagent1.isOf(Items.PUFFERFISH) && reagent3.isOf(Items.BEEHIVE)) ||
-                (reagent2.isOf(Items.SWEET_BERRIES) && reagent3.isOf(Items.PUFFERFISH) && reagent1.isOf(Items.BEEHIVE)) ||
-                (reagent3.isOf(Items.SWEET_BERRIES) && reagent1.isOf(Items.PUFFERFISH) && reagent2.isOf(Items.BEEHIVE)) ||
-                (reagent3.isOf(Items.SWEET_BERRIES) && reagent2.isOf(Items.PUFFERFISH) && reagent1.isOf(Items.BEEHIVE))
+        else if ((reagent1.is(Items.SWEET_BERRIES) && reagent2.is(Items.PUFFERFISH) && reagent3.is(Items.BEEHIVE)) ||
+                (reagent1.is(Items.SWEET_BERRIES) && reagent3.is(Items.PUFFERFISH) && reagent2.is(Items.BEEHIVE)) ||
+                (reagent2.is(Items.SWEET_BERRIES) && reagent1.is(Items.PUFFERFISH) && reagent3.is(Items.BEEHIVE)) ||
+                (reagent2.is(Items.SWEET_BERRIES) && reagent3.is(Items.PUFFERFISH) && reagent1.is(Items.BEEHIVE)) ||
+                (reagent3.is(Items.SWEET_BERRIES) && reagent1.is(Items.PUFFERFISH) && reagent2.is(Items.BEEHIVE)) ||
+                (reagent3.is(Items.SWEET_BERRIES) && reagent2.is(Items.PUFFERFISH) && reagent1.is(Items.BEEHIVE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.THORNS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.THORNS.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.MAGMA_CREAM) && reagent3.isOf(Items.RESIN_BRICKS)) ||
-                (reagent1.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.MAGMA_CREAM) && reagent2.isOf(Items.RESIN_BRICKS)) ||
-                (reagent2.isOf(Items.SLIME_BLOCK) && reagent1.isOf(Items.MAGMA_CREAM) && reagent3.isOf(Items.RESIN_BRICKS)) ||
-                (reagent2.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.MAGMA_CREAM) && reagent1.isOf(Items.RESIN_BRICKS)) ||
-                (reagent3.isOf(Items.SLIME_BLOCK) && reagent1.isOf(Items.MAGMA_CREAM) && reagent2.isOf(Items.RESIN_BRICKS)) ||
-                (reagent3.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.MAGMA_CREAM) && reagent1.isOf(Items.RESIN_BRICKS))
+        else if ((reagent1.is(Items.SLIME_BLOCK) && reagent2.is(Items.MAGMA_CREAM) && reagent3.is(Items.RESIN_BRICKS)) ||
+                (reagent1.is(Items.SLIME_BLOCK) && reagent3.is(Items.MAGMA_CREAM) && reagent2.is(Items.RESIN_BRICKS)) ||
+                (reagent2.is(Items.SLIME_BLOCK) && reagent1.is(Items.MAGMA_CREAM) && reagent3.is(Items.RESIN_BRICKS)) ||
+                (reagent2.is(Items.SLIME_BLOCK) && reagent3.is(Items.MAGMA_CREAM) && reagent1.is(Items.RESIN_BRICKS)) ||
+                (reagent3.is(Items.SLIME_BLOCK) && reagent1.is(Items.MAGMA_CREAM) && reagent2.is(Items.RESIN_BRICKS)) ||
+                (reagent3.is(Items.SLIME_BLOCK) && reagent2.is(Items.MAGMA_CREAM) && reagent1.is(Items.RESIN_BRICKS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.UNBREAKING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.UNBREAKING.identifier());
             cost = 18;
             level = 3;
         }
 
-        else if ((reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.PHANTOM_MEMBRANE) && reagent3.isOf(Items.ENDER_EYE)) ||
-                (reagent1.isOf(Items.WIND_CHARGE) && reagent3.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isOf(Items.ENDER_EYE)) ||
-                (reagent2.isOf(Items.WIND_CHARGE) && reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent3.isOf(Items.ENDER_EYE)) ||
-                (reagent2.isOf(Items.WIND_CHARGE) && reagent3.isOf(Items.PHANTOM_MEMBRANE) && reagent1.isOf(Items.ENDER_EYE)) ||
-                (reagent3.isOf(Items.WIND_CHARGE) && reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isOf(Items.ENDER_EYE)) ||
-                (reagent3.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.PHANTOM_MEMBRANE) && reagent1.isOf(Items.ENDER_EYE))
+        else if ((reagent1.is(Items.WIND_CHARGE) && reagent2.is(Items.PHANTOM_MEMBRANE) && reagent3.is(Items.ENDER_EYE)) ||
+                (reagent1.is(Items.WIND_CHARGE) && reagent3.is(Items.PHANTOM_MEMBRANE) && reagent2.is(Items.ENDER_EYE)) ||
+                (reagent2.is(Items.WIND_CHARGE) && reagent1.is(Items.PHANTOM_MEMBRANE) && reagent3.is(Items.ENDER_EYE)) ||
+                (reagent2.is(Items.WIND_CHARGE) && reagent3.is(Items.PHANTOM_MEMBRANE) && reagent1.is(Items.ENDER_EYE)) ||
+                (reagent3.is(Items.WIND_CHARGE) && reagent1.is(Items.PHANTOM_MEMBRANE) && reagent2.is(Items.ENDER_EYE)) ||
+                (reagent3.is(Items.WIND_CHARGE) && reagent2.is(Items.PHANTOM_MEMBRANE) && reagent1.is(Items.ENDER_EYE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.WIND_BURST.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.WIND_BURST.identifier());
             cost = 18;
             level = 3;
         }
 
         // Double-reagent enchantments
-        else if ((reagent1.isOf(Items.GLOW_INK_SAC) && reagent2.isOf(Items.TURTLE_SCUTE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.TURTLE_SCUTE) && reagent2.isOf(Items.GLOW_INK_SAC) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.GLOW_INK_SAC) && reagent2.isEmpty() && reagent3.isOf(Items.TURTLE_SCUTE)) ||
-                (reagent1.isOf(Items.TURTLE_SCUTE) && reagent2.isEmpty() && reagent3.isOf(Items.GLOW_INK_SAC)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.GLOW_INK_SAC) && reagent3.isOf(Items.TURTLE_SCUTE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.TURTLE_SCUTE) && reagent3.isOf(Items.GLOW_INK_SAC))
+        else if ((reagent1.is(Items.GLOW_INK_SAC) && reagent2.is(Items.TURTLE_SCUTE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.TURTLE_SCUTE) && reagent2.is(Items.GLOW_INK_SAC) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.GLOW_INK_SAC) && reagent2.isEmpty() && reagent3.is(Items.TURTLE_SCUTE)) ||
+                (reagent1.is(Items.TURTLE_SCUTE) && reagent2.isEmpty() && reagent3.is(Items.GLOW_INK_SAC)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.GLOW_INK_SAC) && reagent3.is(Items.TURTLE_SCUTE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.TURTLE_SCUTE) && reagent3.is(Items.GLOW_INK_SAC))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.AQUA_AFFINITY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.AQUA_AFFINITY.identifier());
             cost = 8;
             level = 1;
         }
 
-        else if ((reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isOf(Items.SPIDER_EYE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.SPIDER_EYE) && reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isEmpty() && reagent3.isOf(Items.SPIDER_EYE)) ||
-                (reagent1.isOf(Items.SPIDER_EYE) && reagent2.isEmpty() && reagent3.isOf(Items.FERMENTED_SPIDER_EYE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent3.isOf(Items.SPIDER_EYE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.SPIDER_EYE) && reagent3.isOf(Items.FERMENTED_SPIDER_EYE))
+        else if ((reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent2.is(Items.SPIDER_EYE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.SPIDER_EYE) && reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent2.isEmpty() && reagent3.is(Items.SPIDER_EYE)) ||
+                (reagent1.is(Items.SPIDER_EYE) && reagent2.isEmpty() && reagent3.is(Items.FERMENTED_SPIDER_EYE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent3.is(Items.SPIDER_EYE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.SPIDER_EYE) && reagent3.is(Items.FERMENTED_SPIDER_EYE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BANE_OF_ARTHROPODS.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.BRICKS) && reagent2.isOf(Items.RESIN_BRICKS) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isOf(Items.BRICKS) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BRICKS) && reagent2.isEmpty() && reagent3.isOf(Items.RESIN_BRICKS)) ||
-                (reagent1.isOf(Items.RESIN_BRICKS) && reagent2.isEmpty() && reagent3.isOf(Items.BRICKS)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BRICKS) && reagent3.isOf(Items.RESIN_BRICKS)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.RESIN_BRICKS) && reagent3.isOf(Items.BRICKS))
+        else if ((reagent1.is(Items.BRICKS) && reagent2.is(Items.RESIN_BRICKS) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.RESIN_BRICKS) && reagent2.is(Items.BRICKS) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.BRICKS) && reagent2.isEmpty() && reagent3.is(Items.RESIN_BRICKS)) ||
+                (reagent1.is(Items.RESIN_BRICKS) && reagent2.isEmpty() && reagent3.is(Items.BRICKS)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.BRICKS) && reagent3.is(Items.RESIN_BRICKS)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.RESIN_BRICKS) && reagent3.is(Items.BRICKS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BLAST_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BLAST_PROTECTION.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.BRICK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BRICK) && reagent2.isEmpty() && reagent3.isOf(Items.RESIN_BRICK)) ||
-                (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isEmpty() && reagent3.isOf(Items.BRICK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BRICK) && reagent3.isOf(Items.RESIN_BRICK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.BRICK))
+        else if ((reagent1.is(Items.BRICK) && reagent2.is(Items.RESIN_BRICK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.RESIN_BRICK) && reagent2.is(Items.BRICK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.BRICK) && reagent2.isEmpty() && reagent3.is(Items.RESIN_BRICK)) ||
+                (reagent1.is(Items.RESIN_BRICK) && reagent2.isEmpty() && reagent3.is(Items.BRICK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.BRICK) && reagent3.is(Items.RESIN_BRICK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.RESIN_BRICK) && reagent3.is(Items.BRICK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BREACH.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BREACH.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.COPPER_BLOCK) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.COPPER_BLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.COPPER_BLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isEmpty() && reagent3.isOf(Items.COPPER_BLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.COPPER_BLOCK) && reagent3.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.COPPER_BLOCK))
+        else if ((reagent1.is(Items.COPPER_BLOCK) && reagent2.is(Items.OBSIDIAN) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.OBSIDIAN) && reagent2.is(Items.COPPER_BLOCK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.COPPER_BLOCK) && reagent2.isEmpty() && reagent3.is(Items.OBSIDIAN)) ||
+                (reagent1.is(Items.OBSIDIAN) && reagent2.isEmpty() && reagent3.is(Items.COPPER_BLOCK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.COPPER_BLOCK) && reagent3.is(Items.OBSIDIAN)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.OBSIDIAN) && reagent3.is(Items.COPPER_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DENSITY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DENSITY.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.OBSIDIAN) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isOf(Items.OBSIDIAN) && reagent2.isEmpty() && reagent3.isOf(Items.PRISMARINE_CRYSTALS)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.OBSIDIAN)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.OBSIDIAN) && reagent3.isOf(Items.PRISMARINE_CRYSTALS))
+        else if ((reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent2.is(Items.OBSIDIAN) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.OBSIDIAN) && reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.is(Items.OBSIDIAN)) ||
+                (reagent1.is(Items.OBSIDIAN) && reagent2.isEmpty() && reagent3.is(Items.PRISMARINE_CRYSTALS)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent3.is(Items.OBSIDIAN)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.OBSIDIAN) && reagent3.is(Items.PRISMARINE_CRYSTALS))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DEPTH_STRIDER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DEPTH_STRIDER.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.CLOCK) && reagent2.isOf(Items.SUGAR) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.SUGAR) && reagent2.isOf(Items.CLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.CLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.SUGAR)) ||
-                (reagent1.isOf(Items.SUGAR) && reagent2.isEmpty() && reagent3.isOf(Items.CLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.CLOCK) && reagent3.isOf(Items.SUGAR)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.SUGAR) && reagent3.isOf(Items.CLOCK))
+        else if ((reagent1.is(Items.CLOCK) && reagent2.is(Items.SUGAR) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.SUGAR) && reagent2.is(Items.CLOCK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.CLOCK) && reagent2.isEmpty() && reagent3.is(Items.SUGAR)) ||
+                (reagent1.is(Items.SUGAR) && reagent2.isEmpty() && reagent3.is(Items.CLOCK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.CLOCK) && reagent3.is(Items.SUGAR)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.SUGAR) && reagent3.is(Items.CLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.EFFICIENCY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.EFFICIENCY.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.FEATHER) && reagent2.isOf(Items.RABBIT_FOOT) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isOf(Items.FEATHER) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.FEATHER) && reagent2.isEmpty() && reagent3.isOf(Items.RABBIT_FOOT)) ||
-                (reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isEmpty() && reagent3.isOf(Items.FEATHER)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.FEATHER) && reagent3.isOf(Items.RABBIT_FOOT)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.RABBIT_FOOT) && reagent3.isOf(Items.FEATHER))
+        else if ((reagent1.is(Items.FEATHER) && reagent2.is(Items.RABBIT_FOOT) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.RABBIT_FOOT) && reagent2.is(Items.FEATHER) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.FEATHER) && reagent2.isEmpty() && reagent3.is(Items.RABBIT_FOOT)) ||
+                (reagent1.is(Items.RABBIT_FOOT) && reagent2.isEmpty() && reagent3.is(Items.FEATHER)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.FEATHER) && reagent3.is(Items.RABBIT_FOOT)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.RABBIT_FOOT) && reagent3.is(Items.FEATHER))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FEATHER_FALLING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FEATHER_FALLING.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.GUNPOWDER) && reagent2.isOf(Items.FIRE_CHARGE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.FIRE_CHARGE) && reagent2.isOf(Items.GUNPOWDER) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.GUNPOWDER) && reagent2.isEmpty() && reagent3.isOf(Items.FIRE_CHARGE)) ||
-                (reagent1.isOf(Items.FIRE_CHARGE) && reagent2.isEmpty() && reagent3.isOf(Items.GUNPOWDER)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.GUNPOWDER) && reagent3.isOf(Items.FIRE_CHARGE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.FIRE_CHARGE) && reagent3.isOf(Items.GUNPOWDER))
+        else if ((reagent1.is(Items.GUNPOWDER) && reagent2.is(Items.FIRE_CHARGE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.FIRE_CHARGE) && reagent2.is(Items.GUNPOWDER) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.GUNPOWDER) && reagent2.isEmpty() && reagent3.is(Items.FIRE_CHARGE)) ||
+                (reagent1.is(Items.FIRE_CHARGE) && reagent2.isEmpty() && reagent3.is(Items.GUNPOWDER)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.GUNPOWDER) && reagent3.is(Items.FIRE_CHARGE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.FIRE_CHARGE) && reagent3.is(Items.GUNPOWDER))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FIRE_ASPECT.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FIRE_ASPECT.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.CLAY) && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.CLAY) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.CLAY) && reagent2.isEmpty() && reagent3.isOf(Items.RESIN_BRICK)) ||
-                (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isEmpty() && reagent3.isOf(Items.CLAY)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.CLAY) && reagent3.isOf(Items.RESIN_BRICK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.CLAY))
+        else if ((reagent1.is(Items.CLAY) && reagent2.is(Items.RESIN_BRICK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.RESIN_BRICK) && reagent2.is(Items.CLAY) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.CLAY) && reagent2.isEmpty() && reagent3.is(Items.RESIN_BRICK)) ||
+                (reagent1.is(Items.RESIN_BRICK) && reagent2.isEmpty() && reagent3.is(Items.CLAY)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.CLAY) && reagent3.is(Items.RESIN_BRICK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.RESIN_BRICK) && reagent3.is(Items.CLAY))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FIRE_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FIRE_PROTECTION.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.LAPIS_LAZULI) && reagent2.isOf(Items.AMETHYST_SHARD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.AMETHYST_SHARD) && reagent2.isOf(Items.LAPIS_LAZULI) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.LAPIS_LAZULI) && reagent2.isEmpty() && reagent3.isOf(Items.AMETHYST_SHARD)) ||
-                (reagent1.isOf(Items.AMETHYST_SHARD) && reagent2.isEmpty() && reagent3.isOf(Items.LAPIS_LAZULI)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.LAPIS_LAZULI) && reagent3.isOf(Items.AMETHYST_SHARD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.AMETHYST_SHARD) && reagent3.isOf(Items.LAPIS_LAZULI))
+        else if ((reagent1.is(Items.LAPIS_LAZULI) && reagent2.is(Items.AMETHYST_SHARD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.AMETHYST_SHARD) && reagent2.is(Items.LAPIS_LAZULI) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.LAPIS_LAZULI) && reagent2.isEmpty() && reagent3.is(Items.AMETHYST_SHARD)) ||
+                (reagent1.is(Items.AMETHYST_SHARD) && reagent2.isEmpty() && reagent3.is(Items.LAPIS_LAZULI)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.LAPIS_LAZULI) && reagent3.is(Items.AMETHYST_SHARD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.AMETHYST_SHARD) && reagent3.is(Items.LAPIS_LAZULI))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FORTUNE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FORTUNE.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.PACKED_ICE) && reagent2.isOf(Items.WIND_CHARGE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.PACKED_ICE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PACKED_ICE) && reagent2.isEmpty() && reagent3.isOf(Items.WIND_CHARGE)) ||
-                (reagent1.isOf(Items.WIND_CHARGE) && reagent2.isEmpty() && reagent3.isOf(Items.PACKED_ICE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PACKED_ICE) && reagent3.isOf(Items.WIND_CHARGE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.WIND_CHARGE) && reagent3.isOf(Items.PACKED_ICE))
+        else if ((reagent1.is(Items.PACKED_ICE) && reagent2.is(Items.WIND_CHARGE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.WIND_CHARGE) && reagent2.is(Items.PACKED_ICE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PACKED_ICE) && reagent2.isEmpty() && reagent3.is(Items.WIND_CHARGE)) ||
+                (reagent1.is(Items.WIND_CHARGE) && reagent2.isEmpty() && reagent3.is(Items.PACKED_ICE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PACKED_ICE) && reagent3.is(Items.WIND_CHARGE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.WIND_CHARGE) && reagent3.is(Items.PACKED_ICE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FROST_WALKER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FROST_WALKER.identifier());
             cost = 8;
             level = 1;
         }
 
-        else if ((reagent1.isOf(Items.STICK) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.STICK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.STICK) && reagent2.isEmpty() && reagent3.isOf(Items.POINTED_DRIPSTONE)) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isEmpty() && reagent3.isOf(Items.STICK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.STICK) && reagent3.isOf(Items.POINTED_DRIPSTONE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.STICK))
+        else if ((reagent1.is(Items.STICK) && reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.STICK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.STICK) && reagent2.isEmpty() && reagent3.is(Items.POINTED_DRIPSTONE)) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.isEmpty() && reagent3.is(Items.STICK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.STICK) && reagent3.is(Items.POINTED_DRIPSTONE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.STICK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.IMPALING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.IMPALING.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.LODESTONE) && reagent2.isOf(Items.PISTON) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PISTON) && reagent2.isOf(Items.LODESTONE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.LODESTONE) && reagent2.isEmpty() && reagent3.isOf(Items.PISTON)) ||
-                (reagent1.isOf(Items.PISTON) && reagent2.isEmpty() && reagent3.isOf(Items.LODESTONE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.LODESTONE) && reagent3.isOf(Items.PISTON)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PISTON) && reagent3.isOf(Items.LODESTONE))
+        else if ((reagent1.is(Items.LODESTONE) && reagent2.is(Items.PISTON) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PISTON) && reagent2.is(Items.LODESTONE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.LODESTONE) && reagent2.isEmpty() && reagent3.is(Items.PISTON)) ||
+                (reagent1.is(Items.PISTON) && reagent2.isEmpty() && reagent3.is(Items.LODESTONE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.LODESTONE) && reagent3.is(Items.PISTON)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PISTON) && reagent3.is(Items.LODESTONE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.KNOCKBACK.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.KNOCKBACK.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.EMERALD) && reagent2.isOf(Items.NAUTILUS_SHELL) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.NAUTILUS_SHELL) && reagent2.isOf(Items.EMERALD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.EMERALD) && reagent2.isEmpty() && reagent3.isOf(Items.NAUTILUS_SHELL)) ||
-                (reagent1.isOf(Items.NAUTILUS_SHELL) && reagent2.isEmpty() && reagent3.isOf(Items.EMERALD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.EMERALD) && reagent3.isOf(Items.NAUTILUS_SHELL)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.NAUTILUS_SHELL) && reagent3.isOf(Items.EMERALD))
+        else if ((reagent1.is(Items.EMERALD) && reagent2.is(Items.NAUTILUS_SHELL) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.NAUTILUS_SHELL) && reagent2.is(Items.EMERALD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.EMERALD) && reagent2.isEmpty() && reagent3.is(Items.NAUTILUS_SHELL)) ||
+                (reagent1.is(Items.NAUTILUS_SHELL) && reagent2.isEmpty() && reagent3.is(Items.EMERALD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.EMERALD) && reagent3.is(Items.NAUTILUS_SHELL)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.NAUTILUS_SHELL) && reagent3.is(Items.EMERALD))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LOOTING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LOOTING.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.FISHING_ROD) && reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isOf(Items.FISHING_ROD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.FISHING_ROD) && reagent2.isEmpty() && reagent3.isOf(Items.PRISMARINE_CRYSTALS)) ||
-                (reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.isOf(Items.FISHING_ROD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.FISHING_ROD) && reagent3.isOf(Items.PRISMARINE_CRYSTALS)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent3.isOf(Items.FISHING_ROD))
+        else if ((reagent1.is(Items.FISHING_ROD) && reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent2.is(Items.FISHING_ROD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.FISHING_ROD) && reagent2.isEmpty() && reagent3.is(Items.PRISMARINE_CRYSTALS)) ||
+                (reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.is(Items.FISHING_ROD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.FISHING_ROD) && reagent3.is(Items.PRISMARINE_CRYSTALS)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent3.is(Items.FISHING_ROD))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LOYALTY.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LOYALTY.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.SALMON) && reagent2.isOf(Items.COD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.COD) && reagent2.isOf(Items.SALMON) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.SALMON) && reagent2.isEmpty() && reagent3.isOf(Items.COD)) ||
-                (reagent1.isOf(Items.COD) && reagent2.isEmpty() && reagent3.isOf(Items.SALMON)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.SALMON) && reagent3.isOf(Items.COD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.COD) && reagent3.isOf(Items.SALMON))
+        else if ((reagent1.is(Items.SALMON) && reagent2.is(Items.COD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.COD) && reagent2.is(Items.SALMON) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.SALMON) && reagent2.isEmpty() && reagent3.is(Items.COD)) ||
+                (reagent1.is(Items.COD) && reagent2.isEmpty() && reagent3.is(Items.SALMON)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.SALMON) && reagent3.is(Items.COD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.COD) && reagent3.is(Items.SALMON))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LUCK_OF_THE_SEA.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.BREAD) && reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isOf(Items.BREAD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BREAD) && reagent2.isEmpty() && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isOf(Items.POISONOUS_POTATO) && reagent2.isEmpty() && reagent3.isOf(Items.BREAD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BREAD) && reagent3.isOf(Items.POISONOUS_POTATO)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.POISONOUS_POTATO) && reagent3.isOf(Items.BREAD))
+        else if ((reagent1.is(Items.BREAD) && reagent2.is(Items.POISONOUS_POTATO) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.POISONOUS_POTATO) && reagent2.is(Items.BREAD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.BREAD) && reagent2.isEmpty() && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.is(Items.POISONOUS_POTATO) && reagent2.isEmpty() && reagent3.is(Items.BREAD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.BREAD) && reagent3.is(Items.POISONOUS_POTATO)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.POISONOUS_POTATO) && reagent3.is(Items.BREAD))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LURE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LURE.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isEmpty() && reagent3.isOf(Items.POINTED_DRIPSTONE)) ||
-                (reagent1.isOf(Items.POINTED_DRIPSTONE) && reagent2.isEmpty() && reagent3.isOf(Items.SPECTRAL_ARROW)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.POINTED_DRIPSTONE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.POINTED_DRIPSTONE) && reagent3.isOf(Items.SPECTRAL_ARROW))
+        else if ((reagent1.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.is(Items.SPECTRAL_ARROW) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.SPECTRAL_ARROW) && reagent2.isEmpty() && reagent3.is(Items.POINTED_DRIPSTONE)) ||
+                (reagent1.is(Items.POINTED_DRIPSTONE) && reagent2.isEmpty() && reagent3.is(Items.SPECTRAL_ARROW)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.POINTED_DRIPSTONE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.POINTED_DRIPSTONE) && reagent3.is(Items.SPECTRAL_ARROW))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PIERCING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PIERCING.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(ModItems.PBOW) && reagent2.isOf(Items.LEATHER) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.LEATHER) && reagent2.isOf(ModItems.PBOW) && reagent3.isEmpty()) ||
-                (reagent1.isOf(ModItems.PBOW) && reagent2.isEmpty() && reagent3.isOf(Items.LEATHER)) ||
-                (reagent1.isOf(Items.LEATHER) && reagent2.isEmpty() && reagent3.isOf(ModItems.PBOW)) ||
-                (reagent1.isEmpty() && reagent2.isOf(ModItems.PBOW) && reagent3.isOf(Items.LEATHER)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.LEATHER) && reagent3.isOf(ModItems.PBOW))
+        else if ((reagent1.is(ModItems.PBOW) && reagent2.is(Items.LEATHER) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.LEATHER) && reagent2.is(ModItems.PBOW) && reagent3.isEmpty()) ||
+                (reagent1.is(ModItems.PBOW) && reagent2.isEmpty() && reagent3.is(Items.LEATHER)) ||
+                (reagent1.is(Items.LEATHER) && reagent2.isEmpty() && reagent3.is(ModItems.PBOW)) ||
+                (reagent1.isEmpty() && reagent2.is(ModItems.PBOW) && reagent3.is(Items.LEATHER)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.LEATHER) && reagent3.is(ModItems.PBOW))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.POWER.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.POWER.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.HAY_BLOCK) && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.IRON_CHAIN) && reagent2.isOf(Items.HAY_BLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.HAY_BLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.IRON_CHAIN)) ||
-                (reagent1.isOf(Items.IRON_CHAIN) && reagent2.isEmpty() && reagent3.isOf(Items.HAY_BLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.HAY_BLOCK) && reagent3.isOf(Items.IRON_CHAIN)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.IRON_CHAIN) && reagent3.isOf(Items.HAY_BLOCK))
+        else if ((reagent1.is(Items.HAY_BLOCK) && reagent2.is(Items.IRON_CHAIN) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.IRON_CHAIN) && reagent2.is(Items.HAY_BLOCK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.HAY_BLOCK) && reagent2.isEmpty() && reagent3.is(Items.IRON_CHAIN)) ||
+                (reagent1.is(Items.IRON_CHAIN) && reagent2.isEmpty() && reagent3.is(Items.HAY_BLOCK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.HAY_BLOCK) && reagent3.is(Items.IRON_CHAIN)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.IRON_CHAIN) && reagent3.is(Items.HAY_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROJECTILE_PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROJECTILE_PROTECTION.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.IRON_BLOCK) && reagent2.isOf(Items.PHANTOM_MEMBRANE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isOf(Items.IRON_BLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.IRON_BLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent1.isOf(Items.PHANTOM_MEMBRANE) && reagent2.isEmpty() && reagent3.isOf(Items.IRON_BLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.IRON_BLOCK) && reagent3.isOf(Items.PHANTOM_MEMBRANE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PHANTOM_MEMBRANE) && reagent3.isOf(Items.IRON_BLOCK))
+        else if ((reagent1.is(Items.IRON_BLOCK) && reagent2.is(Items.PHANTOM_MEMBRANE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PHANTOM_MEMBRANE) && reagent2.is(Items.IRON_BLOCK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.IRON_BLOCK) && reagent2.isEmpty() && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent1.is(Items.PHANTOM_MEMBRANE) && reagent2.isEmpty() && reagent3.is(Items.IRON_BLOCK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.IRON_BLOCK) && reagent3.is(Items.PHANTOM_MEMBRANE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PHANTOM_MEMBRANE) && reagent3.is(Items.IRON_BLOCK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROTECTION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROTECTION.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.TIPPED_ARROW) && reagent2.isOf(Items.BRICK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BRICK) && reagent2.isOf(Items.TIPPED_ARROW) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.TIPPED_ARROW) && reagent2.isEmpty() && reagent3.isOf(Items.BRICK)) ||
-                (reagent1.isOf(Items.BRICK) && reagent2.isEmpty() && reagent3.isOf(Items.TIPPED_ARROW)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.TIPPED_ARROW) && reagent3.isOf(Items.BRICK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BRICK) && reagent3.isOf(Items.TIPPED_ARROW))
+        else if ((reagent1.is(Items.TIPPED_ARROW) && reagent2.is(Items.BRICK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.BRICK) && reagent2.is(Items.TIPPED_ARROW) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.TIPPED_ARROW) && reagent2.isEmpty() && reagent3.is(Items.BRICK)) ||
+                (reagent1.is(Items.BRICK) && reagent2.isEmpty() && reagent3.is(Items.TIPPED_ARROW)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.TIPPED_ARROW) && reagent3.is(Items.BRICK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.BRICK) && reagent3.is(Items.TIPPED_ARROW))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PUNCH.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PUNCH.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isOf(Items.MILK_BUCKET) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.MILK_BUCKET) && reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isEmpty() && reagent3.isOf(Items.MILK_BUCKET)) ||
-                (reagent1.isOf(Items.MILK_BUCKET) && reagent2.isEmpty() && reagent3.isOf(Items.SPECTRAL_ARROW)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.SPECTRAL_ARROW) && reagent3.isOf(Items.MILK_BUCKET)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.MILK_BUCKET) && reagent3.isOf(Items.SPECTRAL_ARROW))
+        else if ((reagent1.is(Items.SPECTRAL_ARROW) && reagent2.is(Items.MILK_BUCKET) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.MILK_BUCKET) && reagent2.is(Items.SPECTRAL_ARROW) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.SPECTRAL_ARROW) && reagent2.isEmpty() && reagent3.is(Items.MILK_BUCKET)) ||
+                (reagent1.is(Items.MILK_BUCKET) && reagent2.isEmpty() && reagent3.is(Items.SPECTRAL_ARROW)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.SPECTRAL_ARROW) && reagent3.is(Items.MILK_BUCKET)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.MILK_BUCKET) && reagent3.is(Items.SPECTRAL_ARROW))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.QUICK_CHARGE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.QUICK_CHARGE.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.INK_SAC) && reagent2.isOf(Items.GLASS_BOTTLE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.GLASS_BOTTLE) && reagent2.isOf(Items.INK_SAC) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.INK_SAC) && reagent2.isEmpty() && reagent3.isOf(Items.GLASS_BOTTLE)) ||
-                (reagent1.isOf(Items.GLASS_BOTTLE) && reagent2.isEmpty() && reagent3.isOf(Items.INK_SAC)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.INK_SAC) && reagent3.isOf(Items.GLASS_BOTTLE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.GLASS_BOTTLE) && reagent3.isOf(Items.INK_SAC))
+        else if ((reagent1.is(Items.INK_SAC) && reagent2.is(Items.GLASS_BOTTLE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.GLASS_BOTTLE) && reagent2.is(Items.INK_SAC) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.INK_SAC) && reagent2.isEmpty() && reagent3.is(Items.GLASS_BOTTLE)) ||
+                (reagent1.is(Items.GLASS_BOTTLE) && reagent2.isEmpty() && reagent3.is(Items.INK_SAC)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.INK_SAC) && reagent3.is(Items.GLASS_BOTTLE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.GLASS_BOTTLE) && reagent3.is(Items.INK_SAC))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.RESPIRATION.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.RESPIRATION.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isOf(Items.ENDER_PEARL) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.ENDER_PEARL) && reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isEmpty() && reagent3.isOf(Items.ENDER_PEARL)) ||
-                (reagent1.isOf(Items.ENDER_PEARL) && reagent2.isEmpty() && reagent3.isOf(Items.HEART_OF_THE_SEA)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent3.isOf(Items.ENDER_PEARL)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.ENDER_PEARL) && reagent3.isOf(Items.HEART_OF_THE_SEA))
+        else if ((reagent1.is(Items.HEART_OF_THE_SEA) && reagent2.is(Items.ENDER_PEARL) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.ENDER_PEARL) && reagent2.is(Items.HEART_OF_THE_SEA) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.HEART_OF_THE_SEA) && reagent2.isEmpty() && reagent3.is(Items.ENDER_PEARL)) ||
+                (reagent1.is(Items.ENDER_PEARL) && reagent2.isEmpty() && reagent3.is(Items.HEART_OF_THE_SEA)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.HEART_OF_THE_SEA) && reagent3.is(Items.ENDER_PEARL)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.ENDER_PEARL) && reagent3.is(Items.HEART_OF_THE_SEA))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.RIPTIDE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.RIPTIDE.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.FLINT) && reagent2.isOf(Items.PRISMARINE_SHARD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isOf(Items.FLINT) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.FLINT) && reagent2.isEmpty() && reagent3.isOf(Items.PRISMARINE_SHARD)) ||
-                (reagent1.isOf(Items.PRISMARINE_SHARD) && reagent2.isEmpty() && reagent3.isOf(Items.FLINT)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.FLINT) && reagent3.isOf(Items.PRISMARINE_SHARD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PRISMARINE_SHARD) && reagent3.isOf(Items.FLINT))
+        else if ((reagent1.is(Items.FLINT) && reagent2.is(Items.PRISMARINE_SHARD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PRISMARINE_SHARD) && reagent2.is(Items.FLINT) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.FLINT) && reagent2.isEmpty() && reagent3.is(Items.PRISMARINE_SHARD)) ||
+                (reagent1.is(Items.PRISMARINE_SHARD) && reagent2.isEmpty() && reagent3.is(Items.FLINT)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.FLINT) && reagent3.is(Items.PRISMARINE_SHARD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PRISMARINE_SHARD) && reagent3.is(Items.FLINT))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SHARPNESS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SHARPNESS.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.MAGMA_CREAM) && reagent2.isOf(Items.ECHO_SHARD) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.ECHO_SHARD) && reagent2.isOf(Items.MAGMA_CREAM) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.MAGMA_CREAM) && reagent2.isEmpty() && reagent3.isOf(Items.ECHO_SHARD)) ||
-                (reagent1.isOf(Items.ECHO_SHARD) && reagent2.isEmpty() && reagent3.isOf(Items.MAGMA_CREAM)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.MAGMA_CREAM) && reagent3.isOf(Items.ECHO_SHARD)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.ECHO_SHARD) && reagent3.isOf(Items.MAGMA_CREAM))
+        else if ((reagent1.is(Items.MAGMA_CREAM) && reagent2.is(Items.ECHO_SHARD) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.ECHO_SHARD) && reagent2.is(Items.MAGMA_CREAM) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.MAGMA_CREAM) && reagent2.isEmpty() && reagent3.is(Items.ECHO_SHARD)) ||
+                (reagent1.is(Items.ECHO_SHARD) && reagent2.isEmpty() && reagent3.is(Items.MAGMA_CREAM)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.MAGMA_CREAM) && reagent3.is(Items.ECHO_SHARD)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.ECHO_SHARD) && reagent3.is(Items.MAGMA_CREAM))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SILK_TOUCH.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SILK_TOUCH.identifier());
             cost = 8;
             level = 1;
         }
 
-        else if ((reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isOf(Items.BONE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BONE) && reagent2.isOf(Items.ROTTEN_FLESH) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isEmpty() && reagent3.isOf(Items.BONE)) ||
-                (reagent1.isOf(Items.BONE) && reagent2.isEmpty() && reagent3.isOf(Items.ROTTEN_FLESH)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.ROTTEN_FLESH) && reagent3.isOf(Items.BONE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BONE) && reagent3.isOf(Items.ROTTEN_FLESH))
+        else if ((reagent1.is(Items.ROTTEN_FLESH) && reagent2.is(Items.BONE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.BONE) && reagent2.is(Items.ROTTEN_FLESH) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.ROTTEN_FLESH) && reagent2.isEmpty() && reagent3.is(Items.BONE)) ||
+                (reagent1.is(Items.BONE) && reagent2.isEmpty() && reagent3.is(Items.ROTTEN_FLESH)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.ROTTEN_FLESH) && reagent3.is(Items.BONE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.BONE) && reagent3.is(Items.ROTTEN_FLESH))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SMITE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SMITE.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.CRYING_OBSIDIAN) && reagent2.isOf(Items.NETHER_SPROUTS) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.NETHER_SPROUTS) && reagent2.isOf(Items.CRYING_OBSIDIAN) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.CRYING_OBSIDIAN) && reagent2.isEmpty() && reagent3.isOf(Items.NETHER_SPROUTS)) ||
-                (reagent1.isOf(Items.NETHER_SPROUTS) && reagent2.isEmpty() && reagent3.isOf(Items.CRYING_OBSIDIAN)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.CRYING_OBSIDIAN) && reagent3.isOf(Items.NETHER_SPROUTS)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.NETHER_SPROUTS) && reagent3.isOf(Items.CRYING_OBSIDIAN))
+        else if ((reagent1.is(Items.CRYING_OBSIDIAN) && reagent2.is(Items.NETHER_SPROUTS) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.NETHER_SPROUTS) && reagent2.is(Items.CRYING_OBSIDIAN) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.CRYING_OBSIDIAN) && reagent2.isEmpty() && reagent3.is(Items.NETHER_SPROUTS)) ||
+                (reagent1.is(Items.NETHER_SPROUTS) && reagent2.isEmpty() && reagent3.is(Items.CRYING_OBSIDIAN)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.CRYING_OBSIDIAN) && reagent3.is(Items.NETHER_SPROUTS)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.NETHER_SPROUTS) && reagent3.is(Items.CRYING_OBSIDIAN))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SOUL_SPEED.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SOUL_SPEED.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.BRUSH) && reagent2.isOf(Items.QUARTZ) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.QUARTZ) && reagent2.isOf(Items.BRUSH) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.BRUSH) && reagent2.isEmpty() && reagent3.isOf(Items.QUARTZ)) ||
-                (reagent1.isOf(Items.QUARTZ) && reagent2.isEmpty() && reagent3.isOf(Items.BRUSH)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.BRUSH) && reagent3.isOf(Items.QUARTZ)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.QUARTZ) && reagent3.isOf(Items.BRUSH))
+        else if ((reagent1.is(Items.BRUSH) && reagent2.is(Items.QUARTZ) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.QUARTZ) && reagent2.is(Items.BRUSH) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.BRUSH) && reagent2.isEmpty() && reagent3.is(Items.QUARTZ)) ||
+                (reagent1.is(Items.QUARTZ) && reagent2.isEmpty() && reagent3.is(Items.BRUSH)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.BRUSH) && reagent3.is(Items.QUARTZ)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.QUARTZ) && reagent3.is(Items.BRUSH))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SWEEPING_EDGE.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SWEEPING_EDGE.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.PINK_WOOL) && reagent2.isOf(Items.RABBIT_FOOT) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isOf(Items.PINK_WOOL) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.PINK_WOOL) && reagent2.isEmpty() && reagent3.isOf(Items.RABBIT_FOOT)) ||
-                (reagent1.isOf(Items.RABBIT_FOOT) && reagent2.isEmpty() && reagent3.isOf(Items.PINK_WOOL)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.PINK_WOOL) && reagent3.isOf(Items.RABBIT_FOOT)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.RABBIT_FOOT) && reagent3.isOf(Items.PINK_WOOL))
+        else if ((reagent1.is(Items.PINK_WOOL) && reagent2.is(Items.RABBIT_FOOT) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.RABBIT_FOOT) && reagent2.is(Items.PINK_WOOL) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.PINK_WOOL) && reagent2.isEmpty() && reagent3.is(Items.RABBIT_FOOT)) ||
+                (reagent1.is(Items.RABBIT_FOOT) && reagent2.isEmpty() && reagent3.is(Items.PINK_WOOL)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.PINK_WOOL) && reagent3.is(Items.RABBIT_FOOT)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.RABBIT_FOOT) && reagent3.is(Items.PINK_WOOL))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SWIFT_SNEAK.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SWIFT_SNEAK.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.VINE) && reagent2.isOf(Items.WEEPING_VINES) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.WEEPING_VINES) && reagent2.isOf(Items.VINE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.VINE) && reagent2.isEmpty() && reagent3.isOf(Items.WEEPING_VINES)) ||
-                (reagent1.isOf(Items.WEEPING_VINES) && reagent2.isEmpty() && reagent3.isOf(Items.VINE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.VINE) && reagent3.isOf(Items.WEEPING_VINES)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.WEEPING_VINES) && reagent3.isOf(Items.VINE))
+        else if ((reagent1.is(Items.VINE) && reagent2.is(Items.WEEPING_VINES) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.WEEPING_VINES) && reagent2.is(Items.VINE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.VINE) && reagent2.isEmpty() && reagent3.is(Items.WEEPING_VINES)) ||
+                (reagent1.is(Items.WEEPING_VINES) && reagent2.isEmpty() && reagent3.is(Items.VINE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.VINE) && reagent3.is(Items.WEEPING_VINES)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.WEEPING_VINES) && reagent3.is(Items.VINE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.THORNS.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.THORNS.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.RESIN_BRICK) && reagent2.isOf(Items.SLIME_BLOCK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.SLIME_BLOCK) && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.RESIN_BRICK) && reagent2.isEmpty() && reagent3.isOf(Items.SLIME_BLOCK)) ||
-                (reagent1.isOf(Items.SLIME_BLOCK) && reagent2.isEmpty() && reagent3.isOf(Items.RESIN_BRICK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.RESIN_BRICK) && reagent3.isOf(Items.SLIME_BLOCK)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.SLIME_BLOCK) && reagent3.isOf(Items.RESIN_BRICK))
+        else if ((reagent1.is(Items.RESIN_BRICK) && reagent2.is(Items.SLIME_BLOCK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.SLIME_BLOCK) && reagent2.is(Items.RESIN_BRICK) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.RESIN_BRICK) && reagent2.isEmpty() && reagent3.is(Items.SLIME_BLOCK)) ||
+                (reagent1.is(Items.SLIME_BLOCK) && reagent2.isEmpty() && reagent3.is(Items.RESIN_BRICK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.RESIN_BRICK) && reagent3.is(Items.SLIME_BLOCK)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.SLIME_BLOCK) && reagent3.is(Items.RESIN_BRICK))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.UNBREAKING.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.UNBREAKING.identifier());
             cost = 8;
             level = 2;
         }
 
-        else if ((reagent1.isOf(Items.WIND_CHARGE) && reagent2.isOf(Items.TNT) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.TNT) && reagent2.isOf(Items.WIND_CHARGE) && reagent3.isEmpty()) ||
-                (reagent1.isOf(Items.WIND_CHARGE) && reagent2.isEmpty() && reagent3.isOf(Items.TNT)) ||
-                (reagent1.isOf(Items.TNT) && reagent2.isEmpty() && reagent3.isOf(Items.WIND_CHARGE)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.WIND_CHARGE) && reagent3.isOf(Items.TNT)) ||
-                (reagent1.isEmpty() && reagent2.isOf(Items.TNT) && reagent3.isOf(Items.WIND_CHARGE))
+        else if ((reagent1.is(Items.WIND_CHARGE) && reagent2.is(Items.TNT) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.TNT) && reagent2.is(Items.WIND_CHARGE) && reagent3.isEmpty()) ||
+                (reagent1.is(Items.WIND_CHARGE) && reagent2.isEmpty() && reagent3.is(Items.TNT)) ||
+                (reagent1.is(Items.TNT) && reagent2.isEmpty() && reagent3.is(Items.WIND_CHARGE)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.WIND_CHARGE) && reagent3.is(Items.TNT)) ||
+                (reagent1.isEmpty() && reagent2.is(Items.TNT) && reagent3.is(Items.WIND_CHARGE))
         ) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.WIND_BURST.getValue());
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.WIND_BURST.identifier());
             cost = 8;
             level = 2;
         }
 
         // Single-reagent enchantments
-         else if ((reagent1.isOf(Items.FERMENTED_SPIDER_EYE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.FERMENTED_SPIDER_EYE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.FERMENTED_SPIDER_EYE) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BANE_OF_ARTHROPODS.getValue());
+         else if ((reagent1.is(Items.FERMENTED_SPIDER_EYE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.FERMENTED_SPIDER_EYE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.FERMENTED_SPIDER_EYE) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BANE_OF_ARTHROPODS.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.BRICKS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.BRICKS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.BRICKS) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BLAST_PROTECTION.getValue());
+        } else if ((reagent1.is(Items.BRICKS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.BRICKS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.BRICKS) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BLAST_PROTECTION.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.BRICK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.BRICK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.BRICK) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BREACH.getValue());
+        } else if ((reagent1.is(Items.BRICK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.BRICK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.BRICK) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BREACH.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SUSPICIOUS_STEW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SUSPICIOUS_STEW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SUSPICIOUS_STEW) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.BINDING_CURSE.getValue());
+        } else if ((reagent1.is(Items.SUSPICIOUS_STEW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.SUSPICIOUS_STEW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.SUSPICIOUS_STEW) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.BINDING_CURSE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.CHORUS_FRUIT) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.CHORUS_FRUIT) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.CHORUS_FRUIT) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.VANISHING_CURSE.getValue());
+        } else if ((reagent1.is(Items.CHORUS_FRUIT) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.CHORUS_FRUIT) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.CHORUS_FRUIT) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.VANISHING_CURSE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SMOOTH_STONE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SMOOTH_STONE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SMOOTH_STONE) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DENSITY.getValue());
+        } else if ((reagent1.is(Items.SMOOTH_STONE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.SMOOTH_STONE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.SMOOTH_STONE) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DENSITY.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.DEPTH_STRIDER.getValue());
+        } else if ((reagent1.is(Items.PRISMARINE_CRYSTALS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.PRISMARINE_CRYSTALS) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.DEPTH_STRIDER.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SUGAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SUGAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SUGAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.EFFICIENCY.getValue());
+        } else if ((reagent1.is(Items.SUGAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.SUGAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.SUGAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.EFFICIENCY.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.FEATHER) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.FEATHER) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.FEATHER) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FEATHER_FALLING.getValue());
+        } else if ((reagent1.is(Items.FEATHER) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.FEATHER) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.FEATHER) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FEATHER_FALLING.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.GUNPOWDER) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.GUNPOWDER) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.GUNPOWDER) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FIRE_ASPECT.getValue());
+        } else if ((reagent1.is(Items.GUNPOWDER) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.GUNPOWDER) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.GUNPOWDER) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FIRE_ASPECT.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.CLAY_BALL) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.CLAY_BALL) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.CLAY_BALL) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FIRE_PROTECTION.getValue());
+        } else if ((reagent1.is(Items.CLAY_BALL) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.CLAY_BALL) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.CLAY_BALL) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FIRE_PROTECTION.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.FIREWORK_STAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.FIREWORK_STAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.FIREWORK_STAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FLAME.getValue());
+        } else if ((reagent1.is(Items.FIREWORK_STAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.FIREWORK_STAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.FIREWORK_STAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FLAME.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.LAPIS_LAZULI) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.LAPIS_LAZULI) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.LAPIS_LAZULI) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.FORTUNE.getValue());
+        } else if ((reagent1.is(Items.LAPIS_LAZULI) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.LAPIS_LAZULI) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.LAPIS_LAZULI) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.FORTUNE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.STICK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.STICK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.STICK) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.IMPALING.getValue());
+        } else if ((reagent1.is(Items.STICK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.STICK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.STICK) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.IMPALING.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.LODESTONE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.LODESTONE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.LODESTONE) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.KNOCKBACK.getValue());
+        } else if ((reagent1.is(Items.LODESTONE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.LODESTONE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.LODESTONE) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.KNOCKBACK.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.EMERALD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.EMERALD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.EMERALD) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LOOTING.getValue());
+        } else if ((reagent1.is(Items.EMERALD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.EMERALD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.EMERALD) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LOOTING.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.LEAD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.LEAD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.LEAD) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LOYALTY.getValue());
+        } else if ((reagent1.is(Items.LEAD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.LEAD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.LEAD) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LOYALTY.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.TROPICAL_FISH) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.TROPICAL_FISH) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.TROPICAL_FISH) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LUCK_OF_THE_SEA.getValue());
+        } else if ((reagent1.is(Items.TROPICAL_FISH) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.TROPICAL_FISH) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.TROPICAL_FISH) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LUCK_OF_THE_SEA.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.BREAD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.BREAD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.BREAD) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.LURE.getValue());
+        } else if ((reagent1.is(Items.BREAD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.BREAD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.BREAD) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.LURE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.CROSSBOW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.CROSSBOW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.CROSSBOW) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.MULTISHOT.getValue());
+        } else if ((reagent1.is(Items.CROSSBOW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.CROSSBOW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.CROSSBOW) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.MULTISHOT.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SPECTRAL_ARROW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SPECTRAL_ARROW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SPECTRAL_ARROW) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PIERCING.getValue());
+        } else if ((reagent1.is(Items.SPECTRAL_ARROW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.SPECTRAL_ARROW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.SPECTRAL_ARROW) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PIERCING.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.STRING) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.STRING) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.STRING) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.POWER.getValue());
+        } else if ((reagent1.is(Items.STRING) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.STRING) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.STRING) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.POWER.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.WHEAT) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.WHEAT) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.WHEAT) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROJECTILE_PROTECTION.getValue());
+        } else if ((reagent1.is(Items.WHEAT) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.WHEAT) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.WHEAT) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROJECTILE_PROTECTION.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.COPPER_BLOCK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.COPPER_BLOCK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.COPPER_BLOCK) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PROTECTION.getValue());
+        } else if ((reagent1.is(Items.COPPER_BLOCK) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.COPPER_BLOCK) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.COPPER_BLOCK) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PROTECTION.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.ARROW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.ARROW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.ARROW) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.PUNCH.getValue());
+        } else if ((reagent1.is(Items.ARROW) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.ARROW) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.ARROW) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.PUNCH.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SUGAR_CANE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SUGAR_CANE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SUGAR_CANE) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.QUICK_CHARGE.getValue());
+        } else if ((reagent1.is(Items.SUGAR_CANE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.SUGAR_CANE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.SUGAR_CANE) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.QUICK_CHARGE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.INK_SAC) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.INK_SAC) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.INK_SAC) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.RESPIRATION.getValue());
+        } else if ((reagent1.is(Items.INK_SAC) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.INK_SAC) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.INK_SAC) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.RESPIRATION.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.HEART_OF_THE_SEA) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.HEART_OF_THE_SEA) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.HEART_OF_THE_SEA) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.RIPTIDE.getValue());
+        } else if ((reagent1.is(Items.HEART_OF_THE_SEA) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.HEART_OF_THE_SEA) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.HEART_OF_THE_SEA) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.RIPTIDE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.FLINT) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.FLINT) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.FLINT) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SHARPNESS.getValue());
+        } else if ((reagent1.is(Items.FLINT) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.FLINT) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.FLINT) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SHARPNESS.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.ROTTEN_FLESH) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.ROTTEN_FLESH) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.ROTTEN_FLESH) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SMITE.getValue());
+        } else if ((reagent1.is(Items.ROTTEN_FLESH) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.ROTTEN_FLESH) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.ROTTEN_FLESH) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SMITE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.GHAST_TEAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.GHAST_TEAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.GHAST_TEAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SOUL_SPEED.getValue());
+        } else if ((reagent1.is(Items.GHAST_TEAR) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.GHAST_TEAR) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.GHAST_TEAR) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SOUL_SPEED.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.AMETHYST_SHARD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.AMETHYST_SHARD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.AMETHYST_SHARD) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SWEEPING_EDGE.getValue());
+        } else if ((reagent1.is(Items.AMETHYST_SHARD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.AMETHYST_SHARD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.AMETHYST_SHARD) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SWEEPING_EDGE.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.ECHO_SHARD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.ECHO_SHARD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.ECHO_SHARD) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.SWIFT_SNEAK.getValue());
+        } else if ((reagent1.is(Items.ECHO_SHARD) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.ECHO_SHARD) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.ECHO_SHARD) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.SWIFT_SNEAK.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.CACTUS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.CACTUS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.CACTUS) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.THORNS.getValue());
+        } else if ((reagent1.is(Items.CACTUS) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.CACTUS) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.CACTUS) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.THORNS.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.SLIME_BALL) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.SLIME_BALL) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.SLIME_BALL) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.UNBREAKING.getValue());
+        } else if ((reagent1.is(Items.SLIME_BALL) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.SLIME_BALL) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.SLIME_BALL) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.UNBREAKING.identifier());
             cost = 3;
             level = 1;
-        } else if ((reagent1.isOf(Items.WIND_CHARGE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
-                (reagent2.isOf(Items.WIND_CHARGE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
-                (reagent3.isOf(Items.WIND_CHARGE) && reagent1.isEmpty() && reagent2.isEmpty())) {
-            entryOpt = world.getRegistryManager()
-                    .getOrThrow(RegistryKeys.ENCHANTMENT)
-                    .getEntry(Enchantments.WIND_BURST.getValue());
+        } else if ((reagent1.is(Items.WIND_CHARGE) && reagent2.isEmpty() && reagent3.isEmpty()) ||
+                (reagent2.is(Items.WIND_CHARGE) && reagent1.isEmpty() && reagent3.isEmpty()) ||
+                (reagent3.is(Items.WIND_CHARGE) && reagent1.isEmpty() && reagent2.isEmpty())) {
+            entryOpt = world.registryAccess()
+                    .lookupOrThrow(Registries.ENCHANTMENT)
+                    .get(Enchantments.WIND_BURST.identifier());
         }
 
         if (entryOpt.isPresent()) {
             Enchantment enchantment = entryOpt.get().value();
 
-            if (enchantment.isAcceptableItem(tool)) {
-                RegistryEntry<Enchantment> enchantmentEntry = entryOpt.get();
-                int existingLevel = EnchantmentHelper.getLevel(enchantmentEntry, tool);
+            if (enchantment.canEnchant(tool)) {
+                Holder<Enchantment> enchantmentEntry = entryOpt.get();
+                int existingLevel = EnchantmentHelper.getItemEnchantmentLevel(enchantmentEntry, tool);
 
                 if( level == 2 && existingLevel < 1) {
                     return new TripleMagicBenchEnchantmentSelector.EnchantmentResult(ItemStack.EMPTY, 42069);
@@ -1582,7 +1581,7 @@ public class TripleMagicBenchEnchantmentSelector {
 
                 ItemStack result = tool.copy();
                 removeConflictingEnchantments(result, entryOpt.get());
-                result.addEnchantment(entryOpt.get(), level);
+                result.enchant(entryOpt.get(), level);
                 return new EnchantmentResult(result, cost);
             }
         }
@@ -1590,19 +1589,19 @@ public class TripleMagicBenchEnchantmentSelector {
         return new EnchantmentResult(ItemStack.EMPTY, 0);
     }
 
-    private static void removeConflictingEnchantments(ItemStack stack, RegistryEntry<Enchantment> candidateEntry) {
-        EnchantmentHelper.apply(stack, builder -> {
-            Collection<RegistryEntry<Enchantment>> existing = builder.getEnchantments();
-            List<RegistryEntry<Enchantment>> toRemove = new ArrayList<>();
+    private static void removeConflictingEnchantments(ItemStack stack, Holder<Enchantment> candidateEntry) {
+        EnchantmentHelper.updateEnchantments(stack, builder -> {
+            Collection<Holder<Enchantment>> existing = builder.keySet();
+            List<Holder<Enchantment>> toRemove = new ArrayList<>();
 
-            for (RegistryEntry<Enchantment> entry : existing) {
-                if (!EnchantmentHelper.isCompatible(Collections.singleton(entry), candidateEntry)) {
+            for (Holder<Enchantment> entry : existing) {
+                if (!EnchantmentHelper.isEnchantmentCompatible(Collections.singleton(entry), candidateEntry)) {
                     toRemove.add(entry);
                 }
             }
 
-            for (RegistryEntry<Enchantment> entry : toRemove) {
-                builder.remove(e -> e.equals(entry));
+            for (Holder<Enchantment> entry : toRemove) {
+                builder.removeIf(e -> e.equals(entry));
             }
         });
     }

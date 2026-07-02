@@ -3,61 +3,64 @@ package com.ant.anomalous_advancement.block.custom;
 import com.ant.anomalous_advancement.block.entity.ModBlockEntities;
 import com.ant.anomalous_advancement.block.entity.custom.DoubleMagicBenchEntity;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class DoubleMagicBench extends BlockWithEntity implements BlockEntityProvider {
-    public static final MapCodec<DoubleMagicBench> CODEC = DoubleMagicBench.createCodec(DoubleMagicBench::new);
+public class DoubleMagicBench extends BaseEntityBlock implements EntityBlock {
+    public static final MapCodec<DoubleMagicBench> CODEC = DoubleMagicBench.simpleCodec(DoubleMagicBench::new);
 
-    public DoubleMagicBench(Settings settings) {
+    public DoubleMagicBench(Properties settings) {
         super(settings);
     }
 
     @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec() {
+    protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
 
     @Override
-    public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new DoubleMagicBenchEntity(pos, state);
     }
 
     @Override
-    protected BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+    protected RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
     }
 
     @Override
-    protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
-                                         PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient()) {
-            NamedScreenHandlerFactory screenHandlerFactory = ((DoubleMagicBenchEntity) world.getBlockEntity(pos));
-            if (screenHandlerFactory != null) {
-                player.openHandledScreen(screenHandlerFactory);
+    public InteractionResult useWithoutItem(
+            BlockState state,
+            Level world,
+            BlockPos pos,
+            Player player,
+            BlockHitResult hit
+    ) {
+        if (!world.isClientSide()) {
+            if (world.getBlockEntity(pos) instanceof MenuProvider provider) {
+                player.openMenu(provider);
             }
         }
-        return ActionResult.SUCCESS;
+
+        return InteractionResult.SUCCESS;
     }
 
     @Nullable
     @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        if (world.isClient()) {
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level world, BlockState state, BlockEntityType<T> type) {
+        if (world.isClientSide()) {
             return null;
         }
         return checkType(type, ModBlockEntities.DOUBLE_MAGIC_BENCH_BE, DoubleMagicBenchEntity::tick);

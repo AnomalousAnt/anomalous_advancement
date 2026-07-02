@@ -1,0 +1,34 @@
+{
+  "parent": "anomalous_advancement:enchanting/root",
+  "criteria": {
+    "altar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "anomalous_advancement:altar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.enchanting.craft_altar_description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "anomalous_advancement:altar"
+    },
+    "title": {
+      "translate": "advancements.enchanting.craft_altar_title"
+    }
+  },
+  "requirements": [
+    [
+      "altar"
+    ]
+  ],
+  "sends_telemetry_event": true,
+  "hidden": true
+}

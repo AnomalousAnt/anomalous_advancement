@@ -1,70 +1,67 @@
 package com.ant.anomalous_advancement.datagen;
 
 import com.ant.anomalous_advancement.block.ModBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.condition.MatchToolLootCondition;
-import net.minecraft.loot.condition.RandomChanceLootCondition;
-
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.RegistryEntryLookup;
-
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.entry.LeafEntry;
-import net.minecraft.loot.function.ApplyBonusLootFunction;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.predicate.item.ItemPredicate;
-import net.minecraft.registry.tag.ItemTags;
-
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import java.util.concurrent.CompletableFuture;
 
-public class ModLootTableProvider extends FabricBlockLootTableProvider {
-    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup){
+public class ModLootTableProvider extends FabricBlockLootSubProvider {
+    public ModLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup){
         super(dataOutput, registryLookup);
     }
     @Override
     public void generate() {
-        addDrop(ModBlocks.ALTAR);
-        addDrop(ModBlocks.GILDED_ALTAR);
-        addDrop(ModBlocks.RESPLENDENT_ALTAR);
-        addDrop(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
-        addDrop(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
+        dropSelf(ModBlocks.ALTAR);
+        dropSelf(ModBlocks.GILDED_ALTAR);
+        dropSelf(ModBlocks.RESPLENDENT_ALTAR);
+        dropSelf(ModBlocks.BLOCK_OF_PIGLIN_BRONZE);
+        dropSelf(ModBlocks.BLOCK_OF_DAMASCUS_STEEL);
 
-        addDrop(Blocks.GRAVEL, gravelLoot());
+        add(Blocks.GRAVEL, gravelLoot());
     }
 
     private LootTable.Builder gravelLoot(){
 
-        RegistryEntryLookup<Item> itemLookup = this.registries.getOrThrow(RegistryKeys.ITEM);
-                LootPool.Builder pickaxePool = LootPool.builder()
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(itemLookup,ItemTags.PICKAXES)))
-                        .with(ItemEntry.builder(Items.FLINT)
-                                .conditionally(RandomChanceLootCondition.builder(0.1f))
-                                .apply(ApplyBonusLootFunction.oreDrops(this.registries.getOrThrow(RegistryKeys.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE))))
-                        .rolls(UniformLootNumberProvider.create(1.0F, 1.0F));
+        HolderGetter<Item> itemLookup = this.registries.lookupOrThrow(Registries.ITEM);
+                LootPool.Builder pickaxePool = LootPool.lootPool()
+                        .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemLookup,ItemTags.PICKAXES)))
+                        .add(LootItem.lootTableItem(Items.FLINT)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1f))
+                                .apply(ApplyBonusCount.addOreBonusCount(this.registries.lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.FORTUNE))))
+                        .setRolls(UniformGenerator.between(1.0F, 1.0F));
 
-                LootPool.Builder shovelPool = LootPool.builder()
-                        .conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(itemLookup,ItemTags.SHOVELS)))
-                        .with(ItemEntry.builder(Blocks.GRAVEL))
-                        .rolls(UniformLootNumberProvider.create(1.0F, 1.0F));
-        return LootTable.builder()
-                .pool(pickaxePool)
-                .pool(shovelPool);
+                LootPool.Builder shovelPool = LootPool.lootPool()
+                        .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemLookup,ItemTags.SHOVELS)))
+                        .add(LootItem.lootTableItem(Blocks.GRAVEL))
+                        .setRolls(UniformGenerator.between(1.0F, 1.0F));
+        return LootTable.lootTable()
+                .withPool(pickaxePool)
+                .withPool(shovelPool);
     }
 public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops){
-        RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ((LeafEntry.Builder<?>)
-                ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minDrops, maxDrops))))
-                .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
+        HolderLookup.RegistryLookup<Enchantment> impl = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return this.createSilkTouchDispatchTable(drop, this.applyExplosionDecay(drop, ((LootPoolSingletonContainer.Builder<?>)
+                LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops))))
+                .apply(ApplyBonusCount.addOreBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))));
 }}
 

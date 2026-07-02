@@ -1,0 +1,11 @@
+{
+  "gives": {
+    "id": "anomalous_advancement:pleather_helmet"
+  },
+  "wants": {
+    "id": "minecraft:emerald"
+  },
+  "max_uses": 2,
+  "reputation_discount": 0.1,
+  "xp": 30.0
+}

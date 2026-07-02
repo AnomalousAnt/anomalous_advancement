@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "id": "minecraft:bell"
+  },
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 1
+  },
+  "max_uses": 2,
+  "reputation_discount": 0.1,
+  "xp": 30.0
+}

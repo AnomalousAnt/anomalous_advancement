@@ -1,0 +1,11 @@
+{
+  "gives": {
+    "id": "minecraft:wither_skeleton_skull"
+  },
+  "wants": {
+    "id": "minecraft:emerald",
+    "count": 32
+  },
+  "max_uses": 2,
+  "reputation_discount": 0.1
+}

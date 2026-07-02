@@ -1,0 +1,34 @@
+{
+  "parent": "anomalous_advancement:enchanting/craft_gilded_altar",
+  "criteria": {
+    "resplendent_altar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "anomalous_advancement:resplendent_altar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.enchanting.craft_resplendent_altar_description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "anomalous_advancement:resplendent_altar"
+    },
+    "title": {
+      "translate": "advancements.enchanting.craft_resplendent_altar_title"
+    }
+  },
+  "requirements": [
+    [
+      "resplendent_altar"
+    ]
+  ],
+  "sends_telemetry_event": true,
+  "hidden": true
+}

@@ -85,5 +85,17 @@
 
   "item.anomalous_advancement.mashed_potatoes": "Mashed Potatoes",
 
-  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions"
+  "itemgroup.anomalous_advancement.anomalous_advancement_group": "Anomalous Advancement Additions",
+
+  "advancements.enchanting.root.description": "Begin your enchanting journey!",
+  "advancements.enchanting.root.title": "Enchanting",
+
+  "advancements.enchanting.craft_altar_description": "Craft an Altar",
+  "advancements.enchanting.craft_altar_title": "Who needs diamonds?",
+
+  "advancements.enchanting.craft_gilded_altar_description": "Craft a Gilded Altar",
+  "advancements.enchanting.craft_gilded_altar_title": "Wizard Magic!",
+
+  "advancements.enchanting.craft_resplendent_altar_description": "Craft a Resplendent Altar",
+  "advancements.enchanting.craft_resplendent_altar_title": "MAXIMUM OVERDRIVE!"
 }
